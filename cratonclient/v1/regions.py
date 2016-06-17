@@ -4,6 +4,7 @@ from cratonclient import crud
 
 class Region(crud.Resource):
     """Representation of a Region."""
+
     pass
 
 
