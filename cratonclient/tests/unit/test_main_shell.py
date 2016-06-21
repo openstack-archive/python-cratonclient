@@ -21,4 +21,5 @@ class TestMainShell(base.TestCase):
 
     def test_main_returns_successfully(self):
         """Verify that cratonclient shell main returns as expected."""
-        self.assertEqual(main.main(),0)
+
+        self.assertEqual(main.main(), 0)
