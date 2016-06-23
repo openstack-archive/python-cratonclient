@@ -14,8 +14,11 @@
 """Craton-specific session details."""
 import logging
 
+from oslo_utils import encodeutils
+from oslo_utils import strutils
 import requests
 from requests import exceptions as requests_exc
+import six
 
 import cratonclient
 from cratonclient import exceptions as exc
@@ -31,7 +34,21 @@ class Session(object):
     immediately.
     """
 
-    def __init__(self, session=None, username=None, token=None, project_id=None):
+    def __init__(self, session=None, username=None, token=None,
+                 project_id=None):
+        """Initialize our Session.
+
+        :param session:
+            The session instance (either keystoneauth1's session or requests
+            Session) to use as an underlying HTTP transport. If not provided,
+            we will create a requests Session object.
+        :param str username:
+            The username of the person authenticating against the API.
+        :param str token:
+            The authentication token of the user authenticating.
+        :param str project_id:
+            The user's project id in Craton.
+        """
         if session is None:
             session = requests.Session()
 
@@ -48,28 +65,135 @@ class Session(object):
         self._session.headers['Accept'] = 'application/json'
 
     def delete(self, url, **kwargs):
+        """Make a DELETE request with url and optional parameters.
+
+        See the :meth:`Session.request` documentation for more details.
+
+        .. code-block:: python
+
+            >>> from cratonclient import session as craton
+            >>> session = craton.Session(
+            ...     username='demo',
+            ...     token='p@$$w0rd',
+            ...     project_id='1',
+            ... )
+            >>> response = session.delete('http://example.com')
+        """
         return self.request('DELETE', url, **kwargs)
 
     def get(self, url, **kwargs):
+        """Make a GET request with url and optional parameters.
+
+        See the :meth:`Session.request` documentation for more details.
+
+        .. code-block:: python
+
+            >>> from cratonclient import session as craton
+            >>> session = craton.Session(
+            ...     username='demo',
+            ...     token='p@$$w0rd',
+            ...     project_id='1',
+            ... )
+            >>> response = session.get('http://example.com')
+        """
         return self.request('GET', url, **kwargs)
 
     def head(self, url, **kwargs):
+        """Make a HEAD request with url and optional parameters.
+
+        See the :meth:`Session.request` documentation for more details.
+
+        .. code-block:: python
+
+            >>> from cratonclient import session as craton
+            >>> session = craton.Session(
+            ...     username='demo',
+            ...     token='p@$$w0rd',
+            ...     project_id='1',
+            ... )
+            >>> response = session.head('http://example.com')
+        """
         return self.request('HEAD', url, **kwargs)
 
     def options(self, url, **kwargs):
+        """Make an OPTIONS request with url and optional parameters.
+
+        See the :meth:`Session.request` documentation for more details.
+
+        .. code-block:: python
+
+            >>> from cratonclient import session as craton
+            >>> session = craton.Session(
+            ...     username='demo',
+            ...     token='p@$$w0rd',
+            ...     project_id='1',
+            ... )
+            >>> response = session.options('http://example.com')
+        """
         return self.request('OPTIONS', url, **kwargs)
 
     def post(self, url, **kwargs):
+        """Make a POST request with url and optional parameters.
+
+        See the :meth:`Session.request` documentation for more details.
+
+        .. code-block:: python
+
+            >>> from cratonclient import session as craton
+            >>> session = craton.Session(
+            ...     username='demo',
+            ...     token='p@$$w0rd',
+            ...     project_id='1',
+            ... )
+            >>> response = session.post(
+            ...     'http://example.com',
+            ...     data=b'foo',
+            ...     headers={'Content-Type': 'text/plain'},
+            ... )
+        """
         return self.request('POST', url, **kwargs)
 
     def put(self, url, **kwargs):
+        """Make a PUT request with url and optional parameters.
+
+        See the :meth:`Session.request` documentation for more details.
+
+        .. code-block:: python
+
+            >>> from cratonclient import session as craton
+            >>> session = craton.Session(
+            ...     username='demo',
+            ...     token='p@$$w0rd',
+            ...     project_id='1',
+            ... )
+            >>> response = session.put(
+            ...     'http://example.com',
+            ...     data=b'foo',
+            ...     headers={'Content-Type': 'text/plain'},
+            ... )
+        """
         return self.request('PUT', url, **kwargs)
 
     def request(self, method, url, **kwargs):
+        """Make a request with a method, url, and optional parameters.
+
+        See also: python-requests.org for documentation of acceptable
+        parameters.
+
+        .. code-block:: python
+
+            >>> from cratonclient import session as craton
+            >>> session = craton.Session(
+            ...     username='demo',
+            ...     token='p@$$w0rd',
+            ...     project_id='1',
+            ... )
+            >>> response = session.request('GET', 'http://example.com')
+        """
         self._http_log_request(method=method,
-                          url=url,
-                          data=kwargs.get('data'),
-                          headers=kwargs.get('headers', {}).copy())
+                               url=url,
+                               data=kwargs.get('data'),
+                               headers=kwargs.get('headers', {}).copy())
         try:
             response = self._session.request(method=method,
                                              url=url,
@@ -90,7 +214,6 @@ class Session(object):
             raise exc.error_from(response)
 
         return response
-
 
     def _http_log_request(self, url, method=None, data=None,
                           headers=None, logger=LOG):
@@ -135,16 +258,14 @@ class Session(object):
         if not logger.isEnabledFor(logging.DEBUG):
             return
 
-        text = _remove_service_catalog(response.text)
-
         string_parts = [
             'RESP:',
             '[%s]' % response.status_code
         ]
         for header in six.iteritems(response.headers):
             string_parts.append('%s: %s' % self._process_header(header))
-        if text:
+        if response.text:
             string_parts.append('\nRESP BODY: %s\n' %
-                                strutils.mask_password(text))
+                                strutils.mask_password(response.text))
 
         logger.debug(' '.join(string_parts))

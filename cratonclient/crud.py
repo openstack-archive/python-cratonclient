@@ -11,8 +11,11 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-
 """Client for CRUD operations."""
+import copy
+
+from oslo_utils import strutils
+
 
 class CRUDClient(object):
     """Class that handles the basic create, read, upload, delete workflow."""
@@ -22,6 +25,7 @@ class CRUDClient(object):
     resource_class = None
 
     def __init__(self, session, url):
+        """Initialize our Client with a session and base url."""
         self.session = session
         self.url = url.rstrip('/')
 
@@ -37,11 +41,11 @@ class CRUDClient(object):
         The child class of the CRUDClient may set the ``base_path``, e.g.,
 
         .. code-block:: python
-            
+
             base_path = '/regions'
 
         And it's ``key``, e.g.,
-        
+
         .. code-block:: python
 
             key = 'region'
@@ -179,13 +183,17 @@ class Resource(object):
         return self._info == other._info
 
     def is_loaded(self):
+        """Check if the resource has been loaded."""
         return self._loaded
 
     def set_loaded(self, val):
+        """Set whether the resource has been loaded or not."""
         self._loaded = val
 
     def to_dict(self):
+        """Return the resource as a dictionary."""
         return copy.deepcopy(self._info)
 
     def delete(self):
+        """Delete the resource from the service."""
         return self.manager.delete(self)

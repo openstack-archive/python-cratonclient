@@ -12,8 +12,8 @@
 
 """Tests for `cratonclient.shell.main` module."""
 
-from cratonclient.tests import base
 from cratonclient.shell import main
+from cratonclient.tests import base
 
 
 class TestMainShell(base.TestCase):
@@ -21,5 +21,4 @@ class TestMainShell(base.TestCase):
 
     def test_main_returns_successfully(self):
         """Verify that cratonclient shell main returns as expected."""
-
         self.assertEqual(main.main(), 0)

@@ -11,18 +11,14 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-
-"""
-test_cratonclient
-----------------------------------
-
-Tests for `cratonclient` module.
-"""
+"""Tests for `cratonclient` module."""
 
 from cratonclient.tests import base
 
 
 class TestCratonclient(base.TestCase):
+    """Tests for the top-level module."""
 
     def test_something(self):
+        """Do nothing."""
         pass

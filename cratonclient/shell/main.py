@@ -9,13 +9,11 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-
-"""
-Main shell for parsing arguments directed toward Craton.
-"""
+"""Main shell for parsing arguments directed toward Craton."""
 
 
 def main():
+    """Main entry-point for cratonclient's CLI."""
     return 0
 
 if __name__ == "__main__":

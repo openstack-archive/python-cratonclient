@@ -21,10 +21,10 @@ import cratonclient
 from cratonclient import session
 from cratonclient.tests import base
 
-
 USERNAME = 'example'
-TOKEN =  uuid.uuid4().hex
+TOKEN = uuid.uuid4().hex
 PROJECT_ID = 1
+
 
 class TestSession(base.TestCase):
     """Test our session class."""
@@ -53,11 +53,10 @@ class TestSession(base.TestCase):
             'X-Auth-Token': TOKEN,
             'X-Auth-Project': str(PROJECT_ID),
             'User-Agent': 'python-cratonclient/{0} {1}'.format(
-                cratonclient.__version__, 
+                cratonclient.__version__,
                 requests_session.headers['User-Agent']),
             'Connection': 'keep-alive',
             'Accept-Encoding': 'gzip, deflate',
             'Accept': 'application/json',
         }
         self.assertItemsEqual(expected_headers, craton._session.headers)
-
