@@ -10,8 +10,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-"""
-Command-line interface to the OpenStack Craton API V1.
-"""
+"""Command-line interface to the OpenStack Craton API V1."""
 
-# TODO (cmspence): from cratonclient.v1 import client
+# TODO(cmspence): from cratonclient.v1 import client

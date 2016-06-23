@@ -13,6 +13,7 @@
 # under the License.
 """Exception classes and logic for cratonclient."""
 
+
 class ClientException(Exception):
     """Base exception class for all exceptions in cratonclient."""
 
@@ -32,8 +33,13 @@ class Timeout(ClientException):
     """Catch-all class for connect and read timeouts from requests."""
 
     message = 'Request timed out'
-    
+
     def __init__(self, message=None, **kwargs):
+        """Initialize our Timeout exception.
+
+        This takes an optional keyword-only argument of
+        ``original_exception``.
+        """
         self.original_exception = kwargs.pop('exception', None)
         super(Timeout, self).__init__(message)
 
@@ -45,6 +51,14 @@ class HTTPError(ClientException):
     status_code = None
 
     def __init__(self, message=None, **kwargs):
+        """Initialize our HTTPError instance.
+
+        Optional keyword-only arguments include:
+
+        - response: for the response generating the error
+        - original_exception: in the event that this is a requests exception
+          that we are re-raising.
+        """
         self.response = kwargs.pop('response', None)
         self.original_exception = kwargs.pop('exception', None)
         self.status_code = (self.status_code
@@ -82,7 +96,7 @@ class BadRequest(HTTPClientError):
 
 class Unauthorized(HTTPClientError):
     """Client is unauthorized to access the resource in question."""
-    
+
     status_code = 401
     message = ("The user has either provided insufficient parameters for "
                "authentication or is not authorized to access this resource.")
