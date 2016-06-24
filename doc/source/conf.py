@@ -16,6 +16,9 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath('../..'))
+on_read_the_docs = os.environ.get('READTHEDOCS') == 'True'
+
+
 # -- General configuration ----------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -25,6 +28,9 @@ extensions = [
     #'sphinx.ext.intersphinx',
     'oslosphinx'
 ]
+
+if not on_read_the_docs:
+    extensions.append('oslosphinx')
 
 # autodoc generation is a bit aggressive and a nuisance when doing heavy
 # text edit cycles.
