@@ -12,13 +12,55 @@
 
 """Tests for `cratonclient.shell.main` module."""
 
+
+import mock
+import re
+
+from testtools import matchers
+
 from cratonclient.shell import main
 from cratonclient.tests import base
 
 
-class TestMainShell(base.TestCase):
+class TestMainShell(base.ShellTestCase):
     """Test our craton main shell."""
 
-    def test_main_returns_successfully(self):
-        """Verify that cratonclient shell main returns as expected."""
+    re_options = re.DOTALL | re.MULTILINE
+
+    @mock.patch('cratonclient.shell.main.CratonShell.main')
+    def test_main_returns_successfully(self, cratonShellMainMock):
+        """Verify that main returns as expected."""
+        cratonShellMainMock.return_value = 0
         self.assertEqual(main.main(), 0)
+
+    def test_print_help_no_args(self):
+        """Verify that no arguments prints out help by default."""
+        required_help_responses = [
+            '.*?^usage: craton',
+            '.*?^See "craton help COMMAND" '
+            'for help on a specific command.',
+        ]
+        stdout, stderr = self.shell('')
+        for r in required_help_responses:
+            self.assertThat((stdout + stderr),
+                            matchers.MatchesRegex(r, self.re_options))
+
+    def test_print_help_with_args(self):
+        """Verify that help command(s) prints out help text correctly."""
+        required_help_responses = [
+            '.*?^usage: craton',
+            '.*?^See "craton help COMMAND" '
+            'for help on a specific command.',
+        ]
+        for help_args in ['-h', '--help']:
+            stdout, stderr = self.shell(help_args)
+            for r in required_help_responses:
+                self.assertThat((stdout + stderr),
+                                matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.shell.main.CratonShell.main')
+    def test_main_catches_exception(self, cratonShellMainMock):
+        """Verify exceptions will be caught and shell will exit properly."""
+        cratonShellMainMock.side_effect = Exception(mock.Mock(status=404),
+                                                    'some error')
+        self.assertRaises(SystemExit, main.main)
