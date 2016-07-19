@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
@@ -9,8 +11,13 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+"""Hosts resource and resource shell wrapper."""
+from cratonclient.common import cliutils
 
-"""Command-line interface to the OpenStack Craton API V1."""
 
-
-# TODO(cmspence): from cratonclient.v1 import client
+def do_host_list(cc, args):
+    """Print list of hosts which are registered with the Craton service."""
+    params = {}
+    columns = ['id', 'name']
+    hosts = cc.hosts.list(args.craton_project_id, **params)
+    cliutils.print_list(hosts, columns)
