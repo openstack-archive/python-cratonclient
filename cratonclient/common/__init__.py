@@ -11,10 +11,4 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-"""Craton API Client Library and Command-Line Application."""
-
-import pbr.version
-
-
-__version__ = pbr.version.VersionInfo(
-    'python-cratonclient').version_string()
+"""Common Craton common classes and functions."""

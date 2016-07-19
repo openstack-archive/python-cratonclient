@@ -26,4 +26,12 @@ except ImportError:
 
 setuptools.setup(
     setup_requires=['pbr'],
-    pbr=True)
+    pbr=True,
+    packages=["cratonclient.shell", "cratonclient.shell.v1"],
+    entry_points={
+      "registered_shell_versions": [
+          "v1 = cratonclient.shell.v1.shell:main",
+          "v2 = cratonclient.shell.v2.shell:main",
+      ],
+    },
+)
