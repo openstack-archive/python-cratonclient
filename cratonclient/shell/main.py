@@ -14,16 +14,20 @@
 from __future__ import print_function
 
 import argparse
+import pkg_resources
 import six
 import sys
 
 from oslo_utils import encodeutils
 
+from cratonclient import __version__
+from cratonclient.v1 import client
+
 
 class CratonShell(object):
     """Class used to handle shell definition and parsing."""
 
-    def get_base_parser(self):
+    def get_base_parser(self, reg_cmd):
         """Configure base craton arguments and parsing."""
         parser = argparse.ArgumentParser(
             prog='craton',
@@ -35,18 +39,46 @@ class CratonShell(object):
         )
 
         parser.add_argument('-h', '--help',
-                            action='store_true',
-                            help=argparse.SUPPRESS)
-
+                            action='help',
+                            help=argparse.SUPPRESS,
+                            )
+        parser.add_argument('--version',
+                            action='version',
+                            version=__version__,
+                            )
+        parser.add_argument('command',
+                            choices=reg_cmd.keys(),
+                            )
+        parser.add_argument('args',
+                            help=argparse.SUPPRESS,
+                            nargs=argparse.REMAINDER,
+                            )
         return parser
+
+    def _registered_commands(self, shell_entry='registered_shell_versions'):
+        """Find shell entry points for each version of the API."""
+        reg_versions = pkg_resources.iter_entry_points(group=shell_entry)
+        for ver in reg_versions:
+            shell_main = ver.load()
+            return {ver.name: shell_main()}
 
     def main(self, argv):
         """Main entry-point for cratonclient shell argument parsing."""
-        parser = self.get_base_parser()
-        (options, args) = parser.parse_known_args(argv)
-        if options.help or not argv:
+        # TODO(cmspence): Determine version/microversion programmatically
+        #  We want to move towards microversioning like other projects
+        cli_ver = 'v1'
+        registered_commands = self._registered_commands()[cli_ver]
+        parser = self.get_base_parser(registered_commands)
+        if not argv:
             parser.print_help()
             return 0
+        args = parser.parse_args(argv)
+        reg = registered_commands[args.command]
+        sub_cmd = reg.load()
+        # TODO(cmspence): setup the client.
+        # self.cs = client.Client(session,craton_service_url)
+        self.cc = client.Client(None, "0.0.0.0")
+        sub_cmd(self.cc, args.args)
 
 
 def main():
