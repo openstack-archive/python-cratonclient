@@ -32,3 +32,18 @@ class HostManager(crud.CRUDClient):
         """Retrieve the hosts in a specific region."""
         kwargs['project'] = str(project_id)
         super(HostManager, self).list(**kwargs)
+
+HOST_FIELDS = {
+    'id': 'ID',
+    'name': 'Name',
+    'type': 'Type',
+    'project_id': 'Project ID',
+    'region_id': 'Region ID',
+    'cell_id': 'Cell ID',
+    'ip_address': 'IP Address',
+    'active': 'Active',
+    'note': 'Note',
+    'access_secret_id': "Access Secret ID",
+    'created_at': 'Created At',
+    'update_at': 'Updated At'
+}
