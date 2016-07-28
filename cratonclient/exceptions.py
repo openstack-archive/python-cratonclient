@@ -75,6 +75,12 @@ class HTTPError(ClientException):
         self.status_code = code
 
 
+class CommandError(ClientException):
+    """Client command was invalid or failed."""
+
+    message = "The command used was invalid or caused an error."""
+
+
 class ConnectionFailed(HTTPError):
     """Connecting to the server failed."""
 
