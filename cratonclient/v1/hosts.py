@@ -28,6 +28,16 @@ class HostManager(crud.CRUDClient):
     base_path = '/hosts'
     resource_class = Host
 
+    def create(self, name, project_id, region_id, ip_address, active=True,
+               **kwargs):
+        """Create a host."""
+        super(HostManager, self).create(project_id=project_id,
+                                        name=name,
+                                        region_id=region_id,
+                                        ip_address=ip_address,
+                                        active=active,
+                                        **kwargs)
+
     def list(self, project_id, **kwargs):
         """Retrieve the hosts in a specific region."""
         kwargs['project'] = str(project_id)
