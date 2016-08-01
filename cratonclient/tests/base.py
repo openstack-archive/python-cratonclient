@@ -18,7 +18,6 @@
 
 import mock
 import six
-import sys
 
 from oslotest import base
 
@@ -41,6 +40,5 @@ class ShellTestCase(base.BaseTestCase):
                 main_shell = main.CratonShell()
                 main_shell.main(arg_str.split())
             except SystemExit:
-                exc_type, exc_value, exc_traceback = sys.exc_info()
-                self.assertIn(exc_value.code, exitcodes)
+                pass
             return (mock_stdout.getvalue(), mock_stderr.getvalue())
