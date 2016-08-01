@@ -13,6 +13,9 @@
 """Tests for `cratonclient.shell.v1.hosts_shell` module."""
 
 import mock
+import re
+
+from testtools import matchers
 
 from cratonclient import exceptions as exc
 from cratonclient.tests import base
@@ -20,6 +23,8 @@ from cratonclient.tests import base
 
 class TestHostsShell(base.ShellTestCase):
     """Test our craton hosts shell commands."""
+
+    re_options = re.DOTALL | re.MULTILINE
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_success(self, mock_list):
@@ -128,3 +133,20 @@ class TestHostsShell(base.ShellTestCase):
         self.assertRaises(exc.CommandError,
                           self.shell,
                           'host-list --sort-key name --sort-dir invalid')
+
+    def test_host_create_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton host-create',
+            '.*?^craton host-create: error:.*$'
+        ]
+        stdout, stderr = self.shell('host-create')
+        for r in expected_responses:
+            self.assertThat((stdout + stderr),
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.create')
+    def test_host_create_success(self, mock_create):
+        """Verify that all required args results in success."""
+        self.shell('host-create -p 1 -r 1 -n test -i 127.0.0.1')
+        self.assertTrue(mock_create.called)

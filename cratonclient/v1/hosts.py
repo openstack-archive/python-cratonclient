@@ -28,10 +28,41 @@ class HostManager(crud.CRUDClient):
     base_path = '/hosts'
     resource_class = Host
 
+    def create(self, name, project_id, region_id, ip_address,
+               device_type, active=True,
+               **kwargs):
+        """Create a host.
+
+        .. code-block:: python
+
+        >>> from cratonclient.v1 import client
+        >>> from cratonclient import session
+        >>> session = session.Session(
+        ...     username='demo',
+        ...     token='password',
+        ...     project_id=1
+        ... )
+        >>> client = client.Client(session, 'http://example.com')
+        >>> client.hosts.create(
+        ...     name='test',
+        ...     project_id=1,
+        ...     region_id=1,
+        ...     ip_address='127.0.0.1',
+        ...     device_type="type"
+        ... )
+        """
+        return super(HostManager, self).create(name=name,
+                                               project_id=project_id,
+                                               region_id=region_id,
+                                               ip_address=ip_address,
+                                               device_type=device_type,
+                                               active=active,
+                                               **kwargs)
+
     def list(self, project_id, **kwargs):
         """Retrieve the hosts in a specific region."""
         kwargs['project'] = str(project_id)
-        super(HostManager, self).list(**kwargs)
+        return super(HostManager, self).list(**kwargs)
 
 HOST_FIELDS = {
     'id': 'ID',
