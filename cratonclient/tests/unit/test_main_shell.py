@@ -101,3 +101,17 @@ class TestMainShell(base.ShellTestCase):
         cratonShellMainMock.side_effect = Exception(mock.Mock(status=404),
                                                     'some error')
         self.assertRaises(SystemExit, main.main)
+
+    @mock.patch('cratonclient.shell.v1.hosts_shell.do_host_create')
+    def test_main_routes_sub_command(self, mock_create):
+        """Verify main shell calls correct subcommand."""
+        url = '--craton-url test_url'
+        username = '--os-username test_name'
+        pw = '--os-password test_pw'
+        proj_id = '--craton-project-id 1'
+        self.shell('{} {} {} {} host-create'.format(url,
+                                                    username,
+                                                    pw,
+                                                    proj_id))
+
+        self.assertTrue(mock_create.called)

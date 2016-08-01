@@ -31,7 +31,7 @@ class HostManager(crud.CRUDClient):
     def list(self, project_id, **kwargs):
         """Retrieve the hosts in a specific region."""
         kwargs['project'] = str(project_id)
-        super(HostManager, self).list(**kwargs)
+        return super(HostManager, self).list(**kwargs)
 
 HOST_FIELDS = {
     'id': 'ID',
