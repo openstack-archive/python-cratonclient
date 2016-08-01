@@ -13,13 +13,38 @@
 """Tests for `cratonclient.shell.v1.hosts_shell` module."""
 
 import mock
+import re
 
+from argparse import Namespace
+from testtools import matchers
+
+from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
+from cratonclient.shell.v1 import hosts_shell
 from cratonclient.tests import base
+from cratonclient.v1 import hosts
 
 
 class TestHostsShell(base.ShellTestCase):
     """Test our craton hosts shell commands."""
+
+    re_options = re.DOTALL | re.MULTILINE
+    host_valid_fields = None
+    host_invalid_field = None
+
+    def setUp(self):
+        """Setup required test fixtures."""
+        super(TestHostsShell, self).setUp()
+        self.host_valid_fields = Namespace(project_id=1,
+                                           region_id=1,
+                                           name='mock_host',
+                                           ip_address='127.0.0.1',
+                                           active=True)
+        self.host_invalid_field = Namespace(project_id=1, region_id=1,
+                                            name='mock_host',
+                                            ip_address='127.0.0.1',
+                                            active=True,
+                                            invalid_foo='ignored')
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_success(self, mock_list):
@@ -128,3 +153,31 @@ class TestHostsShell(base.ShellTestCase):
         self.assertRaises(exc.CommandError,
                           self.shell,
                           'host-list --sort-key name --sort-dir invalid')
+
+    def test_host_create_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton host-create',
+            '.*?^craton host-create: error:.*$'
+        ]
+        stdout, stderr = self.shell('host-create')
+        actual_output = stdout+stderr
+        for r in expected_responses:
+            self.assertThat(actual_output,
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.create')
+    def test_do_host_create_calls_host_manager_with_fields(self, mock_create):
+        """Verify that do host create calls HostManager create."""
+        client = mock.Mock()
+        client.hosts = hosts.HostManager(mock.ANY, 'http://127.0.0.1/')
+        hosts_shell.do_host_create(client, self.host_valid_fields)
+        mock_create.assert_called_once_with(**vars(self.host_valid_fields))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.create')
+    def test_do_host_create_ignores_unknown_fields(self, mock_create):
+        """Verify that do host create ignores unknown field."""
+        client = mock.Mock()
+        client.hosts = hosts.HostManager(mock.ANY, 'http://127.0.0.1/')
+        hosts_shell.do_host_create(client, self.host_invalid_field)
+        mock_create.assert_called_once_with(**vars(self.host_valid_fields))
