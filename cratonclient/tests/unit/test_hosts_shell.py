@@ -35,7 +35,7 @@ class TestHostsShell(base.ShellTestCase):
         """Verify that missing required args results in error message."""
         expected_responses = [
             '.*?^usage: craton host-create',
-            '.*?^craton host-create: error: argument -n/--name is required',
+            '.*?^craton host-create: error:.*$',
         ]
         stdout, stderr = self.shell('host-create')
         for r in expected_responses:
@@ -44,6 +44,40 @@ class TestHostsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.hosts.HostManager.create')
     def test_host_create_success(self, mock_create):
-        """Verify that all required args results in success."""
+        """Verify that all required create args results in success."""
         self.shell('host-create -p 1 -r 1 -n test -i 127.0.0.1')
         self.assertTrue(mock_create.called)
+
+    def test_host_update_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton host-update',
+            '.*?^craton host-update: error:.*$',
+        ]
+        stdout, stderr = self.shell('host-update')
+        for r in expected_responses:
+            self.assertThat((stdout + stderr),
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.update')
+    def test_host_update_success(self, mock_update):
+        """Verify that all required update args results in success."""
+        self.shell('host-update 1')
+        self.assertTrue(mock_update.called)
+
+    def test_host_show_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton host-show',
+            '.*?^craton host-show: error:.*$',
+        ]
+        stdout, stderr = self.shell('host-show')
+        for r in expected_responses:
+            self.assertThat((stdout + stderr),
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.get')
+    def test_host_show_success(self, mock_get):
+        """Verify that all required update args results in success."""
+        self.shell('host-show 1')
+        self.assertTrue(mock_get.called)
