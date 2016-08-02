@@ -28,9 +28,32 @@ class HostManager(crud.CRUDClient):
     base_path = '/hosts'
     resource_class = Host
 
+    def get(self, host_id):
+        """Get a host.
+
+        .. code-block:: python
+
+        >>> from cratonclient.v1 import client
+        >>> from cratonclient import session
+        >>> session = session.Session(
+        ...     username='demo',
+        ...     token='password',
+        ...     project_id=1
+        ... )
+        >>> client = client.Client(session, 'http://example.com')
+        >>> created_host = client.hosts.create(
+        ...     name='test',
+        ...     project_id=1,
+        ...     region_id=1,
+        ...     ip_address='127.0.0.1',
+        ...     device_type="type"
+        ... )
+        >>> gotten_host= client.hosts.get(host.id)
+        """
+        return super(HostManager, self).get(host_id=host_id)
+
     def create(self, name, project_id, region_id, ip_address,
-               device_type, active=True,
-               **kwargs):
+               device_type, active=True, **kwargs):
         """Create a host.
 
         .. code-block:: python
@@ -63,6 +86,30 @@ class HostManager(crud.CRUDClient):
         """Retrieve the hosts in a specific region."""
         kwargs['project'] = str(project_id)
         return super(HostManager, self).list(**kwargs)
+
+    def update(self, host_id, **kwargs):
+        """Update a host.
+
+        .. code-block:: python
+
+        >>> from cratonclient.v1 import client
+        >>> from cratonclient import session
+        >>> session = session.Session(
+        ...     username='demo',
+        ...     token='password',
+        ...     project_id=1
+        ... )
+        >>> client = client.Client(session, 'http://example.com')
+        >>> host = client.hosts.create(
+        ...     name='test',
+        ...     project_id=1,
+        ...     region_id=1,
+        ...     ip_address='127.0.0.1',
+        ...     device_type="type"
+        ... )
+        >>> client.hosts.update(host.id, region_id=2)
+        """
+        return super(HostManager, self).update(host_id=host_id, **kwargs)
 
 HOST_FIELDS = {
     'id': 'ID',
