@@ -174,6 +174,32 @@ class Session(object):
         """
         return self.request('PUT', url, **kwargs)
 
+    def patch(self, url, **kwargs):
+        """Make a PATCH request with url and optional parameters.
+
+        See the :meth:`Session.request` documentation for more details.
+
+        .. code-block:: python
+
+            >>> from cratonclient import session as craton
+            >>> session = craton.Session(
+            ...     username='demo',
+            ...     token='p@$$w0rd',
+            ...     project_id='1',
+            ... )
+            >>> response = session.put(
+            ...     'http://example.com',
+            ...     data=b'foo',
+            ...     headers={'Content-Type': 'text/plain'},
+            ... )
+            >>> response = session.patch(
+            ...     'http://example.com',
+            ...     data=b'bar',
+            ...     headers={'Content-Type': 'text/plain'},
+            ... )
+        """
+        return self.request('PATCH', url, **kwargs)
+
     def request(self, method, url, **kwargs):
         """Make a request with a method, url, and optional parameters.
 

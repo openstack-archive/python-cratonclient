@@ -180,3 +180,52 @@ class TestHostsShell(base.ShellTestCase):
         client.hosts = hosts.HostManager(mock.ANY, 'http://127.0.0.1/')
         hosts_shell.do_host_create(client, self.host_invalid_field)
         mock_create.assert_called_once_with(**vars(self.host_valid_fields))
+
+    def test_host_update_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton host-update',
+            '.*?^craton host-update: error:.*$',
+        ]
+        stdout, stderr = self.shell('host-update')
+        actual_output = stdout + stderr
+        for r in expected_responses:
+            self.assertThat(actual_output,
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.update')
+    def test_do_host_update_calls_host_manager_with_fields(self, mock_update):
+        """Verify that do host update calls HostManager create."""
+        client = mock.Mock()
+        client.hosts = hosts.HostManager(mock.ANY, 'http://127.0.0.1/')
+        hosts_shell.do_host_update(client, self.host_valid_fields)
+        mock_update.assert_called_once_with(**vars(self.host_valid_fields))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.update')
+    def test_do_host_update_ignores_unknown_fields(self, mock_update):
+        """Verify that do host create ignores unknown field."""
+        client = mock.Mock()
+        client.hosts = hosts.HostManager(mock.ANY, 'http://127.0.0.1/')
+        hosts_shell.do_host_update(client, self.host_invalid_field)
+        mock_update.assert_called_once_with(**vars(self.host_valid_fields))
+
+    def test_host_show_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton host-show',
+            '.*?^craton host-show: error:.*$',
+        ]
+        stdout, stderr = self.shell('host-show')
+        actual_output = stdout + stderr
+        for r in expected_responses:
+            self.assertThat(actual_output,
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.get')
+    def test_do_host_show_calls_host_manager_with_fields(self, mock_get):
+        """Verify that do host update calls HostManager create."""
+        client = mock.Mock()
+        client.hosts = hosts.HostManager(mock.ANY, 'http://127.0.0.1/')
+        test_args = Namespace(id=1)
+        hosts_shell.do_host_show(client, test_args)
+        mock_get.assert_called_once_with(vars(test_args)['id'])
