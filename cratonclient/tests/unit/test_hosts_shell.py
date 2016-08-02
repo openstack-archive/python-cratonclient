@@ -39,7 +39,8 @@ class TestHostsShell(base.ShellTestCase):
                                            name='mock_host',
                                            ip_address='127.0.0.1',
                                            active=True)
-        self.host_invalid_field = Namespace(project_id=1, region_id=1,
+        self.host_invalid_field = Namespace(project_id=1,
+                                            region_id=1,
                                             name='mock_host',
                                             ip_address='127.0.0.1',
                                             active=True,
@@ -187,3 +188,77 @@ class TestHostsShell(base.ShellTestCase):
         client.inventory.return_value = inventory
         hosts_shell.do_host_create(client, self.host_invalid_field)
         mock_create.assert_called_once_with(**vars(self.host_valid_fields))
+
+    def test_host_update_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton host-update',
+            '.*?^craton host-update: error:.*$',
+        ]
+        stdout, stderr = self.shell('host-update')
+        actual_output = stdout + stderr
+        for r in expected_responses:
+            self.assertThat(actual_output,
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.update')
+    def test_do_host_update_calls_host_manager_with_fields(self, mock_update):
+        """Verify that do host update calls HostManager create."""
+        client = mock.Mock()
+        inventory = mock.Mock()
+        inventory.hosts = hosts.HostManager(mock.ANY,
+                                            mock.ANY,
+                                            'http://127.0.0.1/')
+        client.inventory = mock.Mock(name='inventory')
+        client.inventory.return_value = inventory
+        valid_input = Namespace(region=1,
+                                id=1,
+                                name='mock_host')
+        hosts_shell.do_host_update(client, valid_input)
+        vars(valid_input).pop('region')
+        mock_update.assert_called_once_with(**vars(valid_input))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.update')
+    def test_do_host_update_ignores_unknown_fields(self, mock_update):
+        """Verify that do host create ignores unknown field."""
+        client = mock.Mock()
+        inventory = mock.Mock()
+        inventory.hosts = hosts.HostManager(mock.ANY,
+                                            mock.ANY,
+                                            'http://127.0.0.1/')
+        client.inventory = mock.Mock(name='inventory')
+        client.inventory.return_value = inventory
+        invalid_input = Namespace(region=1,
+                                  id=1,
+                                  name='mock_host',
+                                  invalid=True)
+        hosts_shell.do_host_update(client, invalid_input)
+        vars(invalid_input).pop('region')
+        vars(invalid_input).pop('invalid')
+        mock_update.assert_called_once_with(**vars(invalid_input))
+
+    def test_host_show_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton host-show',
+            '.*?^craton host-show: error:.*$',
+        ]
+        stdout, stderr = self.shell('host-show')
+        actual_output = stdout + stderr
+        for r in expected_responses:
+            self.assertThat(actual_output,
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.get')
+    def test_do_host_show_calls_host_manager_with_fields(self, mock_get):
+        """Verify that do host update calls HostManager create."""
+        client = mock.Mock()
+        inventory = mock.Mock()
+        inventory.hosts = hosts.HostManager(mock.ANY,
+                                            mock.ANY,
+                                            'http://127.0.0.1/')
+        client.inventory = mock.Mock(name='inventory')
+        client.inventory.return_value = inventory
+        test_args = Namespace(id=1, region=1)
+        hosts_shell.do_host_show(client, test_args)
+        mock_get.assert_called_once_with(vars(test_args)['id'])

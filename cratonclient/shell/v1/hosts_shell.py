@@ -17,6 +17,21 @@ from cratonclient import exceptions as exc
 from cratonclient.v1.hosts import HOST_FIELDS as h_fields
 
 
+@cliutils.arg('region',
+              metavar='<region>',
+              type=int,
+              help='ID of the region that the host belongs to.')
+@cliutils.arg('id',
+              metavar='<host>',
+              type=int,
+              help='ID of the host.')
+def do_host_show(cc, args):
+    """Show detailed information about a host."""
+    host = cc.inventory(args.region).hosts.get(args.id)
+    data = {f: getattr(host, f, '') for f in h_fields}
+    cliutils.print_dict(data, wrap=72)
+
+
 @cliutils.arg('-r', '--region',
               metavar='<region>',
               type=int,
@@ -128,6 +143,7 @@ def do_host_list(cc, args):
 @cliutils.arg('--access_secret',
               type=int,
               dest='access_secret_id',
+              metavar='<access_secret>',
               help='ID of the access secret of the host.')
 @cliutils.arg('-l', '--labels',
               default=[],
@@ -139,3 +155,55 @@ def do_host_create(cc, args):
     host = cc.inventory(args.region_id).hosts.create(**fields)
     data = {f: getattr(host, f, '') for f in h_fields}
     cliutils.print_dict(data, wrap=72)
+
+
+@cliutils.arg('region',
+              metavar='<region>',
+              type=int,
+              help='Current ID of the region that the host belongs to.')
+@cliutils.arg('id',
+              metavar='<host>',
+              type=int,
+              help='ID of the host.')
+@cliutils.arg('-n', '--name',
+              metavar='<name>',
+              help='Name of the host.')
+@cliutils.arg('-i', '--ip_address',
+              metavar='<ipaddress>',
+              help='IP Address of the host.')
+@cliutils.arg('-p', '--project',
+              dest='project_id',
+              metavar='<project>',
+              type=int,
+              help='Desired ID of the project that the host should change to.')
+@cliutils.arg('-r', '--region',
+              dest='region_id',
+              metavar='<region>',
+              type=int,
+              help='Desired ID of the region that the host should change to.')
+@cliutils.arg('-c', '--cell',
+              dest='cell_id',
+              metavar='<cell>',
+              type=int,
+              help='ID of the cell that the host belongs to.')
+@cliutils.arg('-a', '--active',
+              default=True,
+              help='Status of the host.  Active or inactive.')
+@cliutils.arg('-t', '--type',
+              help='Type of the host.')
+@cliutils.arg('--note',
+              help='Note about the host.')
+@cliutils.arg('--access_secret',
+              dest='access_secret_id',
+              metavar='<access_secret>',
+              type=int,
+              help='ID of the access secret of the host.')
+@cliutils.arg('-l', '--labels',
+              default=[],
+              help='List of labels for the host.')
+def do_host_update(cc, args):
+    """Update a host that is registered with the Craton service."""
+    fields = {k: v for (k, v) in vars(args).items()
+              if k in h_fields and not (v is None)}
+    host = cc.inventory(args.region).hosts.update(**fields)
+    print("Host {0} has been successfully update.".format(host.id))
