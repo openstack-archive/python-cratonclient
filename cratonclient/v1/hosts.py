@@ -28,6 +28,10 @@ class HostManager(crud.CRUDClient):
     base_path = '/hosts'
     resource_class = Host
 
+    def get(self, host_id, **kwargs):
+        """Get a host."""
+        super(HostManager, self).get(host_id=host_id, **kwargs)
+
     def create(self, name, project_id, region_id, ip_address, active=True,
                **kwargs):
         """Create a host."""
@@ -42,6 +46,10 @@ class HostManager(crud.CRUDClient):
         """Retrieve the hosts in a specific region."""
         kwargs['project'] = str(project_id)
         super(HostManager, self).list(**kwargs)
+
+    def update(self, host_id, **kwargs):
+        """Update a host."""
+        super(HostManager, self).update(host_id=host_id, **kwargs)
 
 HOST_FIELDS = {
     'id': 'ID',
