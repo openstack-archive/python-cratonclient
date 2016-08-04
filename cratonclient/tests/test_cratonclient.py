@@ -12,8 +12,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Tests for `cratonclient` module."""
+import mock
 
 from cratonclient.tests import base
+from cratonclient.v1 import client
 
 
 class TestCratonclient(base.TestCase):
@@ -22,3 +24,13 @@ class TestCratonclient(base.TestCase):
     def test_something(self):
         """Do nothing."""
         pass
+
+    @mock.patch('cratonclient.v1.inventory.Inventory')
+    def test_client_creates_inventory(self, mock_inventory):
+        """Verify that Craton client creates Inventory."""
+        session = mock.Mock()
+        url = 'https://10.1.1.8080'
+        region_id = 1
+        craton = client.Client(session, url)
+        craton.inventory(region_id)
+        mock_inventory.assert_called_once_with(session, url + '/v1', region_id)
