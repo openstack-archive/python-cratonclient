@@ -111,6 +111,30 @@ class HostManager(crud.CRUDClient):
         """
         return super(HostManager, self).update(host_id=host_id, **kwargs)
 
+    def delete(self, host_id):
+        """Delete a host.
+
+        .. code-block:: python
+
+        >>> from cratonclient.v1 import client
+        >>> from cratonclient import session
+        >>> session = session.Session(
+        ...     username='demo',
+        ...     token='password',
+        ...     project_id=1
+        ... )
+        >>> client = client.Client(session, 'http://example.com')
+        >>> host = client.hosts.create(
+        ...     name='test',
+        ...     project_id=1,
+        ...     region_id=1,
+        ...     ip_address='127.0.0.1',
+        ...     device_type="type"
+        ... )
+        >>> client.hosts.delete(host.id)
+        """
+        super(HostManager, self).delete(host_id=host_id)
+
 HOST_FIELDS = {
     'id': 'ID',
     'name': 'Name',

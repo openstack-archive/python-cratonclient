@@ -184,3 +184,9 @@ class TestHostsShell(base.ShellTestCase):
         """Verify that all required update args results in success."""
         self.shell('host-show 1')
         self.assertTrue(mock_get.called)
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.delete')
+    def test_host_delete_success(self, mock_delete):
+        """Verify that host deletes successfully."""
+        self.shell('host-delete 1')
+        self.assertTrue(mock_delete.called)
