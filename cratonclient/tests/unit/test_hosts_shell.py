@@ -229,3 +229,23 @@ class TestHostsShell(base.ShellTestCase):
         test_args = Namespace(id=1)
         hosts_shell.do_host_show(client, test_args)
         mock_get.assert_called_once_with(vars(test_args)['id'])
+
+    def test_host_delete_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton host-delete',
+            '.*?^craton host-delete: error:.*$',
+        ]
+        stdout, stderr = self.shell('host-delete')
+        for r in expected_responses:
+            self.assertThat((stdout + stderr),
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.delete')
+    def test_do_host_delete_calls_host_manager_with_fields(self, mock_delete):
+        """Verify that do host update calls HostManager create."""
+        client = mock.Mock()
+        client.hosts = hosts.HostManager(mock.ANY, 'http://127.0.0.1/')
+        test_args = Namespace(id=1)
+        hosts_shell.do_host_delete(client, test_args)
+        mock_delete.assert_called_once_with(vars(test_args)['id'])

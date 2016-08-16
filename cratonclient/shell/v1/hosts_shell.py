@@ -193,3 +193,13 @@ def do_host_update(cc, args):
     print("Host {0} has been successfully update.".format(host.id))
     data = {f: getattr(host, f, '') for f in h_fields}
     cliutils.print_dict(data, wrap=72)
+
+
+@cliutils.arg('id',
+              metavar='<host>',
+              type=int,
+              help='ID of the host.')
+def do_host_delete(cc, args):
+    """Delete a host that is registered with the Craton service."""
+    host = cc.hosts.delete(args.id)
+    print("Host {0} has been successfully deleted.".format(host.id))
