@@ -51,6 +51,10 @@ class HostManager(crud.CRUDClient):
         """Update a host."""
         super(HostManager, self).update(host_id=host_id, **kwargs)
 
+    def delete(self, host_id):
+        """Delete a host."""
+        super(HostManager, self).delete(host_id=host_id)
+
 HOST_FIELDS = {
     'id': 'ID',
     'name': 'Name',
