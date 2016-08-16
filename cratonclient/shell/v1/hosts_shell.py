@@ -207,3 +207,20 @@ def do_host_update(cc, args):
               if k in h_fields and not (v is None)}
     host = cc.inventory(args.region).hosts.update(**fields)
     print("Host {0} has been successfully update.".format(host.id))
+    data = {f: getattr(host, f, '') for f in h_fields}
+    cliutils.print_dict(data, wrap=72)
+
+
+@cliutils.arg('region',
+              metavar='<region>',
+              type=int,
+              help='ID of the region that the host belongs to.')
+@cliutils.arg('id',
+              metavar='<host>',
+              type=int,
+              help='ID of the host.')
+def do_host_delete(cc, args):
+    """Delete a host that is registered with the Craton service."""
+    response = cc.inventory(args.region).hosts.delete(args.id)
+    print("Host {0} was {1}successfully deleted.".
+          format(args.id, '' if response else 'un'))

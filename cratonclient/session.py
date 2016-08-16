@@ -232,7 +232,7 @@ class Session(object):
         # read timeouts similarly, we need to catch this one first.
         except requests_exc.Timeout as err:
             raise exc.Timeout(exception=err)
-        except requests_exc.ConnectionError:
+        except requests_exc.ConnectionError as err:
             raise exc.ConnectionFailed(exception=err)
 
         self._http_log_response(response)

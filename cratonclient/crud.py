@@ -100,6 +100,14 @@ class CRUDClient(object):
         response = self.session.put(url, json=kwargs)
         return self.resource_class(self, response.json())
 
+    def delete(self, **kwargs):
+        """Delete the item based on the keyword arguments provided."""
+        url = self.build_url(path_arguments=kwargs)
+        response = self.session.delete(url, params=kwargs)
+        if 200 <= response.status_code < 300:
+            return True
+        return False
+
 
 # NOTE(sigmavirus24): Credit for this Resource object goes to the
 # keystoneclient developers and contributors.
