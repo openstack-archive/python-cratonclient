@@ -12,7 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Top-level client for version 1 of Craton's API."""
-
+from cratonclient.v1 import cells
 from cratonclient.v1 import hosts
 
 
@@ -32,4 +32,5 @@ class Inventory(object):
         """
         # TODO(cmspence): self.region = self.regions.get(region=region_id)
         self.hosts = hosts.HostManager(region_id, session, url)
+        self.cells = cells.CellManager(region_id, session, url)
         # TODO(cmspence): self.users, self.projects, self.workflows
