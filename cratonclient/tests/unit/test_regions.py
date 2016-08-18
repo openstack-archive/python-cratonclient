@@ -66,4 +66,56 @@ class TestRegions(base.TestCase):
         client = client.Client(session, 'http://example.com')
         self.assertRaises(exc.InternalServerError,
                           client.regions.create,
-                          name='test')
+                          name='region')
+
+    @requests_mock.mock()
+    def test_region_get_success(self, m):
+        """Verify that region get results in success."""
+        from cratonclient import session
+        from cratonclient.v1 import client
+
+        reg = self.new_region()
+        m.get('http://example.com/regions/1',
+              text=json.dumps(reg),
+              status_code=200)
+        session = session.Session(
+            username='demo',
+            token='password',
+            project_id='1')
+        client = client.Client(session, 'http://example.com')
+        region = client.regions.get(1)
+        self.assertEqual(reg, region._info)
+
+    @requests_mock.mock()
+    def test_region_get_not_found(self, m):
+        """Verify that region get results in not found exception."""
+        from cratonclient import session
+        from cratonclient.v1 import client
+
+        error = self.new_error(404, 'Not Found')
+        m.get('http://example.com/regions/1',
+              text=json.dumps(error),
+              status_code=404)
+        session = session.Session(
+            username='demo',
+            token='password',
+            project_id='1')
+        client = client.Client(session, 'http://example.com')
+        self.assertRaises(exc.NotFound, client.regions.get, 1)
+
+    @requests_mock.mock()
+    def test_region_get_unknown_error(self, m):
+        """Verify that region get results in unknown error."""
+        from cratonclient import session
+        from cratonclient.v1 import client
+
+        error = self.new_error(500, 'Unknown Error')
+        m.get('http://example.com/regions/1',
+              text=json.dumps(error),
+              status_code=500)
+        session = session.Session(
+            username='demo',
+            token='password',
+            project_id='1')
+        client = client.Client(session, 'http://example.com')
+        self.assertRaises(exc.InternalServerError, client.regions.get, 1)
