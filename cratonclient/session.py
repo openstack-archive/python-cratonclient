@@ -51,7 +51,7 @@ class Session(object):
         """
         if session is None:
             session = requests.Session()
-
+        self.project_id = project_id
         self._session = session
         self._session.headers['X-Auth-User'] = username
         self._session.headers['X-Auth-Project'] = str(project_id)
