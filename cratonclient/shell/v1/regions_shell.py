@@ -23,3 +23,14 @@ def do_region_create(cc, args):
     region = cc.regions.create(**fields)
     data = dict([(f, getattr(region, f, '')) for f in r_fields])
     cliutils.print_dict(data, wrap=72)
+
+
+@cliutils.arg('region_id',
+              metavar='<region_id>',
+              type=int,
+              help='ID of the region.')
+def do_region_show(cc, args):
+    """Show detailed information about a region."""
+    region = cc.regions.get(args.region_id)
+    data = dict([(f, getattr(region, f, '')) for f in r_fields])
+    cliutils.print_dict(data, wrap=72)
