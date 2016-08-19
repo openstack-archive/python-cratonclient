@@ -203,7 +203,7 @@ class TestHostsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.hosts.HostManager.update')
     def test_do_host_update_calls_host_manager_with_fields(self, mock_update):
-        """Verify that do host update calls HostManager create."""
+        """Verify that do host update calls HostManager update."""
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.hosts = hosts.HostManager(mock.ANY,
@@ -220,7 +220,7 @@ class TestHostsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.hosts.HostManager.update')
     def test_do_host_update_ignores_unknown_fields(self, mock_update):
-        """Verify that do host create ignores unknown field."""
+        """Verify that do host update ignores unknown field."""
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.hosts = hosts.HostManager(mock.ANY,
@@ -251,7 +251,7 @@ class TestHostsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.hosts.HostManager.get')
     def test_do_host_show_calls_host_manager_with_fields(self, mock_get):
-        """Verify that do host update calls HostManager create."""
+        """Verify that do host show calls HostManager get."""
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.hosts = hosts.HostManager(mock.ANY,
@@ -276,7 +276,7 @@ class TestHostsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.hosts.HostManager.delete')
     def test_do_host_delete_calls_host_manager_with_fields(self, mock_delete):
-        """Verify that do host update calls HostManager create."""
+        """Verify that do host delete calls HostManager delete."""
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.hosts = hosts.HostManager(mock.ANY,

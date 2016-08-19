@@ -40,3 +40,14 @@ def do_region_show(cc, args):
     region = cc.regions.get(args.id)
     data = {f: getattr(region, f, '') for f in r_fields}
     cliutils.print_dict(data, wrap=72)
+
+
+@cliutils.arg('id',
+              metavar='<region>',
+              type=int,
+              help='ID of the region.')
+def do_region_delete(cc, args):
+    """Delete a region that is registered with the Craton service."""
+    response = cc.regions.delete(args.id)
+    print("Region {0} was {1}successfully deleted.".
+          format(args.id, '' if response else 'un'))

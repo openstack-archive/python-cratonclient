@@ -52,7 +52,7 @@ class TestRegionsShell(base.ShellTestCase):
                             matchers.MatchesRegex(r, self.re_options))
 
     @mock.patch('cratonclient.v1.regions.RegionManager.create')
-    def test_do_region_create_calls_host_manager(self, mock_create):
+    def test_do_region_create_calls_region_manager(self, mock_create):
         """Verify that do region create calls RegionManager create."""
         client = mock.Mock()
         session = mock.Mock()
@@ -63,7 +63,7 @@ class TestRegionsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.regions.RegionManager.create')
     def test_do_region_create_ignores_unknown_fields(self, mock_create):
-        """Verify that do host create ignores unknown field."""
+        """Verify that do region create ignores unknown field."""
         client = mock.Mock()
         session = mock.Mock()
         session.project_id = 1
@@ -85,7 +85,7 @@ class TestRegionsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.regions.RegionManager.get')
     def test_do_region_show_calls_region_manager_with_fields(self, mock_get):
-        """Verify that do host update calls HostManager create."""
+        """Verify that do region show calls RegionManager get."""
         client = mock.Mock()
         session = mock.Mock()
         session.project_id = 1
@@ -93,3 +93,25 @@ class TestRegionsShell(base.ShellTestCase):
         test_args = Namespace(id=1)
         regions_shell.do_region_show(client, test_args)
         mock_get.assert_called_once_with(vars(test_args)['id'])
+
+    def test_region_delete_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton region-delete',
+            '.*?^craton region-delete: error:.*$',
+        ]
+        stdout, stderr = self.shell('region-delete')
+        for r in expected_responses:
+            self.assertThat((stdout + stderr),
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.regions.RegionManager.delete')
+    def test_do_region_delete_calls_region_manager(self, mock_delete):
+        """Verify that do region delete calls RegionManager delete."""
+        client = mock.Mock()
+        session = mock.Mock()
+        session.project_id = 1
+        client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
+        test_args = Namespace(id=1)
+        regions_shell.do_region_delete(client, test_args)
+        mock_delete.assert_called_once_with(vars(test_args)['id'])

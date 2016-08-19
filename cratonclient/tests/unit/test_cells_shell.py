@@ -191,7 +191,7 @@ class TestCellsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.cells.CellManager.update')
     def test_do_cell_update_calls_cell_manager_with_fields(self, mock_update):
-        """Verify that do cell update calls CellManager create."""
+        """Verify that do cell update calls CellManager update."""
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.cells = cells.CellManager(mock.ANY,
@@ -208,7 +208,7 @@ class TestCellsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.cells.CellManager.update')
     def test_do_cell_update_ignores_unknown_fields(self, mock_update):
-        """Verify that do cell create ignores unknown field."""
+        """Verify that do cell update ignores unknown field."""
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.cells = cells.CellManager(mock.ANY,
@@ -239,7 +239,7 @@ class TestCellsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.cells.CellManager.get')
     def test_do_cell_show_calls_cell_manager_with_fields(self, mock_get):
-        """Verify that do cell update calls CellManager create."""
+        """Verify that do cell show calls CellManager get."""
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.cells = cells.CellManager(mock.ANY,
@@ -264,7 +264,7 @@ class TestCellsShell(base.ShellTestCase):
 
     @mock.patch('cratonclient.v1.cells.CellManager.delete')
     def test_do_cell_delete_calls_cell_manager_with_fields(self, mock_delete):
-        """Verify that do cell update calls CellManager create."""
+        """Verify that do cell delete calls CellManager delete."""
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.cells = cells.CellManager(mock.ANY,

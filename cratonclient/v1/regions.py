@@ -29,7 +29,6 @@ class RegionManager(crud.CRUDClient):
     resource_class = Region
     project_id = 0
 
-
 REGION_FIELDS = {
     'id': 'ID',
     'project_id': 'Project ID',
