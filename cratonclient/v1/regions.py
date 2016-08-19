@@ -63,6 +63,23 @@ class RegionManager(crud.CRUDClient):
         """
         return super(RegionManager, self).get(region_id=region_id)
 
+    def delete(self, region_id):
+        """Delete a region.
+
+        .. code-block:: python
+
+        >>> from cratonclient.v1 import client
+        >>> from cratonclient import session
+        >>> session = session.Session(
+        ...     username='demo',
+        ...     token='password',
+        ...     project_id=1
+        ... )
+        >>> client = client.Client(session, 'http://example.com')
+        >>> region = client.regions.create(name='region')
+        >>> client.regions.delete(region.id)
+        """
+        super(RegionManager, self).delete(region_id=region_id)
 
 REGION_FIELDS = {
     'id': 'ID',
