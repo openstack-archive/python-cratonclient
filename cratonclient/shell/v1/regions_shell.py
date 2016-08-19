@@ -45,6 +45,29 @@ def do_region_show(cc, args):
 @cliutils.arg('id',
               metavar='<region>',
               type=int,
+              help='ID of the region')
+@cliutils.arg('-n', '--name',
+              metavar='<name>',
+              help='Name of the region.')
+@cliutils.arg('-p', '--project',
+              dest='project_id',
+              metavar='<project_id>',
+              type=int,
+              help='ID of the project that the region belongs to.')
+@cliutils.arg('--note',
+              help='Note about the region.')
+def do_region_update(cc, args):
+    """Update a region that is registered with the Craton service."""
+    fields = {k: v for (k, v) in vars(args).items()
+              if k in r_fields and not (v is None)}
+    region = cc.regions.update(**fields)
+    data = {f: getattr(region, f, '') for f in r_fields}
+    cliutils.print_dict(data, wrap=72)
+
+
+@cliutils.arg('id',
+              metavar='<region>',
+              type=int,
               help='ID of the region.')
 def do_region_delete(cc, args):
     """Delete a region that is registered with the Craton service."""

@@ -115,3 +115,40 @@ class TestRegionsShell(base.ShellTestCase):
         test_args = Namespace(id=1)
         regions_shell.do_region_delete(client, test_args)
         mock_delete.assert_called_once_with(vars(test_args)['id'])
+
+    def test_region_update_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton region-update',
+            '.*?^craton region-update: error:.*$',
+        ]
+        stdout, stderr = self.shell('region-update')
+        for r in expected_responses:
+            self.assertThat((stdout + stderr),
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.regions.RegionManager.update')
+    def test_do_region_update_calls_region_manager(self, mock_update):
+        """Verify that do region update calls RegionManager update."""
+        client = mock.Mock()
+        session = mock.Mock()
+        session.project_id = 1
+        client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
+        valid_input = Namespace(id=1,
+                                name='mock_region')
+        regions_shell.do_region_update(client, valid_input)
+        mock_update.assert_called_once_with(**vars(valid_input))
+
+    @mock.patch('cratonclient.v1.regions.RegionManager.update')
+    def test_do_region_update_ignores_unknown_fields(self, mock_update):
+        """Verify that do region update ignores unknown field."""
+        client = mock.Mock()
+        session = mock.Mock()
+        session.project_id = 1
+        client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
+        invalid_input = Namespace(id=1,
+                                  name='mock_region',
+                                  invalid=True)
+        regions_shell.do_region_update(client, invalid_input)
+        vars(invalid_input).pop('invalid')
+        mock_update.assert_called_once_with(**vars(invalid_input))
