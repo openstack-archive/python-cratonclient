@@ -46,6 +46,26 @@ def do_region_show(cc, args):
     data = dict([(f, getattr(region, f, '')) for f in r_fields])
     cliutils.print_dict(data, wrap=72)
 
+
+@cliutils.arg('region_id',
+              metavar='<region_id>',
+              type=int,
+              help='ID of the region')
+@cliutils.arg('-n', '--name',
+              metavar='<name>',
+              help='Name of the region.')
+@cliutils.arg('-p', '--project',
+              dest='project_id',
+              metavar='<project_id>',
+              type=int,
+              help='ID of the project that the region belongs to.')
+@cliutils.arg('--note',
+              help='Note about the region.')
+def do_region_update(cc, args):
+    """Update a region that is registered with the Craton service."""
+    region = cc.regions.update(args)
+    print("Region {0} has been successfully updated.".format(region.id))
+
 @cliutils.arg('region_id',
               metavar='<region_id>',
               type=int,

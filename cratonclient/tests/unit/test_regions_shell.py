@@ -57,6 +57,23 @@ class TestRegionsShell(base.ShellTestCase):
         self.shell('region-show 1')
         self.assertTrue(mock_get.called)
 
+    def test_region_update_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton region-update',
+            '.*?^craton region-update: error:.*$',
+        ]
+        stdout, stderr = self.shell('region-update')
+        for r in expected_responses:
+            self.assertThat((stdout + stderr),
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.regions.RegionManager.update')
+    def test_region_update_success(self, mock_update):
+        """Verify that all required update args results in success."""
+        self.shell('region-update 1')
+        self.assertTrue(mock_update.called)
+
     @mock.patch('cratonclient.v1.regions.RegionManager.delete')
     def test_region_delete_success(self, mock_delete):
         """Verify that region deletes successfully."""
