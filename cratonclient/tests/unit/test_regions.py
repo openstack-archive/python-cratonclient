@@ -119,3 +119,33 @@ class TestRegions(base.TestCase):
             project_id='1')
         client = client.Client(session, 'http://example.com')
         self.assertRaises(exc.InternalServerError, client.regions.get, 1)
+
+    @requests_mock.mock()
+    def test_region_delete_success(self, m):
+        """Verify that region delete results in success."""
+        from cratonclient import session
+        from cratonclient.v1 import client
+
+        m.delete('http://example.com/regions/1', status_code=200)
+        session = session.Session(username='demo',
+                                  token='password',
+                                  project_id=1)
+        client = client.Client(session, 'http://example.com')
+        region = client.regions.delete(1)
+        self.assertEquals(None, region)
+
+    @requests_mock.mock()
+    def test_region_delete_unknown_error(self, m):
+        """Verify that region delete results in unknown error."""
+        from cratonclient import session
+        from cratonclient.v1 import client
+
+        error = self.new_error(500, 'Unknown Error')
+        m.delete('http://example.com/regions/1',
+                 text=json.dumps(error),
+                 status_code=500)
+        session = session.Session(username='demo',
+                                  token='password',
+                                  project_id=1)
+        client = client.Client(session, 'http://example.com')
+        self.assertRaises(exc.InternalServerError, client.regions.delete, 1)

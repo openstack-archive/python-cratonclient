@@ -56,3 +56,9 @@ class TestRegionsShell(base.ShellTestCase):
         """Verify that all required update args results in success."""
         self.shell('region-show 1')
         self.assertTrue(mock_get.called)
+
+    @mock.patch('cratonclient.v1.regions.RegionManager.delete')
+    def test_region_delete_success(self, mock_delete):
+        """Verify that region deletes successfully."""
+        self.shell('region-delete 1')
+        self.assertTrue(mock_delete.called)

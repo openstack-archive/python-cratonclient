@@ -94,6 +94,11 @@ class CRUDClient(object):
         response = self.session.get(url, params=kwargs)
         return [self.resource_class(self, item) for item in response.json()]
 
+    def delete(self, **kwargs):
+        """Delete the item based on the keyword arguments provided."""
+        url = self.build_url(path_arguments=kwargs)
+        return self.session.delete(url, params=kwargs)
+
 
 # NOTE(sigmavirus24): Credit for this Resource object goes to the
 # keystoneclient developers and contributors.
