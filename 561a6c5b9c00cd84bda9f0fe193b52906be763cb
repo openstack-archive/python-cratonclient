@@ -1,0 +1,9 @@
+Code-Review+2: Ian Cordasco <ian.cordasco@rackspace.com>
+Code-Review+2: Jim Baker <jim.baker@python.org>
+Workflow+1: Jim Baker <jim.baker@python.org>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 31 Aug 2016 18:22:21 +0000
+Reviewed-on: https://review.openstack.org/351262
+Project: openstack/python-cratonclient
+Branch: refs/heads/master
