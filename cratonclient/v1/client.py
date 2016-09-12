@@ -12,9 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Top-level client for version 1 of Craton's API."""
-from cratonclient.v1 import hosts
 from cratonclient.v1 import inventory
-from cratonclient.v1 import regions
 
 
 class Client(object):
@@ -37,14 +35,9 @@ class Client(object):
         if not self._url.endswith('/v1'):
             self._url += '/v1'
 
-        manager_kwargs = {'session': self._session, 'url': url}
-        # TODO(cmspence):remove self.hosts
-        self.hosts = hosts.HostManager(**manager_kwargs)
-        self.regions = regions.RegionManager(**manager_kwargs)
-        # TODO(cmspence):self.projects, self.users
+        self._manager_kwargs = {'session': self._session, 'url': self._url}
 
     def inventory(self, region_id):
         """Retrieve inventory for a given region."""
-        return inventory.Inventory(self._session,
-                                   self._url,
-                                   region_id)
+        self._manager_kwargs['region_id'] = region_id
+        return inventory.Inventory(**self._manager_kwargs)

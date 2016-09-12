@@ -61,14 +61,14 @@ class TestMainShell(base.ShellTestCase):
     @mock.patch('cratonclient.v1.client.Client')
     def test_main_craton_url(self, mock_client):
         """Verify that craton-url command is used for client connection."""
-        self.shell('--craton-url http://localhost:9999/ host-list')
+        self.shell('--craton-url http://localhost:9999/ host-list -r 1')
         mock_client.assert_called_with(mock.ANY, 'http://localhost:9999/')
 
     @mock.patch('cratonclient.session.Session')
     @mock.patch('cratonclient.v1.client.Client')
     def test_main_craton_project_id(self, mock_client, mock_session):
         """Verify --craton-project-id command is used for client connection."""
-        self.shell('--craton-project-id 99 host-list')
+        self.shell('--craton-project-id 99 host-list -r 1')
         mock_session.assert_called_with(username=mock.ANY,
                                         token=mock.ANY,
                                         project_id=99)
@@ -78,7 +78,7 @@ class TestMainShell(base.ShellTestCase):
     @mock.patch('cratonclient.v1.client.Client')
     def test_main_os_username(self, mock_client, mock_session):
         """Verify --os-username command is used for client connection."""
-        self.shell('--os-username test host-list')
+        self.shell('--os-username test host-list -r 1')
         mock_session.assert_called_with(username='test',
                                         token=mock.ANY,
                                         project_id=mock.ANY)
@@ -88,7 +88,7 @@ class TestMainShell(base.ShellTestCase):
     @mock.patch('cratonclient.v1.client.Client')
     def test_main_os_password(self, mock_client, mock_session):
         """Verify --os-password command is used for client connection."""
-        self.shell('--os-password test host-list')
+        self.shell('--os-password test host-list -r 1')
         mock_session.assert_called_with(username=mock.ANY,
                                         token='test',
                                         project_id=mock.ANY)

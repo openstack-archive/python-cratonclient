@@ -33,4 +33,6 @@ class TestCratonclient(base.TestCase):
         region_id = 1
         craton = client.Client(session, url)
         craton.inventory(region_id)
-        mock_inventory.assert_called_once_with(session, url + '/v1', region_id)
+        mock_inventory.assert_called_once_with(region_id=region_id,
+                                               session=session,
+                                               url=url + '/v1')

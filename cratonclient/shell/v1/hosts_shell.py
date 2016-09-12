@@ -17,6 +17,11 @@ from cratonclient import exceptions as exc
 from cratonclient.v1.hosts import HOST_FIELDS as h_fields
 
 
+@cliutils.arg('-r', '--region',
+              metavar='<region>',
+              type=int,
+              required=True,
+              help='ID of the region that the host belongs to.')
 @cliutils.arg('-c', '--cell',
               metavar='<cell>',
               type=int,
@@ -47,9 +52,9 @@ from cratonclient.v1.hosts import HOST_FIELDS as h_fields
 def do_host_list(cc, args):
     """Print list of hosts which are registered with the Craton service."""
     params = {}
-    default_fields = ['id', 'name', 'type', 'active', 'cell_id']
+    default_fields = ['id', 'name', 'device_type', 'active', 'cell_id']
     if args.cell is not None:
-        params['cell'] = args.cell
+        params['cell_id'] = args.cell
     if args.limit is not None:
         if args.limit < 0:
             raise exc.CommandError('Invalid limit specified. Expected '
@@ -81,7 +86,7 @@ def do_host_list(cc, args):
                                        'are: "asc", "desc".')
         params['sort_dir'] = args.sort_dir
 
-    hosts = cc.hosts.list(args.craton_project_id, **params)
+    hosts = cc.inventory(args.region).hosts.list(**params)
     cliutils.print_list(hosts, list(fields))
 
 
@@ -110,11 +115,14 @@ def do_host_list(cc, args):
               metavar='<cell>',
               type=int,
               help='ID of the cell that the host belongs to.')
+@cliutils.arg('-t', '--type',
+              dest='device_type',
+              metavar='<type>',
+              required=True,
+              help='Type of the host.')
 @cliutils.arg('-a', '--active',
               default=True,
               help='Status of the host.  Active or inactive.')
-@cliutils.arg('-t', '--type',
-              help='Type of the host.')
 @cliutils.arg('--note',
               help='Note about the host.')
 @cliutils.arg('--access_secret',
@@ -126,11 +134,8 @@ def do_host_list(cc, args):
               help='List of labels for the host.')
 def do_host_create(cc, args):
     """Register a new host with the Craton service."""
-    host_fields = ['id', 'name', 'type', 'active', 'project_id', 'region_id',
-                   'cell_id', 'note', 'access_secret_id', 'ip_address']
     fields = {k: v for (k, v) in vars(args).items()
-              if k in host_fields and not (v is None)}
-
-    host = cc.hosts.create(**fields)
-    data = {f: getattr(host, f, '') for f in host_fields}
+              if k in h_fields and not (v is None)}
+    host = cc.inventory(args.region_id).hosts.create(**fields)
+    data = {f: getattr(host, f, '') for f in h_fields}
     cliutils.print_dict(data, wrap=72)

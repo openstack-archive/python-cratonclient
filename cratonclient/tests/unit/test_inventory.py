@@ -28,4 +28,4 @@ class TestInventory(base.TestCase):
         url = 'https://10.1.1.0:8080/'
         region_id = 1,
         inventory.Inventory(session, url, region_id)
-        mock_hostmanager.assert_called_once_with(session, url)
+        mock_hostmanager.assert_called_once_with(region_id, session, url)
