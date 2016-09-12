@@ -48,20 +48,20 @@ class TestHostsShell(base.ShellTestCase):
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_success(self, mock_list):
         """Verify that no arguments prints out all project hosts."""
-        self.shell('host-list')
+        self.shell('host-list -r 1')
         self.assertTrue(mock_list.called)
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_parse_param_success(self, mock_list):
         """Verify that success of parsing a subcommand argument."""
-        self.shell('host-list --limit 0')
+        self.shell('host-list -r 1 --limit 0')
         self.assertTrue(mock_list.called)
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
-    def test_host_list_limit_0_succcess(self, mock_list):
+    def test_host_list_limit_0_success(self, mock_list):
         """Verify that --limit 0 prints out all project hosts."""
-        self.shell('host-list --limit 0')
-        mock_list.assert_called_once_with(mock.ANY, limit=0)
+        self.shell('host-list -r 1 --limit 0')
+        mock_list.assert_called_once_with(limit=0)
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_limit_positive_num_success(self, mock_list):
@@ -69,8 +69,8 @@ class TestHostsShell(base.ShellTestCase):
 
         The command will print out X number of project hosts.
         """
-        self.shell('host-list --limit 1')
-        mock_list.assert_called_once_with(mock.ANY, limit=1)
+        self.shell('host-list -r 1 --limit 1')
+        mock_list.assert_called_once_with(limit=1)
 
     def test_host_list_limit_negative_num_failure(self):
         """Verify --limit X, where X is a negative integer, fails.
@@ -79,28 +79,28 @@ class TestHostsShell(base.ShellTestCase):
         """
         self.assertRaises(exc.CommandError,
                           self.shell,
-                          'host-list --limit -1')
+                          'host-list -r 1 --limit -1')
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_cell_success(self, mock_list):
         """Verify --cell arguments successfully pass cell to Client."""
         for cell_arg in ['-c', '--cell']:
-            self.shell('host-list {0} 1'.format(cell_arg))
-            mock_list.assert_called_once_with(mock.ANY, cell=1)
+            self.shell('host-list -r 1 {0} 1'.format(cell_arg))
+            mock_list.assert_called_once_with(cell_id=1)
             mock_list.reset_mock()
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_detail_success(self, mock_list):
         """Verify --detail argument successfully pass detail to Client."""
-        self.shell('host-list --detail')
-        mock_list.assert_called_once_with(mock.ANY, detail=True)
+        self.shell('host-list -r 1 --detail')
+        mock_list.assert_called_once_with(detail=True)
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     @mock.patch('cratonclient.common.cliutils.print_list')
     def test_host_list_fields_success(self, mock_printlist, mock_list):
         """Verify --fields argument successfully passed to Client."""
-        self.shell('host-list --fields id name')
-        mock_list.assert_called_once_with(mock.ANY)
+        self.shell('host-list -r 1 --fields id name')
+        mock_list.assert_called_once_with()
         mock_printlist.assert_called_once_with(mock.ANY,
                                                list({'id': 'ID',
                                                      'name': 'Name'}))
@@ -108,50 +108,47 @@ class TestHostsShell(base.ShellTestCase):
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_detail_and_fields_specified(self, mock_list):
         """Verify --fields ignored when --detail argument passed in."""
-        self.shell('host-list --fields id name --detail')
-        mock_list.assert_called_once_with(mock.ANY, detail=True)
+        self.shell('host-list -r 1 --fields id name --detail')
+        mock_list.assert_called_once_with(detail=True)
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_sort_key_field_key_success(self, mock_list):
         """Verify --sort-key arguments successfully passed to Client."""
-        self.shell('host-list --sort-key cell_id')
-        mock_list.assert_called_once_with(mock.ANY,
-                                          sort_key='cell_id',
+        self.shell('host-list -r 1 --sort-key cell_id')
+        mock_list.assert_called_once_with(sort_key='cell_id',
                                           sort_dir='asc')
 
     def test_host_list_sort_key_invalid(self):
         """Verify --sort-key with invalid args, fails with Command Error."""
         self.assertRaises(exc.CommandError,
                           self.shell,
-                          'host-list --sort-key invalid')
+                          'host-list -r 1 --sort-key invalid')
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_sort_dir_not_passed_without_sort_key(self, mock_list):
         """Verify --sort-dir arg ignored without --sort-key."""
-        self.shell('host-list --sort-dir desc')
-        mock_list.assert_called_once_with(mock.ANY)
+        self.shell('host-list -r 1 --sort-dir desc')
+        mock_list.assert_called_once_with()
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_sort_dir_asc_success(self, mock_list):
         """Verify --sort-dir asc successfully passed to Client."""
-        self.shell('host-list --sort-key name --sort-dir asc')
-        mock_list.assert_called_once_with(mock.ANY,
-                                          sort_key='name',
+        self.shell('host-list -r 1 --sort-key name --sort-dir asc')
+        mock_list.assert_called_once_with(sort_key='name',
                                           sort_dir='asc')
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_sort_dir_desc_success(self, mock_list):
         """Verify --sort-dir desc successfully passed to Client."""
-        self.shell('host-list --sort-key name --sort-dir desc')
-        mock_list.assert_called_once_with(mock.ANY,
-                                          sort_key='name',
+        self.shell('host-list -r 1 --sort-key name --sort-dir desc')
+        mock_list.assert_called_once_with(sort_key='name',
                                           sort_dir='desc')
 
     def test_host_list_sort_dir_invalid_value(self):
         """Verify --sort-dir with invalid args, fails with Command Error."""
         self.assertRaises(exc.CommandError,
                           self.shell,
-                          'host-list --sort-key name --sort-dir invalid')
+                          'host-list -r 1 --sort-key name --sort-dir invalid')
 
     def test_host_create_missing_required_args(self):
         """Verify that missing required args results in error message."""
@@ -169,7 +166,12 @@ class TestHostsShell(base.ShellTestCase):
     def test_do_host_create_calls_host_manager_with_fields(self, mock_create):
         """Verify that do host create calls HostManager create."""
         client = mock.Mock()
-        client.hosts = hosts.HostManager(mock.ANY, 'http://127.0.0.1/')
+        inventory = mock.Mock()
+        inventory.hosts = hosts.HostManager(mock.ANY,
+                                            mock.ANY,
+                                            'http://127.0.0.1/')
+        client.inventory = mock.Mock(name='inventory')
+        client.inventory.return_value = inventory
         hosts_shell.do_host_create(client, self.host_valid_fields)
         mock_create.assert_called_once_with(**vars(self.host_valid_fields))
 
@@ -177,6 +179,11 @@ class TestHostsShell(base.ShellTestCase):
     def test_do_host_create_ignores_unknown_fields(self, mock_create):
         """Verify that do host create ignores unknown field."""
         client = mock.Mock()
-        client.hosts = hosts.HostManager(mock.ANY, 'http://127.0.0.1/')
+        inventory = mock.Mock()
+        inventory.hosts = hosts.HostManager(mock.ANY,
+                                            mock.ANY,
+                                            'http://127.0.0.1/')
+        client.inventory = mock.Mock(name='inventory')
+        client.inventory.return_value = inventory
         hosts_shell.do_host_create(client, self.host_invalid_field)
         mock_create.assert_called_once_with(**vars(self.host_valid_fields))
