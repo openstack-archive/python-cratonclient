@@ -200,6 +200,19 @@ class Session(object):
         """
         return self.request('PATCH', url, **kwargs)
 
+    def _request(self, **kwargs):
+        """Make a request and optionally remove the Keystone parameters."""
+        # Default the Keystone specific arguments
+        kwargs.setdefault('service_type', 'fleet_management')
+        try:
+            response = self._session.request(**kwargs)
+        except TypeError:
+            # If we're using a Session object that doesn't support Keystone
+            # parameters, we need to remove them and retry.
+            kwargs.pop('service_type')
+            response = self._session.request(**kwargs)
+        return response
+
     def request(self, method, url, **kwargs):
         """Make a request with a method, url, and optional parameters.
 
@@ -221,9 +234,9 @@ class Session(object):
                                data=kwargs.get('data'),
                                headers=kwargs.get('headers', {}).copy())
         try:
-            response = self._session.request(method=method,
-                                             url=url,
-                                             **kwargs)
+            response = self._request(method=method,
+                                     url=url,
+                                     **kwargs)
         except requests_exc.HTTPError as err:
             raise exc.HTTPError(exception=err, response=err.response)
         # NOTE(sigmavirus24): The ordering of Timeout before ConnectionError
