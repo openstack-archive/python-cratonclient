@@ -14,6 +14,8 @@
 """Craton-specific session details."""
 import logging
 
+from keystoneauth1 import plugin
+from keystoneauth1 import session as ksa_session
 from oslo_utils import encodeutils
 from oslo_utils import strutils
 import requests
@@ -39,9 +41,8 @@ class Session(object):
         """Initialize our Session.
 
         :param session:
-            The session instance (either keystoneauth1's session or requests
-            Session) to use as an underlying HTTP transport. If not provided,
-            we will create a requests Session object.
+            The session instance to use as an underlying HTTP transport. If
+            not provided, we will create a keystoneauth1 Session object.
         :param str username:
             The username of the person authenticating against the API.
         :param str token:
@@ -49,20 +50,17 @@ class Session(object):
         :param str project_id:
             The user's project id in Craton.
         """
+        self._auth = None
         if session is None:
-            session = requests.Session()
+            self._auth = CratonAuth(username=username,
+                                    project_id=project_id,
+                                    token=token)
+            craton_user_agent = 'python-cratonclient/{0}'.format(
+                cratonclient.__version__)
+            session = ksa_session.Session(auth=self._auth,
+                                          user_agent=craton_user_agent)
         self.project_id = project_id
         self._session = session
-        self._session.headers['X-Auth-User'] = username
-        self._session.headers['X-Auth-Project'] = str(project_id)
-        self._session.headers['X-Auth-Token'] = token
-
-        craton_version = 'python-cratonclient/{0} '.format(
-            cratonclient.__version__)
-        old_user_agent = self._session.headers['User-Agent']
-
-        self._session.headers['User-Agent'] = craton_version + old_user_agent
-        self._session.headers['Accept'] = 'application/json'
 
     def delete(self, url, **kwargs):
         """Make a DELETE request with url and optional parameters.
@@ -200,6 +198,19 @@ class Session(object):
         """
         return self.request('PATCH', url, **kwargs)
 
+    def _request(self, **kwargs):
+        """Make a request and optionally remove the Keystone parameters."""
+        # Default the Keystone specific arguments
+        kwargs.setdefault('service_type', 'fleet_management')
+        try:
+            response = self._session.request(**kwargs)
+        except TypeError:
+            # If we're using a Session object that doesn't support Keystone
+            # parameters, we need to remove them and retry.
+            kwargs.pop('service_type')
+            response = self._session.request(**kwargs)
+        return response
+
     def request(self, method, url, **kwargs):
         """Make a request with a method, url, and optional parameters.
 
@@ -221,9 +232,9 @@ class Session(object):
                                data=kwargs.get('data'),
                                headers=kwargs.get('headers', {}).copy())
         try:
-            response = self._session.request(method=method,
-                                             url=url,
-                                             **kwargs)
+            response = self._request(method=method,
+                                     url=url,
+                                     **kwargs)
         except requests_exc.HTTPError as err:
             raise exc.HTTPError(exception=err, response=err.response)
         # NOTE(sigmavirus24): The ordering of Timeout before ConnectionError
@@ -295,3 +306,34 @@ class Session(object):
                                 strutils.mask_password(response.text))
 
         logger.debug(' '.join(string_parts))
+
+
+class CratonAuth(plugin.BaseAuthPlugin):
+    """Custom authentication plugin for keystoneauth1.
+
+    This is specifically for the case where we're not using Keystone for
+    authentication.
+    """
+
+    def __init__(self, username, project_id, token):
+        self.username = username
+        self.project_id = project_id
+        self.token = token
+
+    def get_token(self, session, **kwargs):
+        """Return our token."""
+        return self.token
+
+    def get_headers(self, session, **kwargs):
+        """Return the craton authentication headers."""
+        headers = super(CratonAuth, self).get_headers(session, **kwargs)
+        if headers is None:
+            # NOTE(sigmavirus24): This means that the token must be None. We
+            # should not allow this to go further. We're using built-in Craton
+            # authentication (not authenticating against Keystone) so we will
+            # be unable to authenticate.
+            raise exc.UnableToAuthenticate()
+
+        headers['X-Auth-User'] = self.username
+        headers['X-Auth-Project'] = '{}'.format(self.project_id)
+        return headers
