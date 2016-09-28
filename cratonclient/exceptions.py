@@ -29,6 +29,12 @@ class ClientException(Exception):
         super(ClientException, self).__init__(message)
 
 
+class UnableToAuthenticate(ClientException):
+    """There are insufficient parameters for authentication."""
+
+    message = "Some of the parameters required to authenticate were missing."""
+
+
 class Timeout(ClientException):
     """Catch-all class for connect and read timeouts from requests."""
 
@@ -90,7 +96,7 @@ class ConnectionFailed(HTTPError):
 class HTTPClientError(HTTPError):
     """Base exception for client side errors (4xx status codes)."""
 
-    message = "Something went wrong with the request."""
+    message = "Something went wrong with the request."
 
 
 class BadRequest(HTTPClientError):
