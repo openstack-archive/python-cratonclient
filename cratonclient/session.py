@@ -58,7 +58,6 @@ class Session(object):
                 cratonclient.__version__)
             session = ksa_session.Session(auth=self._auth,
                                           user_agent=craton_user_agent)
-        self.project_id = project_id
         self._session = session
 
     def delete(self, url, **kwargs):
