@@ -70,3 +70,26 @@ class TestRegionsShell(base.ShellTestCase):
         client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
         regions_shell.do_region_create(client, self.region_invalid_field)
         mock_create.assert_called_once_with(**vars(self.region_valid_fields))
+
+    def test_region_show_missing_required_args(self):
+        """Verify that missing required args results in error message."""
+        expected_responses = [
+            '.*?^usage: craton region-show',
+            '.*?^craton region-show: error:.*$',
+        ]
+        stdout, stderr = self.shell('region-show')
+        actual_output = stdout + stderr
+        for r in expected_responses:
+            self.assertThat(actual_output,
+                            matchers.MatchesRegex(r, self.re_options))
+
+    @mock.patch('cratonclient.v1.regions.RegionManager.get')
+    def test_do_region_show_calls_region_manager_with_fields(self, mock_get):
+        """Verify that do host update calls HostManager create."""
+        client = mock.Mock()
+        session = mock.Mock()
+        session.project_id = 1
+        client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
+        test_args = Namespace(id=1)
+        regions_shell.do_region_show(client, test_args)
+        mock_get.assert_called_once_with(vars(test_args)['id'])
