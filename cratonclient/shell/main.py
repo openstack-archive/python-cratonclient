@@ -117,26 +117,24 @@ class CratonShell(object):
         )
         self.parser = subcommand_parser
 
-        if options.help or not argv:
+        if options.help or ('help' in argv) or not argv:
             parser.print_help()
             return 0
 
         args = subcommand_parser.parse_args(argv)
-
         session = craton.Session(
             username=args.os_username,
             token=args.os_password,
             project_id=args.craton_project_id,
         )
         self.cc = client.Client(session, args.craton_url)
-
         args.func(self.cc, args)
 
 
 def main():
     """Main entry-point for cratonclient's CLI."""
     try:
-        CratonShell().main(map(encodeutils.safe_decode, sys.argv[1:]))
+        CratonShell().main([encodeutils.safe_decode(a) for a in sys.argv[1:]])
     except Exception as e:
         print("ERROR: %s" % encodeutils.safe_encode(six.text_type(e)),
               file=sys.stderr)
