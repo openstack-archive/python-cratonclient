@@ -199,13 +199,14 @@ class Session(object):
     def _request(self, **kwargs):
         """Make a request and optionally remove the Keystone parameters."""
         # Default the Keystone specific arguments
-        kwargs.setdefault('service_type', 'fleet_management')
+        kwargs.setdefault('endpoint_filter',
+                          {'service_type': 'fleet_management'})
         try:
             response = self._session.request(**kwargs)
         except TypeError:
             # If we're using a Session object that doesn't support Keystone
             # parameters, we need to remove them and retry.
-            kwargs.pop('service_type')
+            kwargs.pop('endpoint_filter')
             response = self._session.request(**kwargs)
         return response
 
