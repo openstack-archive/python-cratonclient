@@ -29,29 +29,6 @@ class RegionManager(crud.CRUDClient):
     resource_class = Region
     project_id = 0
 
-    def __init__(self, session, url):
-        """Initialize our RegionManager with project, session, and url."""
-        super(RegionManager, self).__init__(session, url)
-        self.project_id = session.project_id
-
-    def create(self, **kwargs):
-        """Create a region.
-
-        .. code-block:: python
-
-        >>> from cratonclient.v1 import client
-        >>> from cratonclient import session
-        >>> session = session.Session(
-        ...     username='demo',
-        ...     token='password',
-        ...     project_id=1
-        ... )
-        >>> client = client.Client(session, 'http://example.com')
-        >>> client.regions.create(name='region')
-        """
-        kwargs['project_id'] = self.project_id
-        return super(RegionManager, self).create(**kwargs)
-
 
 REGION_FIELDS = {
     'id': 'ID',
