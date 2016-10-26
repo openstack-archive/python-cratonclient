@@ -30,10 +30,16 @@ class TestCRUDClient(base.TestCase):
         super(TestCRUDClient, self).setUp()
         self.session = mock.Mock()
         self.resource_spec = mock.Mock(spec=crud.Resource)
-        self.client = crud.CRUDClient(self.session, 'http://example.com/v1/')
-        self.client.base_path = '/test'
-        self.client.key = 'test_key'
-        self.client.resource_class = self.resource_spec
+        self.client = self.create_client()
+
+    def create_client(self, **kwargs):
+        """Create and configure a basic CRUDClient."""
+        client = crud.CRUDClient(self.session, 'http://example.com/v1/',
+                                 **kwargs)
+        client.base_path = '/test'
+        client.key = 'test_key'
+        client.resource_class = self.resource_spec
+        return client
 
     def test_strips_trailing_forward_slash_from_url(self):
         """Verify the client strips the trailing / in a URL."""
@@ -72,6 +78,22 @@ class TestCRUDClient(base.TestCase):
                 'base_path': '/override',
             }),
         )
+
+    def test_merge_request_arguments(self):
+        """Verify we include extra request arguments."""
+        client = self.create_client(extra_id=4321)
+        request_args = {}
+
+        client.merge_request_arguments(request_args, skip_merge=False)
+        self.assertEqual({'extra_id': 4321}, request_args)
+
+    def test_merge_request_arguments_skips_merging(self):
+        """Verify we include extra request arguments."""
+        client = self.create_client(extra_id=4321)
+        request_args = {}
+
+        client.merge_request_arguments(request_args, skip_merge=True)
+        self.assertEqual({}, request_args)
 
     def test_create_generates_a_post_request(self):
         """Verify that using our create method will POST to our service."""

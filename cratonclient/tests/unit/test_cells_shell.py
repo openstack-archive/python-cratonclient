@@ -157,8 +157,8 @@ class TestCellsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.cells = cells.CellManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         cells_shell.do_cell_create(client, self.cell_valid_fields)
@@ -170,8 +170,8 @@ class TestCellsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.cells = cells.CellManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         cells_shell.do_cell_create(client, self.cell_invalid_field)
@@ -195,8 +195,8 @@ class TestCellsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.cells = cells.CellManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         valid_input = Namespace(region=1,
@@ -212,8 +212,8 @@ class TestCellsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.cells = cells.CellManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         invalid_input = Namespace(region=1,
@@ -243,8 +243,8 @@ class TestCellsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.cells = cells.CellManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         test_args = Namespace(id=1, region=1)
@@ -268,8 +268,8 @@ class TestCellsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.cells = cells.CellManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         test_args = Namespace(id=1, region=1)

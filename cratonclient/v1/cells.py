@@ -27,22 +27,6 @@ class CellManager(crud.CRUDClient):
     key = 'cell'
     base_path = '/cells'
     resource_class = Cell
-    region_id = 0
-
-    def __init__(self, region_id, session, url):
-        """Initialize our CellManager object with region, session, and url."""
-        super(CellManager, self).__init__(session, url)
-        self.region_id = region_id
-
-    def list(self, **kwargs):
-        """Retrieve the cells in a specific region."""
-        kwargs['region_id'] = self.region_id
-        return super(CellManager, self).list(**kwargs)
-
-    def create(self, **kwargs):
-        """Create a cell in a specific region."""
-        kwargs['region_id'] = self.region_id
-        return super(CellManager, self).create(**kwargs)
 
 
 CELL_FIELDS = {
