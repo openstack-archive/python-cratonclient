@@ -31,6 +31,6 @@ class Inventory(object):
             'https://10.1.1.0:8080/'.
         """
         # TODO(cmspence): self.region = self.regions.get(region=region_id)
-        self.hosts = hosts.HostManager(region_id, session, url)
-        self.cells = cells.CellManager(region_id, session, url)
+        self.hosts = hosts.HostManager(session, url, region_id=region_id)
+        self.cells = cells.CellManager(session, url, region_id=region_id)
         # TODO(cmspence): self.users, self.projects, self.workflows

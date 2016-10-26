@@ -28,7 +28,11 @@ class TestInventory(base.TestCase):
         url = 'https://10.1.1.0:8080/'
         region_id = 1
         inventory.Inventory(session, url, region_id)
-        mock_hostmanager.assert_called_once_with(region_id, session, url)
+        mock_hostmanager.assert_called_once_with(
+            session,
+            url,
+            region_id=region_id,
+        )
 
     @mock.patch('cratonclient.v1.cells.CellManager')
     def test_inventory_creates_cell_manager(self, cell_manager):
@@ -37,4 +41,8 @@ class TestInventory(base.TestCase):
         url = 'https://10.1.1.0:8080/'
         region_id = 1
         inventory.Inventory(session, url, region_id)
-        cell_manager.assert_called_once_with(region_id, session, url)
+        cell_manager.assert_called_once_with(
+            session,
+            url,
+            region_id=region_id,
+        )

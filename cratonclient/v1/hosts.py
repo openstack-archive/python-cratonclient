@@ -27,22 +27,6 @@ class HostManager(crud.CRUDClient):
     key = 'host'
     base_path = '/hosts'
     resource_class = Host
-    region_id = 0
-
-    def __init__(self, region_id, session, url):
-        """Initialize our HostManager object with region, session and url."""
-        super(HostManager, self).__init__(session, url)
-        self.region_id = region_id
-
-    def list(self, **kwargs):
-        """Retrieve the hosts in a specific region."""
-        kwargs['region_id'] = self.region_id
-        return super(HostManager, self).list(**kwargs)
-
-    def create(self, **kwargs):
-        """Create a host in a specific region."""
-        kwargs['region_id'] = self.region_id
-        return super(HostManager, self).create(**kwargs)
 
 
 HOST_FIELDS = {

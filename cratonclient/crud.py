@@ -24,10 +24,11 @@ class CRUDClient(object):
     base_path = None
     resource_class = None
 
-    def __init__(self, session, url):
+    def __init__(self, session, url, **extra_request_kwargs):
         """Initialize our Client with a session and base url."""
         self.session = session
         self.url = url.rstrip('/')
+        self.extra_request_kwargs = extra_request_kwargs
 
     def build_url(self, path_arguments=None):
         """Build a complete URL from the url, base_path, and arguments.
@@ -76,21 +77,34 @@ class CRUDClient(object):
 
         return url
 
-    def create(self, **kwargs):
+    def merge_request_arguments(self, request_kwargs, skip_merge):
+        """Merge the extra request arguments into the per-request args."""
+        if skip_merge:
+            return
+
+        keys = set(self.extra_request_kwargs.keys())
+        missing_keys = keys.difference(request_kwargs.keys())
+        for key in missing_keys:
+            request_kwargs[key] = self.extra_request_kwargs[key]
+
+    def create(self, skip_merge=False, **kwargs):
         """Create a new item based on the keyword arguments provided."""
+        self.merge_request_arguments(kwargs, skip_merge)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.post(url, json=kwargs)
         return self.resource_class(self, response.json(), loaded=True)
 
-    def get(self, item_id=None, **kwargs):
+    def get(self, item_id=None, skip_merge=True, **kwargs):
         """Retrieve the item based on the keyword arguments provided."""
+        self.merge_request_arguments(kwargs, skip_merge)
         kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.get(url)
         return self.resource_class(self, response.json(), loaded=True)
 
-    def list(self, **kwargs):
+    def list(self, skip_merge=False, **kwargs):
         """List the items from this endpoint."""
+        self.merge_request_arguments(kwargs, skip_merge)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.get(url, params=kwargs)
         return [
@@ -98,14 +112,16 @@ class CRUDClient(object):
             for item in response.json()
         ]
 
-    def update(self, **kwargs):
+    def update(self, skip_merge=True, **kwargs):
         """Update the item based on the keyword arguments provided."""
+        self.merge_request_arguments(kwargs, skip_merge)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.put(url, json=kwargs)
         return self.resource_class(self, response.json(), loaded=True)
 
-    def delete(self, item_id=None, **kwargs):
+    def delete(self, item_id=None, skip_merge=True, **kwargs):
         """Delete the item based on the keyword arguments provided."""
+        self.merge_request_arguments(kwargs, skip_merge)
         kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.delete(url, params=kwargs)
