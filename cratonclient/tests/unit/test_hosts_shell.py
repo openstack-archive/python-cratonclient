@@ -169,8 +169,8 @@ class TestHostsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.hosts = hosts.HostManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         hosts_shell.do_host_create(client, self.host_valid_fields)
@@ -182,8 +182,8 @@ class TestHostsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.hosts = hosts.HostManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         hosts_shell.do_host_create(client, self.host_invalid_field)
@@ -207,8 +207,8 @@ class TestHostsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.hosts = hosts.HostManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         valid_input = Namespace(region=1,
@@ -224,8 +224,8 @@ class TestHostsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.hosts = hosts.HostManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         invalid_input = Namespace(region=1,
@@ -255,8 +255,8 @@ class TestHostsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.hosts = hosts.HostManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         test_args = Namespace(id=1, region=1)
@@ -280,8 +280,8 @@ class TestHostsShell(base.ShellTestCase):
         client = mock.Mock()
         inventory = mock.Mock()
         inventory.hosts = hosts.HostManager(mock.ANY,
-                                            mock.ANY,
-                                            'http://127.0.0.1/')
+                                            'http://127.0.0.1/',
+                                            region_id=mock.ANY)
         client.inventory = mock.Mock(name='inventory')
         client.inventory.return_value = inventory
         test_args = Namespace(id=1, region=1)
