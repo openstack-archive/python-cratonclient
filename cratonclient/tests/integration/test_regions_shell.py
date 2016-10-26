@@ -17,7 +17,7 @@ from argparse import Namespace
 from testtools import matchers
 
 from cratonclient.shell.v1 import regions_shell
-from cratonclient.tests import base
+from cratonclient.tests.integration import base
 from cratonclient.v1 import regions
 
 
