@@ -80,28 +80,33 @@ class CRUDClient(object):
         """Create a new item based on the keyword arguments provided."""
         url = self.build_url(path_arguments=kwargs)
         response = self.session.post(url, json=kwargs)
-        return self.resource_class(self, response.json())
+        return self.resource_class(self, response.json(), loaded=True)
 
-    def get(self, **kwargs):
+    def get(self, item_id=None, **kwargs):
         """Retrieve the item based on the keyword arguments provided."""
+        kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.get(url)
-        return self.resource_class(self, response.json())
+        return self.resource_class(self, response.json(), loaded=True)
 
     def list(self, **kwargs):
         """List the items from this endpoint."""
         url = self.build_url(path_arguments=kwargs)
         response = self.session.get(url, params=kwargs)
-        return [self.resource_class(self, item) for item in response.json()]
+        return [
+            self.resource_class(self, item, loaded=True)
+            for item in response.json()
+        ]
 
     def update(self, **kwargs):
         """Update the item based on the keyword arguments provided."""
         url = self.build_url(path_arguments=kwargs)
         response = self.session.put(url, json=kwargs)
-        return self.resource_class(self, response.json())
+        return self.resource_class(self, response.json(), loaded=True)
 
-    def delete(self, **kwargs):
+    def delete(self, item_id=None, **kwargs):
         """Delete the item based on the keyword arguments provided."""
+        kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.delete(url, params=kwargs)
         if 200 <= response.status_code < 300:
@@ -210,4 +215,4 @@ class Resource(object):
 
     def delete(self):
         """Delete the resource from the service."""
-        return self.manager.delete(self)
+        return self.manager.delete(self.id)
