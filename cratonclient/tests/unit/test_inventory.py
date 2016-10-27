@@ -26,6 +26,15 @@ class TestInventory(base.TestCase):
         """Verify Inventory class creates HostManager."""
         session = mock.Mock()
         url = 'https://10.1.1.0:8080/'
-        region_id = 1,
+        region_id = 1
         inventory.Inventory(session, url, region_id)
         mock_hostmanager.assert_called_once_with(region_id, session, url)
+
+    @mock.patch('cratonclient.v1.cells.CellManager')
+    def test_inventory_creates_cell_manager(self, cell_manager):
+        """Verify the Inventory class creates a CellManager."""
+        session = mock.Mock()
+        url = 'https://10.1.1.0:8080/'
+        region_id = 1
+        inventory.Inventory(session, url, region_id)
+        cell_manager.assert_called_once_with(region_id, session, url)
