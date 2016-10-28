@@ -58,7 +58,7 @@ class TestCellsShell(base.ShellTestCase):
     def test_cell_list_limit_0_success(self, mock_list):
         """Verify that --limit 0 prints out all project cells."""
         self.shell('cell-list -r 1 --limit 0')
-        mock_list.assert_called_once_with(limit=0)
+        mock_list.assert_called_once_with(limit=0, sort_dir='asc')
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
     def test_cell_list_limit_positive_num_success(self, mock_list):
@@ -67,7 +67,7 @@ class TestCellsShell(base.ShellTestCase):
         The command will print out X number of project cells.
         """
         self.shell('cell-list -r 1 --limit 1')
-        mock_list.assert_called_once_with(limit=1)
+        mock_list.assert_called_once_with(limit=1, sort_dir='asc')
 
     def test_cell_list_limit_negative_num_failure(self):
         """Verify --limit X, where X is a negative integer, fails.
@@ -82,23 +82,17 @@ class TestCellsShell(base.ShellTestCase):
     def test_cell_list_detail_success(self, mock_list):
         """Verify --detail argument successfully pass detail to Client."""
         self.shell('cell-list -r 1 --detail')
-        mock_list.assert_called_once_with(detail=True)
+        mock_list.assert_called_once_with(detail=True, sort_dir='asc')
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
     @mock.patch('cratonclient.common.cliutils.print_list')
     def test_cell_list_fields_success(self, mock_printlist, mock_list):
         """Verify --fields argument successfully passed to Client."""
         self.shell('cell-list -r 1 --fields id name')
-        mock_list.assert_called_once_with()
+        mock_list.assert_called_once_with(sort_dir='asc')
         mock_printlist.assert_called_once_with(mock.ANY,
                                                list({'id': 'ID',
                                                      'name': 'Name'}))
-
-    @mock.patch('cratonclient.v1.cells.CellManager.list')
-    def test_cell_list_detail_and_fields_specified(self, mock_list):
-        """Verify --fields ignored when --detail argument passed in."""
-        self.shell('cell-list -r 1 --fields id name --detail')
-        mock_list.assert_called_once_with(detail=True)
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
     def test_cell_list_sort_key_field_key_success(self, mock_list):
@@ -112,12 +106,6 @@ class TestCellsShell(base.ShellTestCase):
         self.assertRaises(exc.CommandError,
                           self.shell,
                           'cell-list -r 1 --sort-key invalid')
-
-    @mock.patch('cratonclient.v1.cells.CellManager.list')
-    def test_cell_list_sort_dir_not_passed_without_sort_key(self, mock_list):
-        """Verify --sort-dir arg ignored without --sort-key."""
-        self.shell('cell-list -r 1 --sort-dir desc')
-        mock_list.assert_called_once_with()
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
     def test_cell_list_sort_dir_asc_success(self, mock_list):
@@ -135,9 +123,10 @@ class TestCellsShell(base.ShellTestCase):
 
     def test_cell_list_sort_dir_invalid_value(self):
         """Verify --sort-dir with invalid args, fails with Command Error."""
-        self.assertRaises(exc.CommandError,
-                          self.shell,
-                          'cell-list -r 1 --sort-key name --sort-dir invalid')
+        (_, error) = self.shell(
+            'cell-list -r 1 --sort-key name --sort-dir invalid'
+        )
+        self.assertIn("invalid choice: 'invalid'", error)
 
     def test_cell_create_missing_required_args(self):
         """Verify that missing required args results in error message."""
@@ -203,8 +192,7 @@ class TestCellsShell(base.ShellTestCase):
                                 id=1,
                                 name='mock_cell')
         cells_shell.do_cell_update(client, valid_input)
-        vars(valid_input).pop('region')
-        mock_update.assert_called_once_with(**vars(valid_input))
+        mock_update.assert_called_once_with(1, name='mock_cell')
 
     @mock.patch('cratonclient.v1.cells.CellManager.update')
     def test_do_cell_update_ignores_unknown_fields(self, mock_update):
@@ -221,9 +209,7 @@ class TestCellsShell(base.ShellTestCase):
                                   name='mock_cell',
                                   invalid=True)
         cells_shell.do_cell_update(client, invalid_input)
-        vars(invalid_input).pop('region')
-        vars(invalid_input).pop('invalid')
-        mock_update.assert_called_once_with(**vars(invalid_input))
+        mock_update.assert_called_once_with(1, name='mock_cell')
 
     def test_cell_show_missing_required_args(self):
         """Verify that missing required args results in error message."""
