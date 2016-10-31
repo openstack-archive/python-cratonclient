@@ -1,0 +1,9 @@
+Code-Review+1: Syed Ahsan Shamim Zaidi <ahsanmohsin04@yahoo.com>
+Code-Review+2: sulochan-acharya <sulochan@gmail.com>
+Workflow+1: sulochan-acharya <sulochan@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 31 Oct 2016 10:07:14 +0000
+Reviewed-on: https://review.openstack.org/391530
+Project: openstack/python-cratonclient
+Branch: refs/heads/master
