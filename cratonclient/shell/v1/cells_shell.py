@@ -12,9 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Cells resource and resource shell wrapper."""
+from __future__ import print_function
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
-from cratonclient.v1.cells import CELL_FIELDS as c_fields
+from cratonclient.v1 import cells
 
 
 @cliutils.arg('region',
@@ -28,7 +30,7 @@ from cratonclient.v1.cells import CELL_FIELDS as c_fields
 def do_cell_show(cc, args):
     """Show detailed information about a cell."""
     cell = cc.inventory(args.region).cells.get(args.id)
-    data = {f: getattr(cell, f, '') for f in c_fields}
+    data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
@@ -51,6 +53,7 @@ def do_cell_show(cc, args):
 @cliutils.arg('--sort-dir',
               metavar='<direction>',
               default='asc',
+              choices=('asc', 'desc'),
               help='Sort direction: "asc" (default) or "desc".')
 @cliutils.arg('--fields',
               nargs='+',
@@ -69,45 +72,41 @@ def do_cell_list(cc, args):
                                    'non-negative limit, got {0}'
                                    .format(args.limit))
         params['limit'] = args.limit
+
+    if args.fields and args.detail:
+        raise exc.CommandError('Cannot specify both --fields and --detail.')
+
     if args.detail:
-        fields = c_fields
+        fields = cells.CELL_FIELDS
         params['detail'] = args.detail
     elif args.fields:
-        fields = {x: c_fields[x] for x in args.fields}
-    else:
-        fields = {x: c_fields[x] for x in default_fields}
-    if args.sort_key is not None:
-        fields_map = dict(zip(fields.keys(), fields.keys()))
-        # TODO(cmspence): Do we want to allow sorting by field heading value?
         try:
-            sort_key = fields_map[args.sort_key]
-        except KeyError:
+            fields = {x: cells.CELL_FIELDS[x] for x in args.fields}
+        except KeyError as keyerr:
+            raise exc.CommandError('Invalid field "{}"'.format(keyerr.args[0]))
+    else:
+        fields = {x: cells.CELL_FIELDS[x] for x in default_fields}
+    sort_key = args.sort_key and args.sort_key.lower()
+    if sort_key is not None:
+        if sort_key not in cells.CELL_FIELDS:
             raise exc.CommandError(
-                '{0} is an invalid key for sorting,  valid values for '
-                '--sort-key are: {1}'.format(args.sort_key, c_fields.keys())
+                ('"--sort-key" value was "{}" but should '
+                 'be one of: {}').format(
+                     args.sort_key,
+                     ', '.join(cells.CELL_FIELDS.keys())
+                )
             )
         params['sort_key'] = sort_key
-        if args.sort_dir is not None:
-            if args.sort_dir not in ('asc', 'desc'):
-                raise exc.CommandError('Invalid sort direction specified. The '
-                                       'expected valid values for --sort-dir '
-                                       'are: "asc", "desc".')
-        params['sort_dir'] = args.sort_dir
+    params['sort_dir'] = args.sort_dir
 
-    cells = cc.inventory(args.region).cells.list(**params)
-    cliutils.print_list(cells, list(fields))
+    listed_cells = cc.inventory(args.region).cells.list(**params)
+    cliutils.print_list(listed_cells, list(fields))
 
 
 @cliutils.arg('-n', '--name',
               metavar='<name>',
               required=True,
               help='Name of the cell.')
-@cliutils.arg('-p', '--project',
-              dest='project_id',
-              metavar='<project>',
-              type=int,
-              required=True,
-              help='ID of the project that the cell belongs to.')
 @cliutils.arg('-r', '--region',
               dest='region_id',
               metavar='<region>',
@@ -119,9 +118,9 @@ def do_cell_list(cc, args):
 def do_cell_create(cc, args):
     """Register a new cell with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in c_fields and not (v is None)}
+              if k in cells.CELL_FIELDS and not (v is None)}
     cell = cc.inventory(args.region_id).cells.create(**fields)
-    data = {f: getattr(cell, f, '') for f in c_fields}
+    data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
@@ -135,28 +134,26 @@ def do_cell_create(cc, args):
               help='ID of the cell.')
 @cliutils.arg('-n', '--name',
               metavar='<name>',
-              required=True,
               help='Name of the cell.')
-@cliutils.arg('-p', '--project',
-              dest='project_id',
-              metavar='<project>',
-              type=int,
-              required=True,
-              help='Desired ID of the project that the cell should change to.')
 @cliutils.arg('-r', '--region',
               dest='region_id',
               metavar='<region>',
               type=int,
-              required=True,
               help='Desired ID of the region that the cell should change to.')
 @cliutils.arg('--note',
               help='Note about the cell.')
 def do_cell_update(cc, args):
     """Update a cell that is registered with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in c_fields and not (v is None)}
-    cell = cc.inventory(args.region).cells.update(**fields)
-    data = {f: getattr(cell, f, '') for f in c_fields}
+              if k in cells.CELL_FIELDS and not (v is None)}
+    cell_id = fields.pop('id')
+    if not fields:
+        raise exc.CommandError(
+            'Nothing to update... Please specify one of --name, --region, '
+            'or --note'
+        )
+    cell = cc.inventory(args.region).cells.update(cell_id, **fields)
+    data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
@@ -170,6 +167,14 @@ def do_cell_update(cc, args):
               help='ID of the cell.')
 def do_cell_delete(cc, args):
     """Delete a cell that is registered with the Craton service."""
-    response = cc.inventory(args.region).cells.delete(args.id)
-    print("Cell {0} was {1}successfully deleted.".
-          format(args.id, '' if response else 'un'))
+    try:
+        response = cc.inventory(args.region).cells.delete(args.id)
+    except exc.ClientException as client_exc:
+        raise exc.CommandError(
+            'Failed to delete cell {} due to "{}:{}"'.format(
+                args.id, client_exc.__class__, str(client_exc)
+            )
+        )
+    else:
+        print("Cell {0} was {1} deleted.".
+              format(args.id, 'successfully' if response else 'not'))
