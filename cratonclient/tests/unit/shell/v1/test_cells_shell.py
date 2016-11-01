@@ -12,63 +12,20 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Tests for the shell functions for the cells resource."""
-import argparse
-
 import mock
 
 from cratonclient import exceptions
 from cratonclient.shell.v1 import cells_shell
-from cratonclient.tests import base
+from cratonclient.tests.unit.shell import base
 from cratonclient.v1 import cells
 
 
-class TestCells(base.TestCase):
-    """Base class for cells_shell commands."""
-
-    def setUp(self):
-        """Initialize test fixtures."""
-        super(TestCells, self).setUp()
-        self.craton_client = mock.Mock()
-        self.inventory = mock.Mock()
-        self.craton_client.inventory.return_value = self.inventory
-
-    def assertRaisesCommandErrorWith(self, func, args):
-        """Assert do_cell_create raises CommandError."""
-        self.assertRaises(
-            exceptions.CommandError,
-            func, self.craton_client, args,
-        )
-
-
-class TestCellsPrintDict(TestCells):
-    """Base class for commands using print_dict."""
-
-    def setUp(self):
-        """Initialize test fixtures."""
-        super(TestCellsPrintDict, self).setUp()
-        self.print_dict_patch = mock.patch(
-            'cratonclient.common.cliutils.print_dict'
-        )
-        self.print_dict = self.print_dict_patch.start()
-
-    def tearDown(self):
-        """Clean-up test fixtures."""
-        super(TestCellsPrintDict, self).tearDown()
-        self.print_dict_patch.stop()
-
-    def assertNothingWasCalled(self):
-        """Assert inventory, list, and print_dict were not called."""
-        self.assertFalse(self.craton_client.inventory.called)
-        self.assertFalse(self.inventory.cells.list.called)
-        self.assertFalse(self.print_dict.called)
-
-
-class TestDoShellShow(TestCellsPrintDict):
+class TestDoShellShow(base.TestShellCommandUsingPrintDict):
     """Unit tests for the cell show command."""
 
     def test_simple_usage(self):
         """Verify the behaviour of do_cell_show."""
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             id=456,
         )
@@ -83,31 +40,17 @@ class TestDoShellShow(TestCellsPrintDict):
         )
 
 
-class TestDoCellList(TestCells):
+class TestDoCellList(base.TestShellCommandUsingPrintList):
     """Unit tests for the cell list command."""
-
-    def setUp(self):
-        """Initialize test fixtures."""
-        super(TestDoCellList, self).setUp()
-        self.print_list_patch = mock.patch(
-            'cratonclient.common.cliutils.print_list'
-        )
-        self.print_list = self.print_list_patch.start()
-
-    def tearDown(self):
-        """Clean-up test fixtures."""
-        super(TestDoCellList, self).tearDown()
-        self.print_list_patch.stop()
 
     def assertNothingWasCalled(self):
         """Assert inventory, list, and print_list were not called."""
-        self.assertFalse(self.craton_client.inventory.called)
-        self.assertFalse(self.inventory.cells.list.called)
+        super(TestDoCellList, self).assertNothingWasCalled()
         self.assertFalse(self.print_list.called)
 
     def test_with_defaults(self):
         """Verify the behaviour of do_cell_list with mostly default values."""
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             detail=False,
             limit=None,
@@ -126,7 +69,7 @@ class TestDoCellList(TestCells):
 
     def test_negative_limit(self):
         """Ensure we raise an exception for negative limits."""
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             detail=False,
             limit=-1,
@@ -140,7 +83,7 @@ class TestDoCellList(TestCells):
 
     def test_positive_limit(self):
         """Verify that we pass positive limits to the call to list."""
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             detail=False,
             limit=5,
@@ -162,7 +105,7 @@ class TestDoCellList(TestCells):
 
     def test_valid_sort_key(self):
         """Verify that we pass on our sort key."""
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             detail=False,
             limit=None,
@@ -184,7 +127,7 @@ class TestDoCellList(TestCells):
 
     def test_invalid_sort_key(self):
         """Verify that do not we pass on our sort key."""
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             detail=False,
             limit=None,
@@ -198,7 +141,7 @@ class TestDoCellList(TestCells):
 
     def test_detail(self):
         """Verify the behaviour of specifying --detail."""
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             detail=True,
             limit=None,
@@ -219,7 +162,7 @@ class TestDoCellList(TestCells):
 
     def test_raises_exception_with_detail_and_fields(self):
         """Verify that we fail when users specify --detail and --fields."""
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             detail=True,
             limit=None,
@@ -233,7 +176,7 @@ class TestDoCellList(TestCells):
 
     def test_fields(self):
         """Verify that we print out specific fields."""
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             detail=False,
             limit=None,
@@ -253,7 +196,7 @@ class TestDoCellList(TestCells):
 
     def test_invalid_fields(self):
         """Verify that we error out with invalid fields."""
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             detail=False,
             limit=None,
@@ -266,12 +209,12 @@ class TestDoCellList(TestCells):
         self.assertNothingWasCalled()
 
 
-class TestDoCellCreate(TestCellsPrintDict):
+class TestDoCellCreate(base.TestShellCommandUsingPrintDict):
     """Unit tests for the cell create command."""
 
     def test_create_without_note(self):
         """Verify our parameters to cells.create."""
-        args = argparse.Namespace(
+        args = self.args_for(
             name='New Cell',
             region_id=123,
             note=None,
@@ -288,7 +231,7 @@ class TestDoCellCreate(TestCellsPrintDict):
 
     def test_create_with_note(self):
         """Verify that we include the note argument when present."""
-        args = argparse.Namespace(
+        args = self.args_for(
             name='New Cell',
             region_id=123,
             note='This is a note',
@@ -305,12 +248,12 @@ class TestDoCellCreate(TestCellsPrintDict):
         self.print_dict.assert_called_once_with(mock.ANY, wrap=72)
 
 
-class TestDoCellUpdate(TestCellsPrintDict):
+class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
     """Unit tests for the cell update command."""
 
     def test_update_without_name_region_or_note_fails(self):
         """Verify we raise a command error when there's nothing to update."""
-        args = argparse.Namespace(
+        args = self.args_for(
             id=123,
             region=345,
             name=None,
@@ -323,7 +266,7 @@ class TestDoCellUpdate(TestCellsPrintDict):
 
     def test_update_with_name(self):
         """Verify we update with only the new name."""
-        args = argparse.Namespace(
+        args = self.args_for(
             id=123,
             region=345,
             name='New name',
@@ -342,7 +285,7 @@ class TestDoCellUpdate(TestCellsPrintDict):
 
     def test_update_with_new_region(self):
         """Verify we update with only the new region id."""
-        args = argparse.Namespace(
+        args = self.args_for(
             id=123,
             region=345,
             name=None,
@@ -361,7 +304,7 @@ class TestDoCellUpdate(TestCellsPrintDict):
 
     def test_update_with_new_note(self):
         """Verify we update with only the new note text."""
-        args = argparse.Namespace(
+        args = self.args_for(
             id=123,
             region=345,
             name=None,
@@ -380,7 +323,7 @@ class TestDoCellUpdate(TestCellsPrintDict):
 
     def test_update_with_everything(self):
         """Verify we update with everything."""
-        args = argparse.Namespace(
+        args = self.args_for(
             id=123,
             region=345,
             name='A new name for a new region',
@@ -400,7 +343,7 @@ class TestDoCellUpdate(TestCellsPrintDict):
         self.print_dict.assert_called_once_with(mock.ANY, wrap=72)
 
 
-class TestDoCellDelete(TestCells):
+class TestDoCellDelete(base.TestShellCommand):
     """Tests for the do_cell_delete command."""
 
     def setUp(self):
@@ -419,7 +362,7 @@ class TestDoCellDelete(TestCells):
     def test_successful(self):
         """Verify the message we print when successful."""
         self.inventory.cells.delete.return_value = True
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             id=456,
         )
@@ -435,7 +378,7 @@ class TestDoCellDelete(TestCells):
     def test_failed(self):
         """Verify the message we print when deletion fails."""
         self.inventory.cells.delete.return_value = False
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             id=456,
         )
@@ -451,7 +394,7 @@ class TestDoCellDelete(TestCells):
     def test_failed_with_exception(self):
         """Verify the message we print when deletion fails."""
         self.inventory.cells.delete.side_effect = exceptions.NotFound
-        args = argparse.Namespace(
+        args = self.args_for(
             region=123,
             id=456,
         )

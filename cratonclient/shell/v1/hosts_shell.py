@@ -12,9 +12,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Hosts resource and resource shell wrapper."""
+from __future__ import print_function
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
-from cratonclient.v1.hosts import HOST_FIELDS as h_fields
+from cratonclient.v1 import hosts
 
 
 @cliutils.arg('region',
@@ -28,7 +30,7 @@ from cratonclient.v1.hosts import HOST_FIELDS as h_fields
 def do_host_show(cc, args):
     """Show detailed information about a host."""
     host = cc.inventory(args.region).hosts.get(args.id)
-    data = {f: getattr(host, f, '') for f in h_fields}
+    data = {f: getattr(host, f, '') for f in hosts.HOST_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
@@ -56,6 +58,7 @@ def do_host_show(cc, args):
 @cliutils.arg('--sort-dir',
               metavar='<direction>',
               default='asc',
+              choices=('asc', 'desc'),
               help='Sort direction: "asc" (default) or "desc".')
 @cliutils.arg('--fields',
               nargs='+',
@@ -76,33 +79,34 @@ def do_host_list(cc, args):
                                    'non-negative limit, got {0}'
                                    .format(args.limit))
         params['limit'] = args.limit
+
+    if args.fields and args.detail:
+        raise exc.CommandError('Cannot specify both --fields and --detail.')
+
     if args.detail:
-        fields = h_fields
+        fields = hosts.HOST_FIELDS
         params['detail'] = args.detail
     elif args.fields:
-        fields = {x: h_fields[x] for x in args.fields}
-    else:
-        fields = {x: h_fields[x] for x in default_fields}
-    if args.sort_key is not None:
-        fields_map = dict(zip(fields.keys(), fields.keys()))
-        # TODO(cmspence): Do we want to allow sorting by field heading value?
         try:
-            sort_key = fields_map[args.sort_key]
-        except KeyError:
+            fields = {x: hosts.HOST_FIELDS[x] for x in args.fields}
+        except KeyError as keyerr:
+            raise exc.CommandError('Invalid field "{}"'.format(keyerr.args[0]))
+    else:
+        fields = {x: hosts.HOST_FIELDS[x] for x in default_fields}
+    sort_key = args.sort_key and args.sort_key.lower()
+    if sort_key is not None:
+        if sort_key not in hosts.HOST_FIELDS:
             raise exc.CommandError(
                 '{0} is an invalid key for sorting,  valid values for '
-                '--sort-key are: {1}'.format(args.sort_key, h_fields.keys())
+                '--sort-key are: {1}'.format(
+                    args.sort_key, hosts.HOST_FIELDS.keys()
+                )
             )
         params['sort_key'] = sort_key
-        if args.sort_dir is not None:
-            if args.sort_dir not in ('asc', 'desc'):
-                raise exc.CommandError('Invalid sort direction specified. The '
-                                       'expected valid values for --sort-dir '
-                                       'are: "asc", "desc".')
-        params['sort_dir'] = args.sort_dir
+    params['sort_dir'] = args.sort_dir
 
-    hosts = cc.inventory(args.region).hosts.list(**params)
-    cliutils.print_list(hosts, list(fields))
+    host_list = cc.inventory(args.region).hosts.list(**params)
+    cliutils.print_list(host_list, list(fields))
 
 
 @cliutils.arg('-n', '--name',
@@ -116,7 +120,6 @@ def do_host_list(cc, args):
 @cliutils.arg('-p', '--project',
               dest='project_id',
               metavar='<project>',
-              type=int,
               required=True,
               help='ID of the project that the host belongs to.')
 @cliutils.arg('-r', '--region',
@@ -151,9 +154,9 @@ def do_host_list(cc, args):
 def do_host_create(cc, args):
     """Register a new host with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in h_fields and not (v is None)}
+              if k in hosts.HOST_FIELDS and (v or v is False)}
     host = cc.inventory(args.region_id).hosts.create(**fields)
-    data = {f: getattr(host, f, '') for f in h_fields}
+    data = {f: getattr(host, f, '') for f in hosts.HOST_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
@@ -189,8 +192,6 @@ def do_host_create(cc, args):
 @cliutils.arg('-a', '--active',
               default=True,
               help='Status of the host.  Active or inactive.')
-@cliutils.arg('-t', '--type',
-              help='Type of the host.')
 @cliutils.arg('--note',
               help='Note about the host.')
 @cliutils.arg('--access_secret',
@@ -204,10 +205,11 @@ def do_host_create(cc, args):
 def do_host_update(cc, args):
     """Update a host that is registered with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in h_fields and not (v is None)}
-    host = cc.inventory(args.region).hosts.update(**fields)
-    print("Host {0} has been successfully update.".format(host.id))
-    data = {f: getattr(host, f, '') for f in h_fields}
+              if k in hosts.HOST_FIELDS and (v or v is False)}
+    item_id = fields.pop('id')
+    host = cc.inventory(args.region).hosts.update(item_id, **fields)
+    print("Host {0} has been successfully updated.".format(host.id))
+    data = {f: getattr(host, f, '') for f in hosts.HOST_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
@@ -221,6 +223,14 @@ def do_host_update(cc, args):
               help='ID of the host.')
 def do_host_delete(cc, args):
     """Delete a host that is registered with the Craton service."""
-    response = cc.inventory(args.region).hosts.delete(args.id)
-    print("Host {0} was {1}successfully deleted.".
-          format(args.id, '' if response else 'un'))
+    try:
+        response = cc.inventory(args.region).hosts.delete(args.id)
+    except exc.ClientException as client_exc:
+        raise exc.CommandError(
+            'Failed to delete cell {} due to "{}:{}"'.format(
+                args.id, client_exc.__class__, str(client_exc),
+            )
+        )
+    else:
+        print("Host {0} was {1} deleted.".
+              format(args.id, 'successfully' if response else 'not'))
