@@ -48,16 +48,19 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
         super(TestDoCellList, self).assertNothingWasCalled()
         self.assertFalse(self.print_list.called)
 
+    def args_for(self, **kwargs):
+        """Generate the default argument list for cell-list."""
+        kwargs.setdefault('region', 123)
+        kwargs.setdefault('detail', False)
+        kwargs.setdefault('limit', None)
+        kwargs.setdefault('sort_key', None)
+        kwargs.setdefault('sort_dir', 'asc')
+        kwargs.setdefault('fields', [])
+        return super(TestDoCellList, self).args_for(**kwargs)
+
     def test_with_defaults(self):
         """Verify the behaviour of do_cell_list with mostly default values."""
-        args = self.args_for(
-            region=123,
-            detail=False,
-            limit=None,
-            sort_key=None,
-            sort_dir='asc',
-            fields=[],
-        )
+        args = self.args_for()
 
         cells_shell.do_cell_list(self.craton_client, args)
 
@@ -69,28 +72,14 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
     def test_negative_limit(self):
         """Ensure we raise an exception for negative limits."""
-        args = self.args_for(
-            region=123,
-            detail=False,
-            limit=-1,
-            sort_key=None,
-            sort_dir='asc',
-            fields=[],
-        )
+        args = self.args_for(limit=-1)
 
         self.assertRaisesCommandErrorWith(cells_shell.do_cell_list, args)
         self.assertNothingWasCalled()
 
     def test_positive_limit(self):
         """Verify that we pass positive limits to the call to list."""
-        args = self.args_for(
-            region=123,
-            detail=False,
-            limit=5,
-            sort_key=None,
-            sort_dir='asc',
-            fields=[],
-        )
+        args = self.args_for(limit=5)
 
         cells_shell.do_cell_list(self.craton_client, args)
 
@@ -105,14 +94,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
     def test_valid_sort_key(self):
         """Verify that we pass on our sort key."""
-        args = self.args_for(
-            region=123,
-            detail=False,
-            limit=None,
-            sort_key='name',
-            sort_dir='asc',
-            fields=[],
-        )
+        args = self.args_for(sort_key='name')
 
         cells_shell.do_cell_list(self.craton_client, args)
 
@@ -127,28 +109,14 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
     def test_invalid_sort_key(self):
         """Verify that do not we pass on our sort key."""
-        args = self.args_for(
-            region=123,
-            detail=False,
-            limit=None,
-            sort_key='fake-sort-key',
-            sort_dir='asc',
-            fields=[],
-        )
+        args = self.args_for(sort_key='fake-sort-key')
 
         self.assertRaisesCommandErrorWith(cells_shell.do_cell_list, args)
         self.assertNothingWasCalled()
 
     def test_detail(self):
         """Verify the behaviour of specifying --detail."""
-        args = self.args_for(
-            region=123,
-            detail=True,
-            limit=None,
-            sort_key=None,
-            sort_dir='asc',
-            fields=[],
-        )
+        args = self.args_for(detail=True)
 
         cells_shell.do_cell_list(self.craton_client, args)
 
@@ -163,11 +131,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
     def test_raises_exception_with_detail_and_fields(self):
         """Verify that we fail when users specify --detail and --fields."""
         args = self.args_for(
-            region=123,
             detail=True,
-            limit=None,
-            sort_key=None,
-            sort_dir='asc',
             fields=['id', 'name'],
         )
 
@@ -176,14 +140,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
     def test_fields(self):
         """Verify that we print out specific fields."""
-        args = self.args_for(
-            region=123,
-            detail=False,
-            limit=None,
-            sort_key=None,
-            sort_dir='asc',
-            fields=['id', 'name', 'note'],
-        )
+        args = self.args_for(fields=['id', 'name', 'note'])
 
         cells_shell.do_cell_list(self.craton_client, args)
 
@@ -196,14 +153,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
     def test_invalid_fields(self):
         """Verify that we error out with invalid fields."""
-        args = self.args_for(
-            region=123,
-            detail=False,
-            limit=None,
-            sort_key=None,
-            sort_dir='asc',
-            fields=['uuid', 'not-name', 'nate'],
-        )
+        args = self.args_for(fields=['uuid', 'not-name', 'nate'])
 
         self.assertRaisesCommandErrorWith(cells_shell.do_cell_list, args)
         self.assertNothingWasCalled()
@@ -212,13 +162,16 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 class TestDoCellCreate(base.TestShellCommandUsingPrintDict):
     """Unit tests for the cell create command."""
 
+    def args_for(self, **kwargs):
+        """Generate the default args for cell-create."""
+        kwargs.setdefault('name', 'New Cell')
+        kwargs.setdefault('region_id', 123)
+        kwargs.setdefault('note', None)
+        return super(TestDoCellCreate, self).args_for(**kwargs)
+
     def test_create_without_note(self):
         """Verify our parameters to cells.create."""
-        args = self.args_for(
-            name='New Cell',
-            region_id=123,
-            note=None,
-        )
+        args = self.args_for()
 
         cells_shell.do_cell_create(self.craton_client, args)
 
@@ -231,11 +184,7 @@ class TestDoCellCreate(base.TestShellCommandUsingPrintDict):
 
     def test_create_with_note(self):
         """Verify that we include the note argument when present."""
-        args = self.args_for(
-            name='New Cell',
-            region_id=123,
-            note='This is a note',
-        )
+        args = self.args_for(note='This is a note')
 
         cells_shell.do_cell_create(self.craton_client, args)
 
@@ -251,28 +200,25 @@ class TestDoCellCreate(base.TestShellCommandUsingPrintDict):
 class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
     """Unit tests for the cell update command."""
 
+    def args_for(self, **kwargs):
+        """Generate arguments for cell-update command."""
+        kwargs.setdefault('id', 123)
+        kwargs.setdefault('region', 345)
+        kwargs.setdefault('name', None)
+        kwargs.setdefault('region_id', None)
+        kwargs.setdefault('note', None)
+        return super(TestDoCellUpdate, self).args_for(**kwargs)
+
     def test_update_without_name_region_or_note_fails(self):
         """Verify we raise a command error when there's nothing to update."""
-        args = self.args_for(
-            id=123,
-            region=345,
-            name=None,
-            region_id=None,
-            note=None,
-        )
+        args = self.args_for()
 
         self.assertRaisesCommandErrorWith(cells_shell.do_cell_update, args)
         self.assertNothingWasCalled()
 
     def test_update_with_name(self):
         """Verify we update with only the new name."""
-        args = self.args_for(
-            id=123,
-            region=345,
-            name='New name',
-            region_id=None,
-            note=None,
-        )
+        args = self.args_for(name='New name')
 
         cells_shell.do_cell_update(self.craton_client, args)
 
@@ -285,13 +231,7 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
 
     def test_update_with_new_region(self):
         """Verify we update with only the new region id."""
-        args = self.args_for(
-            id=123,
-            region=345,
-            name=None,
-            region_id=678,
-            note=None,
-        )
+        args = self.args_for(region_id=678)
 
         cells_shell.do_cell_update(self.craton_client, args)
 
@@ -304,13 +244,7 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
 
     def test_update_with_new_note(self):
         """Verify we update with only the new note text."""
-        args = self.args_for(
-            id=123,
-            region=345,
-            name=None,
-            region_id=None,
-            note='A new note',
-        )
+        args = self.args_for(note='A new note')
 
         cells_shell.do_cell_update(self.craton_client, args)
 
@@ -324,8 +258,6 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
     def test_update_with_everything(self):
         """Verify we update with everything."""
         args = self.args_for(
-            id=123,
-            region=345,
             name='A new name for a new region',
             region_id=678,
             note='A new note',
