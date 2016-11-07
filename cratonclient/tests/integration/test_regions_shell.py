@@ -137,7 +137,7 @@ class TestRegionsShell(base.ShellTestCase):
         valid_input = Namespace(id=1,
                                 name='mock_region')
         regions_shell.do_region_update(client, valid_input)
-        mock_update.assert_called_once_with(**vars(valid_input))
+        mock_update.assert_called_once_with(1, name='mock_region')
 
     @mock.patch('cratonclient.v1.regions.RegionManager.update')
     def test_do_region_update_ignores_unknown_fields(self, mock_update):
@@ -150,5 +150,4 @@ class TestRegionsShell(base.ShellTestCase):
                                   name='mock_region',
                                   invalid=True)
         regions_shell.do_region_update(client, invalid_input)
-        vars(invalid_input).pop('invalid')
-        mock_update.assert_called_once_with(**vars(invalid_input))
+        mock_update.assert_called_once_with(1, name='mock_region')

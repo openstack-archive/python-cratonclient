@@ -1,0 +1,202 @@
+# -*- coding: utf-8 -*-
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+"""Tests for the shell functions for the regions resource."""
+import mock
+
+from cratonclient import exceptions
+from cratonclient.shell.v1 import regions_shell
+from cratonclient.tests.unit.shell import base
+from cratonclient.v1 import regions
+
+
+class TestDoRegionShow(base.TestShellCommandUsingPrintDict):
+    """Unit tests for the region-show command."""
+
+    def test_prints_region_data(self):
+        """Verify we print the data for the region."""
+        args = self.args_for(id=1234)
+
+        regions_shell.do_region_show(self.craton_client, args)
+
+        self.craton_client.regions.get.assert_called_once_with(1234)
+        self.print_dict.assert_called_once_with(
+            {field: mock.ANY for field in regions.REGION_FIELDS},
+            wrap=72,
+        )
+
+
+class TestDoRegionCreate(base.TestShellCommandUsingPrintDict):
+    """Unit tests for the region-create command."""
+
+    def args_for(self, **kwargs):
+        """Generate arguments for region-create."""
+        kwargs.setdefault('name', 'New region')
+        kwargs.setdefault('note', None)
+        return super(TestDoRegionCreate, self).args_for(**kwargs)
+
+    def test_accepts_only_required_arguments(self):
+        """Verify operation with only --name provided."""
+        args = self.args_for()
+
+        regions_shell.do_region_create(self.craton_client, args)
+
+        self.craton_client.regions.create.assert_called_once_with(
+            name='New region',
+        )
+        self.print_dict.assert_called_once_with(
+            {field: mock.ANY for field in regions.REGION_FIELDS},
+            wrap=72,
+        )
+
+    def test_accepts_optional_arguments(self):
+        """Verify operation with --note passed as well."""
+        args = self.args_for(note='This is a note')
+
+        regions_shell.do_region_create(self.craton_client, args)
+
+        self.craton_client.regions.create.assert_called_once_with(
+            name='New region',
+            note='This is a note',
+        )
+        self.print_dict.assert_called_once_with(
+            {field: mock.ANY for field in regions.REGION_FIELDS},
+            wrap=72,
+        )
+
+
+class TestDoRegionUpdate(base.TestShellCommandUsingPrintDict):
+    """Unit tests for region-update command."""
+
+    def args_for(self, **kwargs):
+        """Generate arguments for region-update."""
+        kwargs.setdefault('id', 12345)
+        kwargs.setdefault('name', None)
+        kwargs.setdefault('note', None)
+        return super(TestDoRegionUpdate, self).args_for(**kwargs)
+
+    def test_nothing_to_update_raises_error(self):
+        """Verify specifying nothing raises a CommandError."""
+        args = self.args_for()
+
+        self.assertRaisesCommandErrorWith(
+            regions_shell.do_region_update,
+            args,
+        )
+        self.assertFalse(self.craton_client.regions.update.called)
+        self.assertFalse(self.print_dict.called)
+
+    def test_name_is_updated(self):
+        """Verify the name attribute update is sent."""
+        args = self.args_for(name='A New Name')
+
+        regions_shell.do_region_update(self.craton_client, args)
+
+        self.craton_client.regions.update.assert_called_once_with(
+            12345,
+            name='A New Name',
+        )
+        self.print_dict.assert_called_once_with(
+            {field: mock.ANY for field in regions.REGION_FIELDS},
+            wrap=72,
+        )
+
+    def test_note_is_updated(self):
+        """Verify the note attribute is updated."""
+        args = self.args_for(note='A New Note')
+
+        regions_shell.do_region_update(self.craton_client, args)
+
+        self.craton_client.regions.update.assert_called_once_with(
+            12345,
+            note='A New Note',
+        )
+        self.print_dict.assert_called_once_with(
+            {field: mock.ANY for field in regions.REGION_FIELDS},
+            wrap=72,
+        )
+
+    def test_everything_is_updated(self):
+        """Verify the note and name are updated."""
+        args = self.args_for(
+            note='A New Note',
+            name='A New Name',
+        )
+
+        regions_shell.do_region_update(self.craton_client, args)
+
+        self.craton_client.regions.update.assert_called_once_with(
+            12345,
+            note='A New Note',
+            name='A New Name',
+        )
+        self.print_dict.assert_called_once_with(
+            {field: mock.ANY for field in regions.REGION_FIELDS},
+            wrap=72,
+        )
+
+
+class TestDoRegionDelete(base.TestShellCommand):
+    """Unit tests for the region-delete command."""
+
+    def setUp(self):
+        """Mock the print function."""
+        super(TestDoRegionDelete, self).setUp()
+        self.print_mock = mock.patch(
+            'cratonclient.shell.v1.regions_shell.print'
+        )
+        self.print_func = self.print_mock.start()
+
+    def tearDown(self):
+        """Clean up our print function mock."""
+        super(TestDoRegionDelete, self).tearDown()
+        self.print_mock.stop()
+
+    def args_for(self, **kwargs):
+        """Generate args for the region-delete command."""
+        kwargs.setdefault('id', 123456)
+        return super(TestDoRegionDelete, self).args_for(**kwargs)
+
+    def test_successful(self):
+        """Verify successful deletion."""
+        self.craton_client.regions.delete.return_value = True
+        args = self.args_for()
+
+        regions_shell.do_region_delete(self.craton_client, args)
+
+        self.craton_client.regions.delete.assert_called_once_with(123456)
+        self.print_func.assert_called_once_with(
+            'Region 123456 was successfully deleted.'
+        )
+
+    def test_failed(self):
+        """Verify failed deletion."""
+        self.craton_client.regions.delete.return_value = False
+        args = self.args_for()
+
+        regions_shell.do_region_delete(self.craton_client, args)
+
+        self.craton_client.regions.delete.assert_called_once_with(123456)
+        self.print_func.assert_called_once_with(
+            'Region 123456 was not deleted.'
+        )
+
+    def test_failed_with_exception(self):
+        """Verify we raise a CommandError on client exceptions."""
+        self.craton_client.regions.delete.side_effect = exceptions.NotFound
+        args = self.args_for()
+
+        self.assertRaisesCommandErrorWith(regions_shell.do_region_delete, args)
+
+        self.craton_client.regions.delete.assert_called_once_with(123456)
+        self.assertFalse(self.print_func.called)

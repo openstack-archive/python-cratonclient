@@ -10,9 +10,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """Hosts resource and resource shell wrapper."""
+from __future__ import print_function
 
 from cratonclient.common import cliutils
-from cratonclient.v1.regions import REGION_FIELDS as r_fields
+from cratonclient import exceptions as exc
+from cratonclient.v1 import regions
 
 
 @cliutils.arg('-n', '--name',
@@ -24,10 +26,10 @@ from cratonclient.v1.regions import REGION_FIELDS as r_fields
 def do_region_create(cc, args):
     """Register a new region with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in r_fields and not (v is None)}
+              if k in regions.REGION_FIELDS and not (v is None)}
 
     region = cc.regions.create(**fields)
-    data = {f: getattr(region, f, '') for f in r_fields}
+    data = {f: getattr(region, f, '') for f in regions.REGION_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
@@ -38,7 +40,7 @@ def do_region_create(cc, args):
 def do_region_show(cc, args):
     """Show detailed information about a region."""
     region = cc.regions.get(args.id)
-    data = {f: getattr(region, f, '') for f in r_fields}
+    data = {f: getattr(region, f, '') for f in regions.REGION_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
@@ -49,19 +51,20 @@ def do_region_show(cc, args):
 @cliutils.arg('-n', '--name',
               metavar='<name>',
               help='Name of the region.')
-@cliutils.arg('-p', '--project',
-              dest='project_id',
-              metavar='<project_id>',
-              type=int,
-              help='ID of the project that the region belongs to.')
 @cliutils.arg('--note',
               help='Note about the region.')
 def do_region_update(cc, args):
     """Update a region that is registered with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in r_fields and not (v is None)}
-    region = cc.regions.update(**fields)
-    data = {f: getattr(region, f, '') for f in r_fields}
+              if k in regions.REGION_FIELDS and not (v is None)}
+    item_id = fields.pop('id')
+    if not fields:
+        raise exc.CommandError(
+            'Nothing to update... Please specify one or more of --name, or '
+            '--note'
+        )
+    region = cc.regions.update(item_id, **fields)
+    data = {f: getattr(region, f, '') for f in regions.REGION_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
@@ -71,6 +74,14 @@ def do_region_update(cc, args):
               help='ID of the region.')
 def do_region_delete(cc, args):
     """Delete a region that is registered with the Craton service."""
-    response = cc.regions.delete(args.id)
-    print("Region {0} was {1}successfully deleted.".
-          format(args.id, '' if response else 'un'))
+    try:
+        response = cc.regions.delete(args.id)
+    except exc.ClientException as client_exc:
+        raise exc.CommandError(
+            'Failed to delete region {} due to "{}:{}"'.format(
+                args.id, client_exc.__class__, str(client_exc),
+            )
+        )
+    else:
+        print("Region {0} was {1} deleted.".
+              format(args.id, 'successfully' if response else 'not'))
