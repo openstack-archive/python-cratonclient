@@ -1,0 +1,8 @@
+Code-Review+2: sulochan-acharya <sulochan@gmail.com>
+Workflow+1: Ian Cordasco <sigmavirus24@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 07 Nov 2016 15:33:24 +0000
+Reviewed-on: https://review.openstack.org/393910
+Project: openstack/python-cratonclient
+Branch: refs/heads/master
