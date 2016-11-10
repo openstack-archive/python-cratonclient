@@ -18,19 +18,20 @@ import six
 import sys
 
 from oslo_utils import encodeutils
+from oslo_utils import importutils
 
 from cratonclient import __version__
 from cratonclient import session as craton
 
 from cratonclient.common import cliutils
-from cratonclient.shell.v1 import shell
 from cratonclient.v1 import client
 
 
 class CratonShell(object):
     """Class used to handle shell definition and parsing."""
 
-    def get_base_parser(self):
+    @staticmethod
+    def get_base_parser():
         """Configure base craton arguments and parsing."""
         parser = argparse.ArgumentParser(
             prog='craton',
@@ -51,32 +52,47 @@ class CratonShell(object):
                             )
         parser.add_argument('--craton-url',
                             default=cliutils.env('CRATON_URL'),
-                            help='Defaults to env[CRATON_URL]',
+                            help='The base URL of the running Craton service.'
+                                 ' Defaults to env[CRATON_URL].',
                             )
-        parser.add_argument('--craton-project-id',
+        parser.add_argument('--craton-version',
                             type=int,
-                            default=1,
-                            help='Defaults to 1',
+                            default=cliutils.env('CRATON_VERSION',
+                                                 default=1),
+                            help='The version of the Craton API to use. '
+                                 'Defaults to env[CRATON_VERSION].'
+                            )
+        parser.add_argument('--os-project-id',
+                            default=cliutils.env('OS_PROJECT_ID'),
+                            help='The project ID used to authenticate to '
+                                 'Craton. Defaults to env[OS_PROJECT_ID].',
                             )
         parser.add_argument('--os-username',
                             default=cliutils.env('OS_USERNAME'),
-                            help='Defaults to env[OS_USERNAME]',
+                            help='The username used to authenticate to '
+                                 'Craton. Defaults to env[OS_USERNAME].',
                             )
         parser.add_argument('--os-password',
                             default=cliutils.env('OS_PASSWORD'),
-                            help='Defaults to env[OS_PASSWORD]',
+                            help='The password used to authenticate to '
+                                 'Craton. Defaults to env[OS_PASSWORD].',
                             )
         return parser
 
     # NOTE(cmspence): Credit for this get_subcommand_parser function
     # goes to the magnumclient developers and contributors.
-    def get_subcommand_parser(self):
+    def get_subcommand_parser(self, api_version):
         """Get subcommands by parsing COMMAND_MODULES."""
         parser = self.get_base_parser()
 
         self.subcommands = {}
         subparsers = parser.add_subparsers(metavar='<subcommand>',
                                            dest='subparser_name')
+        shell = importutils.import_versioned_module(
+            'cratonclient.shell',
+            api_version,
+            'shell',
+        )
         command_modules = shell.COMMAND_MODULES
         for command_module in command_modules:
             self._find_subparsers(subparsers, command_module)
@@ -113,7 +129,7 @@ class CratonShell(object):
         parser = self.get_base_parser()
         (options, args) = parser.parse_known_args(argv)
         subcommand_parser = (
-            self.get_subcommand_parser()
+            self.get_subcommand_parser(options.craton_version)
         )
         self.parser = subcommand_parser
 
@@ -125,7 +141,7 @@ class CratonShell(object):
         session = craton.Session(
             username=args.os_username,
             token=args.os_password,
-            project_id=args.craton_project_id,
+            project_id=args.os_project_id,
         )
         self.cc = client.Client(session, args.craton_url)
         args.func(self.cc, args)
@@ -139,7 +155,6 @@ def main():
         print("ERROR: %s" % encodeutils.safe_encode(six.text_type(e)),
               file=sys.stderr)
         sys.exit(1)
-
     return 0
 
 

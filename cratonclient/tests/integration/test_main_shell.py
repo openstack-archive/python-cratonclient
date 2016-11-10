@@ -67,11 +67,11 @@ class TestMainShell(base.ShellTestCase):
     @mock.patch('cratonclient.session.Session')
     @mock.patch('cratonclient.v1.client.Client')
     def test_main_craton_project_id(self, mock_client, mock_session):
-        """Verify --craton-project-id command is used for client connection."""
-        self.shell('--craton-project-id 99 host-list -r 1')
+        """Verify --os-project-id command is used for client connection."""
+        self.shell('--os-project-id 99 host-list -r 1')
         mock_session.assert_called_with(username=mock.ANY,
                                         token=mock.ANY,
-                                        project_id=99)
+                                        project_id='99')
         mock_client.assert_called_with(mock.ANY, mock.ANY)
 
     @mock.patch('cratonclient.session.Session')
@@ -108,7 +108,7 @@ class TestMainShell(base.ShellTestCase):
         url = '--craton-url test_url'
         username = '--os-username test_name'
         pw = '--os-password test_pw'
-        proj_id = '--craton-project-id 1'
+        proj_id = '--os-project-id 1'
         self.shell('{} {} {} {} host-create'.format(url,
                                                     username,
                                                     pw,
