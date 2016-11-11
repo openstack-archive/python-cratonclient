@@ -32,15 +32,14 @@ class HostManager(crud.CRUDClient):
 HOST_FIELDS = {
     'id': 'ID',
     'name': 'Name',
-    'device_type': 'Device Type',
+    'device_type': 'Type of host',
     'project_id': 'Project ID',
     'region_id': 'Region ID',
     'cell_id': 'Cell ID',
     'ip_address': 'IP Address',
     'active': 'Active',
     'note': 'Note',
-    'access_secret_id': "Access Secret ID",
-    'created_at': 'Created At',
-    'update_at': 'Updated At',
-    'labels': 'Labels',
+    'data': 'User defined information',
+    'parent_id': 'Parent ID of this host',
+    'labels': 'User defined Labels'
 }
