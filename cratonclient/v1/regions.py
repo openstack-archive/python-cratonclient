@@ -30,10 +30,10 @@ class RegionManager(crud.CRUDClient):
     project_id = 0
 
 REGION_FIELDS = {
-    'id': 'ID',
-    'project_id': 'Project ID',
-    'name': 'Name',
-    'note': 'Note',
-    'created_at': 'Created At',
-    'update_at': 'Updated At'
+    'id': 'Unique ID for the region',
+    'project_id': 'UUID of the project',
+    'name': 'Region Name',
+    'note': 'Region Note',
+    'data': 'User defined information',
+    'cell': 'List of cells in this region'
 }
