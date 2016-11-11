@@ -94,19 +94,18 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             region_id=246,
         )
         self.assertSortedPrintListFieldsEqualTo([
-            'access_secret_id',
             'active',
             'cell_id',
-            'created_at',
+            'data',
             'device_type',
             'id',
             'ip_address',
             'labels',
             'name',
             'note',
+            'parent_id',
             'project_id',
             'region_id',
-            'update_at',
         ])
 
     def test_with_limit(self):
@@ -198,7 +197,7 @@ class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
         kwargs.setdefault('device_type', 'host')
         kwargs.setdefault('active', True)
         kwargs.setdefault('note', None)
-        kwargs.setdefault('access_secret_id', None)
+        kwargs.setdefault('data', None)
         kwargs.setdefault('labels', [])
         return super(TestDoHostCreate, self).args_for(**kwargs)
 
@@ -235,26 +234,6 @@ class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
             active=True,
             region_id=123,
             note='This is a note.',
-        )
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in hosts.HOST_FIELDS},
-            wrap=72,
-        )
-
-    def test_with_access_secret(self):
-        """Verify that we pass along an access secret."""
-        args = self.args_for(access_secret_id=789)
-
-        hosts_shell.do_host_create(self.craton_client, args)
-
-        self.craton_client.hosts.create.assert_called_once_with(
-            name='test-hostname',
-            ip_address='10.0.1.10',
-            cell_id=246,
-            device_type='host',
-            active=True,
-            region_id=123,
-            access_secret_id=789,
         )
         self.print_dict.assert_called_once_with(
             {f: mock.ANY for f in hosts.HOST_FIELDS},
@@ -309,7 +288,6 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
         kwargs.setdefault('cell_id', None)
         kwargs.setdefault('active', True)
         kwargs.setdefault('note', None)
-        kwargs.setdefault('access_secret_id', None)
         kwargs.setdefault('labels', [])
         return super(TestDoHostUpdate, self).args_for(**kwargs)
 
@@ -395,7 +373,6 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
             region_id=789,
             cell_id=101,
             note='A note about a host',
-            access_secret_id=1001,
             labels=['label1', 'label2'],
         )
 
@@ -409,7 +386,6 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
             region_id=789,
             cell_id=101,
             note='A note about a host',
-            access_secret_id=1001,
             labels=['label1', 'label2'],
         )
         self.print_mock.assert_called_once_with(

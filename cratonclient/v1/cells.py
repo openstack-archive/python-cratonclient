@@ -30,11 +30,10 @@ class CellManager(crud.CRUDClient):
 
 
 CELL_FIELDS = {
-    'id': 'ID',
+    'id': 'Unique ID of the cell',
     'region_id': 'Region ID',
-    'project_id': 'Project ID',
+    'project_id': 'UUID of the project',
     'name': 'Name',
     'note': 'Note',
-    'created_at': 'Created At',
-    'update_at': 'Updated At'
+    'data': 'User defined information',
 }
