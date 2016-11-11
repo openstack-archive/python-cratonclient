@@ -59,6 +59,7 @@ class Session(object):
             session = ksa_session.Session(auth=self._auth,
                                           user_agent=craton_user_agent)
         self._session = session
+        self._cache_region = None
 
     def delete(self, url, **kwargs):
         """Make a DELETE request with url and optional parameters.
