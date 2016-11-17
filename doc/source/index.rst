@@ -14,6 +14,7 @@ Contents:
    readme
    installation
    usage
+   v1-api-documentation
    contributing
 
 Indices and tables
