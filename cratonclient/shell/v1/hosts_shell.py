@@ -19,17 +19,13 @@ from cratonclient import exceptions as exc
 from cratonclient.v1 import hosts
 
 
-@cliutils.arg('region',
-              metavar='<region>',
-              type=int,
-              help='ID of the region that the host belongs to.')
 @cliutils.arg('id',
               metavar='<host>',
               type=int,
               help='ID of the host.')
 def do_host_show(cc, args):
     """Show detailed information about a host."""
-    host = cc.inventory(args.region).hosts.get(args.id)
+    host = cc.hosts.get(args.id)
     data = {f: getattr(host, f, '') for f in hosts.HOST_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
@@ -104,8 +100,9 @@ def do_host_list(cc, args):
             )
         params['sort_key'] = sort_key
     params['sort_dir'] = args.sort_dir
+    params['region_id'] = args.region
 
-    host_list = cc.inventory(args.region).hosts.list(**params)
+    host_list = cc.hosts.list(**params)
     cliutils.print_list(host_list, list(fields))
 
 
@@ -150,15 +147,11 @@ def do_host_create(cc, args):
     """Register a new host with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
               if k in hosts.HOST_FIELDS and (v or v is False)}
-    host = cc.inventory(args.region_id).hosts.create(**fields)
+    host = cc.hosts.create(**fields)
     data = {f: getattr(host, f, '') for f in hosts.HOST_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
-@cliutils.arg('region',
-              metavar='<region>',
-              type=int,
-              help='Current ID of the region that the host belongs to.')
 @cliutils.arg('id',
               metavar='<host>',
               type=int,
@@ -197,16 +190,12 @@ def do_host_update(cc, args):
     fields = {k: v for (k, v) in vars(args).items()
               if k in hosts.HOST_FIELDS and (v or v is False)}
     item_id = fields.pop('id')
-    host = cc.inventory(args.region).hosts.update(item_id, **fields)
+    host = cc.hosts.update(item_id, **fields)
     print("Host {0} has been successfully updated.".format(host.id))
     data = {f: getattr(host, f, '') for f in hosts.HOST_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
-@cliutils.arg('region',
-              metavar='<region>',
-              type=int,
-              help='ID of the region that the host belongs to.')
 @cliutils.arg('id',
               metavar='<host>',
               type=int,
@@ -214,7 +203,7 @@ def do_host_update(cc, args):
 def do_host_delete(cc, args):
     """Delete a host that is registered with the Craton service."""
     try:
-        response = cc.inventory(args.region).hosts.delete(args.id)
+        response = cc.hosts.delete(args.id)
     except exc.ClientException as client_exc:
         raise exc.CommandError(
             'Failed to delete cell {} due to "{}:{}"'.format(

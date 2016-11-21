@@ -62,7 +62,11 @@ class TestHostsShell(base.ShellTestCase):
     def test_host_list_limit_0_success(self, mock_list):
         """Verify that --limit 0 prints out all project hosts."""
         self.shell('host-list -r 1 --limit 0')
-        mock_list.assert_called_once_with(limit=0, sort_dir='asc')
+        mock_list.assert_called_once_with(
+            limit=0,
+            sort_dir='asc',
+            region_id=1,
+        )
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_limit_positive_num_success(self, mock_list):
@@ -71,7 +75,11 @@ class TestHostsShell(base.ShellTestCase):
         The command will print out X number of project hosts.
         """
         self.shell('host-list -r 1 --limit 1')
-        mock_list.assert_called_once_with(limit=1, sort_dir='asc')
+        mock_list.assert_called_once_with(
+            limit=1,
+            sort_dir='asc',
+            region_id=1,
+        )
 
     def test_host_list_limit_negative_num_failure(self):
         """Verify --limit X, where X is a negative integer, fails.
@@ -87,21 +95,32 @@ class TestHostsShell(base.ShellTestCase):
         """Verify --cell arguments successfully pass cell to Client."""
         for cell_arg in ['-c', '--cell']:
             self.shell('host-list -r 1 {0} 1'.format(cell_arg))
-            mock_list.assert_called_once_with(cell_id=1, sort_dir='asc')
+            mock_list.assert_called_once_with(
+                cell_id=1,
+                sort_dir='asc',
+                region_id=1,
+            )
             mock_list.reset_mock()
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_detail_success(self, mock_list):
         """Verify --detail argument successfully pass detail to Client."""
         self.shell('host-list -r 1 --detail')
-        mock_list.assert_called_once_with(detail=True, sort_dir='asc')
+        mock_list.assert_called_once_with(
+            detail=True,
+            sort_dir='asc',
+            region_id=1,
+        )
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     @mock.patch('cratonclient.common.cliutils.print_list')
     def test_host_list_fields_success(self, mock_printlist, mock_list):
         """Verify --fields argument successfully passed to Client."""
         self.shell('host-list -r 1 --fields id name')
-        mock_list.assert_called_once_with(sort_dir='asc')
+        mock_list.assert_called_once_with(
+            sort_dir='asc',
+            region_id=1,
+        )
         mock_printlist.assert_called_once_with(mock.ANY,
                                                list({'id': 'ID',
                                                      'name': 'Name'}))
@@ -110,8 +129,11 @@ class TestHostsShell(base.ShellTestCase):
     def test_host_list_sort_key_field_key_success(self, mock_list):
         """Verify --sort-key arguments successfully passed to Client."""
         self.shell('host-list -r 1 --sort-key cell_id')
-        mock_list.assert_called_once_with(sort_key='cell_id',
-                                          sort_dir='asc')
+        mock_list.assert_called_once_with(
+            sort_key='cell_id',
+            sort_dir='asc',
+            region_id=1,
+        )
 
     def test_host_list_sort_key_invalid(self):
         """Verify --sort-key with invalid args, fails with Command Error."""
@@ -123,21 +145,30 @@ class TestHostsShell(base.ShellTestCase):
     def test_host_list_sort_dir_not_passed_without_sort_key(self, mock_list):
         """Verify --sort-dir arg ignored without --sort-key."""
         self.shell('host-list -r 1 --sort-dir desc')
-        mock_list.assert_called_once_with(sort_dir='desc')
+        mock_list.assert_called_once_with(
+            sort_dir='desc',
+            region_id=1,
+        )
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_sort_dir_asc_success(self, mock_list):
         """Verify --sort-dir asc successfully passed to Client."""
         self.shell('host-list -r 1 --sort-key name --sort-dir asc')
-        mock_list.assert_called_once_with(sort_key='name',
-                                          sort_dir='asc')
+        mock_list.assert_called_once_with(
+            sort_key='name',
+            sort_dir='asc',
+            region_id=1,
+        )
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_sort_dir_desc_success(self, mock_list):
         """Verify --sort-dir desc successfully passed to Client."""
         self.shell('host-list -r 1 --sort-key name --sort-dir desc')
-        mock_list.assert_called_once_with(sort_key='name',
-                                          sort_dir='desc')
+        mock_list.assert_called_once_with(
+            sort_key='name',
+            sort_dir='desc',
+            region_id=1,
+        )
 
     def test_host_list_sort_dir_invalid_value(self):
         """Verify --sort-dir with invalid args, fails with Command Error."""
@@ -162,12 +193,10 @@ class TestHostsShell(base.ShellTestCase):
     def test_do_host_create_calls_host_manager_with_fields(self, mock_create):
         """Verify that do host create calls HostManager create."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.hosts = hosts.HostManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.hosts = hosts.HostManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         hosts_shell.do_host_create(client, self.host_valid_fields)
         mock_create.assert_called_once_with(**vars(self.host_valid_fields))
 
@@ -175,12 +204,10 @@ class TestHostsShell(base.ShellTestCase):
     def test_do_host_create_ignores_unknown_fields(self, mock_create):
         """Verify that do host create ignores unknown field."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.hosts = hosts.HostManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.hosts = hosts.HostManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         hosts_shell.do_host_create(client, self.host_invalid_field)
         mock_create.assert_called_once_with(**vars(self.host_valid_fields))
 
@@ -200,12 +227,10 @@ class TestHostsShell(base.ShellTestCase):
     def test_do_host_update_calls_host_manager_with_fields(self, mock_update):
         """Verify that do host update calls HostManager update."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.hosts = hosts.HostManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.hosts = hosts.HostManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         valid_input = Namespace(region=1,
                                 id=1,
                                 name='mock_host')
@@ -216,12 +241,10 @@ class TestHostsShell(base.ShellTestCase):
     def test_do_host_update_ignores_unknown_fields(self, mock_update):
         """Verify that do host update ignores unknown field."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.hosts = hosts.HostManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.hosts = hosts.HostManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         invalid_input = Namespace(region=1,
                                   id=1,
                                   name='mock_host',
@@ -245,12 +268,10 @@ class TestHostsShell(base.ShellTestCase):
     def test_do_host_show_calls_host_manager_with_fields(self, mock_get):
         """Verify that do host show calls HostManager get."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.hosts = hosts.HostManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.hosts = hosts.HostManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         test_args = Namespace(id=1, region=1)
         hosts_shell.do_host_show(client, test_args)
         mock_get.assert_called_once_with(vars(test_args)['id'])
@@ -270,12 +291,10 @@ class TestHostsShell(base.ShellTestCase):
     def test_do_host_delete_calls_host_manager_with_fields(self, mock_delete):
         """Verify that do host delete calls HostManager delete."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.hosts = hosts.HostManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.hosts = hosts.HostManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         test_args = Namespace(id=1, region=1)
         hosts_shell.do_host_delete(client, test_args)
         mock_delete.assert_called_once_with(vars(test_args)['id'])

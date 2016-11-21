@@ -19,17 +19,13 @@ from cratonclient import exceptions as exc
 from cratonclient.v1 import cells
 
 
-@cliutils.arg('region',
-              metavar='<region>',
-              type=int,
-              help='ID of the region that the cell belongs to.')
 @cliutils.arg('id',
               metavar='<cell>',
               type=int,
               help='ID of the cell.')
 def do_cell_show(cc, args):
     """Show detailed information about a cell."""
-    cell = cc.inventory(args.region).cells.get(args.id)
+    cell = cc.cells.get(args.id)
     data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
@@ -98,8 +94,9 @@ def do_cell_list(cc, args):
             )
         params['sort_key'] = sort_key
     params['sort_dir'] = args.sort_dir
+    params['region_id'] = args.region
 
-    listed_cells = cc.inventory(args.region).cells.list(**params)
+    listed_cells = cc.cells.list(**params)
     cliutils.print_list(listed_cells, list(fields))
 
 
@@ -119,15 +116,11 @@ def do_cell_create(cc, args):
     """Register a new cell with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
               if k in cells.CELL_FIELDS and not (v is None)}
-    cell = cc.inventory(args.region_id).cells.create(**fields)
+    cell = cc.cells.create(**fields)
     data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
-@cliutils.arg('region',
-              metavar='<region>',
-              type=int,
-              help='Current ID of the region that the cell belongs to.')
 @cliutils.arg('id',
               metavar='<cell>',
               type=int,
@@ -152,15 +145,11 @@ def do_cell_update(cc, args):
             'Nothing to update... Please specify one of --name, --region, '
             'or --note'
         )
-    cell = cc.inventory(args.region).cells.update(cell_id, **fields)
+    cell = cc.cells.update(cell_id, **fields)
     data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
-@cliutils.arg('region',
-              metavar='<region>',
-              type=int,
-              help='ID of the region that the cell belongs to.')
 @cliutils.arg('id',
               metavar='<cell>',
               type=int,
@@ -168,7 +157,7 @@ def do_cell_update(cc, args):
 def do_cell_delete(cc, args):
     """Delete a cell that is registered with the Craton service."""
     try:
-        response = cc.inventory(args.region).cells.delete(args.id)
+        response = cc.cells.delete(args.id)
     except exc.ClientException as client_exc:
         raise exc.CommandError(
             'Failed to delete cell {} due to "{}:{}"'.format(
