@@ -16,10 +16,7 @@ import logging
 
 from keystoneauth1 import plugin
 from keystoneauth1 import session as ksa_session
-from oslo_utils import encodeutils
-from oslo_utils import strutils
 from requests import exceptions as requests_exc
-import six
 
 import cratonclient
 from cratonclient import exceptions as exc
@@ -196,20 +193,6 @@ class Session(object):
         """
         return self.request('PATCH', url, **kwargs)
 
-    def _request(self, **kwargs):
-        """Make a request and optionally remove the Keystone parameters."""
-        # Default the Keystone specific arguments
-        kwargs.setdefault('endpoint_filter',
-                          {'service_type': 'fleet_management'})
-        try:
-            response = self._session.request(**kwargs)
-        except TypeError:
-            # If we're using a Session object that doesn't support Keystone
-            # parameters, we need to remove them and retry.
-            kwargs.pop('endpoint_filter')
-            response = self._session.request(**kwargs)
-        return response
-
     def request(self, method, url, **kwargs):
         """Make a request with a method, url, and optional parameters.
 
@@ -226,14 +209,14 @@ class Session(object):
             ... )
             >>> response = session.request('GET', 'http://example.com')
         """
-        self._http_log_request(method=method,
-                               url=url,
-                               data=kwargs.get('data'),
-                               headers=kwargs.get('headers', {}).copy())
+        kwargs.setdefault('endpoint_filter',
+                          {'service_type': 'fleet_management'})
         try:
-            response = self._request(method=method,
-                                     url=url,
-                                     **kwargs)
+            response = self._session.request(
+                method=method,
+                url=url,
+                **kwargs
+            )
         except requests_exc.HTTPError as err:
             raise exc.HTTPError(exception=err, response=err.response)
         # NOTE(sigmavirus24): The ordering of Timeout before ConnectionError
@@ -245,66 +228,10 @@ class Session(object):
         except requests_exc.ConnectionError as err:
             raise exc.ConnectionFailed(exception=err)
 
-        self._http_log_response(response)
         if response.status_code >= 400:
             raise exc.error_from(response)
 
         return response
-
-    def _http_log_request(self, url, method=None, data=None,
-                          headers=None, logger=LOG):
-        if not logger.isEnabledFor(logging.DEBUG):
-            # NOTE(morganfainberg): This whole debug section is expensive,
-            # there is no need to do the work if we're not going to emit a
-            # debug log.
-            return
-
-        string_parts = ['REQ: curl -g -i']
-
-        # NOTE(jamielennox): None means let requests do its default validation
-        # so we need to actually check that this is False.
-        if self.verify is False:
-            string_parts.append('--insecure')
-        elif isinstance(self.verify, six.string_types):
-            string_parts.append('--cacert "%s"' % self.verify)
-
-        if method:
-            string_parts.extend(['-X', method])
-
-        string_parts.append(url)
-
-        if headers:
-            for header in six.iteritems(headers):
-                string_parts.append('-H "%s: %s"'
-                                    % self._process_header(header))
-
-        if data:
-            string_parts.append("-d '%s'" % data)
-        try:
-            logger.debug(' '.join(string_parts))
-        except UnicodeDecodeError:
-            logger.debug("Replaced characters that could not be decoded"
-                         " in log output, original caused UnicodeDecodeError")
-            string_parts = [
-                encodeutils.safe_decode(
-                    part, errors='replace') for part in string_parts]
-            logger.debug(' '.join(string_parts))
-
-    def _http_log_response(self, response, logger=LOG):
-        if not logger.isEnabledFor(logging.DEBUG):
-            return
-
-        string_parts = [
-            'RESP:',
-            '[%s]' % response.status_code
-        ]
-        for header in six.iteritems(response.headers):
-            string_parts.append('%s: %s' % self._process_header(header))
-        if response.text:
-            string_parts.append('\nRESP BODY: %s\n' %
-                                strutils.mask_password(response.text))
-
-        logger.debug(' '.join(string_parts))
 
 
 class CratonAuth(plugin.BaseAuthPlugin):
