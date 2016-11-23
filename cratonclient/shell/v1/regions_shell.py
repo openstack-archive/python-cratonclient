@@ -33,6 +33,40 @@ def do_region_create(cc, args):
     cliutils.print_dict(data, wrap=72)
 
 
+@cliutils.arg('--limit',
+              metavar='<limit>',
+              type=int,
+              help='Maximum number of regions to return.')
+@cliutils.arg('--fields',
+              nargs='+',
+              metavar='<fields>',
+              default=[],
+              help='Comma-separated list of fields to display. '
+                   'Only these fields will be fetched from the server. '
+                   'Can not be used when "--detail" is specified')
+def do_region_list(cc, args):
+    """List all regions."""
+    params = {}
+    default_fields = ['id', 'name']
+    if args.limit is not None:
+        if args.limit < 0:
+            raise exc.CommandError('Invalid limit specified. Expected '
+                                   'non-negative limit, got {0}'
+                                   .format(args.limit))
+        params['limit'] = args.limit
+
+    if args.fields:
+        try:
+            fields = {x: regions.REGION_FIELDS[x] for x in args.fields}
+        except KeyError as err:
+            raise exc.CommandError('Invalid field "{}"'.format(err.args[0]))
+    else:
+        fields = default_fields
+
+    regions_list = cc.regions.list(**params)
+    cliutils.print_list(regions_list, list(fields))
+
+
 @cliutils.arg('id',
               metavar='<region>',
               type=int,
