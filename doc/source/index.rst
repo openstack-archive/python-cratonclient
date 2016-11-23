@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to python-cratonclient's documentation!
-========================================================
+=================================================
+ Welcome to python-cratonclient's documentation!
+=================================================
 
 Contents:
 
@@ -15,6 +16,7 @@ Contents:
    installation
    usage
    v1-api-documentation
+   authentication-documentation
    contributing
 
 Indices and tables

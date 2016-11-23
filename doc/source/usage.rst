@@ -35,10 +35,10 @@ authentication, you need only do the following:
 
 .. code-block:: python
 
-    from cratonclient import session
+    from cratonclient import auth
     from cratonclient.v1 import client
 
-    craton_session = session.Session(
+    craton_session = auth.craton_auth(
         username=USERNAME,
         password=TOKEN,
         project_id=PROJECT_ID,
@@ -74,10 +74,10 @@ Then, we need to do the following:
     from keystoneauth1.identity.v3 import password as password_auth
     from keystoneauth1 import session as ksa_session
 
-    from cratonclient import session
+    from cratonclient import auth
     from cratonclient.v1 import client
 
-    _auth = password_auth.Password(
+    craton_session = auth.keystone_auth(
         auth_url=AUTH_URL,
         password=PASSWORD,
         username=USERNAME,
@@ -85,7 +85,6 @@ Then, we need to do the following:
         project_name=PROJECT_NAME,
         project_domain_name=PROJECT_DOMAIN_NAME,
     )
-    craton_session = session.Session(session=ksa_session.Session(auth=_auth))
     craton = client.Client(
         session=craton_session,
         url=URL,
