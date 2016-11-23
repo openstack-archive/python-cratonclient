@@ -58,7 +58,11 @@ class TestCellsShell(base.ShellTestCase):
     def test_cell_list_limit_0_success(self, mock_list):
         """Verify that --limit 0 prints out all project cells."""
         self.shell('cell-list -r 1 --limit 0')
-        mock_list.assert_called_once_with(limit=0, sort_dir='asc')
+        mock_list.assert_called_once_with(
+            limit=0,
+            sort_dir='asc',
+            region_id=1,
+        )
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
     def test_cell_list_limit_positive_num_success(self, mock_list):
@@ -67,7 +71,11 @@ class TestCellsShell(base.ShellTestCase):
         The command will print out X number of project cells.
         """
         self.shell('cell-list -r 1 --limit 1')
-        mock_list.assert_called_once_with(limit=1, sort_dir='asc')
+        mock_list.assert_called_once_with(
+            limit=1,
+            sort_dir='asc',
+            region_id=1,
+        )
 
     def test_cell_list_limit_negative_num_failure(self):
         """Verify --limit X, where X is a negative integer, fails.
@@ -82,14 +90,21 @@ class TestCellsShell(base.ShellTestCase):
     def test_cell_list_detail_success(self, mock_list):
         """Verify --detail argument successfully pass detail to Client."""
         self.shell('cell-list -r 1 --detail')
-        mock_list.assert_called_once_with(detail=True, sort_dir='asc')
+        mock_list.assert_called_once_with(
+            detail=True,
+            region_id=1,
+            sort_dir='asc',
+        )
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
     @mock.patch('cratonclient.common.cliutils.print_list')
     def test_cell_list_fields_success(self, mock_printlist, mock_list):
         """Verify --fields argument successfully passed to Client."""
         self.shell('cell-list -r 1 --fields id name')
-        mock_list.assert_called_once_with(sort_dir='asc')
+        mock_list.assert_called_once_with(
+            sort_dir='asc',
+            region_id=1,
+        )
         mock_printlist.assert_called_once_with(mock.ANY,
                                                list({'id': 'ID',
                                                      'name': 'Name'}))
@@ -98,8 +113,11 @@ class TestCellsShell(base.ShellTestCase):
     def test_cell_list_sort_key_field_key_success(self, mock_list):
         """Verify --sort-key arguments successfully passed to Client."""
         self.shell('cell-list -r 1 --sort-key name')
-        mock_list.assert_called_once_with(sort_key='name',
-                                          sort_dir='asc')
+        mock_list.assert_called_once_with(
+            sort_key='name',
+            sort_dir='asc',
+            region_id=1,
+        )
 
     def test_cell_list_sort_key_invalid(self):
         """Verify --sort-key with invalid args, fails with Command Error."""
@@ -111,15 +129,21 @@ class TestCellsShell(base.ShellTestCase):
     def test_cell_list_sort_dir_asc_success(self, mock_list):
         """Verify --sort-dir asc successfully passed to Client."""
         self.shell('cell-list -r 1 --sort-key name --sort-dir asc')
-        mock_list.assert_called_once_with(sort_key='name',
-                                          sort_dir='asc')
+        mock_list.assert_called_once_with(
+            sort_key='name',
+            sort_dir='asc',
+            region_id=1,
+        )
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
     def test_cell_list_sort_dir_desc_success(self, mock_list):
         """Verify --sort-dir desc successfully passed to Client."""
         self.shell('cell-list -r 1 --sort-key name --sort-dir desc')
-        mock_list.assert_called_once_with(sort_key='name',
-                                          sort_dir='desc')
+        mock_list.assert_called_once_with(
+            sort_key='name',
+            sort_dir='desc',
+            region_id=1,
+        )
 
     def test_cell_list_sort_dir_invalid_value(self):
         """Verify --sort-dir with invalid args, fails with Command Error."""
@@ -144,12 +168,10 @@ class TestCellsShell(base.ShellTestCase):
     def test_do_cell_create_calls_cell_manager_with_fields(self, mock_create):
         """Verify that do cell create calls CellManager create."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.cells = cells.CellManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.cells = cells.CellManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         cells_shell.do_cell_create(client, self.cell_valid_fields)
         mock_create.assert_called_once_with(**vars(self.cell_valid_fields))
 
@@ -157,12 +179,10 @@ class TestCellsShell(base.ShellTestCase):
     def test_do_cell_create_ignores_unknown_fields(self, mock_create):
         """Verify that do cell create ignores unknown field."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.cells = cells.CellManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.cells = cells.CellManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         cells_shell.do_cell_create(client, self.cell_invalid_field)
         mock_create.assert_called_once_with(**vars(self.cell_valid_fields))
 
@@ -182,12 +202,10 @@ class TestCellsShell(base.ShellTestCase):
     def test_do_cell_update_calls_cell_manager_with_fields(self, mock_update):
         """Verify that do cell update calls CellManager update."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.cells = cells.CellManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.cells = cells.CellManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         valid_input = Namespace(region=1,
                                 id=1,
                                 name='mock_cell')
@@ -198,12 +216,10 @@ class TestCellsShell(base.ShellTestCase):
     def test_do_cell_update_ignores_unknown_fields(self, mock_update):
         """Verify that do cell update ignores unknown field."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.cells = cells.CellManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.cells = cells.CellManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         invalid_input = Namespace(region=1,
                                   id=1,
                                   name='mock_cell',
@@ -227,13 +243,11 @@ class TestCellsShell(base.ShellTestCase):
     def test_do_cell_show_calls_cell_manager_with_fields(self, mock_get):
         """Verify that do cell show calls CellManager get."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.cells = cells.CellManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
-        test_args = Namespace(id=1, region=1)
+        client.cells = cells.CellManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
+        test_args = Namespace(id=1)
         cells_shell.do_cell_show(client, test_args)
         mock_get.assert_called_once_with(vars(test_args)['id'])
 
@@ -252,12 +266,10 @@ class TestCellsShell(base.ShellTestCase):
     def test_do_cell_delete_calls_cell_manager_with_fields(self, mock_delete):
         """Verify that do cell delete calls CellManager delete."""
         client = mock.Mock()
-        inventory = mock.Mock()
-        inventory.cells = cells.CellManager(mock.ANY,
-                                            'http://127.0.0.1/',
-                                            region_id=mock.ANY)
-        client.inventory = mock.Mock(name='inventory')
-        client.inventory.return_value = inventory
+        client.cells = cells.CellManager(
+            mock.ANY, 'http://127.0.0.1/',
+            region_id=mock.ANY,
+        )
         test_args = Namespace(id=1, region=1)
         cells_shell.do_cell_delete(client, test_args)
         mock_delete.assert_called_once_with(vars(test_args)['id'])

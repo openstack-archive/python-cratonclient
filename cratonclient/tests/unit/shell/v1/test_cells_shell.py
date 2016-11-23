@@ -32,8 +32,7 @@ class TestDoShellShow(base.TestShellCommandUsingPrintDict):
 
         cells_shell.do_cell_show(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.get.assert_called_once_with(456)
+        self.craton_client.cells.get.assert_called_once_with(456)
         self.print_dict.assert_called_once_with(
             {f: mock.ANY for f in cells.CELL_FIELDS},
             wrap=72,
@@ -64,8 +63,10 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
         cells_shell.do_cell_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.list.assert_called_once_with(sort_dir='asc')
+        self.craton_client.cells.list.assert_called_once_with(
+            sort_dir='asc',
+            region_id=123,
+        )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
                          sorted(self.print_list.call_args[0][-1]))
@@ -83,10 +84,10 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
         cells_shell.do_cell_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.list.assert_called_once_with(
+        self.craton_client.cells.list.assert_called_once_with(
             limit=5,
             sort_dir='asc',
+            region_id=123,
         )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
@@ -98,10 +99,10 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
         cells_shell.do_cell_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.list.assert_called_once_with(
+        self.craton_client.cells.list.assert_called_once_with(
             sort_dir='asc',
             sort_key='name',
+            region_id=123,
         )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
@@ -120,10 +121,10 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
         cells_shell.do_cell_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.list.assert_called_once_with(
+        self.craton_client.cells.list.assert_called_once_with(
             sort_dir='asc',
             detail=True,
+            region_id=123,
         )
         self.assertEqual(sorted(list(cells.CELL_FIELDS)),
                          sorted(self.print_list.call_args[0][-1]))
@@ -144,9 +145,9 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
         cells_shell.do_cell_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.list.assert_called_once_with(
+        self.craton_client.cells.list.assert_called_once_with(
             sort_dir='asc',
+            region_id=123,
         )
         self.assertEqual(['id', 'name', 'note'],
                          sorted(self.print_list.call_args[0][-1]))
@@ -175,8 +176,7 @@ class TestDoCellCreate(base.TestShellCommandUsingPrintDict):
 
         cells_shell.do_cell_create(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.create.assert_called_once_with(
+        self.craton_client.cells.create.assert_called_once_with(
             name='New Cell',
             region_id=123,
         )
@@ -188,8 +188,7 @@ class TestDoCellCreate(base.TestShellCommandUsingPrintDict):
 
         cells_shell.do_cell_create(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.create.assert_called_once_with(
+        self.craton_client.cells.create.assert_called_once_with(
             name='New Cell',
             region_id=123,
             note='This is a note',
@@ -203,7 +202,6 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
     def args_for(self, **kwargs):
         """Generate arguments for cell-update command."""
         kwargs.setdefault('id', 123)
-        kwargs.setdefault('region', 345)
         kwargs.setdefault('name', None)
         kwargs.setdefault('region_id', None)
         kwargs.setdefault('note', None)
@@ -222,8 +220,7 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
 
         cells_shell.do_cell_update(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(345)
-        self.inventory.cells.update.assert_called_once_with(
+        self.craton_client.cells.update.assert_called_once_with(
             123,
             name='New name',
         )
@@ -235,8 +232,7 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
 
         cells_shell.do_cell_update(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(345)
-        self.inventory.cells.update.assert_called_once_with(
+        self.craton_client.cells.update.assert_called_once_with(
             123,
             region_id=678,
         )
@@ -248,8 +244,7 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
 
         cells_shell.do_cell_update(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(345)
-        self.inventory.cells.update.assert_called_once_with(
+        self.craton_client.cells.update.assert_called_once_with(
             123,
             note='A new note',
         )
@@ -265,8 +260,7 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
 
         cells_shell.do_cell_update(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(345)
-        self.inventory.cells.update.assert_called_once_with(
+        self.craton_client.cells.update.assert_called_once_with(
             123,
             name='A new name for a new region',
             region_id=678,
@@ -293,39 +287,35 @@ class TestDoCellDelete(base.TestShellCommand):
 
     def test_successful(self):
         """Verify the message we print when successful."""
-        self.inventory.cells.delete.return_value = True
+        self.craton_client.cells.delete.return_value = True
         args = self.args_for(
-            region=123,
             id=456,
         )
 
         cells_shell.do_cell_delete(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.delete.assert_called_once_with(456)
+        self.craton_client.cells.delete.assert_called_once_with(456)
         self.print_func.assert_called_once_with(
             'Cell 456 was successfully deleted.'
         )
 
     def test_failed(self):
         """Verify the message we print when deletion fails."""
-        self.inventory.cells.delete.return_value = False
+        self.craton_client.cells.delete.return_value = False
         args = self.args_for(
-            region=123,
             id=456,
         )
 
         cells_shell.do_cell_delete(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.delete.assert_called_once_with(456)
+        self.craton_client.cells.delete.assert_called_once_with(456)
         self.print_func.assert_called_once_with(
             'Cell 456 was not deleted.'
         )
 
     def test_failed_with_exception(self):
         """Verify the message we print when deletion fails."""
-        self.inventory.cells.delete.side_effect = exceptions.NotFound
+        self.craton_client.cells.delete.side_effect = exceptions.NotFound
         args = self.args_for(
             region=123,
             id=456,
@@ -333,6 +323,5 @@ class TestDoCellDelete(base.TestShellCommand):
 
         self.assertRaisesCommandErrorWith(cells_shell.do_cell_delete, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.cells.delete.assert_called_once_with(456)
+        self.craton_client.cells.delete.assert_called_once_with(456)
         self.assertFalse(self.print_func.called)

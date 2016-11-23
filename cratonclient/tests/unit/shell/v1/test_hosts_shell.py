@@ -32,8 +32,7 @@ class TestDoHostShow(base.TestShellCommandUsingPrintDict):
 
         hosts_shell.do_host_show(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(135)
-        self.inventory.hosts.get.assert_called_once_with(246)
+        self.craton_client.hosts.get.assert_called_once_with(246)
         self.print_dict.assert_called_once_with(
             {f: mock.ANY for f in hosts.HOST_FIELDS},
             wrap=72,
@@ -60,8 +59,10 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         hosts_shell.do_host_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(246)
-        self.inventory.hosts.list.assert_called_once_with(sort_dir='asc')
+        self.craton_client.hosts.list.assert_called_once_with(
+            sort_dir='asc',
+            region_id=246,
+        )
         self.assertSortedPrintListFieldsEqualTo([
             'active', 'cell_id', 'device_type', 'id', 'name'
         ])
@@ -72,10 +73,10 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         hosts_shell.do_host_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(246)
-        self.inventory.hosts.list.assert_called_once_with(
+        self.craton_client.hosts.list.assert_called_once_with(
             cell_id=789,
             sort_dir='asc',
+            region_id=246,
         )
         self.assertSortedPrintListFieldsEqualTo([
             'active', 'cell_id', 'device_type', 'id', 'name',
@@ -87,10 +88,10 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         hosts_shell.do_host_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(246)
-        self.inventory.hosts.list.assert_called_once_with(
+        self.craton_client.hosts.list.assert_called_once_with(
             detail=True,
             sort_dir='asc',
+            region_id=246,
         )
         self.assertSortedPrintListFieldsEqualTo([
             'access_secret_id',
@@ -114,10 +115,10 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         hosts_shell.do_host_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(246)
-        self.inventory.hosts.list.assert_called_once_with(
+        self.craton_client.hosts.list.assert_called_once_with(
             limit=20,
             sort_dir='asc',
+            region_id=246,
         )
         self.assertSortedPrintListFieldsEqualTo([
             'active', 'cell_id', 'device_type', 'id', 'name'
@@ -136,8 +137,10 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         hosts_shell.do_host_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(246)
-        self.inventory.hosts.list.assert_called_once_with(sort_dir='asc')
+        self.craton_client.hosts.list.assert_called_once_with(
+            sort_dir='asc',
+            region_id=246,
+        )
         self.assertSortedPrintListFieldsEqualTo([
             'cell_id', 'id', 'name',
         ])
@@ -157,10 +160,10 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         hosts_shell.do_host_list(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(246)
-        self.inventory.hosts.list.assert_called_once_with(
+        self.craton_client.hosts.list.assert_called_once_with(
             sort_key='ip_address',
             sort_dir='asc',
+            region_id=246,
         )
 
     def test_fields_and_detail_raise_command_error(self):
@@ -205,8 +208,7 @@ class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
 
         hosts_shell.do_host_create(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.create.assert_called_once_with(
+        self.craton_client.hosts.create.assert_called_once_with(
             name='test-hostname',
             ip_address='10.0.1.10',
             cell_id=246,
@@ -225,8 +227,7 @@ class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
 
         hosts_shell.do_host_create(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.create.assert_called_once_with(
+        self.craton_client.hosts.create.assert_called_once_with(
             name='test-hostname',
             ip_address='10.0.1.10',
             cell_id=246,
@@ -246,8 +247,7 @@ class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
 
         hosts_shell.do_host_create(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.create.assert_called_once_with(
+        self.craton_client.hosts.create.assert_called_once_with(
             name='test-hostname',
             ip_address='10.0.1.10',
             cell_id=246,
@@ -267,8 +267,7 @@ class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
 
         hosts_shell.do_host_create(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.create.assert_called_once_with(
+        self.craton_client.hosts.create.assert_called_once_with(
             name='test-hostname',
             ip_address='10.0.1.10',
             cell_id=246,
@@ -293,7 +292,7 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
             'cratonclient.shell.v1.hosts_shell.print'
         )
         self.print_mock = self.print_mocker.start()
-        self.inventory.hosts.update.return_value = mock.Mock(id=246)
+        self.craton_client.hosts.update.return_value = mock.Mock(id=246)
 
     def tearDown(self):
         """Stop mocking print."""
@@ -320,8 +319,7 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
 
         hosts_shell.do_host_update(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.update.assert_called_once_with(
+        self.craton_client.hosts.update.assert_called_once_with(
             246,
             active=True,
         )
@@ -339,8 +337,7 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
 
         hosts_shell.do_host_update(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.update.assert_called_once_with(
+        self.craton_client.hosts.update.assert_called_once_with(
             246,
             name='New name',
             active=True,
@@ -359,8 +356,7 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
 
         hosts_shell.do_host_update(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.update.assert_called_once_with(
+        self.craton_client.hosts.update.assert_called_once_with(
             246,
             ip_address='10.1.0.10',
             active=True,
@@ -379,8 +375,7 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
 
         hosts_shell.do_host_update(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.update.assert_called_once_with(
+        self.craton_client.hosts.update.assert_called_once_with(
             246,
             active=False,
         )
@@ -406,8 +401,7 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
 
         hosts_shell.do_host_update(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.update.assert_called_once_with(
+        self.craton_client.hosts.update.assert_called_once_with(
             246,
             active=True,
             name='New name',
@@ -445,7 +439,7 @@ class TestDoHostDelete(base.TestShellCommand):
 
     def test_successful(self):
         """Verify we print our successful message."""
-        self.inventory.hosts.delete.return_value = True
+        self.craton_client.hosts.delete.return_value = True
         args = self.args_for(
             region=123,
             id=246,
@@ -453,15 +447,14 @@ class TestDoHostDelete(base.TestShellCommand):
 
         hosts_shell.do_host_delete(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.delete.assert_called_once_with(246)
+        self.craton_client.hosts.delete.assert_called_once_with(246)
         self.print_mock.assert_called_once_with(
             'Host 246 was successfully deleted.'
         )
 
     def test_failed(self):
         """Verify the message we print when deletion fails."""
-        self.inventory.hosts.delete.return_value = False
+        self.craton_client.hosts.delete.return_value = False
         args = self.args_for(
             region=123,
             id=246,
@@ -469,15 +462,14 @@ class TestDoHostDelete(base.TestShellCommand):
 
         hosts_shell.do_host_delete(self.craton_client, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.delete.assert_called_once_with(246)
+        self.craton_client.hosts.delete.assert_called_once_with(246)
         self.print_mock.assert_called_once_with(
             'Host 246 was not deleted.'
         )
 
     def test_failed_with_exception(self):
         """Verify we raise a CommandError on client exceptions."""
-        self.inventory.hosts.delete.side_effect = exceptions.NotFound
+        self.craton_client.hosts.delete.side_effect = exceptions.NotFound
         args = self.args_for(
             region=123,
             id=246,
@@ -485,6 +477,5 @@ class TestDoHostDelete(base.TestShellCommand):
 
         self.assertRaisesCommandErrorWith(hosts_shell.do_host_delete, args)
 
-        self.craton_client.inventory.assert_called_once_with(123)
-        self.inventory.hosts.delete.assert_called_once_with(246)
+        self.craton_client.hosts.delete.assert_called_once_with(246)
         self.assertFalse(self.print_mock.called)
