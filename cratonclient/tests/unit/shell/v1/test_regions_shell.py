@@ -200,3 +200,52 @@ class TestDoRegionDelete(base.TestShellCommand):
 
         self.craton_client.regions.delete.assert_called_once_with(123456)
         self.assertFalse(self.print_func.called)
+
+
+class TestDoRegionList(base.TestShellCommandUsingPrintList):
+    """Test region-list command."""
+
+    def args_for(self, **kwargs):
+        """Generate the default argument list for region-list."""
+        kwargs.setdefault('detail', False)
+        kwargs.setdefault('limit', None)
+        kwargs.setdefault('fields', [])
+        return super(TestDoRegionList, self).args_for(**kwargs)
+
+    def test_with_defaults(self):
+        """Test region-list with default values."""
+        args = self.args_for()
+        regions_shell.do_region_list(self.craton_client, args)
+
+        self.assertTrue(self.print_list.called)
+        self.assertEqual(['id', 'name'],
+                         sorted(self.print_list.call_args[0][-1]))
+
+    def test_negative_limit(self):
+        """Ensure we raise an exception for negative limits."""
+        args = self.args_for(limit=-1)
+        self.assertRaisesCommandErrorWith(regions_shell.do_region_list, args)
+
+    def test_positive_limit(self):
+        """Verify that we pass positive limits to the call to list."""
+        args = self.args_for(limit=5)
+        regions_shell.do_region_list(self.craton_client, args)
+        self.craton_client.regions.list.assert_called_once_with(
+            limit=5,
+        )
+        self.assertTrue(self.print_list.called)
+        self.assertEqual(['id', 'name'],
+                         sorted(self.print_list.call_args[0][-1]))
+
+    def test_fields(self):
+        """Verify that we print out specific fields."""
+        args = self.args_for(fields=['id', 'name', 'note'])
+        regions_shell.do_region_list(self.craton_client, args)
+        self.assertEqual(['id', 'name', 'note'],
+                         sorted(self.print_list.call_args[0][-1]))
+
+    def test_invalid_fields(self):
+        """Verify that we error out with invalid fields."""
+        args = self.args_for(fields=['uuid', 'not-name', 'nate'])
+        self.assertRaisesCommandErrorWith(regions_shell.do_region_list, args)
+        self.assertNothingWasCalled()
