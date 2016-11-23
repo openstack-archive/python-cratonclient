@@ -14,6 +14,7 @@
 """Session specific unit tests."""
 from keystoneauth1 import session as ksa_session
 
+from cratonclient import auth
 from cratonclient import session
 from cratonclient.tests import base
 
@@ -28,9 +29,9 @@ class TestCratonAuth(base.TestCase):
 
     def test_stores_authentication_details(self):
         """Verify that our plugin stores auth details."""
-        plugin = session.CratonAuth(username=TEST_USERNAME_0,
-                                    project_id=TEST_PROJECT_0,
-                                    token=TEST_TOKEN_0)
+        plugin = auth.CratonAuth(username=TEST_USERNAME_0,
+                                 project_id=TEST_PROJECT_0,
+                                 token=TEST_TOKEN_0)
         self.assertEqual(TEST_USERNAME_0, plugin.username)
         self.assertEqual(TEST_PROJECT_0, plugin.project_id)
         self.assertEqual(TEST_TOKEN_0, plugin.token)
@@ -38,9 +39,9 @@ class TestCratonAuth(base.TestCase):
     def test_generates_appropriate_headers(self):
         """Verify we generate the X-Auth-* headers."""
         fake_session = object()
-        plugin = session.CratonAuth(username=TEST_USERNAME_0,
-                                    project_id=TEST_PROJECT_0,
-                                    token=TEST_TOKEN_0)
+        plugin = auth.CratonAuth(username=TEST_USERNAME_0,
+                                 project_id=TEST_PROJECT_0,
+                                 token=TEST_TOKEN_0)
         self.assertDictEqual(
             {
                 'X-Auth-Token': TEST_TOKEN_0,
@@ -53,23 +54,15 @@ class TestCratonAuth(base.TestCase):
     def test_stores_token(self):
         """Verify get_token returns our token."""
         fake_session = object()
-        plugin = session.CratonAuth(username=TEST_USERNAME_0,
-                                    project_id=TEST_PROJECT_0,
-                                    token=TEST_TOKEN_0)
+        plugin = auth.CratonAuth(username=TEST_USERNAME_0,
+                                 project_id=TEST_PROJECT_0,
+                                 token=TEST_TOKEN_0)
 
         self.assertEqual(TEST_TOKEN_0, plugin.get_token(fake_session))
 
 
 class TestSession(base.TestCase):
     """Unit tests for cratonclient's Session abstraction."""
-
-    def test_creates_craton_auth_plugin(self):
-        """Verify we default to using keystoneauth plugin auth."""
-        craton_session = session.Session(username=TEST_USERNAME_0,
-                                         project_id=TEST_PROJECT_0,
-                                         token=TEST_TOKEN_0)
-
-        self.assertIsInstance(craton_session._auth, session.CratonAuth)
 
     def test_creates_keystoneauth_session(self):
         """Verify we default to keystoneauth sessions and semantics."""
