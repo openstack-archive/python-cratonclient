@@ -17,6 +17,13 @@ Contents:
    v1-api-documentation
    contributing
 
+Specifications for python-cratonclient:
+
+.. toctree::
+    :maxdepth: 1
+
+    specs/index
+
 Indices and tables
 ==================
 
