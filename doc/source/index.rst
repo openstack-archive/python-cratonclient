@@ -19,6 +19,13 @@ Contents:
    authentication-documentation
    contributing
 
+Specifications for python-cratonclient:
+
+.. toctree::
+    :maxdepth: 1
+
+    specs/index
+
 Indices and tables
 ==================
 
