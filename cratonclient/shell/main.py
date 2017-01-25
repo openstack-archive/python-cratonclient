@@ -132,11 +132,17 @@ class CratonShell(object):
         )
         self.parser = subcommand_parser
 
-        if options.help or ('help' in argv) or not argv:
-            parser.print_help()
+        if options.help or not argv:
+            self.parser.print_help()
             return 0
 
         args = subcommand_parser.parse_args(argv)
+
+        # Short-circuit and deal with help right away.
+        if args.func == self.do_help:
+            self.do_help(args)
+            return 0
+
         session = craton.Session(
             username=args.os_username,
             token=args.os_password,
@@ -144,6 +150,24 @@ class CratonShell(object):
         )
         self.cc = client.Client(session, args.craton_url)
         args.func(self.cc, args)
+
+    @cliutils.arg(
+            'command',
+            metavar='<subcommand>',
+            nargs='?',
+            help='Display help for <subcommand>.')
+    def do_help(self, args):
+        """
+        Display help about this program or one of its subcommands.
+        """
+        if args.command:
+            if args.command in self.subcommands:
+                self.subcommands[args.command].print_help()
+            else:
+                raise exc.CommandError("'%s' is not a valid subcommand" %
+                                       args.command)
+        else:
+            self.parser.print_help()
 
 
 def main():
