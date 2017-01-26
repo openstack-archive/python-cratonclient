@@ -135,11 +135,6 @@ def do_host_list(cc, args):
               help='Status of the host.  Active or inactive.')
 @cliutils.arg('--note',
               help='Note about the host.')
-@cliutils.arg('--access_secret',
-              type=int,
-              dest='access_secret_id',
-              metavar='<access_secret>',
-              help='ID of the access secret of the host.')
 @cliutils.arg('-l', '--labels',
               default=[],
               help='List of labels for the host.')
@@ -177,11 +172,6 @@ def do_host_create(cc, args):
               help='Status of the host.  Active or inactive.')
 @cliutils.arg('--note',
               help='Note about the host.')
-@cliutils.arg('--access_secret',
-              dest='access_secret_id',
-              metavar='<access_secret>',
-              type=int,
-              help='ID of the access secret of the host.')
 @cliutils.arg('-l', '--labels',
               default=[],
               help='List of labels for the host.')

@@ -39,7 +39,6 @@ HOST_FIELDS = {
     'ip_address': 'IP Address',
     'active': 'Active',
     'note': 'Note',
-    'access_secret_id': "Access Secret ID",
     'created_at': 'Created At',
     'update_at': 'Updated At',
     'labels': 'Labels',
