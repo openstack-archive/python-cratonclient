@@ -12,6 +12,7 @@
 """Command-line interface to the OpenStack Craton API V1."""
 from cratonclient.shell.v1 import cells_shell
 from cratonclient.shell.v1 import hosts_shell
+from cratonclient.shell.v1 import network_devices_shell
 from cratonclient.shell.v1 import networks_shell
 from cratonclient.shell.v1 import regions_shell
 
@@ -20,5 +21,6 @@ COMMAND_MODULES = [
     regions_shell,
     hosts_shell,
     cells_shell,
-    networks_shell
+    networks_shell,
+    network_devices_shell,
 ]

@@ -14,6 +14,7 @@
 """Top-level client for version 1 of Craton's API."""
 from cratonclient.v1 import cells
 from cratonclient.v1 import hosts
+from cratonclient.v1 import network_devices
 from cratonclient.v1 import networks
 from cratonclient.v1 import regions
 
@@ -43,3 +44,5 @@ class Client(object):
         self.cells = cells.CellManager(**manager_kwargs)
         self.regions = regions.RegionManager(**manager_kwargs)
         self.networks = networks.NetworksManager(**manager_kwargs)
+        self.network_devices = network_devices.NetworkDevicesManager(
+            **manager_kwargs)
