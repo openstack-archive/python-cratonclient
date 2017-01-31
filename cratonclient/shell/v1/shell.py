@@ -13,6 +13,7 @@
 from cratonclient.shell.v1 import cells_shell
 from cratonclient.shell.v1 import hosts_shell
 from cratonclient.shell.v1 import network_devices_shell
+from cratonclient.shell.v1 import network_interfaces_shell
 from cratonclient.shell.v1 import networks_shell
 from cratonclient.shell.v1 import regions_shell
 
@@ -23,4 +24,5 @@ COMMAND_MODULES = [
     cells_shell,
     networks_shell,
     network_devices_shell,
+    network_interfaces_shell,
 ]

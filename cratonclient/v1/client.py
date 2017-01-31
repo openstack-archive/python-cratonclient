@@ -15,6 +15,7 @@
 from cratonclient.v1 import cells
 from cratonclient.v1 import hosts
 from cratonclient.v1 import network_devices
+from cratonclient.v1 import network_interfaces
 from cratonclient.v1 import networks
 from cratonclient.v1 import regions
 
@@ -45,4 +46,6 @@ class Client(object):
         self.regions = regions.RegionManager(**manager_kwargs)
         self.networks = networks.NetworksManager(**manager_kwargs)
         self.network_devices = network_devices.NetworkDevicesManager(
+            **manager_kwargs)
+        self.network_interfaces = network_interfaces.NetworkInterfaceManager(
             **manager_kwargs)
