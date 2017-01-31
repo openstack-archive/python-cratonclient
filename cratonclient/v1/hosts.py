@@ -13,11 +13,11 @@
 # under the License.
 """Hosts resource and resource manager."""
 from cratonclient import crud
+from cratonclient.v1.variables import VariablesMixin
 
 
-class Host(crud.Resource):
+class Host(VariablesMixin):
     """Representation of a Host."""
-
     pass
 
 

@@ -13,11 +13,11 @@
 # under the License.
 """Regions manager code."""
 from cratonclient import crud
+from cratonclient.v1.variables import VariablesMixin
 
 
-class Region(crud.Resource):
+class Region(VariablesMixin):
     """Representation of a Region."""
-
     pass
 
 

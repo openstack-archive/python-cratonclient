@@ -45,7 +45,7 @@ class CRUDClient(object):
 
             base_path = '/regions'
 
-        And it's ``key``, e.g.,
+        And its ``key``, e.g.,
 
         .. code-block:: python
 
@@ -100,7 +100,14 @@ class CRUDClient(object):
         kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.get(url)
-        return self.resource_class(self, response.json(), loaded=True)
+        items = response.json()
+        # FIXME(jimbaker) workaround that get can retrieve multiple
+        # items here!
+        if isinstance(items, list):
+            item = items[0]
+        else:
+            item = items
+        return self.resource_class(self, item, loaded=True)
 
     def list(self, skip_merge=False, **kwargs):
         """List the items from this endpoint."""
@@ -118,6 +125,7 @@ class CRUDClient(object):
         kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.put(url, json=kwargs)
+        print('update kwargs=%r json=%r' % (kwargs, response.json()))
         return self.resource_class(self, response.json(), loaded=True)
 
     def delete(self, item_id=None, skip_merge=True, **kwargs):
