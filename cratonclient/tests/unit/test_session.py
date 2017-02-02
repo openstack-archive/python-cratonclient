@@ -13,6 +13,7 @@
 # under the License.
 """Session specific unit tests."""
 from keystoneauth1 import session as ksa_session
+import mock
 
 from cratonclient import auth
 from cratonclient import session
@@ -78,3 +79,31 @@ class TestSession(base.TestCase):
         craton_session = session.Session(session=ksa_session_obj)
 
         self.assertIs(ksa_session_obj, craton_session._session)
+
+    def test_paginate_stops_with_first_empty_list(self):
+        """Verify the behaviour of Session#paginate."""
+        response = mock.Mock()
+        response.status_code = 200
+        response.json.return_value = {
+            'items': [],
+            'links': [{
+                'rel': 'next',
+                'href': 'http://example.com/v1/items?limit=30&marker=foo',
+            }],
+        }
+        mock_session = mock.Mock()
+        mock_session.request.return_value = response
+
+        craton_session = session.Session(session=mock_session)
+        paginated_items = list(craton_session.paginate(
+            url='http://example.com/v1/items',
+            items_key='items',
+            autopaginate=True,
+        ))
+
+        self.assertListEqual([(response, [])], paginated_items)
+        mock_session.request.assert_called_once_with(
+            method='GET',
+            url='http://example.com/v1/items',
+            endpoint_filter={'service_type': 'fleet_management'},
+        )

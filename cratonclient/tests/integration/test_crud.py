@@ -134,10 +134,13 @@ class TestCrudIntegration(base.TestCase):
         """Verify the request to list a resource."""
         self.session.request.return_value = self.create_response(
             status_code=200,
-            json_return_value=[{'name': 'Test', 'id': 1234}],
+            json_return_value={
+                'test_keys': [{'name': 'Test', 'id': 1234}],
+                'links': [],
+            },
         )
 
-        resources = self.client.list(filter_by='some-attribute')
+        resources = list(self.client.list(filter_by='some-attribute'))
 
         self.session.request.assert_called_once_with(
             method='GET',
