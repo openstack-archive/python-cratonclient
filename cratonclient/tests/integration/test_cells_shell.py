@@ -62,6 +62,8 @@ class TestCellsShell(base.ShellTestCase):
             limit=0,
             sort_dir='asc',
             region_id=1,
+            autopaginate=False,
+            marker=None,
         )
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
@@ -75,6 +77,8 @@ class TestCellsShell(base.ShellTestCase):
             limit=1,
             sort_dir='asc',
             region_id=1,
+            autopaginate=False,
+            marker=None,
         )
 
     def test_cell_list_limit_negative_num_failure(self):
@@ -94,6 +98,8 @@ class TestCellsShell(base.ShellTestCase):
             detail=True,
             region_id=1,
             sort_dir='asc',
+            autopaginate=False,
+            marker=None,
         )
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
@@ -104,6 +110,8 @@ class TestCellsShell(base.ShellTestCase):
         mock_list.assert_called_once_with(
             sort_dir='asc',
             region_id=1,
+            autopaginate=False,
+            marker=None,
         )
         mock_printlist.assert_called_once_with(mock.ANY,
                                                list({'id': 'ID',
@@ -117,6 +125,8 @@ class TestCellsShell(base.ShellTestCase):
             sort_key='name',
             sort_dir='asc',
             region_id=1,
+            autopaginate=False,
+            marker=None,
         )
 
     def test_cell_list_sort_key_invalid(self):
@@ -133,6 +143,8 @@ class TestCellsShell(base.ShellTestCase):
             sort_key='name',
             sort_dir='asc',
             region_id=1,
+            autopaginate=False,
+            marker=None,
         )
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
@@ -143,6 +155,8 @@ class TestCellsShell(base.ShellTestCase):
             sort_key='name',
             sort_dir='desc',
             region_id=1,
+            autopaginate=False,
+            marker=None,
         )
 
     def test_cell_list_sort_dir_invalid_value(self):

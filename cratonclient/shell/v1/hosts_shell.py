@@ -44,10 +44,6 @@ def do_host_show(cc, args):
               action='store_true',
               default=False,
               help='Show detailed information about the hosts.')
-@cliutils.arg('--limit',
-              metavar='<limit>',
-              type=int,
-              help='Maximum number of hosts to return.')
 @cliutils.arg('--sort-key',
               metavar='<field>',
               help='Host field that will be used for sorting.')
@@ -63,6 +59,20 @@ def do_host_show(cc, args):
               help='Comma-separated list of fields to display. '
                    'Only these fields will be fetched from the server. '
                    'Can not be used when "--detail" is specified')
+@cliutils.arg('--all',
+              action='store_true',
+              default=False,
+              help='Retrieve and show all hosts. This will override '
+                   'the provided value for --limit and automatically '
+                   'retrieve each page of results.')
+@cliutils.arg('--limit',
+              metavar='<limit>',
+              type=int,
+              help='Maximum number of hosts to return.')
+@cliutils.arg('--marker',
+              metavar='<marker>',
+              default=None,
+              help='ID of the cell to use to resume listing hosts.')
 def do_host_list(cc, args):
     """Print list of hosts which are registered with the Craton service."""
     params = {}
@@ -75,6 +85,8 @@ def do_host_list(cc, args):
                                    'non-negative limit, got {0}'
                                    .format(args.limit))
         params['limit'] = args.limit
+    if args.all is True:
+        params['limit'] = 100
 
     if args.fields and args.detail:
         raise exc.CommandError('Cannot specify both --fields and --detail.')
@@ -101,6 +113,8 @@ def do_host_list(cc, args):
         params['sort_key'] = sort_key
     params['sort_dir'] = args.sort_dir
     params['region_id'] = args.region
+    params['marker'] = args.marker
+    params['autopaginate'] = args.all
 
     host_list = cc.hosts.list(**params)
     cliutils.print_list(host_list, list(fields))

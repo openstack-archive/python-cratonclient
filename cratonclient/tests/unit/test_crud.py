@@ -172,13 +172,16 @@ class TestCRUDClient(base.TestCase):
 
     def test_list_generates_a_get_request(self):
         """Verify that using our list method will GET from our service."""
-        response = self.session.get.return_value = mock.Mock()
-        response.json.return_value = [{'name': 'fake-name', 'id': 1}]
+        response = mock.Mock()
+        items = [{'name': 'fake-name', 'id': 1}]
+        self.session.paginate.return_value = iter([(response, items)])
 
-        self.client.list(sort='asc')
+        next(self.client.list(sort='asc'))
 
-        self.session.get.assert_called_once_with(
+        self.session.paginate.assert_called_once_with(
             'http://example.com/v1/test',
+            autopaginate=True,
+            items_key='test_keys',
             params={'sort': 'asc'},
         )
         self.resource_spec.assert_called_once_with(

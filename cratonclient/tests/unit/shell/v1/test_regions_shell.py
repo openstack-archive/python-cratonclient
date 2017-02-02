@@ -210,6 +210,8 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('detail', False)
         kwargs.setdefault('limit', None)
         kwargs.setdefault('fields', [])
+        kwargs.setdefault('marker', None)
+        kwargs.setdefault('all', False)
         return super(TestDoRegionList, self).args_for(**kwargs)
 
     def test_with_defaults(self):
@@ -232,6 +234,8 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
         regions_shell.do_region_list(self.craton_client, args)
         self.craton_client.regions.list.assert_called_once_with(
             limit=5,
+            marker=None,
+            autopaginate=False,
         )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
@@ -249,3 +253,38 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
         args = self.args_for(fields=['uuid', 'not-name', 'nate'])
         self.assertRaisesCommandErrorWith(regions_shell.do_region_list, args)
         self.assertNothingWasCalled()
+
+    def test_autopagination(self):
+        """Verify autopagination is controlled by --all."""
+        args = self.args_for(all=True)
+
+        regions_shell.do_region_list(self.craton_client, args)
+
+        self.craton_client.regions.list.assert_called_once_with(
+            limit=100,
+            marker=None,
+            autopaginate=True,
+        )
+
+    def test_autopagination_overrides_limit(self):
+        """Verify --all overrides --limit."""
+        args = self.args_for(all=True, limit=35)
+
+        regions_shell.do_region_list(self.craton_client, args)
+
+        self.craton_client.regions.list.assert_called_once_with(
+            limit=100,
+            marker=None,
+            autopaginate=True,
+        )
+
+    def test_marker_pass_through(self):
+        """Verify we pass our marker through to the client."""
+        args = self.args_for(marker=31)
+
+        regions_shell.do_region_list(self.craton_client, args)
+
+        self.craton_client.regions.list.assert_called_once_with(
+            marker=31,
+            autopaginate=False,
+        )

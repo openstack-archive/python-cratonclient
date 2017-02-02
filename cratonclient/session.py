@@ -232,3 +232,49 @@ class Session(object):
             raise exc.error_from(response)
 
         return response
+
+    def paginate(self, url, items_key, autopaginate=True, **kwargs):
+        """Make a GET request to a paginated resource.
+
+        If :param:`autopaginate` is set to ``True``, this will automatically
+        handle finding and retrieving the next page of items.
+
+        .. code-block:: python
+
+            >>> from cratonclient import session as craton
+            >>> session = craton.Session(
+            ...     username='demo',
+            ...     token='p@##w0rd',
+            ...     project_id='84363597-721c-4068-9731-8824692b51bb',
+            ... )
+            >>> url = 'https://example.com/v1/hosts'
+            >>> for response in session.paginate(url, items_key='hosts'):
+            ...     print("Received status {}".format(response.status_code))
+            ...     print("Received {} items".format(len(items)))
+
+        :param bool autopaginate:
+            Determines whether or not this method continues requesting items
+            automatically after the first page.
+        """
+        response = self.get(url, **kwargs)
+        json_body = response.json()
+        items = json_body[items_key]
+        links = json_body['links']
+        yield response, items
+        while autopaginate and len(items) > 0:
+            url = _find_next_link(links)
+            if url is None:
+                break
+            response = self.get(url)
+            json_body = response.json()
+            items = json_body[items_key]
+            links = json_body['links']
+            yield response, items
+
+
+def _find_next_link(links):
+    for link in links:
+        if link['rel'] == 'next':
+            return link['href']
+
+    return None

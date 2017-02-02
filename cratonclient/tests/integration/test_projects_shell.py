@@ -55,7 +55,9 @@ class TestProjectsShell(base.ShellTestCase):
         """Verify that --limit 0 prints out all project projects."""
         self.shell('project-list --limit 0')
         mock_list.assert_called_once_with(
-            limit=0
+            limit=0,
+            marker=None,
+            autopaginate=False,
         )
 
     @mock.patch('cratonclient.v1.projects.ProjectManager.list')
@@ -66,7 +68,9 @@ class TestProjectsShell(base.ShellTestCase):
         """
         self.shell('project-list --limit 1')
         mock_list.assert_called_once_with(
-            limit=1
+            limit=1,
+            marker=None,
+            autopaginate=False,
         )
 
     def test_project_list_limit_negative_num_failure(self):
@@ -82,14 +86,20 @@ class TestProjectsShell(base.ShellTestCase):
     def test_project_list_detail_success(self, mock_list):
         """Verify --detail argument successfully pass detail to Client."""
         self.shell('project-list --detail')
-        mock_list.assert_called_once_with()
+        mock_list.assert_called_once_with(
+            marker=None,
+            autopaginate=False,
+        )
 
     @mock.patch('cratonclient.v1.projects.ProjectManager.list')
     @mock.patch('cratonclient.common.cliutils.print_list')
     def test_project_list_fields_success(self, mock_printlist, mock_list):
         """Verify --fields argument successfully passed to Client."""
         self.shell('project-list --fields id name')
-        mock_list.assert_called_once_with()
+        mock_list.assert_called_once_with(
+            marker=None,
+            autopaginate=False,
+        )
         mock_printlist.assert_called_once_with(mock.ANY,
                                                list({'id': 'ID',
                                                      'name': 'Name'}))

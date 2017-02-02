@@ -33,10 +33,6 @@ def do_region_create(cc, args):
     cliutils.print_dict(data, wrap=72)
 
 
-@cliutils.arg('--limit',
-              metavar='<limit>',
-              type=int,
-              help='Maximum number of regions to return.')
 @cliutils.arg('--fields',
               nargs='+',
               metavar='<fields>',
@@ -44,6 +40,20 @@ def do_region_create(cc, args):
               help='Comma-separated list of fields to display. '
                    'Only these fields will be fetched from the server. '
                    'Can not be used when "--detail" is specified')
+@cliutils.arg('--all',
+              action='store_true',
+              default=False,
+              help='Retrieve and show all regions. This will override '
+                   'the provided value for --limit and automatically '
+                   'retrieve each page of results.')
+@cliutils.arg('--limit',
+              metavar='<limit>',
+              type=int,
+              help='Maximum number of regions to return.')
+@cliutils.arg('--marker',
+              metavar='<marker>',
+              default=None,
+              help='ID of the cell to use to resume listing regions.')
 def do_region_list(cc, args):
     """List all regions."""
     params = {}
@@ -54,6 +64,8 @@ def do_region_list(cc, args):
                                    'non-negative limit, got {0}'
                                    .format(args.limit))
         params['limit'] = args.limit
+    if args.all is True:
+        params['limit'] = 100
 
     if args.fields:
         try:
@@ -62,6 +74,8 @@ def do_region_list(cc, args):
             raise exc.CommandError('Invalid field "{}"'.format(err.args[0]))
     else:
         fields = default_fields
+    params['marker'] = args.marker
+    params['autopaginate'] = args.all
 
     regions_list = cc.regions.list(**params)
     cliutils.print_list(regions_list, list(fields))
