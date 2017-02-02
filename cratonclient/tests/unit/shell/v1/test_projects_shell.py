@@ -55,6 +55,8 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('limit', None)
         kwargs.setdefault('detail', False)
         kwargs.setdefault('fields', [])
+        kwargs.setdefault('marker', None)
+        kwargs.setdefault('all', False)
         return super(TestDoProjectList, self).args_for(**kwargs)
 
     def test_with_defaults(self):
@@ -63,7 +65,10 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
 
         projects_shell.do_project_list(self.craton_client, args)
 
-        self.craton_client.projects.list.assert_called_once_with()
+        self.craton_client.projects.list.assert_called_once_with(
+            marker=None,
+            autopaginate=False,
+        )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
                          sorted(self.print_list.call_args[0][-1]))
@@ -84,6 +89,8 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
 
         self.craton_client.projects.list.assert_called_once_with(
             limit=5,
+            autopaginate=False,
+            marker=None,
         )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
@@ -95,7 +102,10 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
 
         projects_shell.do_project_list(self.craton_client, args)
 
-        self.craton_client.projects.list.assert_called_once_with()
+        self.craton_client.projects.list.assert_called_once_with(
+            marker=None,
+            autopaginate=False,
+        )
         self.assertEqual(sorted(list(projects.PROJECT_FIELDS)),
                          sorted(self.print_list.call_args[0][-1]))
 
@@ -106,7 +116,9 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
         projects_shell.do_project_list(self.craton_client, args)
 
         self.craton_client.projects.list.assert_called_once_with(
-            name='project_1'
+            name='project_1',
+            autopaginate=False,
+            marker=None,
         )
         self.assertEqual(['id', 'name'],
                          sorted(self.print_list.call_args[0][-1]))
@@ -127,7 +139,10 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
 
         projects_shell.do_project_list(self.craton_client, args)
 
-        self.craton_client.projects.list.assert_called_once_with()
+        self.craton_client.projects.list.assert_called_once_with(
+            autopaginate=False,
+            marker=None,
+        )
         self.assertEqual(['id', 'name'],
                          sorted(self.print_list.call_args[0][-1]))
 
@@ -137,6 +152,42 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
 
         self.assertRaisesCommandErrorWith(projects_shell.do_project_list, args)
         self.assertNothingWasCalled()
+
+    def test_autopagination(self):
+        """Verify autopagination is controlled by --all."""
+        args = self.args_for(all=True)
+
+        projects_shell.do_project_list(self.craton_client, args)
+
+        self.craton_client.projects.list.assert_called_once_with(
+            limit=100,
+            autopaginate=True,
+            marker=None,
+        )
+
+    def test_autopagination_overrides_limit(self):
+        """Verify --all overrides --limit."""
+        args = self.args_for(all=True, limit=25)
+
+        projects_shell.do_project_list(self.craton_client, args)
+
+        self.craton_client.projects.list.assert_called_once_with(
+            limit=100,
+            autopaginate=True,
+            marker=None,
+        )
+
+    def test_marker_support(self):
+        """Verify we pass through the marker."""
+        project_id = uuid.uuid4().hex
+        args = self.args_for(marker=project_id)
+
+        projects_shell.do_project_list(self.craton_client, args)
+
+        self.craton_client.projects.list.assert_called_once_with(
+            autopaginate=False,
+            marker=project_id,
+        )
 
 
 class TestDoProjectCreate(base.TestShellCommandUsingPrintDict):

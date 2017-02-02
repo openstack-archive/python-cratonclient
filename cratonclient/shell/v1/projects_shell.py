@@ -36,10 +36,6 @@ def do_project_show(cc, args):
               action='store_true',
               default=False,
               help='Show detailed information about the projects.')
-@cliutils.arg('--limit',
-              metavar='<limit>',
-              type=int,
-              help='Maximum number of projects to return.')
 @cliutils.arg('--fields',
               nargs='+',
               metavar='<fields>',
@@ -47,6 +43,20 @@ def do_project_show(cc, args):
               help='Comma-separated list of fields to display. '
                    'Only these fields will be fetched from the server. '
                    'Can not be used when "--detail" is specified')
+@cliutils.arg('--all',
+              action='store_true',
+              default=False,
+              help='Retrieve and show all projects. This will override '
+                   'the provided value for --limit and automatically '
+                   'retrieve each page of results.')
+@cliutils.arg('--limit',
+              metavar='<limit>',
+              type=int,
+              help='Maximum number of projects to return.')
+@cliutils.arg('--marker',
+              metavar='<marker>',
+              default=None,
+              help='ID of the cell to use to resume listing projects.')
 def do_project_list(cc, args):
     """Print list of projects which are registered with the Craton service."""
     params = {}
@@ -57,6 +67,8 @@ def do_project_list(cc, args):
                                    'non-negative limit, got {0}'
                                    .format(args.limit))
         params['limit'] = args.limit
+    if args.all is True:
+        params['limit'] = 100
 
     if args.fields and args.detail:
         raise exc.CommandError('Cannot specify both --fields and --detail.')
@@ -72,6 +84,8 @@ def do_project_list(cc, args):
             raise exc.CommandError('Invalid field "{}"'.format(keyerr.args[0]))
     else:
         fields = {x: projects.PROJECT_FIELDS[x] for x in default_fields}
+    params['marker'] = args.marker
+    params['autopaginate'] = args.all
 
     listed_projects = cc.projects.list(**params)
     cliutils.print_list(listed_projects, list(fields))

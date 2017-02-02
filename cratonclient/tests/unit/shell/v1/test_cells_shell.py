@@ -55,6 +55,8 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('sort_key', None)
         kwargs.setdefault('sort_dir', 'asc')
         kwargs.setdefault('fields', [])
+        kwargs.setdefault('marker', None)
+        kwargs.setdefault('all', False)
         return super(TestDoCellList, self).args_for(**kwargs)
 
     def test_with_defaults(self):
@@ -66,6 +68,8 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
         self.craton_client.cells.list.assert_called_once_with(
             sort_dir='asc',
             region_id=123,
+            autopaginate=False,
+            marker=None,
         )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
@@ -88,6 +92,8 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             limit=5,
             sort_dir='asc',
             region_id=123,
+            autopaginate=False,
+            marker=None,
         )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
@@ -103,6 +109,8 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             sort_dir='asc',
             sort_key='name',
             region_id=123,
+            autopaginate=False,
+            marker=None,
         )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
@@ -125,6 +133,8 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             sort_dir='asc',
             detail=True,
             region_id=123,
+            autopaginate=False,
+            marker=None,
         )
         self.assertEqual(sorted(list(cells.CELL_FIELDS)),
                          sorted(self.print_list.call_args[0][-1]))
@@ -148,6 +158,8 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
         self.craton_client.cells.list.assert_called_once_with(
             sort_dir='asc',
             region_id=123,
+            autopaginate=False,
+            marker=None,
         )
         self.assertEqual(['id', 'name', 'note'],
                          sorted(self.print_list.call_args[0][-1]))
@@ -158,6 +170,34 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
         self.assertRaisesCommandErrorWith(cells_shell.do_cell_list, args)
         self.assertNothingWasCalled()
+
+    def test_autopaginate(self):
+        """Verify that autopagination works."""
+        args = self.args_for(all=True)
+
+        cells_shell.do_cell_list(self.craton_client, args)
+
+        self.craton_client.cells.list.assert_called_once_with(
+            sort_dir='asc',
+            region_id=123,
+            limit=100,
+            autopaginate=True,
+            marker=None,
+        )
+
+    def test_autopagination_overrides_limit(self):
+        """Verify that --all overrides --limit."""
+        args = self.args_for(all=True, limit=10)
+
+        cells_shell.do_cell_list(self.craton_client, args)
+
+        self.craton_client.cells.list.assert_called_once_with(
+            sort_dir='asc',
+            region_id=123,
+            limit=100,
+            autopaginate=True,
+            marker=None,
+        )
 
 
 class TestDoCellCreate(base.TestShellCommandUsingPrintDict):

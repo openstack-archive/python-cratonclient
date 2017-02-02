@@ -103,14 +103,19 @@ class CRUDClient(object):
         return self.resource_class(self, response.json(), loaded=True)
 
     def list(self, skip_merge=False, **kwargs):
-        """List the items from this endpoint."""
+        """Generate the items from this endpoint."""
+        autopaginate = kwargs.pop('autopaginate', True)
         self.merge_request_arguments(kwargs, skip_merge)
         url = self.build_url(path_arguments=kwargs)
-        response = self.session.get(url, params=kwargs)
-        return [
-            self.resource_class(self, item, loaded=True)
-            for item in response.json()
-        ]
+        response_generator = self.session.paginate(
+            url,
+            autopaginate=autopaginate,
+            items_key=(self.key + 's'),
+            params=kwargs,
+        )
+        for response, items in response_generator:
+            for item in items:
+                yield self.resource_class(self, item, loaded=True)
 
     def update(self, item_id=None, skip_merge=True, **kwargs):
         """Update the item based on the keyword arguments provided."""

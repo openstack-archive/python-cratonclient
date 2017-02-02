@@ -51,6 +51,8 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('sort_key', None)
         kwargs.setdefault('sort_dir', 'asc')
         kwargs.setdefault('fields', [])
+        kwargs.setdefault('marker', None)
+        kwargs.setdefault('all', False)
         return super(TestDoHostList, self).args_for(**kwargs)
 
     def test_only_required_parameters(self):
@@ -62,6 +64,8 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         self.craton_client.hosts.list.assert_called_once_with(
             sort_dir='asc',
             region_id=246,
+            autopaginate=False,
+            marker=None,
         )
         self.assertSortedPrintListFieldsEqualTo([
             'active', 'cell_id', 'device_type', 'id', 'name'
@@ -77,6 +81,8 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             cell_id=789,
             sort_dir='asc',
             region_id=246,
+            autopaginate=False,
+            marker=None,
         )
         self.assertSortedPrintListFieldsEqualTo([
             'active', 'cell_id', 'device_type', 'id', 'name',
@@ -92,6 +98,8 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             detail=True,
             sort_dir='asc',
             region_id=246,
+            autopaginate=False,
+            marker=None,
         )
         self.assertSortedPrintListFieldsEqualTo([
             'active',
@@ -118,6 +126,8 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             limit=20,
             sort_dir='asc',
             region_id=246,
+            autopaginate=False,
+            marker=None,
         )
         self.assertSortedPrintListFieldsEqualTo([
             'active', 'cell_id', 'device_type', 'id', 'name'
@@ -139,6 +149,8 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         self.craton_client.hosts.list.assert_called_once_with(
             sort_dir='asc',
             region_id=246,
+            autopaginate=False,
+            marker=None,
         )
         self.assertSortedPrintListFieldsEqualTo([
             'cell_id', 'id', 'name',
@@ -163,6 +175,8 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             sort_key='ip_address',
             sort_dir='asc',
             region_id=246,
+            autopaginate=False,
+            marker=None,
         )
 
     def test_fields_and_detail_raise_command_error(self):
@@ -182,6 +196,47 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             hosts_shell.do_host_list, args,
         )
         self.assertNothingWasCalled()
+
+    def test_autopagination(self):
+        """Verify autopagination is controlled by --all."""
+        args = self.args_for(all=True)
+
+        hosts_shell.do_host_list(self.craton_client, args)
+
+        self.craton_client.hosts.list.assert_called_once_with(
+            region_id=246,
+            sort_dir='asc',
+            limit=100,
+            marker=None,
+            autopaginate=True,
+        )
+
+    def test_autopagination_overrides_limit(self):
+        """Verify --all overrides --limit."""
+        args = self.args_for(all=True, limit=30)
+
+        hosts_shell.do_host_list(self.craton_client, args)
+
+        self.craton_client.hosts.list.assert_called_once_with(
+            region_id=246,
+            sort_dir='asc',
+            limit=100,
+            marker=None,
+            autopaginate=True,
+        )
+
+    def test_marker_pass_through(self):
+        """Verify we pass our marker through to the client."""
+        args = self.args_for(marker=42)
+
+        hosts_shell.do_host_list(self.craton_client, args)
+
+        self.craton_client.hosts.list.assert_called_once_with(
+            region_id=246,
+            sort_dir='asc',
+            marker=42,
+            autopaginate=False,
+        )
 
 
 class TestDoHostCreate(base.TestShellCommandUsingPrintDict):

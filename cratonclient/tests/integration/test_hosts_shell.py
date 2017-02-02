@@ -66,6 +66,8 @@ class TestHostsShell(base.ShellTestCase):
             limit=0,
             sort_dir='asc',
             region_id=1,
+            marker=None,
+            autopaginate=False,
         )
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
@@ -79,6 +81,8 @@ class TestHostsShell(base.ShellTestCase):
             limit=1,
             sort_dir='asc',
             region_id=1,
+            marker=None,
+            autopaginate=False,
         )
 
     def test_host_list_limit_negative_num_failure(self):
@@ -99,6 +103,8 @@ class TestHostsShell(base.ShellTestCase):
                 cell_id=1,
                 sort_dir='asc',
                 region_id=1,
+                marker=None,
+                autopaginate=False,
             )
             mock_list.reset_mock()
 
@@ -110,6 +116,8 @@ class TestHostsShell(base.ShellTestCase):
             detail=True,
             sort_dir='asc',
             region_id=1,
+            marker=None,
+            autopaginate=False,
         )
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
@@ -120,6 +128,8 @@ class TestHostsShell(base.ShellTestCase):
         mock_list.assert_called_once_with(
             sort_dir='asc',
             region_id=1,
+            marker=None,
+            autopaginate=False,
         )
         mock_printlist.assert_called_once_with(mock.ANY,
                                                list({'id': 'ID',
@@ -133,6 +143,8 @@ class TestHostsShell(base.ShellTestCase):
             sort_key='cell_id',
             sort_dir='asc',
             region_id=1,
+            marker=None,
+            autopaginate=False,
         )
 
     def test_host_list_sort_key_invalid(self):
@@ -148,6 +160,8 @@ class TestHostsShell(base.ShellTestCase):
         mock_list.assert_called_once_with(
             sort_dir='desc',
             region_id=1,
+            marker=None,
+            autopaginate=False,
         )
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
@@ -158,6 +172,8 @@ class TestHostsShell(base.ShellTestCase):
             sort_key='name',
             sort_dir='asc',
             region_id=1,
+            marker=None,
+            autopaginate=False,
         )
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
@@ -168,6 +184,8 @@ class TestHostsShell(base.ShellTestCase):
             sort_key='name',
             sort_dir='desc',
             region_id=1,
+            marker=None,
+            autopaginate=False,
         )
 
     def test_host_list_sort_dir_invalid_value(self):
