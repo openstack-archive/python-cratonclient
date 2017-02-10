@@ -44,7 +44,7 @@ def do_project_show(cc, args):
               nargs='+',
               metavar='<fields>',
               default=[],
-              help='Comma-separated list of fields to display. '
+              help='Space-separated list of fields to display. '
                    'Only these fields will be fetched from the server. '
                    'Can not be used when "--detail" is specified')
 def do_project_list(cc, args):
