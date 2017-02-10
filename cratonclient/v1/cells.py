@@ -36,5 +36,5 @@ CELL_FIELDS = {
     'name': 'Name',
     'note': 'Note',
     'created_at': 'Created At',
-    'update_at': 'Updated At'
+    'updated_at': 'Updated At'
 }

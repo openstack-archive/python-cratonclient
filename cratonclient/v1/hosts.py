@@ -40,6 +40,6 @@ HOST_FIELDS = {
     'active': 'Active',
     'note': 'Note',
     'created_at': 'Created At',
-    'update_at': 'Updated At',
+    'updated_at': 'Updated At',
     'labels': 'Labels',
 }

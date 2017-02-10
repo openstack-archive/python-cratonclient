@@ -105,7 +105,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             'note',
             'project_id',
             'region_id',
-            'update_at',
+            'updated_at',
         ])
 
     def test_with_limit(self):

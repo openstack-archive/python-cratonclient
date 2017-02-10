@@ -33,5 +33,5 @@ PROJECT_FIELDS = {
     'id': 'ID',
     'name': 'Name',
     'created_at': 'Created At',
-    'update_at': 'Updated At'
+    'updated_at': 'Updated At'
 }
