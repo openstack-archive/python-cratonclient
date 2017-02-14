@@ -42,4 +42,5 @@ HOST_FIELDS = {
     'created_at': 'Created At',
     'updated_at': 'Updated At',
     'labels': 'Labels',
+    'parent_id': 'Parent ID',
 }
