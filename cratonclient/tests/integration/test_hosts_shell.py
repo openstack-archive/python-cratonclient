@@ -64,7 +64,6 @@ class TestHostsShell(base.ShellTestCase):
         self.shell('host-list -r 1 --limit 0')
         mock_list.assert_called_once_with(
             limit=0,
-            sort_dir='asc',
             region_id=1,
         )
 
@@ -77,7 +76,6 @@ class TestHostsShell(base.ShellTestCase):
         self.shell('host-list -r 1 --limit 1')
         mock_list.assert_called_once_with(
             limit=1,
-            sort_dir='asc',
             region_id=1,
         )
 
@@ -97,7 +95,6 @@ class TestHostsShell(base.ShellTestCase):
             self.shell('host-list -r 1 {0} 1'.format(cell_arg))
             mock_list.assert_called_once_with(
                 cell_id=1,
-                sort_dir='asc',
                 region_id=1,
             )
             mock_list.reset_mock()
@@ -108,7 +105,6 @@ class TestHostsShell(base.ShellTestCase):
         self.shell('host-list -r 1 --detail')
         mock_list.assert_called_once_with(
             detail=True,
-            sort_dir='asc',
             region_id=1,
         )
 
@@ -118,64 +114,11 @@ class TestHostsShell(base.ShellTestCase):
         """Verify --fields argument successfully passed to Client."""
         self.shell('host-list -r 1 --fields id name')
         mock_list.assert_called_once_with(
-            sort_dir='asc',
             region_id=1,
         )
         mock_printlist.assert_called_once_with(mock.ANY,
                                                list({'id': 'ID',
                                                      'name': 'Name'}))
-
-    @mock.patch('cratonclient.v1.hosts.HostManager.list')
-    def test_host_list_sort_key_field_key_success(self, mock_list):
-        """Verify --sort-key arguments successfully passed to Client."""
-        self.shell('host-list -r 1 --sort-key cell_id')
-        mock_list.assert_called_once_with(
-            sort_key='cell_id',
-            sort_dir='asc',
-            region_id=1,
-        )
-
-    def test_host_list_sort_key_invalid(self):
-        """Verify --sort-key with invalid args, fails with Command Error."""
-        self.assertRaises(exc.CommandError,
-                          self.shell,
-                          'host-list -r 1 --sort-key invalid')
-
-    @mock.patch('cratonclient.v1.hosts.HostManager.list')
-    def test_host_list_sort_dir_not_passed_without_sort_key(self, mock_list):
-        """Verify --sort-dir arg ignored without --sort-key."""
-        self.shell('host-list -r 1 --sort-dir desc')
-        mock_list.assert_called_once_with(
-            sort_dir='desc',
-            region_id=1,
-        )
-
-    @mock.patch('cratonclient.v1.hosts.HostManager.list')
-    def test_host_list_sort_dir_asc_success(self, mock_list):
-        """Verify --sort-dir asc successfully passed to Client."""
-        self.shell('host-list -r 1 --sort-key name --sort-dir asc')
-        mock_list.assert_called_once_with(
-            sort_key='name',
-            sort_dir='asc',
-            region_id=1,
-        )
-
-    @mock.patch('cratonclient.v1.hosts.HostManager.list')
-    def test_host_list_sort_dir_desc_success(self, mock_list):
-        """Verify --sort-dir desc successfully passed to Client."""
-        self.shell('host-list -r 1 --sort-key name --sort-dir desc')
-        mock_list.assert_called_once_with(
-            sort_key='name',
-            sort_dir='desc',
-            region_id=1,
-        )
-
-    def test_host_list_sort_dir_invalid_value(self):
-        """Verify --sort-dir with invalid args, fails with Command Error."""
-        (_, error) = self.shell(
-            'host-list -r 1 --sort-key name --sort-dir invalid'
-        )
-        self.assertIn("invalid choice: 'invalid'", error)
 
     def test_host_create_missing_required_args(self):
         """Verify that missing required args results in error message."""

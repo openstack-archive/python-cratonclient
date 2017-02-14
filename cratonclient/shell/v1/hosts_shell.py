@@ -48,14 +48,6 @@ def do_host_show(cc, args):
               metavar='<limit>',
               type=int,
               help='Maximum number of hosts to return.')
-@cliutils.arg('--sort-key',
-              metavar='<field>',
-              help='Host field that will be used for sorting.')
-@cliutils.arg('--sort-dir',
-              metavar='<direction>',
-              default='asc',
-              choices=('asc', 'desc'),
-              help='Sort direction: "asc" (default) or "desc".')
 @cliutils.arg('--fields',
               nargs='+',
               metavar='<fields>',
@@ -89,17 +81,6 @@ def do_host_list(cc, args):
             raise exc.CommandError('Invalid field "{}"'.format(keyerr.args[0]))
     else:
         fields = {x: hosts.HOST_FIELDS[x] for x in default_fields}
-    sort_key = args.sort_key and args.sort_key.lower()
-    if sort_key is not None:
-        if sort_key not in hosts.HOST_FIELDS:
-            raise exc.CommandError(
-                '{0} is an invalid key for sorting,  valid values for '
-                '--sort-key are: {1}'.format(
-                    args.sort_key, hosts.HOST_FIELDS.keys()
-                )
-            )
-        params['sort_key'] = sort_key
-    params['sort_dir'] = args.sort_dir
     params['region_id'] = args.region
 
     host_list = cc.hosts.list(**params)

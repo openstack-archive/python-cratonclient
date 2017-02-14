@@ -48,8 +48,6 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('cell', None)
         kwargs.setdefault('detail', False)
         kwargs.setdefault('limit', None)
-        kwargs.setdefault('sort_key', None)
-        kwargs.setdefault('sort_dir', 'asc')
         kwargs.setdefault('fields', [])
         return super(TestDoHostList, self).args_for(**kwargs)
 
@@ -60,7 +58,6 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         hosts_shell.do_host_list(self.craton_client, args)
 
         self.craton_client.hosts.list.assert_called_once_with(
-            sort_dir='asc',
             region_id=246,
         )
         self.assertSortedPrintListFieldsEqualTo([
@@ -75,7 +72,6 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         self.craton_client.hosts.list.assert_called_once_with(
             cell_id=789,
-            sort_dir='asc',
             region_id=246,
         )
         self.assertSortedPrintListFieldsEqualTo([
@@ -90,7 +86,6 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         self.craton_client.hosts.list.assert_called_once_with(
             detail=True,
-            sort_dir='asc',
             region_id=246,
         )
         self.assertSortedPrintListFieldsEqualTo([
@@ -116,7 +111,6 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         self.craton_client.hosts.list.assert_called_once_with(
             limit=20,
-            sort_dir='asc',
             region_id=246,
         )
         self.assertSortedPrintListFieldsEqualTo([
@@ -137,33 +131,11 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         hosts_shell.do_host_list(self.craton_client, args)
 
         self.craton_client.hosts.list.assert_called_once_with(
-            sort_dir='asc',
             region_id=246,
         )
         self.assertSortedPrintListFieldsEqualTo([
             'cell_id', 'id', 'name',
         ])
-
-    def test_invalid_sort_key(self):
-        """Verify that we disallow invalid sort keys."""
-        args = self.args_for(sort_key='my-fake-sort-key')
-
-        self.assertRaisesCommandErrorWith(
-            hosts_shell.do_host_list, args
-        )
-        self.assertNothingWasCalled()
-
-    def test_sort_key(self):
-        """Verify we pass sort_key to our list call."""
-        args = self.args_for(sort_key='ip_address')
-
-        hosts_shell.do_host_list(self.craton_client, args)
-
-        self.craton_client.hosts.list.assert_called_once_with(
-            sort_key='ip_address',
-            sort_dir='asc',
-            region_id=246,
-        )
 
     def test_fields_and_detail_raise_command_error(self):
         """Verify combining fields and detail cause an error."""

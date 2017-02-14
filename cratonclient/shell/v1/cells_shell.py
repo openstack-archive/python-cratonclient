@@ -43,14 +43,6 @@ def do_cell_show(cc, args):
               metavar='<limit>',
               type=int,
               help='Maximum number of cells to return.')
-@cliutils.arg('--sort-key',
-              metavar='<field>',
-              help='Cell field that will be used for sorting.')
-@cliutils.arg('--sort-dir',
-              metavar='<direction>',
-              default='asc',
-              choices=('asc', 'desc'),
-              help='Sort direction: "asc" (default) or "desc".')
 @cliutils.arg('--fields',
               nargs='+',
               metavar='<fields>',
@@ -82,18 +74,6 @@ def do_cell_list(cc, args):
             raise exc.CommandError('Invalid field "{}"'.format(keyerr.args[0]))
     else:
         fields = {x: cells.CELL_FIELDS[x] for x in default_fields}
-    sort_key = args.sort_key and args.sort_key.lower()
-    if sort_key is not None:
-        if sort_key not in cells.CELL_FIELDS:
-            raise exc.CommandError(
-                ('"--sort-key" value was "{}" but should '
-                 'be one of: {}').format(
-                     args.sort_key,
-                     ', '.join(cells.CELL_FIELDS.keys())
-                )
-            )
-        params['sort_key'] = sort_key
-    params['sort_dir'] = args.sort_dir
     params['region_id'] = args.region
 
     listed_cells = cc.cells.list(**params)

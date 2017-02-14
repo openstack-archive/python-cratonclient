@@ -52,8 +52,6 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('region', 123)
         kwargs.setdefault('detail', False)
         kwargs.setdefault('limit', None)
-        kwargs.setdefault('sort_key', None)
-        kwargs.setdefault('sort_dir', 'asc')
         kwargs.setdefault('fields', [])
         return super(TestDoCellList, self).args_for(**kwargs)
 
@@ -64,7 +62,6 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
         cells_shell.do_cell_list(self.craton_client, args)
 
         self.craton_client.cells.list.assert_called_once_with(
-            sort_dir='asc',
             region_id=123,
         )
         self.assertTrue(self.print_list.called)
@@ -86,34 +83,11 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
         self.craton_client.cells.list.assert_called_once_with(
             limit=5,
-            sort_dir='asc',
             region_id=123,
         )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
                          sorted(self.print_list.call_args[0][-1]))
-
-    def test_valid_sort_key(self):
-        """Verify that we pass on our sort key."""
-        args = self.args_for(sort_key='name')
-
-        cells_shell.do_cell_list(self.craton_client, args)
-
-        self.craton_client.cells.list.assert_called_once_with(
-            sort_dir='asc',
-            sort_key='name',
-            region_id=123,
-        )
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
-
-    def test_invalid_sort_key(self):
-        """Verify that do not we pass on our sort key."""
-        args = self.args_for(sort_key='fake-sort-key')
-
-        self.assertRaisesCommandErrorWith(cells_shell.do_cell_list, args)
-        self.assertNothingWasCalled()
 
     def test_detail(self):
         """Verify the behaviour of specifying --detail."""
@@ -122,7 +96,6 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
         cells_shell.do_cell_list(self.craton_client, args)
 
         self.craton_client.cells.list.assert_called_once_with(
-            sort_dir='asc',
             detail=True,
             region_id=123,
         )
@@ -146,7 +119,6 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
         cells_shell.do_cell_list(self.craton_client, args)
 
         self.craton_client.cells.list.assert_called_once_with(
-            sort_dir='asc',
             region_id=123,
         )
         self.assertEqual(['id', 'name', 'note'],
