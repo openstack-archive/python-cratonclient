@@ -77,6 +77,15 @@ class CRUDClient(object):
 
         return url
 
+    def get_data(self, json):
+        """Retrieve resource data from the JSON response body."""
+        resource = self.base_path[1:]
+        try:
+            return json[resource]
+        except KeyError:
+            raise KeyError(
+                "%r data element not found in JSON response" % resource)
+
     def merge_request_arguments(self, request_kwargs, skip_merge):
         """Merge the extra request arguments into the per-request args."""
         if skip_merge:
@@ -100,7 +109,8 @@ class CRUDClient(object):
         kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.get(url)
-        return self.resource_class(self, response.json(), loaded=True)
+        return self.resource_class(
+            self, self.get_data(response.json()), loaded=True)
 
     def list(self, skip_merge=False, **kwargs):
         """List the items from this endpoint."""
@@ -109,7 +119,7 @@ class CRUDClient(object):
         response = self.session.get(url, params=kwargs)
         return [
             self.resource_class(self, item, loaded=True)
-            for item in response.json()
+            for item in self.get_data(response.json())
         ]
 
     def update(self, item_id=None, skip_merge=True, **kwargs):

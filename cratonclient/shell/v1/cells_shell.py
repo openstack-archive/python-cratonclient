@@ -48,7 +48,6 @@ def do_cell_show(cc, args):
               help='Cell field that will be used for sorting.')
 @cliutils.arg('--sort-dir',
               metavar='<direction>',
-              default='asc',
               choices=('asc', 'desc'),
               help='Sort direction: "asc" (default) or "desc".')
 @cliutils.arg('--fields',
@@ -93,7 +92,8 @@ def do_cell_list(cc, args):
                 )
             )
         params['sort_key'] = sort_key
-    params['sort_dir'] = args.sort_dir
+    if args.sort_dir is not None:
+        params['sort_dir'] = args.sort_dir
     params['region_id'] = args.region
 
     listed_cells = cc.cells.list(**params)

@@ -141,7 +141,8 @@ class TestCRUDClient(base.TestCase):
     def test_get_generates_a_get_request(self):
         """Verify that using our get method will GET from our service."""
         response = self.session.get.return_value = mock.Mock()
-        response.json.return_value = {'name': 'fake-name', 'id': 1}
+        response.json.return_value = {
+            'test': {'name': 'fake-name', 'id': 1}}
 
         self.client.get(test_key_id=1)
 
@@ -157,7 +158,8 @@ class TestCRUDClient(base.TestCase):
     def test_get_generates_a_get_request_positionally(self):
         """Verify passing the id positionally works as well."""
         response = self.session.get.return_value = mock.Mock()
-        response.json.return_value = {'name': 'fake-name', 'id': 1}
+        response.json.return_value = {
+            'test': {'name': 'fake-name', 'id': 1}}
 
         self.client.get(1)
 
@@ -173,7 +175,8 @@ class TestCRUDClient(base.TestCase):
     def test_list_generates_a_get_request(self):
         """Verify that using our list method will GET from our service."""
         response = self.session.get.return_value = mock.Mock()
-        response.json.return_value = [{'name': 'fake-name', 'id': 1}]
+        response.json.return_value = {
+            'test': [{'name': 'fake-name', 'id': 1}]}
 
         self.client.list(sort='asc')
 

@@ -53,7 +53,6 @@ def do_host_show(cc, args):
               help='Host field that will be used for sorting.')
 @cliutils.arg('--sort-dir',
               metavar='<direction>',
-              default='asc',
               choices=('asc', 'desc'),
               help='Sort direction: "asc" (default) or "desc".')
 @cliutils.arg('--fields',
@@ -99,7 +98,8 @@ def do_host_list(cc, args):
                 )
             )
         params['sort_key'] = sort_key
-    params['sort_dir'] = args.sort_dir
+    if args.sort_dir is not None:
+        params['sort_dir'] = args.sort_dir
     params['region_id'] = args.region
 
     host_list = cc.hosts.list(**params)

@@ -116,7 +116,7 @@ class TestCrudIntegration(base.TestCase):
         """Verify the request to retrieve an item."""
         self.session.request.return_value = self.create_response(
             status_code=200,
-            json_return_value={'name': 'Test', 'id': 1234},
+            json_return_value={'test': {'name': 'Test', 'id': 1234}},
         )
 
         resource = self.client.get(1)
@@ -134,7 +134,7 @@ class TestCrudIntegration(base.TestCase):
         """Verify the request to list a resource."""
         self.session.request.return_value = self.create_response(
             status_code=200,
-            json_return_value=[{'name': 'Test', 'id': 1234}],
+            json_return_value={'test': [{'name': 'Test', 'id': 1234}]},
         )
 
         resources = self.client.list(filter_by='some-attribute')

@@ -64,7 +64,6 @@ class TestHostsShell(base.ShellTestCase):
         self.shell('host-list -r 1 --limit 0')
         mock_list.assert_called_once_with(
             limit=0,
-            sort_dir='asc',
             region_id=1,
         )
 
@@ -77,7 +76,6 @@ class TestHostsShell(base.ShellTestCase):
         self.shell('host-list -r 1 --limit 1')
         mock_list.assert_called_once_with(
             limit=1,
-            sort_dir='asc',
             region_id=1,
         )
 
@@ -97,7 +95,6 @@ class TestHostsShell(base.ShellTestCase):
             self.shell('host-list -r 1 {0} 1'.format(cell_arg))
             mock_list.assert_called_once_with(
                 cell_id=1,
-                sort_dir='asc',
                 region_id=1,
             )
             mock_list.reset_mock()
@@ -108,7 +105,6 @@ class TestHostsShell(base.ShellTestCase):
         self.shell('host-list -r 1 --detail')
         mock_list.assert_called_once_with(
             detail=True,
-            sort_dir='asc',
             region_id=1,
         )
 
@@ -118,7 +114,6 @@ class TestHostsShell(base.ShellTestCase):
         """Verify --fields argument successfully passed to Client."""
         self.shell('host-list -r 1 --fields id name')
         mock_list.assert_called_once_with(
-            sort_dir='asc',
             region_id=1,
         )
         mock_printlist.assert_called_once_with(mock.ANY,
@@ -131,7 +126,6 @@ class TestHostsShell(base.ShellTestCase):
         self.shell('host-list -r 1 --sort-key cell_id')
         mock_list.assert_called_once_with(
             sort_key='cell_id',
-            sort_dir='asc',
             region_id=1,
         )
 

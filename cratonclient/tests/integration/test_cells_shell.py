@@ -60,7 +60,6 @@ class TestCellsShell(base.ShellTestCase):
         self.shell('cell-list -r 1 --limit 0')
         mock_list.assert_called_once_with(
             limit=0,
-            sort_dir='asc',
             region_id=1,
         )
 
@@ -73,7 +72,6 @@ class TestCellsShell(base.ShellTestCase):
         self.shell('cell-list -r 1 --limit 1')
         mock_list.assert_called_once_with(
             limit=1,
-            sort_dir='asc',
             region_id=1,
         )
 
@@ -93,7 +91,6 @@ class TestCellsShell(base.ShellTestCase):
         mock_list.assert_called_once_with(
             detail=True,
             region_id=1,
-            sort_dir='asc',
         )
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
@@ -102,7 +99,6 @@ class TestCellsShell(base.ShellTestCase):
         """Verify --fields argument successfully passed to Client."""
         self.shell('cell-list -r 1 --fields id name')
         mock_list.assert_called_once_with(
-            sort_dir='asc',
             region_id=1,
         )
         mock_printlist.assert_called_once_with(mock.ANY,
@@ -115,7 +111,6 @@ class TestCellsShell(base.ShellTestCase):
         self.shell('cell-list -r 1 --sort-key name')
         mock_list.assert_called_once_with(
             sort_key='name',
-            sort_dir='asc',
             region_id=1,
         )
 
