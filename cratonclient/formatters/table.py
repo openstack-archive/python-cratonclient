@@ -155,11 +155,10 @@ class Formatter(base.Formatter):
             output = output.decode()
         print(output)
 
-    def handle_instance(self, instance):
+    def handle_dict(self, dictionary):
         """Handle a single resource."""
         table = self.build_table([self.dict_property, self.dict_value])
-
-        for key, value in sorted(instance.to_dict().items()):
+        for key, value in sorted(dictionary.items()):
             if isinstance(value, dict):
                 value = six.text_type(value)
             if self.wrap > 0:
@@ -178,3 +177,7 @@ class Formatter(base.Formatter):
         if six.PY3:
             output = output.decode()
         print(output)
+
+    def handle_instance(self, instance):
+        """Handle a single resource."""
+        self.handle_dict(instance.to_dict())

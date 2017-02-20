@@ -14,6 +14,8 @@
 """Hosts resource and resource shell wrapper."""
 from __future__ import print_function
 
+import argparse
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
 from cratonclient.v1 import hosts
@@ -32,7 +34,6 @@ def do_host_show(cc, args):
 @cliutils.arg('-r', '--region',
               metavar='<region>',
               type=int,
-              required=True,
               help='ID of the region that the host belongs to.')
 @cliutils.arg('--cloud',
               metavar='<cloud>',
@@ -79,7 +80,8 @@ def do_host_show(cc, args):
 def do_host_list(cc, args):
     """Print list of hosts which are registered with the Craton service."""
     params = {}
-    default_fields = ['id', 'name', 'device_type', 'active', 'cell_id']
+    default_fields = [
+        'id', 'name', 'device_type', 'active', 'region_id', 'cell_id']
     if args.cell is not None:
         params['cell_id'] = args.cell
     if args.cloud is not None:
@@ -224,7 +226,7 @@ def do_host_delete(cc, args):
         response = cc.hosts.delete(args.id)
     except exc.ClientException as client_exc:
         raise exc.CommandError(
-            'Failed to delete cell {} due to "{}:{}"'.format(
+            'Failed to delete host {} due to "{}:{}"'.format(
                 args.id, client_exc.__class__, str(client_exc),
             )
         )

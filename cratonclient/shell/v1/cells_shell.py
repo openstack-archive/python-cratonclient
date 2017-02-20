@@ -14,6 +14,8 @@
 """Cells resource and resource shell wrapper."""
 from __future__ import print_function
 
+import argparse
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
 from cratonclient.v1 import cells
@@ -32,7 +34,6 @@ def do_cell_show(cc, args):
 @cliutils.arg('-r', '--region',
               metavar='<region>',
               type=int,
-              required=True,
               help='ID of the region that the cell belongs to.')
 @cliutils.arg('--cloud',
               metavar='<cloud>',
