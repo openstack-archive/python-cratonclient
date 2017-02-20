@@ -70,6 +70,10 @@ class Formatter(object):
             self.handle_instance(item_to_format)
             return
 
+        if isinstance(item_to_format, dict):
+            self.handle_dict(item_to_format)
+            return
+
         try:
             self.handle_generator(item_to_format)
         except TypeError as err:
@@ -80,6 +84,19 @@ class Formatter(object):
                     err
                 )
             )
+
+    def handle_dict(self, dictionary):
+        """Format and print the dictionary provided.
+
+        :param dictionary:
+            The dictionary that needs to be formatted.
+        :type dictionary:
+            dict
+        """
+        raise NotImplementedError(
+            "A formatter plugin subclassed Formatter but did not implement"
+            " the handle_dict method."
+        )
 
     def handle_instance(self, instance):
         """Format and print the instance provided.
