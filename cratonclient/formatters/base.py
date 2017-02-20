@@ -11,6 +11,7 @@
 # under the License.
 """Base class implementation for formatting plugins."""
 from cratonclient import crud
+from cratonclient.v1 import variables
 
 
 class Formatter(object):
@@ -67,7 +68,11 @@ class Formatter(object):
             ValueError.
         """
         if isinstance(item_to_format, crud.Resource):
-            self.handle_instance(item_to_format)
+            self.handle_resource(item_to_format)
+            return
+
+        if isinstance(item_to_format, variables.Variables):
+            self.handle_variables(item_to_format)
             return
 
         try:
@@ -80,6 +85,19 @@ class Formatter(object):
                     err
                 )
             )
+
+    def handle_variables(self, instance):
+        """Format and print the instance provided.
+
+        :param instance:
+            The instance retrieved from the API that needs to be formatted.
+        :type instance:
+            cratonclient.v1.variables.Variables
+        """
+        raise NotImplementedError(
+            "A formatter plugin subclassed Formatter but did not implement"
+            " the handle_variables method."
+        )
 
     def handle_instance(self, instance):
         """Format and print the instance provided.

@@ -15,6 +15,9 @@ from __future__ import print_function
 
 import argparse
 import sys
+# TEM remove!!
+import traceback
+#TEM
 
 from oslo_utils import encodeutils
 from oslo_utils import importutils
@@ -197,6 +200,9 @@ def main():
     try:
         CratonShell().main([encodeutils.safe_decode(a) for a in sys.argv[1:]])
     except Exception as e:
+        # TEM remove!!!
+        traceback.print_tb(sys.exc_info()[2])
+        # TEM
         print("ERROR: {}".format(encodeutils.exception_to_unicode(e)),
               file=sys.stderr)
         sys.exit(1)
