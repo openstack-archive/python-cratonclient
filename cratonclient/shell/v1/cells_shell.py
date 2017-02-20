@@ -14,6 +14,8 @@
 """Cells resource and resource shell wrapper."""
 from __future__ import print_function
 
+import argparse
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
 from cratonclient.v1 import cells
@@ -33,7 +35,6 @@ def do_cell_show(cc, args):
 @cliutils.arg('-r', '--region',
               metavar='<region>',
               type=int,
-              required=True,
               help='ID of the region that the cell belongs to.')
 @cliutils.arg('--cloud',
               metavar='<cloud>',
@@ -198,3 +199,29 @@ def do_cell_delete(cc, args):
     else:
         print("Cell {0} was {1} deleted.".
               format(args.id, 'successfully' if response else 'not'))
+
+
+@cliutils.arg('id',
+              metavar='<cell>',
+              type=int,
+              help='ID of the cell.')
+@cliutils.arg('--format',
+              metavar='<format>',
+              help='Output format of variables.')
+@cliutils.error('getting variables')
+def do_cell_vars_get(cc, args):
+    """Get variables for a cell that is registered with the Craton service."""
+    cell = cc.cells.get(item_id=args.id)
+    cliutils.get_and_print_variables(cell, args)
+
+
+@cliutils.arg('id',
+              metavar='<cell>',
+              type=int,
+              help='ID of the cell.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.error('setting variables')
+def do_cell_vars_set(cc, args):
+    """Set variables for a cell that is registered with the Craton service."""
+    cell = cc.cells.get(item_id=args.id)
+    cliutils.set_variables(cell, args)
