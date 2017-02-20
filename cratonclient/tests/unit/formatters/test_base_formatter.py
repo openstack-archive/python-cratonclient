@@ -46,7 +46,7 @@ class TestBaseFormatter(testbase.TestCase):
 
     def test_handle_detects_resources(self):
         """Verify we handle instances explicitly."""
-        resource = crud.Resource(mock.Mock(), {})
+        resource = crud.Resource(mock.Mock(), {"id": 1234})
         method = 'handle_instance'
         with mock.patch.object(self.formatter, method) as handle_instance:
             self.formatter.handle(resource)
