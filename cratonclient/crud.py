@@ -45,7 +45,7 @@ class CRUDClient(object):
 
             base_path = '/regions'
 
-        And it's ``key``, e.g.,
+        And its ``key``, e.g.,
 
         .. code-block:: python
 
@@ -146,6 +146,7 @@ class Resource(object):
 
     HUMAN_ID = False
     NAME_ATTR = 'name'
+    subresource_managers = {}
 
     def __init__(self, manager, info, loaded=False):
         """Populate and bind to a manager.
@@ -158,6 +159,15 @@ class Resource(object):
         self._info = info
         self._add_details(info)
         self._loaded = loaded
+
+        session = self.manager.session
+        subresource_base_url = self.manager.build_url(
+            {"{0}_id".format(self.manager.key): self.id}
+        )
+        for attribute, cls in self.subresource_managers.items():
+            setattr(self, attribute,
+                    cls(session, subresource_base_url,
+                        **self.manager.extra_request_kwargs))
 
     def __repr__(self):
         """Return string representation of resource attributes."""
