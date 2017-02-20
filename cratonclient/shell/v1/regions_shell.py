@@ -12,6 +12,8 @@
 """Hosts resource and resource shell wrapper."""
 from __future__ import print_function
 
+import argparse
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
 from cratonclient.v1 import regions
@@ -20,9 +22,9 @@ from cratonclient.v1 import regions
 @cliutils.arg('-n', '--name',
               metavar='<name>',
               required=True,
-              help='Name of the host.')
+              help='Name of the region.')
 @cliutils.arg('--note',
-              help='Note about the host.')
+              help='Note about the region.')
 def do_region_create(cc, args):
     """Register a new region with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
@@ -133,3 +135,41 @@ def do_region_delete(cc, args):
     else:
         print("Region {0} was {1} deleted.".
               format(args.id, 'successfully' if response else 'not'))
+
+
+@cliutils.arg('id',
+              metavar='<region>',
+              type=int,
+              help='ID or name of the region.')
+@cliutils.arg('--format',
+              metavar='<format>',
+              help='Output format of variables.')
+@cliutils.error('getting variables')
+def do_region_vars_get(cc, args):
+    """Get variables for a region."""
+    region = cc.regions.get(item_id=args.id)
+    cliutils.get_and_print_variables(region, args)
+
+
+@cliutils.arg('id',
+              metavar='<region>',
+              type=int,
+              help='ID of the region.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.error('setting variables')
+def do_region_vars_set(cc, args):
+    """Set variables for a region."""
+    region = cc.regions.get(item_id=args.id)
+    cliutils.set_variables(region, args)
+
+
+@cliutils.arg('id',
+              metavar='<region>',
+              type=int,
+              help='ID of the region.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.error('deleting variables')
+def do_region_vars_delete(cc, args):
+    """Set variables for a region."""
+    region = cc.regions.get(item_id=args.id)
+    cliutils.delete_variables(region, args)
