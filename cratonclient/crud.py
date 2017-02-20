@@ -20,7 +20,7 @@ from oslo_utils import strutils
 class CRUDClient(object):
     """Class that handles the basic create, read, upload, delete workflow."""
 
-    key = None
+    key = ""
     base_path = None
     resource_class = None
 
@@ -45,7 +45,7 @@ class CRUDClient(object):
 
             base_path = '/regions'
 
-        And it's ``key``, e.g.,
+        And its ``key``, e.g.,
 
         .. code-block:: python
 
@@ -125,15 +125,25 @@ class CRUDClient(object):
         response = self.session.put(url, json=kwargs)
         return self.resource_class(self, response.json(), loaded=True)
 
-    def delete(self, item_id=None, skip_merge=True, **kwargs):
+    def delete(self, item_id=None, skip_merge=True, json=None, **kwargs):
         """Delete the item based on the keyword arguments provided."""
         self.merge_request_arguments(kwargs, skip_merge)
         kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
-        response = self.session.delete(url, params=kwargs)
+        response = self.session.delete(url, params=kwargs, json=json)
         if 200 <= response.status_code < 300:
             return True
         return False
+
+    def __repr__(self):
+        """Return string representation of a Variable."""
+        return '%(class)s(%(session)s, %(url)s, %(extra_request_kwargs)s)' % \
+            {
+                "class": self.__class__.__name__,
+                "session": self.session,
+                "url": self.url,
+                "extra_request_kwargs": self.extra_request_kwargs,
+            }
 
 
 # NOTE(sigmavirus24): Credit for this Resource object goes to the
@@ -146,6 +156,7 @@ class Resource(object):
 
     HUMAN_ID = False
     NAME_ATTR = 'name'
+    subresource_managers = {}
 
     def __init__(self, manager, info, loaded=False):
         """Populate and bind to a manager.
@@ -158,6 +169,15 @@ class Resource(object):
         self._info = info
         self._add_details(info)
         self._loaded = loaded
+
+        session = self.manager.session
+        subresource_base_url = self.manager.build_url(
+            {"{0}_id".format(self.manager.key): self.id}
+        )
+        for attribute, cls in self.subresource_managers.items():
+            setattr(self, attribute,
+                    cls(session, subresource_base_url,
+                        **self.manager.extra_request_kwargs))
 
     def __repr__(self):
         """Return string representation of resource attributes."""
