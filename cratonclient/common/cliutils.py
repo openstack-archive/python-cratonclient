@@ -12,13 +12,17 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Craton CLI helper classes and functions."""
+import functools
 import json
 import os
 import prettytable
 import six
+import sys
 import textwrap
 
 from oslo_utils import encodeutils
+
+from cratonclient import exceptions as exc
 
 
 def arg(*args, **kwargs):
@@ -49,6 +53,44 @@ def add_arg(func, *args, **kwargs):
         # Because of the semantics of decorator composition if we just append
         # to the options list positional options will appear to be backwards.
         func.arguments.insert(0, (args, kwargs))
+
+
+def handle_shell_exception():
+    """Generic error handler for shell methods."""
+    def decorator(function):
+        @functools.wraps(function)
+        def wrapper(cc, args):
+            prop_map = {
+                "vars": "variables"
+            }
+            try:
+                function(cc, args)
+            except exc.ClientException as client_exc:
+                # NOTE(thomasem): All shell methods follow a similar pattern,
+                # so we can parse this name to get intended parts for
+                # messaging what went wrong to the end-user.
+                # The pattern is "do_<resource>_(<prop>_)<verb>", like
+                # do_project_show or do_project_vars_get, where <prop> is
+                # not guaranteed to be there, but will afford support for
+                # actions on some property of the resource.
+                parsed = function.__name__.split('_')
+                resource = parsed[1]
+                verb = parsed[-1]
+                prop = parsed[2] if len(parsed) > 3 else None
+                msg = 'Failed to {}'.format(verb)
+                if prop:
+                    # NOTE(thomasem): Prop would be something like "vars" in
+                    # "do_project_vars_get".
+                    msg = '{} {}'.format(msg, prop_map.get(prop))
+                # NOTE(thomasem): Append resource and ClientException details
+                # to error message.
+                msg = '{} for {} {} due to "{}:{}"'.format(
+                    msg, resource, args.id, client_exc.__class__,
+                    str(client_exc))
+                raise exc.CommandError(msg)
+
+        return wrapper
+    return decorator
 
 
 def print_list(objs, fields, formatters=None, sortby_index=0,
@@ -147,3 +189,54 @@ def env(*args, **kwargs):
         if value:
             return value
     return kwargs.get('default', '')
+
+
+def convert_arg_value(v):
+    """Convert different user inputs to normalized type."""
+    lower_v = v.lower()
+    if lower_v == 'true':
+        return True
+    if lower_v == 'false':
+        return False
+    if lower_v == 'null' or lower_v == 'none':
+        return None
+    try:
+        return int(v)
+    except ValueError:
+        pass
+    try:
+        return float(v)
+    except ValueError:
+        pass
+    return v
+
+
+def set_variables(resource, args):
+    """Derive list of expected variables for a resource and set them."""
+    update_variables = {}
+    delete_variables = set()
+    for variable in args.variables:
+        k, v = variable.split('=', 1)
+        if v:
+            update_variables[k] = convert_arg_value(v)
+        else:
+            delete_variables.add(k)
+    if not sys.stdin.isatty():
+        if update_variables or delete_variables:
+            raise Exception("FIXME cannot set on command line as well!")
+        update_variables = json.load(sys.stdin)
+    if update_variables:
+        resource.variables.update(**update_variables)
+    if delete_variables:
+        resource.variables.delete(*delete_variables)
+
+
+def delete_variables(resource, args):
+    """Delete a list of variables (by key) from a resource."""
+    if not sys.stdin.isatty():
+        if args.variables:
+            raise Exception("FIXME cannot delete on command line as well!")
+        delete_variables = json.load(sys.stdin)
+    else:
+        delete_variables = args.variables
+    resource.variables.delete(*delete_variables)

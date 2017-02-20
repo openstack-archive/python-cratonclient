@@ -19,6 +19,7 @@ from testtools import matchers
 from cratonclient.shell.v1 import regions_shell
 from cratonclient.tests.integration import base
 from cratonclient.v1 import regions
+from cratonclient.v1 import variables
 
 
 class TestRegionsShell(base.ShellTestCase):
@@ -151,3 +152,27 @@ class TestRegionsShell(base.ShellTestCase):
                                   invalid=True)
         regions_shell.do_region_update(client, invalid_input)
         mock_update.assert_called_once_with(1, name='mock_region')
+
+
+class TestRegionsVariablesShell(base.ShellTestCase):
+    """Test craton regions variables shell commands."""
+
+    def setUp(self):
+        super(TestRegionsVariablesShell, self).setUp()
+        self.mock_variables = variables.Variables(
+            manager = mock.Mock(),
+            info={},
+        )
+
+    @mock.patch('cratonclient.v1.regions.RegionManager.get')
+    def test_do_region_vars_get(self, mock_get):
+        """Verify that do region update ignores unknown field."""
+        client = mock.Mock()
+        session = mock.Mock()
+        session.project_id = 1
+        mock_region = mock_get.return_value
+        mock_region.variables = self.mock_variables
+        client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
+        regions_shell.do_region_vars_get(client, Namespace(id=1))
+        mock_get.assert_called_once_with(item_id=1)
+
