@@ -45,7 +45,7 @@ class CRUDClient(object):
 
             base_path = '/regions'
 
-        And it's ``key``, e.g.,
+        And its ``key``, e.g.,
 
         .. code-block:: python
 
@@ -100,7 +100,14 @@ class CRUDClient(object):
         kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.get(url)
-        return self.resource_class(self, response.json(), loaded=True)
+        items = response.json()
+        # FIXME(jimbaker) workaround that get can retrieve multiple
+        # items here!
+        if isinstance(items, list):
+            item = items[0]
+        else:
+            item = items
+        return self.resource_class(self, item, loaded=True)
 
     def list(self, skip_merge=False, **kwargs):
         """Generate the items from this endpoint."""
@@ -163,9 +170,20 @@ class Resource(object):
         """Return string representation of resource attributes."""
         reprkeys = sorted(k
                           for k in self.__dict__.keys()
-                          if k[0] != '_' and k != 'manager')
+                          if self.is_resource_property(k))
         info = ", ".join("%s=%s" % (k, getattr(self, k)) for k in reprkeys)
         return "<%s %s>" % (self.__class__.__name__, info)
+
+    @staticmethod
+    def is_resource_property(k):
+        """Evaluate if this is a property of the resource.
+
+        Since we use self.__dict__ to access arbitrary attributes of the Craton
+        resource this class represents, we wish to exclude "private"
+        properties and any others that aren't legitimately properties of a
+        Craton resource.
+        """
+        return k[0] != '_' and k != 'manager'
 
     @property
     def human_id(self):
@@ -211,8 +229,6 @@ class Resource(object):
         new = self.manager.get(self.id)
         if new:
             self._add_details(new._info)
-            self._add_details(
-                {'x_request_id': self.manager.client.last_request_id})
 
     def __eq__(self, other):
         """Define equality for resources."""
