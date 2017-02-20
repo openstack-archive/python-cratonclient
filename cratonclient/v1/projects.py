@@ -13,6 +13,7 @@
 # under the License.
 """Regions manager code."""
 from cratonclient import crud
+from cratonclient.v1.variables import ResourceWithVariables
 
 
 class Project(crud.Resource):
@@ -25,6 +26,7 @@ class ProjectManager(crud.CRUDClient):
     """A manager for projects."""
 
     key = 'project'
+    variables_key = 'variables'
     base_path = '/projects'
     resource_class = Project
 

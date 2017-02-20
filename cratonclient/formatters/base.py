@@ -70,6 +70,10 @@ class Formatter(object):
             self.handle_instance(item_to_format)
             return
 
+        if isinstance(item_to_format, dict):
+            self.handle_dict(item_to_format)
+            return
+
         try:
             self.handle_generator(item_to_format)
         except TypeError as err:
