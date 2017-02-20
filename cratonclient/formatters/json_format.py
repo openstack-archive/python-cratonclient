@@ -29,17 +29,19 @@ class Formatter(base.Formatter):
         self.indent = 4
         self.sort_keys = True
 
-    def format(self, dictionary):
+    def handle_dict(self, dictionary):
         """Return the dictionary as a JSON string."""
-        return json.dumps(
-            dictionary,
-            sort_keys=self.sort_keys,
-            indent=self.indent,
+        print(
+            json.dumps(
+                dictionary,
+                sort_keys=self.sort_keys,
+                indent=self.indent,
+            )
         )
 
     def handle_instance(self, instance):
         """Print the JSON representation of a single instance."""
-        print(self.format(instance.to_dict()))
+        self.handle_dict(instance.to_dict())
 
     def handle_generator(self, generator):
         """Print the JSON representation of a collection."""

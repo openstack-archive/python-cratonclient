@@ -20,7 +20,7 @@ from cratonclient.v1 import regions
 @cliutils.arg('-n', '--name',
               metavar='<name>',
               required=True,
-              help='Name of the host.')
+              help='Name of the region.')
 @cliutils.arg('--cloud',
               dest='cloud_id',
               metavar='<cloud>',
@@ -28,7 +28,7 @@ from cratonclient.v1 import regions
               required=True,
               help='ID of the cloud that the region belongs to.')
 @cliutils.arg('--note',
-              help='Note about the host.')
+              help='Note about the region.')
 def do_region_create(cc, args):
     """Register a new region with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
