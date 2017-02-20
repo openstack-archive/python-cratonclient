@@ -14,6 +14,8 @@
 """Hosts resource and resource shell wrapper."""
 from __future__ import print_function
 
+import argparse
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
 from cratonclient.v1 import hosts
@@ -33,7 +35,6 @@ def do_host_show(cc, args):
 @cliutils.arg('-r', '--region',
               metavar='<region>',
               type=int,
-              required=True,
               help='ID of the region that the host belongs to.')
 @cliutils.arg('--cloud',
               metavar='<cloud>',
@@ -80,7 +81,8 @@ def do_host_show(cc, args):
 def do_host_list(cc, args):
     """Print list of hosts which are registered with the Craton service."""
     params = {}
-    default_fields = ['id', 'name', 'device_type', 'active', 'cell_id']
+    default_fields = [
+        'id', 'name', 'device_type', 'active', 'region_id', 'cell_id']
     if args.cell is not None:
         params['cell_id'] = args.cell
     if args.cloud is not None:
@@ -227,10 +229,45 @@ def do_host_delete(cc, args):
         response = cc.hosts.delete(args.id)
     except exc.ClientException as client_exc:
         raise exc.CommandError(
-            'Failed to delete cell {} due to "{}:{}"'.format(
+            'Failed to delete host {} due to "{}:{}"'.format(
                 args.id, client_exc.__class__, str(client_exc),
             )
         )
     else:
         print("Host {0} was {1} deleted.".
               format(args.id, 'successfully' if response else 'not'))
+
+
+@cliutils.arg('id',
+              metavar='<host>',
+              type=int,
+              help='ID of the host.')
+@cliutils.error('getting variables')
+def do_host_vars_get(cc, args):
+    """Get variables for a host."""
+    host = cc.hosts.get(item_id=args.id)
+    cliutils.print_dict(host.variables, wrap=72)
+
+
+@cliutils.arg('id',
+              metavar='<host>',
+              type=int,
+              help='ID of the host.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.error('setting variables')
+def do_host_vars_set(cc, args):
+    """Set variables for a host."""
+    host = cc.hosts.get(item_id=args.id)
+    cliutils.set_variables(host, args)
+
+
+@cliutils.arg('id',
+              metavar='<host>',
+              type=int,
+              help='ID of the host.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.error('deleting variables')
+def do_host_vars_delete(cc, args):
+    """Set variables for a host."""
+    host = cc.hosts.get(item_id=args.id)
+    cliutils.delete_variables(host, args)
