@@ -12,6 +12,8 @@
 """Hosts resource and resource shell wrapper."""
 from __future__ import print_function
 
+import argparse
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
 from cratonclient.v1 import clouds
@@ -133,3 +135,38 @@ def do_cloud_delete(cc, args):
     else:
         print("Cloud {0} was {1} deleted.".
               format(args.id, 'successfully' if response else 'not'))
+
+
+@cliutils.arg('id',
+              metavar='<cloud>',
+              type=int,
+              help='ID or name of the cloud.')
+@cliutils.error('getting variables')
+def do_cloud_vars_get(cc, args):
+    """Get variables for a cloud."""
+    cloud = cc.clouds.get(item_id=args.id)
+    cliutils.print_dict(cloud.variables, wrap=72)
+
+
+@cliutils.arg('id',
+              metavar='<cloud>',
+              type=int,
+              help='ID of the cloud.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.error('setting variables')
+def do_cloud_vars_set(cc, args):
+    """Set variables for a cloud."""
+    cloud = cc.clouds.get(item_id=args.id)
+    cliutils.set_variables(cloud, args)
+
+
+@cliutils.arg('id',
+              metavar='<cloud>',
+              type=int,
+              help='ID of the cloud.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.error('deleting variables')
+def do_cloud_vars_delete(cc, args):
+    """Set variables for a cloud."""
+    cloud = cc.clouds.get(item_id=args.id)
+    cliutils.delete_variables(cloud, args)
