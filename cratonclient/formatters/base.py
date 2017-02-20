@@ -11,6 +11,7 @@
 # under the License.
 """Base class implementation for formatting plugins."""
 from cratonclient import crud
+from cratonclient.v1 import variables
 
 
 class Formatter(object):
@@ -66,7 +67,7 @@ class Formatter(object):
             we will not know how to handle it. In that case, we will raise a
             ValueError.
         """
-        if isinstance(item_to_format, crud.Resource):
+        if type(item_to_format) in [crud.Resource, variables.Variables]:
             self.handle_instance(item_to_format)
             return
 
