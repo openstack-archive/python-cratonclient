@@ -13,9 +13,10 @@
 # under the License.
 """Regions manager code."""
 from cratonclient import crud
+from cratonclient.v1.variables import ResourceWithVariables
 
 
-class Project(crud.Resource):
+class Project(ResourceWithVariables):
     """Representation of a Project."""
 
     pass
