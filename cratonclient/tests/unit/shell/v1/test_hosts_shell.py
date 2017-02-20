@@ -64,7 +64,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             marker=None,
         )
         self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name'
+            'active', 'cell_id', 'device_type', 'id', 'name', 'region_id'
         ])
 
     def test_with_cell_id(self):
@@ -81,7 +81,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             marker=None,
         )
         self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name',
+            'active', 'cell_id', 'device_type', 'id', 'name', 'region_id'
         ])
 
     def test_with_cloud_id(self):
@@ -98,7 +98,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             marker=None,
         )
         self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name',
+            'active', 'cell_id', 'device_type', 'id', 'name', 'region_id'
         ])
 
     def test_with_detail(self):
@@ -145,7 +145,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             marker=None,
         )
         self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name'
+            'active', 'cell_id', 'device_type', 'id', 'name', 'region_id'
         ])
 
     def test_negative_limit_raises_command_error(self):
