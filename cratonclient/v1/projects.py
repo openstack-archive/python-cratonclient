@@ -15,7 +15,7 @@
 from cratonclient import crud
 
 
-class Project(crud.Resource):
+class Project(crud.CratonResource):
     """Representation of a Project."""
 
     pass
@@ -25,6 +25,7 @@ class ProjectManager(crud.CRUDClient):
     """A manager for projects."""
 
     key = 'project'
+    variables_key = 'variables'
     base_path = '/projects'
     resource_class = Project
 

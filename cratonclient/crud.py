@@ -13,8 +13,14 @@
 # under the License.
 """Client for CRUD operations."""
 import copy
+import enum
 
 from oslo_utils import strutils
+
+
+class SubResourceTypes(enum.Enum):
+    """Different types of subresources for a Craton resource."""
+    VARIABLES = 'variables'
 
 
 class CRUDClient(object):
@@ -45,7 +51,7 @@ class CRUDClient(object):
 
             base_path = '/regions'
 
-        And it's ``key``, e.g.,
+        And its ``key``, e.g.,
 
         .. code-block:: python
 
@@ -68,12 +74,16 @@ class CRUDClient(object):
             path_arguments = {}
 
         base_path = path_arguments.pop('base_path', None) or self.base_path
+        subresource = path_arguments.pop('subresource', None)
         item_id = path_arguments.pop('{0}_id'.format(self.key), None)
 
         url = self.url + base_path
 
         if item_id is not None:
             url += '/{0}'.format(item_id)
+
+        if subresource:
+            url += '/{0}'.format(str(subresource))
 
         return url
 
@@ -131,6 +141,34 @@ class CRUDClient(object):
         kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.delete(url, params=kwargs)
+        if 200 <= response.status_code < 300:
+            return True
+        return False
+
+    def get_subresource(self, item_id=None, subresource=None):
+        """Get variables for the resource."""
+        kwargs = {}
+        kwargs.setdefault(self.key + '_id', item_id)
+        kwargs.setdefault('subresource', subresource)
+        url = self.build_url(path_arguments=kwargs)
+        response = self.session.get(url)
+        return self.resource_class(self, response.json(), loaded=True)
+
+    def set_subresource(self, item_id=None, subresource=None, **kwargs):
+        """Set new variables for the resource."""
+        kwargs.setdefault(self.key + '_id', item_id)
+        kwargs.setdefault('subresource', subresource)
+        url = self.build_url(path_arguments=kwargs)
+        response = self.session.put(url, json=kwargs)
+        return self.resource_class(self, response.json(), loaded=True)
+
+    def delete_subresource(self, item_id=None, subresource=None, *keys):
+        """Delete variables for the resource."""
+        kwargs = {}
+        kwargs.setdefault(self.key + '_id', item_id)
+        kwargs.setdefault('subresource', subresource)
+        url = self.build_url(path_arguments=kwargs)
+        response = self.session.delete(url, json=keys)
         if 200 <= response.status_code < 300:
             return True
         return False
@@ -238,3 +276,42 @@ class Resource(object):
     def delete(self):
         """Delete the resource from the service."""
         return self.manager.delete(self.id)
+
+
+class CratonResource(Resource):
+    """Represents a Craton resource, with extra attributes, like variables."""
+
+    def __init__(self, *args, **kwargs):
+        """Instantiate Craton resource."""
+        self._variables = {}
+        self._handlers = {
+            "variables": self._add_variables,
+            "default": self._add_detail,
+        }
+        super(CratonResource, self).__init__(*args, **kwargs)
+
+    def _add_detail(self, detail):
+        try:
+            setattr(self, k, v)
+            self._info[k] = v
+        except AttributeError:  # nosec(cjschaef): we already defined the
+            # attribute on the class
+            pass
+
+    def _add_variables(self, variables):
+        for k, v in variables.items():
+            self._variables[k] = Variable(k, v)
+
+    def _add_details(self, info):
+        for (k, v) in info.items():
+            handler = self._handlers.get(k) or self._handlers['default']
+            handler(v)
+
+
+class Variable(object):
+    """Represents a Craton variable key/value pair."""
+
+    def __init__(self, name, value):
+        """Instantiate key/value pair."""
+        self.name = name
+        self.value = value
