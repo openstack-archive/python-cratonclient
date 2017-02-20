@@ -21,6 +21,7 @@ class CRUDClient(object):
     """Class that handles the basic create, read, upload, delete workflow."""
 
     key = None
+    variables_key = None
     base_path = None
     resource_class = None
 
@@ -30,7 +31,7 @@ class CRUDClient(object):
         self.url = url.rstrip('/')
         self.extra_request_kwargs = extra_request_kwargs
 
-    def build_url(self, path_arguments=None):
+    def build_url(self, path_arguments=None, variables=False):
         """Build a complete URL from the url, base_path, and arguments.
 
         A CRUDClient is constructed with the base URL, e.g.
@@ -45,7 +46,7 @@ class CRUDClient(object):
 
             base_path = '/regions'
 
-        And it's ``key``, e.g.,
+        And its ``key``, e.g.,
 
         .. code-block:: python
 
@@ -75,6 +76,9 @@ class CRUDClient(object):
         if item_id is not None:
             url += '/{0}'.format(item_id)
 
+        if variables:
+            url += '/{0}'.format(self.variables_key)
+
         return url
 
     def merge_request_arguments(self, request_kwargs, skip_merge):
@@ -100,6 +104,7 @@ class CRUDClient(object):
         kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.get(url)
+        items = response.json()
         return self.resource_class(self, response.json(), loaded=True)
 
     def list(self, skip_merge=False, **kwargs):
@@ -131,6 +136,31 @@ class CRUDClient(object):
         kwargs.setdefault(self.key + '_id', item_id)
         url = self.build_url(path_arguments=kwargs)
         response = self.session.delete(url, params=kwargs)
+        if 200 <= response.status_code < 300:
+            return True
+        return False
+
+    def get_variables(self, item_id=None):
+        """Get variables for the resource."""
+        kwargs = {}
+        kwargs.setdefault(self.key + '_id', item_id)
+        url = self.build_url(path_arguments=kwargs, variables=True)
+        response = self.session.get(url)
+        return self.resource_class(self, response.json(), loaded=True)
+
+    def set_variables(self, item_id=None, **kwargs):
+        """Set new variables for the resource."""
+        kwargs.setdefault(self.key + '_id', item_id)
+        url = self.build_url(path_arguments=kwargs, variables=True)
+        response = self.session.put(url, json=kwargs)
+        return self.resource_class(self, response.json(), loaded=True)
+
+    def delete_variables(self, item_id=None, *keys):
+        """Delete variables for the resource."""
+        kwargs = {}
+        kwargs.setdefault(self.key + '_id', item_id)
+        url = self.build_url(path_arguments=kwargs, variables=True)
+        response = self.session.delete(url, json=keys)
         if 200 <= response.status_code < 300:
             return True
         return False
