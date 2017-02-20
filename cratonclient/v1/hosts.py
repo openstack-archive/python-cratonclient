@@ -14,7 +14,6 @@
 """Hosts resource and resource manager."""
 from cratonclient import crud
 
-
 class Host(crud.Resource):
     """Representation of a Host."""
 

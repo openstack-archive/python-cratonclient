@@ -14,6 +14,8 @@
 """Projects resource and resource shell wrapper."""
 from __future__ import print_function
 
+import argparse
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
 from cratonclient.v1 import projects
@@ -118,3 +120,39 @@ def do_project_delete(cc, args):
     else:
         print("Project {0} was {1} deleted.".
               format(args.id, 'successfully' if response else 'not'))
+
+
+@cliutils.arg('id',
+              metavar='<project>',
+              help='ID or name of the project.')
+@cliutils.handle_shell_exception()
+def do_project_vars_get(cc, args):
+    """Get variables for a project."""
+    project = cc.projects.get_variables(item_id=args.id)
+    args.formatter.configure(wrap=72).handle(project.variables)
+
+
+@cliutils.arg('id',
+              metavar='<project>',
+              help='ID of the project.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.handle_shell_exception()
+def do_project_vars_set(cc, args):
+    """Set variables for a project."""
+    project_id = args.id
+    project = cc.projects.get_variables(item_id=project_id)
+    adds, deletes = cliutils.variable_updates(project, args)
+    cc.projects.set_variables(project_id, **adds)
+    cc.projects.delete_variables(project_id, *deletes)
+
+@cliutils.arg('id',
+              metavar='<project>',
+              help='ID of the project.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.handle_shell_exception()
+def do_project_vars_delete(cc, args):
+    """Delete variables for a project by key."""
+    project_id = args.id
+    project = cc.projects.get_variables(item_id=project_id)
+    deletes = cliutils.variable_deletes(project, args)
+    cc.projects.delete_variables(project_id, *deletes)
