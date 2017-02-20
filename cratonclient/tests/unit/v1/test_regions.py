@@ -24,7 +24,7 @@ class TestRegion(base.TestCase):
     def test_is_a_resource_instance(self):
         """Verify that a Region instance is an instance of a Resource."""
         manager = mock.Mock()
-        self.assertIsInstance(regions.Region(manager, {}),
+        self.assertIsInstance(regions.Region(manager, {"id": 1234}),
                               crud.Resource)
 
 
