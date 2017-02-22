@@ -11,6 +11,7 @@
 # limitations under the License.
 """Command-line interface to the OpenStack Craton API V1."""
 from cratonclient.shell.v1 import cells_shell
+from cratonclient.shell.v1 import clouds_shell
 from cratonclient.shell.v1 import hosts_shell
 from cratonclient.shell.v1 import projects_shell
 from cratonclient.shell.v1 import regions_shell
@@ -19,6 +20,7 @@ from cratonclient.shell.v1 import regions_shell
 COMMAND_MODULES = [
     # TODO(cmspence): project_shell, cell_shell, device_shell, user_shell, etc.
     projects_shell,
+    clouds_shell,
     regions_shell,
     hosts_shell,
     cells_shell,

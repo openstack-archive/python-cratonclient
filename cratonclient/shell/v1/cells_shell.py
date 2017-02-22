@@ -124,6 +124,12 @@ def do_cell_list(cc, args):
               type=int,
               required=True,
               help='ID of the region that the cell belongs to.')
+@cliutils.arg('-c', '--cloud',
+              dest='cloud_id',
+              metavar='<cloud>',
+              type=int,
+              required=True,
+              help='ID of the cloud that the cell belongs to.')
 @cliutils.arg('--note',
               help='Note about the cell.')
 def do_cell_create(cc, args):
@@ -147,6 +153,11 @@ def do_cell_create(cc, args):
               metavar='<region>',
               type=int,
               help='Desired ID of the region that the cell should change to.')
+@cliutils.arg('-c', '--cloud',
+              dest='cloud_id',
+              metavar='<cloud>',
+              type=int,
+              help='Desired ID of the cloud that the cell should change to.')
 @cliutils.arg('--note',
               help='Note about the cell.')
 def do_cell_update(cc, args):
@@ -157,7 +168,7 @@ def do_cell_update(cc, args):
     if not fields:
         raise exc.CommandError(
             'Nothing to update... Please specify one of --name, --region, '
-            'or --note'
+            '--cloud, or --note'
         )
     cell = cc.cells.update(cell_id, **fields)
     data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}
