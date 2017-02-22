@@ -11,29 +11,27 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-"""Regions manager code."""
+"""Clouds manager code."""
 from cratonclient import crud
 
 
-class Cell(crud.Resource):
-    """Representation of a Region."""
+class Cloud(crud.Resource):
+    """Representation of a Cloud."""
 
     pass
 
 
-class CellManager(crud.CRUDClient):
-    """A manager for cells."""
+class CloudManager(crud.CRUDClient):
+    """A manager for clouds."""
 
-    key = 'cell'
-    base_path = '/cells'
-    resource_class = Cell
+    key = 'cloud'
+    base_path = '/clouds'
+    resource_class = Cloud
+    project_id = 0
 
-
-CELL_FIELDS = {
+CLOUD_FIELDS = {
     'id': 'ID',
-    'region_id': 'Region ID',
     'project_id': 'Project ID',
-    'cloud_id': 'Cloud ID',
     'name': 'Name',
     'note': 'Note',
     'created_at': 'Created At',

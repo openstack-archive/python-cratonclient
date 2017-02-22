@@ -44,6 +44,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
     def args_for(self, **kwargs):
         """Generate a Namespace for do_host_list."""
+        kwargs.setdefault('cloud', None)
         kwargs.setdefault('region', 246)
         kwargs.setdefault('cell', None)
         kwargs.setdefault('detail', False)
@@ -88,6 +89,23 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             'active', 'cell_id', 'device_type', 'id', 'name',
         ])
 
+    def test_with_cloud_id(self):
+        """Verify that we include the cell_id in the params."""
+        args = self.args_for(cloud=123)
+
+        hosts_shell.do_host_list(self.craton_client, args)
+
+        self.craton_client.hosts.list.assert_called_once_with(
+            sort_dir='asc',
+            cloud_id=123,
+            region_id=246,
+            autopaginate=False,
+            marker=None,
+        )
+        self.assertSortedPrintListFieldsEqualTo([
+            'active', 'cell_id', 'device_type', 'id', 'name',
+        ])
+
     def test_with_detail(self):
         """Verify the behaviour of specifying --detail."""
         args = self.args_for(detail=True)
@@ -104,6 +122,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         self.assertSortedPrintListFieldsEqualTo([
             'active',
             'cell_id',
+            'cloud_id',
             'created_at',
             'device_type',
             'id',
