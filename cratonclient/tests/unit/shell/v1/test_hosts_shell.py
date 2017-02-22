@@ -104,6 +104,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         self.assertSortedPrintListFieldsEqualTo([
             'active',
             'cell_id',
+            'cloud_id',
             'created_at',
             'device_type',
             'id',
