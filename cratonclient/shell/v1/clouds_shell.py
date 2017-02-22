@@ -14,28 +14,22 @@ from __future__ import print_function
 
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
-from cratonclient.v1 import regions
+from cratonclient.v1 import clouds
 
 
 @cliutils.arg('-n', '--name',
               metavar='<name>',
               required=True,
               help='Name of the host.')
-@cliutils.arg('--cloud',
-              dest='cloud_id',
-              metavar='<cloud>',
-              type=int,
-              required=True,
-              help='ID of the cloud that the region belongs to.')
 @cliutils.arg('--note',
               help='Note about the host.')
-def do_region_create(cc, args):
-    """Register a new region with the Craton service."""
+def do_cloud_create(cc, args):
+    """Register a new cloud with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in regions.REGION_FIELDS and not (v is None)}
+              if k in clouds.CLOUD_FIELDS and not (v is None)}
 
-    region = cc.regions.create(**fields)
-    data = {f: getattr(region, f, '') for f in regions.REGION_FIELDS}
+    cloud = cc.clouds.create(**fields)
+    data = {f: getattr(cloud, f, '') for f in clouds.CLOUD_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
@@ -49,19 +43,19 @@ def do_region_create(cc, args):
 @cliutils.arg('--all',
               action='store_true',
               default=False,
-              help='Retrieve and show all regions. This will override '
+              help='Retrieve and show all clouds. This will override '
                    'the provided value for --limit and automatically '
                    'retrieve each page of results.')
 @cliutils.arg('--limit',
               metavar='<limit>',
               type=int,
-              help='Maximum number of regions to return.')
+              help='Maximum number of clouds to return.')
 @cliutils.arg('--marker',
               metavar='<marker>',
               default=None,
-              help='ID of the region to use to resume listing regions.')
-def do_region_list(cc, args):
-    """List all regions."""
+              help='ID of the cell to use to resume listing clouds.')
+def do_cloud_list(cc, args):
+    """List all clouds."""
     params = {}
     default_fields = ['id', 'name']
     if args.limit is not None:
@@ -75,7 +69,7 @@ def do_region_list(cc, args):
 
     if args.fields:
         try:
-            fields = {x: regions.REGION_FIELDS[x] for x in args.fields}
+            fields = {x: clouds.CLOUD_FIELDS[x] for x in args.fields}
         except KeyError as err:
             raise exc.CommandError('Invalid field "{}"'.format(err.args[0]))
     else:
@@ -83,64 +77,59 @@ def do_region_list(cc, args):
     params['marker'] = args.marker
     params['autopaginate'] = args.all
 
-    regions_list = cc.regions.list(**params)
-    cliutils.print_list(regions_list, list(fields))
+    clouds_list = cc.clouds.list(**params)
+    cliutils.print_list(clouds_list, list(fields))
 
 
 @cliutils.arg('id',
-              metavar='<region>',
+              metavar='<cloud>',
               type=int,
-              help='ID of the region.')
-def do_region_show(cc, args):
-    """Show detailed information about a region."""
-    region = cc.regions.get(args.id)
-    data = {f: getattr(region, f, '') for f in regions.REGION_FIELDS}
+              help='ID of the cloud.')
+def do_cloud_show(cc, args):
+    """Show detailed information about a cloud."""
+    cloud = cc.clouds.get(args.id)
+    data = {f: getattr(cloud, f, '') for f in clouds.CLOUD_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
 @cliutils.arg('id',
-              metavar='<region>',
-              type=int,
-              help='ID of the region')
-@cliutils.arg('-n', '--name',
-              metavar='<name>',
-              help='Name of the region.')
-@cliutils.arg('--cloud',
-              dest='cloud_id',
               metavar='<cloud>',
               type=int,
-              help='Desired ID of the cloud that the region should change to.')
+              help='ID of the cloud')
+@cliutils.arg('-n', '--name',
+              metavar='<name>',
+              help='Name of the cloud.')
 @cliutils.arg('--note',
-              help='Note about the region.')
-def do_region_update(cc, args):
-    """Update a region that is registered with the Craton service."""
+              help='Note about the cloud.')
+def do_cloud_update(cc, args):
+    """Update a cloud that is registered with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in regions.REGION_FIELDS and not (v is None)}
+              if k in clouds.CLOUD_FIELDS and not (v is None)}
     item_id = fields.pop('id')
     if not fields:
         raise exc.CommandError(
-            'Nothing to update... Please specify one or more of --name, '
-            '--cloud, or --note'
+            'Nothing to update... Please specify one or more of --name, or '
+            '--note'
         )
-    region = cc.regions.update(item_id, **fields)
-    data = {f: getattr(region, f, '') for f in regions.REGION_FIELDS}
+    cloud = cc.clouds.update(item_id, **fields)
+    data = {f: getattr(cloud, f, '') for f in clouds.CLOUD_FIELDS}
     cliutils.print_dict(data, wrap=72)
 
 
 @cliutils.arg('id',
-              metavar='<region>',
+              metavar='<cloud>',
               type=int,
-              help='ID of the region.')
-def do_region_delete(cc, args):
-    """Delete a region that is registered with the Craton service."""
+              help='ID of the cloud.')
+def do_cloud_delete(cc, args):
+    """Delete a cloud that is registered with the Craton service."""
     try:
-        response = cc.regions.delete(args.id)
+        response = cc.clouds.delete(args.id)
     except exc.ClientException as client_exc:
         raise exc.CommandError(
-            'Failed to delete region {} due to "{}:{}"'.format(
+            'Failed to delete cloud {} due to "{}:{}"'.format(
                 args.id, client_exc.__class__, str(client_exc),
             )
         )
     else:
-        print("Region {0} was {1} deleted.".
+        print("Cloud {0} was {1} deleted.".
               format(args.id, 'successfully' if response else 'not'))
