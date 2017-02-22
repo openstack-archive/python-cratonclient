@@ -35,6 +35,10 @@ def do_cell_show(cc, args):
               type=int,
               required=True,
               help='ID of the region that the cell belongs to.')
+@cliutils.arg('--cloud',
+              metavar='<cloud>',
+              type=int,
+              help='ID of the cloud that the cell belongs to.')
 @cliutils.arg('--detail',
               action='store_true',
               default=False,
@@ -72,6 +76,8 @@ def do_cell_list(cc, args):
     """Print list of cells which are registered with the Craton service."""
     params = {}
     default_fields = ['id', 'name']
+    if args.cloud is not None:
+        params['cloud_id'] = args.cloud
     if args.limit is not None:
         if args.limit < 0:
             raise exc.CommandError('Invalid limit specified. Expected '
@@ -124,6 +130,12 @@ def do_cell_list(cc, args):
               type=int,
               required=True,
               help='ID of the region that the cell belongs to.')
+@cliutils.arg('--cloud',
+              dest='cloud_id',
+              metavar='<cloud>',
+              type=int,
+              required=True,
+              help='ID of the cloud that the cell belongs to.')
 @cliutils.arg('--note',
               help='Note about the cell.')
 def do_cell_create(cc, args):
@@ -147,6 +159,11 @@ def do_cell_create(cc, args):
               metavar='<region>',
               type=int,
               help='Desired ID of the region that the cell should change to.')
+@cliutils.arg('--cloud',
+              dest='cloud_id',
+              metavar='<cloud>',
+              type=int,
+              help='Desired ID of the cloud that the cell should change to.')
 @cliutils.arg('--note',
               help='Note about the cell.')
 def do_cell_update(cc, args):
@@ -157,7 +174,7 @@ def do_cell_update(cc, args):
     if not fields:
         raise exc.CommandError(
             'Nothing to update... Please specify one of --name, --region, '
-            'or --note'
+            '--cloud, or --note'
         )
     cell = cc.cells.update(cell_id, **fields)
     data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}

@@ -44,6 +44,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
     def args_for(self, **kwargs):
         """Generate a Namespace for do_host_list."""
+        kwargs.setdefault('cloud', None)
         kwargs.setdefault('region', 246)
         kwargs.setdefault('cell', None)
         kwargs.setdefault('detail', False)
@@ -104,6 +105,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         self.assertSortedPrintListFieldsEqualTo([
             'active',
             'cell_id',
+            'cloud_id',
             'created_at',
             'device_type',
             'id',
@@ -125,6 +127,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         self.craton_client.hosts.list.assert_called_once_with(
             limit=20,
             sort_dir='asc',
+            cloud_id=123,
             region_id=246,
             autopaginate=False,
             marker=None,
@@ -148,6 +151,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         self.craton_client.hosts.list.assert_called_once_with(
             sort_dir='asc',
+            cloud_id=123,
             region_id=246,
             autopaginate=False,
             marker=None,
@@ -174,6 +178,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         self.craton_client.hosts.list.assert_called_once_with(
             sort_key='ip_address',
             sort_dir='asc',
+            cloud_id=123,
             region_id=246,
             autopaginate=False,
             marker=None,

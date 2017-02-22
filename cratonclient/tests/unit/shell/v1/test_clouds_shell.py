@@ -11,53 +11,51 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-"""Tests for the shell functions for the regions resource."""
+"""Tests for the shell functions for the clouds resource."""
 import mock
 
 from cratonclient import exceptions
-from cratonclient.shell.v1 import regions_shell
+from cratonclient.shell.v1 import clouds_shell
 from cratonclient.tests.unit.shell import base
-from cratonclient.v1 import regions
+from cratonclient.v1 import clouds
 
 
-class TestDoRegionShow(base.TestShellCommandUsingPrintDict):
-    """Unit tests for the region-show command."""
+class TestDoCloudShow(base.TestShellCommandUsingPrintDict):
+    """Unit tests for the cloud-show command."""
 
-    def test_prints_region_data(self):
-        """Verify we print the data for the region."""
+    def test_prints_cloud_data(self):
+        """Verify we print the data for the cloud."""
         args = self.args_for(id=1234)
 
-        regions_shell.do_region_show(self.craton_client, args)
+        clouds_shell.do_cloud_show(self.craton_client, args)
 
-        self.craton_client.regions.get.assert_called_once_with(1234)
+        self.craton_client.clouds.get.assert_called_once_with(1234)
         self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
+            {field: mock.ANY for field in clouds.CLOUD_FIELDS},
             wrap=72,
         )
 
 
-class TestDoRegionCreate(base.TestShellCommandUsingPrintDict):
-    """Unit tests for the region-create command."""
+class TestDoCloudCreate(base.TestShellCommandUsingPrintDict):
+    """Unit tests for the cloud-create command."""
 
     def args_for(self, **kwargs):
-        """Generate arguments for region-create."""
-        kwargs.setdefault('name', 'New region')
-        kwargs.setdefault('cloud_id', 1)
+        """Generate arguments for cloud-create."""
+        kwargs.setdefault('name', 'New cloud')
         kwargs.setdefault('note', None)
-        return super(TestDoRegionCreate, self).args_for(**kwargs)
+        return super(TestDoCloudCreate, self).args_for(**kwargs)
 
     def test_accepts_only_required_arguments(self):
         """Verify operation with only --name provided."""
         args = self.args_for()
 
-        regions_shell.do_region_create(self.craton_client, args)
+        clouds_shell.do_cloud_create(self.craton_client, args)
 
-        self.craton_client.regions.create.assert_called_once_with(
-            name='New region',
-            cloud_id=1,
+        self.craton_client.clouds.create.assert_called_once_with(
+            name='New cloud',
         )
         self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
+            {field: mock.ANY for field in clouds.CLOUD_FIELDS},
             wrap=72,
         )
 
@@ -65,53 +63,51 @@ class TestDoRegionCreate(base.TestShellCommandUsingPrintDict):
         """Verify operation with --note passed as well."""
         args = self.args_for(note='This is a note')
 
-        regions_shell.do_region_create(self.craton_client, args)
+        clouds_shell.do_cloud_create(self.craton_client, args)
 
-        self.craton_client.regions.create.assert_called_once_with(
-            name='New region',
-            cloud_id=1,
+        self.craton_client.clouds.create.assert_called_once_with(
+            name='New cloud',
             note='This is a note',
         )
         self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
+            {field: mock.ANY for field in clouds.CLOUD_FIELDS},
             wrap=72,
         )
 
 
-class TestDoRegionUpdate(base.TestShellCommandUsingPrintDict):
-    """Unit tests for region-update command."""
+class TestDoCloudUpdate(base.TestShellCommandUsingPrintDict):
+    """Unit tests for cloud-update command."""
 
     def args_for(self, **kwargs):
-        """Generate arguments for region-update."""
+        """Generate arguments for cloud-update."""
         kwargs.setdefault('id', 12345)
-        kwargs.setdefault('cloud_id', None)
         kwargs.setdefault('name', None)
         kwargs.setdefault('note', None)
-        return super(TestDoRegionUpdate, self).args_for(**kwargs)
+        return super(TestDoCloudUpdate, self).args_for(**kwargs)
 
     def test_nothing_to_update_raises_error(self):
         """Verify specifying nothing raises a CommandError."""
         args = self.args_for()
 
         self.assertRaisesCommandErrorWith(
-            regions_shell.do_region_update,
+            clouds_shell.do_cloud_update,
             args,
         )
-        self.assertFalse(self.craton_client.regions.update.called)
+        self.assertFalse(self.craton_client.clouds.update.called)
         self.assertFalse(self.print_dict.called)
 
     def test_name_is_updated(self):
         """Verify the name attribute update is sent."""
         args = self.args_for(name='A New Name')
 
-        regions_shell.do_region_update(self.craton_client, args)
+        clouds_shell.do_cloud_update(self.craton_client, args)
 
-        self.craton_client.regions.update.assert_called_once_with(
+        self.craton_client.clouds.update.assert_called_once_with(
             12345,
             name='A New Name',
         )
         self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
+            {field: mock.ANY for field in clouds.CLOUD_FIELDS},
             wrap=72,
         )
 
@@ -119,14 +115,14 @@ class TestDoRegionUpdate(base.TestShellCommandUsingPrintDict):
         """Verify the note attribute is updated."""
         args = self.args_for(note='A New Note')
 
-        regions_shell.do_region_update(self.craton_client, args)
+        clouds_shell.do_cloud_update(self.craton_client, args)
 
-        self.craton_client.regions.update.assert_called_once_with(
+        self.craton_client.clouds.update.assert_called_once_with(
             12345,
             note='A New Note',
         )
         self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
+            {field: mock.ANY for field in clouds.CLOUD_FIELDS},
             wrap=72,
         )
 
@@ -135,110 +131,94 @@ class TestDoRegionUpdate(base.TestShellCommandUsingPrintDict):
         args = self.args_for(
             note='A New Note',
             name='A New Name',
-            cloud_id=2,
         )
 
-        regions_shell.do_region_update(self.craton_client, args)
+        clouds_shell.do_cloud_update(self.craton_client, args)
 
-        self.craton_client.regions.update.assert_called_once_with(
+        self.craton_client.clouds.update.assert_called_once_with(
             12345,
             note='A New Note',
             name='A New Name',
-            cloud_id=2,
         )
         self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
+            {field: mock.ANY for field in clouds.CLOUD_FIELDS},
             wrap=72,
         )
 
 
-class TestDoRegionDelete(base.TestShellCommand):
-    """Unit tests for the region-delete command."""
+class TestDoCloudDelete(base.TestShellCommand):
+    """Unit tests for the cloud-delete command."""
 
     def setUp(self):
         """Mock the print function."""
-        super(TestDoRegionDelete, self).setUp()
+        super(TestDoCloudDelete, self).setUp()
         self.print_mock = mock.patch(
-            'cratonclient.shell.v1.regions_shell.print'
+            'cratonclient.shell.v1.clouds_shell.print'
         )
         self.print_func = self.print_mock.start()
 
     def tearDown(self):
         """Clean up our print function mock."""
-        super(TestDoRegionDelete, self).tearDown()
+        super(TestDoCloudDelete, self).tearDown()
         self.print_mock.stop()
 
     def args_for(self, **kwargs):
-        """Generate args for the region-delete command."""
+        """Generate args for the cloud-delete command."""
         kwargs.setdefault('id', 123456)
-        return super(TestDoRegionDelete, self).args_for(**kwargs)
+        return super(TestDoCloudDelete, self).args_for(**kwargs)
 
     def test_successful(self):
         """Verify successful deletion."""
-        self.craton_client.regions.delete.return_value = True
+        self.craton_client.clouds.delete.return_value = True
         args = self.args_for()
 
-        regions_shell.do_region_delete(self.craton_client, args)
+        clouds_shell.do_cloud_delete(self.craton_client, args)
 
-        self.craton_client.regions.delete.assert_called_once_with(123456)
+        self.craton_client.clouds.delete.assert_called_once_with(123456)
         self.print_func.assert_called_once_with(
-            'Region 123456 was successfully deleted.'
+            'Cloud 123456 was successfully deleted.'
         )
 
     def test_failed(self):
         """Verify failed deletion."""
-        self.craton_client.regions.delete.return_value = False
+        self.craton_client.clouds.delete.return_value = False
         args = self.args_for()
 
-        regions_shell.do_region_delete(self.craton_client, args)
+        clouds_shell.do_cloud_delete(self.craton_client, args)
 
-        self.craton_client.regions.delete.assert_called_once_with(123456)
+        self.craton_client.clouds.delete.assert_called_once_with(123456)
         self.print_func.assert_called_once_with(
-            'Region 123456 was not deleted.'
+            'Cloud 123456 was not deleted.'
         )
 
     def test_failed_with_exception(self):
         """Verify we raise a CommandError on client exceptions."""
-        self.craton_client.regions.delete.side_effect = exceptions.NotFound
+        self.craton_client.clouds.delete.side_effect = exceptions.NotFound
         args = self.args_for()
 
-        self.assertRaisesCommandErrorWith(regions_shell.do_region_delete, args)
+        self.assertRaisesCommandErrorWith(clouds_shell.do_cloud_delete, args)
 
-        self.craton_client.regions.delete.assert_called_once_with(123456)
+        self.craton_client.clouds.delete.assert_called_once_with(123456)
         self.assertFalse(self.print_func.called)
 
 
-class TestDoRegionList(base.TestShellCommandUsingPrintList):
-    """Test region-list command."""
+class TestDoCloudList(base.TestShellCommandUsingPrintList):
+    """Test cloud-list command."""
 
     def args_for(self, **kwargs):
-        """Generate the default argument list for region-list."""
+        """Generate the default argument list for cloud-list."""
         kwargs.setdefault('detail', False)
-        kwargs.setdefault('cloud', None)
         kwargs.setdefault('limit', None)
         kwargs.setdefault('fields', [])
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
-        return super(TestDoRegionList, self).args_for(**kwargs)
+        return super(TestDoCloudList, self).args_for(**kwargs)
 
     def test_with_defaults(self):
-        """Test region-list with default values."""
+        """Test cloud-list with default values."""
         args = self.args_for()
-        regions_shell.do_region_list(self.craton_client, args)
+        clouds_shell.do_cloud_list(self.craton_client, args)
 
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
-
-    def test_with_cloud_id(self):
-        """Test region-list with default values."""
-        args = self.args_for(cloud=123)
-        regions_shell.do_region_list(self.craton_client, args)
-        self.craton_client.regions.list.assert_called_once_with(
-            cloud_id=123,
-            marker=None,
-            autopaginate=False,
-        )
         self.assertTrue(self.print_list.called)
         self.assertEqual(['id', 'name'],
                          sorted(self.print_list.call_args[0][-1]))
@@ -246,13 +226,13 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
     def test_negative_limit(self):
         """Ensure we raise an exception for negative limits."""
         args = self.args_for(limit=-1)
-        self.assertRaisesCommandErrorWith(regions_shell.do_region_list, args)
+        self.assertRaisesCommandErrorWith(clouds_shell.do_cloud_list, args)
 
     def test_positive_limit(self):
         """Verify that we pass positive limits to the call to list."""
         args = self.args_for(limit=5)
-        regions_shell.do_region_list(self.craton_client, args)
-        self.craton_client.regions.list.assert_called_once_with(
+        clouds_shell.do_cloud_list(self.craton_client, args)
+        self.craton_client.clouds.list.assert_called_once_with(
             limit=5,
             marker=None,
             autopaginate=False,
@@ -264,23 +244,23 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
     def test_fields(self):
         """Verify that we print out specific fields."""
         args = self.args_for(fields=['id', 'name', 'note'])
-        regions_shell.do_region_list(self.craton_client, args)
+        clouds_shell.do_cloud_list(self.craton_client, args)
         self.assertEqual(['id', 'name', 'note'],
                          sorted(self.print_list.call_args[0][-1]))
 
     def test_invalid_fields(self):
         """Verify that we error out with invalid fields."""
         args = self.args_for(fields=['uuid', 'not-name', 'nate'])
-        self.assertRaisesCommandErrorWith(regions_shell.do_region_list, args)
+        self.assertRaisesCommandErrorWith(clouds_shell.do_cloud_list, args)
         self.assertNothingWasCalled()
 
     def test_autopagination(self):
         """Verify autopagination is controlled by --all."""
         args = self.args_for(all=True)
 
-        regions_shell.do_region_list(self.craton_client, args)
+        clouds_shell.do_cloud_list(self.craton_client, args)
 
-        self.craton_client.regions.list.assert_called_once_with(
+        self.craton_client.clouds.list.assert_called_once_with(
             limit=100,
             marker=None,
             autopaginate=True,
@@ -290,9 +270,9 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
         """Verify --all overrides --limit."""
         args = self.args_for(all=True, limit=35)
 
-        regions_shell.do_region_list(self.craton_client, args)
+        clouds_shell.do_cloud_list(self.craton_client, args)
 
-        self.craton_client.regions.list.assert_called_once_with(
+        self.craton_client.clouds.list.assert_called_once_with(
             limit=100,
             marker=None,
             autopaginate=True,
@@ -302,9 +282,9 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
         """Verify we pass our marker through to the client."""
         args = self.args_for(marker=31)
 
-        regions_shell.do_region_list(self.craton_client, args)
+        clouds_shell.do_cloud_list(self.craton_client, args)
 
-        self.craton_client.regions.list.assert_called_once_with(
+        self.craton_client.clouds.list.assert_called_once_with(
             marker=31,
             autopaginate=False,
         )
