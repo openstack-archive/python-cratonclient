@@ -35,6 +35,10 @@ def do_host_show(cc, args):
               type=int,
               required=True,
               help='ID of the region that the host belongs to.')
+@cliutils.arg('--cloud',
+              metavar='<cloud>',
+              type=int,
+              help='ID of the cloud that the host belongs to.')
 @cliutils.arg('-c', '--cell',
               metavar='<cell>',
               type=int,
@@ -79,6 +83,8 @@ def do_host_list(cc, args):
     default_fields = ['id', 'name', 'device_type', 'active', 'cell_id']
     if args.cell is not None:
         params['cell_id'] = args.cell
+    if args.cloud is not None:
+        params['cloud_id'] = args.cloud
     if args.limit is not None:
         if args.limit < 0:
             raise exc.CommandError('Invalid limit specified. Expected '
@@ -134,6 +140,12 @@ def do_host_list(cc, args):
               type=int,
               required=True,
               help='ID of the region that the host belongs to.')
+@cliutils.arg('--cloud',
+              dest='cloud_id',
+              metavar='<cloud>',
+              type=int,
+              required=True,
+              help='ID of the cloud that the host belongs to.')
 @cliutils.arg('-c', '--cell',
               dest='cell_id',
               metavar='<cell>',
@@ -176,6 +188,11 @@ def do_host_create(cc, args):
               metavar='<region>',
               type=int,
               help='Desired ID of the region that the host should change to.')
+@cliutils.arg('--cloud',
+              dest='cloud_id',
+              metavar='<cloud>',
+              type=int,
+              help='Desired ID of the cloud that the host should change to.')
 @cliutils.arg('-c', '--cell',
               dest='cell_id',
               metavar='<cell>',

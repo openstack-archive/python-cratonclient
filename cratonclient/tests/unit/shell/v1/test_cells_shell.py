@@ -50,6 +50,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
     def args_for(self, **kwargs):
         """Generate the default argument list for cell-list."""
         kwargs.setdefault('region', 123)
+        kwargs.setdefault('cloud', None)
         kwargs.setdefault('detail', False)
         kwargs.setdefault('limit', None)
         kwargs.setdefault('sort_key', None)
@@ -67,6 +68,23 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
 
         self.craton_client.cells.list.assert_called_once_with(
             sort_dir='asc',
+            region_id=123,
+            autopaginate=False,
+            marker=None,
+        )
+        self.assertTrue(self.print_list.called)
+        self.assertEqual(['id', 'name'],
+                         sorted(self.print_list.call_args[0][-1]))
+
+    def test_with_cloud_id(self):
+        """Verify the behaviour of do_cell_list with mostly default values."""
+        args = self.args_for(cloud=456)
+
+        cells_shell.do_cell_list(self.craton_client, args)
+
+        self.craton_client.cells.list.assert_called_once_with(
+            sort_dir='asc',
+            cloud_id=456,
             region_id=123,
             autopaginate=False,
             marker=None,

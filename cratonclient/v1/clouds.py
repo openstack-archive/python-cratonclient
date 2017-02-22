@@ -11,37 +11,28 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-"""Hosts resource and resource manager."""
+"""Clouds manager code."""
 from cratonclient import crud
 
 
-class Host(crud.Resource):
-    """Representation of a Host."""
+class Cloud(crud.Resource):
+    """Representation of a Cloud."""
 
     pass
 
 
-class HostManager(crud.CRUDClient):
-    """A manager for hosts."""
+class CloudManager(crud.CRUDClient):
+    """A manager for clouds."""
 
-    key = 'host'
-    base_path = '/hosts'
-    resource_class = Host
+    key = 'cloud'
+    base_path = '/clouds'
+    resource_class = Cloud
 
-
-HOST_FIELDS = {
+CLOUD_FIELDS = {
     'id': 'ID',
-    'name': 'Name',
-    'device_type': 'Device Type',
     'project_id': 'Project ID',
-    'cloud_id': 'Cloud ID',
-    'region_id': 'Region ID',
-    'cell_id': 'Cell ID',
-    'ip_address': 'IP Address',
-    'active': 'Active',
+    'name': 'Name',
     'note': 'Note',
     'created_at': 'Created At',
-    'updated_at': 'Updated At',
-    'labels': 'Labels',
-    'parent_id': 'Parent ID',
+    'updated_at': 'Updated At'
 }

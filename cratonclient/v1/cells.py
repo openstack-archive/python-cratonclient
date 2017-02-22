@@ -33,6 +33,7 @@ CELL_FIELDS = {
     'id': 'ID',
     'region_id': 'Region ID',
     'project_id': 'Project ID',
+    'cloud_id': 'Cloud ID',
     'name': 'Name',
     'note': 'Note',
     'created_at': 'Created At',
