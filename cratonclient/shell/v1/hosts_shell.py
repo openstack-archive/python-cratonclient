@@ -35,6 +35,10 @@ def do_host_show(cc, args):
               type=int,
               required=True,
               help='ID of the region that the host belongs to.')
+@cliutils.arg('--cloud',
+              metavar='<cloud>',
+              type=int,
+              help='ID of the cloud that the host belongs to.')
 @cliutils.arg('-c', '--cell',
               metavar='<cell>',
               type=int,
@@ -113,6 +117,7 @@ def do_host_list(cc, args):
         params['sort_key'] = sort_key
     params['sort_dir'] = args.sort_dir
     params['region_id'] = args.region
+    params['cloud_id'] = args.cloud
     params['marker'] = args.marker
     params['autopaginate'] = args.all
 
@@ -134,6 +139,12 @@ def do_host_list(cc, args):
               type=int,
               required=True,
               help='ID of the region that the host belongs to.')
+@cliutils.arg('--cloud',
+              dest='cloud_id',
+              metavar='<cloud>',
+              type=int,
+              required=True,
+              help='ID of the cloud that the host belongs to.')
 @cliutils.arg('-c', '--cell',
               dest='cell_id',
               metavar='<cell>',
@@ -176,6 +187,11 @@ def do_host_create(cc, args):
               metavar='<region>',
               type=int,
               help='Desired ID of the region that the host should change to.')
+@cliutils.arg('--cloud',
+              dest='cloud_id',
+              metavar='<cloud>',
+              type=int,
+              help='Desired ID of the cloud that the host should change to.')
 @cliutils.arg('-c', '--cell',
               dest='cell_id',
               metavar='<cell>',
