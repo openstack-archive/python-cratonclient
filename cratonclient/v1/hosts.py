@@ -34,6 +34,7 @@ HOST_FIELDS = {
     'name': 'Name',
     'device_type': 'Device Type',
     'project_id': 'Project ID',
+    'cloud_id': 'Cloud ID',
     'region_id': 'Region ID',
     'cell_id': 'Cell ID',
     'ip_address': 'IP Address',
