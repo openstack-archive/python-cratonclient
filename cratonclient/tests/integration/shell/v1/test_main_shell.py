@@ -19,7 +19,7 @@ import re
 from testtools import matchers
 
 from cratonclient.shell import main
-from cratonclient.tests.integration import base
+from cratonclient.tests.integration.shell import base
 
 
 class TestMainShell(base.ShellTestCase):
