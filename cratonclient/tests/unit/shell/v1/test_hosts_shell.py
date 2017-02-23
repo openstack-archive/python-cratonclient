@@ -111,6 +111,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             'labels',
             'name',
             'note',
+            'parent_id',
             'project_id',
             'region_id',
             'updated_at',
