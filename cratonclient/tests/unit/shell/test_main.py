@@ -122,6 +122,10 @@ class TestCratonShell(base.TestCase):
                 version=cratonclient.__version__,
             ),
             mock.call(
+                '--format', default='default', choices=['default', 'json'],
+                help=mock.ANY,
+            ),
+            mock.call(
                 '--craton-url', default='',
                 help='The base URL of the running Craton service. '
                      'Defaults to env[CRATON_URL].',
