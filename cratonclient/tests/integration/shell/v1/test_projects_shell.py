@@ -20,7 +20,7 @@ from testtools import matchers
 
 from cratonclient import exceptions as exc
 from cratonclient.shell.v1 import projects_shell
-from cratonclient.tests.integration import base
+from cratonclient.tests.integration.shell import base
 from cratonclient.v1 import projects
 
 

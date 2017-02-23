@@ -17,7 +17,7 @@ from argparse import Namespace
 from testtools import matchers
 
 from cratonclient.shell.v1 import clouds_shell
-from cratonclient.tests.integration import base
+from cratonclient.tests.integration.shell import base
 from cratonclient.v1 import clouds
 
 
