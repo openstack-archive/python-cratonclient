@@ -25,8 +25,8 @@ from cratonclient.v1 import projects
 def do_project_show(cc, args):
     """Show detailed information about a project."""
     project = cc.projects.get(args.id)
-    data = {f: getattr(project, f, '') for f in projects.PROJECT_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72)
+    args.formatter.handle(project)
 
 
 @cliutils.arg('-n', '--name',

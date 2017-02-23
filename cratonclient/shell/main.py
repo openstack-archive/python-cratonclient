@@ -18,6 +18,7 @@ import sys
 
 from oslo_utils import encodeutils
 from oslo_utils import importutils
+from stevedore import extension
 
 from cratonclient import __version__
 from cratonclient import exceptions as exc
@@ -27,11 +28,19 @@ from cratonclient.common import cliutils
 from cratonclient.v1 import client
 
 
+FORMATTERS_NAMESPACE = 'cratonclient.formatters'
+
+
 class CratonShell(object):
     """Class used to handle shell definition and parsing."""
 
-    @staticmethod
-    def get_base_parser():
+    def __init__(self):
+        self.extension_mgr = extension.ExtensionManager(
+            namespace=FORMATTERS_NAMESPACE,
+            invoke_on_load=False,
+        )
+
+    def get_base_parser(self):
         """Configure base craton arguments and parsing."""
         parser = argparse.ArgumentParser(
             prog='craton',
@@ -49,6 +58,12 @@ class CratonShell(object):
         parser.add_argument('--version',
                             action='version',
                             version=__version__,
+                            )
+        parser.add_argument('--format',
+                            choices=list(self.extension_mgr.names()),
+                            help='The format to use to print the information '
+                                 'to the console. Defaults to pretty-printing '
+                                 'using ASCII tables.',
                             )
         parser.add_argument('--craton-url',
                             default=cliutils.env('CRATON_URL'),
@@ -150,6 +165,7 @@ class CratonShell(object):
             project_id=args.os_project_id,
         )
         self.cc = client.Client(session, args.craton_url)
+        args.formatter = self.extension_mgr[args.format](args)
         args.func(self.cc, args)
 
     @cliutils.arg(
