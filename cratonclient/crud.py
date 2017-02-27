@@ -13,6 +13,7 @@
 # under the License.
 """Client for CRUD operations."""
 import copy
+from itertools import chain
 
 from oslo_utils import strutils
 
@@ -119,6 +120,7 @@ class CRUDClient(object):
             autopaginate=autopaginate,
             items_key=(self.key + 's'),
             params=kwargs,
+            extract=lambda x: chain(*x.values()),
         )
         for response, items in response_generator:
             for item in items:
@@ -214,7 +216,7 @@ class Resource(object):
         self.set_loaded(True)
         if not hasattr(self.manager, 'get'):
             return
-            
+
         new = self.manager.get(self.id)
         if new:
             self._add_details(new._info)
