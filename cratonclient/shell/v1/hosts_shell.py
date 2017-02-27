@@ -26,8 +26,7 @@ from cratonclient.v1 import hosts
 def do_host_show(cc, args):
     """Show detailed information about a host."""
     host = cc.hosts.get(args.id)
-    data = {f: getattr(host, f, '') for f in hosts.HOST_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(host)
 
 
 @cliutils.arg('-r', '--region',
@@ -123,7 +122,7 @@ def do_host_list(cc, args):
     params['autopaginate'] = args.all
 
     host_list = cc.hosts.list(**params)
-    cliutils.print_list(host_list, list(fields))
+    args.formatter.configure(fields=list(fields)).handle(host_list)
 
 
 @cliutils.arg('-n', '--name',
@@ -169,8 +168,7 @@ def do_host_create(cc, args):
     fields = {k: v for (k, v) in vars(args).items()
               if k in hosts.HOST_FIELDS and (v or v is False)}
     host = cc.hosts.create(**fields)
-    data = {f: getattr(host, f, '') for f in hosts.HOST_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(host)
 
 
 @cliutils.arg('id',
@@ -213,8 +211,7 @@ def do_host_update(cc, args):
     item_id = fields.pop('id')
     host = cc.hosts.update(item_id, **fields)
     print("Host {0} has been successfully updated.".format(host.id))
-    data = {f: getattr(host, f, '') for f in hosts.HOST_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(host)
 
 
 @cliutils.arg('id',

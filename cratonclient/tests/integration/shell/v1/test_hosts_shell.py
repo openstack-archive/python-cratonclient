@@ -29,22 +29,30 @@ class TestHostsShell(base.ShellTestCase):
 
     re_options = re.DOTALL | re.MULTILINE
     host_valid_fields = None
-    host_invalid_field = None
+    host_invalid_fields = None
 
     def setUp(self):
         """Setup required test fixtures."""
         super(TestHostsShell, self).setUp()
-        self.host_valid_fields = Namespace(project_id=1,
-                                           region_id=1,
-                                           name='mock_host',
-                                           ip_address='127.0.0.1',
-                                           active=True)
-        self.host_invalid_field = Namespace(project_id=1,
-                                            region_id=1,
-                                            name='mock_host',
-                                            ip_address='127.0.0.1',
-                                            active=True,
-                                            invalid_foo='ignored')
+        self.host_valid_kwargs = {
+            'project_id': 1,
+            'region_id': 1,
+            'name': 'mock_host',
+            'ip_address': '127.0.0.1',
+            'active': True,
+        }
+        self.host_invalid_kwargs = {
+            'project_id': 1,
+            'region_id': 1,
+            'name': 'mock_host',
+            'ip_address': '127.0.0.1',
+            'active': True,
+            'invalid_foo': 'ignored',
+        }
+        self.host_valid_fields = Namespace(**self.host_valid_kwargs)
+        self.host_valid_fields.formatter = mock.Mock()
+        self.host_invalid_fields = Namespace(**self.host_invalid_kwargs)
+        self.host_invalid_fields.formatter = mock.Mock()
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_success(self, mock_list):
@@ -121,8 +129,7 @@ class TestHostsShell(base.ShellTestCase):
         )
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
-    @mock.patch('cratonclient.common.cliutils.print_list')
-    def test_host_list_fields_success(self, mock_printlist, mock_list):
+    def test_host_list_fields_success(self, mock_list):
         """Verify --fields argument successfully passed to Client."""
         self.shell('host-list -r 1 --fields id name')
         mock_list.assert_called_once_with(
@@ -131,9 +138,6 @@ class TestHostsShell(base.ShellTestCase):
             marker=None,
             autopaginate=False,
         )
-        mock_printlist.assert_called_once_with(mock.ANY,
-                                               list({'id': 'ID',
-                                                     'name': 'Name'}))
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_sort_key_field_key_success(self, mock_list):
@@ -216,7 +220,7 @@ class TestHostsShell(base.ShellTestCase):
             region_id=mock.ANY,
         )
         hosts_shell.do_host_create(client, self.host_valid_fields)
-        mock_create.assert_called_once_with(**vars(self.host_valid_fields))
+        mock_create.assert_called_once_with(**self.host_valid_kwargs)
 
     @mock.patch('cratonclient.v1.hosts.HostManager.create')
     def test_do_host_create_ignores_unknown_fields(self, mock_create):
@@ -226,8 +230,8 @@ class TestHostsShell(base.ShellTestCase):
             mock.ANY, 'http://127.0.0.1/',
             region_id=mock.ANY,
         )
-        hosts_shell.do_host_create(client, self.host_invalid_field)
-        mock_create.assert_called_once_with(**vars(self.host_valid_fields))
+        hosts_shell.do_host_create(client, self.host_invalid_fields)
+        mock_create.assert_called_once_with(**self.host_valid_kwargs)
 
     def test_host_update_missing_required_args(self):
         """Verify that missing required args results in error message."""
@@ -251,7 +255,8 @@ class TestHostsShell(base.ShellTestCase):
         )
         valid_input = Namespace(region=1,
                                 id=1,
-                                name='mock_host')
+                                name='mock_host',
+                                formatter=mock.Mock())
         hosts_shell.do_host_update(client, valid_input)
         mock_update.assert_called_once_with(1, name='mock_host')
 
@@ -266,6 +271,7 @@ class TestHostsShell(base.ShellTestCase):
         invalid_input = Namespace(region=1,
                                   id=1,
                                   name='mock_host',
+                                  formatter=mock.Mock(),
                                   invalid=True)
         hosts_shell.do_host_update(client, invalid_input)
         mock_update.assert_called_once_with(1, name='mock_host')
@@ -291,8 +297,12 @@ class TestHostsShell(base.ShellTestCase):
             region_id=mock.ANY,
         )
         test_args = Namespace(id=1, region=1)
+        formatter = test_args.formatter = mock.Mock()
+        formatter.configure.return_value = formatter
         hosts_shell.do_host_show(client, test_args)
         mock_get.assert_called_once_with(vars(test_args)['id'])
+        self.assertTrue(formatter.handle.called)
+        self.assertEqual(1, formatter.handle.call_count)
 
     def test_host_delete_missing_required_args(self):
         """Verify that missing required args results in error message."""

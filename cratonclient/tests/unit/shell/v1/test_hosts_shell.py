@@ -17,7 +17,6 @@ import mock
 from cratonclient import exceptions
 from cratonclient.shell.v1 import hosts_shell
 from cratonclient.tests.unit.shell import base
-from cratonclient.v1 import hosts
 
 
 class TestDoHostShow(base.TestShellCommandUsingPrintDict):
@@ -33,10 +32,6 @@ class TestDoHostShow(base.TestShellCommandUsingPrintDict):
         hosts_shell.do_host_show(self.craton_client, args)
 
         self.craton_client.hosts.get.assert_called_once_with(246)
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in hosts.HOST_FIELDS},
-            wrap=72,
-        )
 
 
 class TestDoHostList(base.TestShellCommandUsingPrintList):
@@ -289,9 +284,9 @@ class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
             active=True,
             region_id=123,
         )
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in hosts.HOST_FIELDS},
-            wrap=72,
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.formatter.handle.assert_called_once_with(
+            self.craton_client.hosts.create.return_value
         )
 
     def test_with_a_note(self):
@@ -309,9 +304,9 @@ class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
             region_id=123,
             note='This is a note.',
         )
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in hosts.HOST_FIELDS},
-            wrap=72,
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.formatter.handle.assert_called_once_with(
+            self.craton_client.hosts.create.return_value
         )
 
     def test_with_labels(self):
@@ -329,9 +324,9 @@ class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
             region_id=123,
             labels=['label-0', 'label-1'],
         )
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in hosts.HOST_FIELDS},
-            wrap=72,
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.formatter.handle.assert_called_once_with(
+            self.craton_client.hosts.create.return_value
         )
 
 
@@ -378,9 +373,9 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
         self.print_mock.assert_called_once_with(
             'Host 246 has been successfully updated.'
         )
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in hosts.HOST_FIELDS},
-            wrap=72,
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.formatter.handle.assert_called_once_with(
+            self.craton_client.hosts.update.return_value
         )
 
     def test_with_name(self):
@@ -397,9 +392,9 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
         self.print_mock.assert_called_once_with(
             'Host 246 has been successfully updated.'
         )
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in hosts.HOST_FIELDS},
-            wrap=72,
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.formatter.handle.assert_called_once_with(
+            self.craton_client.hosts.update.return_value
         )
 
     def test_with_ip_address(self):
@@ -416,9 +411,9 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
         self.print_mock.assert_called_once_with(
             'Host 246 has been successfully updated.'
         )
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in hosts.HOST_FIELDS},
-            wrap=72,
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.formatter.handle.assert_called_once_with(
+            self.craton_client.hosts.update.return_value
         )
 
     def test_disable_host(self):
@@ -434,9 +429,9 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
         self.print_mock.assert_called_once_with(
             'Host 246 has been successfully updated.'
         )
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in hosts.HOST_FIELDS},
-            wrap=72,
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.formatter.handle.assert_called_once_with(
+            self.craton_client.hosts.update.return_value
         )
 
     def test_optional_parameters(self):
@@ -465,9 +460,9 @@ class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
         self.print_mock.assert_called_once_with(
             'Host 246 has been successfully updated.'
         )
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in hosts.HOST_FIELDS},
-            wrap=72,
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.formatter.handle.assert_called_once_with(
+            self.craton_client.hosts.update.return_value
         )
 
 

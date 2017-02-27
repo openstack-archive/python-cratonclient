@@ -26,6 +26,8 @@ class TestShellCommand(base.TestCase):
     def setUp(self):
         """Initialize test fixtures."""
         super(TestShellCommand, self).setUp()
+        self.formatter = mock.Mock()
+        self.formatter.configure.return_value = self.formatter
         self.craton_client = mock.Mock()
         self.inventory = mock.Mock()
         self.craton_client.inventory.return_value = self.inventory
@@ -39,6 +41,7 @@ class TestShellCommand(base.TestCase):
 
     def args_for(self, **kwargs):
         """Return a Namespace object with the specified kwargs."""
+        kwargs.setdefault('formatter', self.formatter)
         return argparse.Namespace(**kwargs)
 
 
@@ -87,5 +90,6 @@ class TestShellCommandUsingPrintList(TestShellCommand):
 
     def assertSortedPrintListFieldsEqualTo(self, expected_fields):
         """Assert the sorted fields parameter is equal expected_fields."""
-        self.assertEqual(expected_fields,
-                         sorted(self.print_list.call_args[0][-1]))
+        kwargs = self.formatter.configure.call_args[1]
+        self.assertListEqual(expected_fields,
+                             sorted(kwargs['fields']))
