@@ -233,7 +233,8 @@ class Session(object):
 
         return response
 
-    def paginate(self, url, items_key, autopaginate=True, **kwargs):
+    def paginate(self, url, items_key, autopaginate=True,
+                 extract=lambda x: x, **kwargs):
         """Make a GET request to a paginated resource.
 
         If :param:`autopaginate` is set to ``True``, this will automatically
@@ -258,7 +259,7 @@ class Session(object):
         """
         response = self.get(url, **kwargs)
         json_body = response.json()
-        items = json_body[items_key]
+        items = extract(json_body[items_key])
         links = json_body['links']
         yield response, items
         while autopaginate and len(items) > 0:

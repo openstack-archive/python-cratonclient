@@ -13,8 +13,11 @@
 # under the License.
 """Client for CRUD operations."""
 import copy
+from itertools import chain
 
 from oslo_utils import strutils
+
+import cratonclient
 
 
 class CRUDClient(object):
@@ -114,11 +117,17 @@ class CRUDClient(object):
         autopaginate = kwargs.pop('autopaginate', True)
         self.merge_request_arguments(kwargs, skip_merge)
         url = self.build_url(path_arguments=kwargs)
+        if isinstance(self, cratonclient.v1.devices.DeviceManager):
+            extract = lambda x: chain(*x.values())
+        else:
+            extract = lambda x: x
+
         response_generator = self.session.paginate(
             url,
             autopaginate=autopaginate,
             items_key=(self.key + 's'),
             params=kwargs,
+            extract=extract,
         )
         for response, items in response_generator:
             for item in items:
@@ -214,7 +223,7 @@ class Resource(object):
         self.set_loaded(True)
         if not hasattr(self.manager, 'get'):
             return
-            
+
         new = self.manager.get(self.id)
         if new:
             self._add_details(new._info)
