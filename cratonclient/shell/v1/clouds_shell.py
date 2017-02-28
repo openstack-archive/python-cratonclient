@@ -29,8 +29,7 @@ def do_cloud_create(cc, args):
               if k in clouds.CLOUD_FIELDS and not (v is None)}
 
     cloud = cc.clouds.create(**fields)
-    data = {f: getattr(cloud, f, '') for f in clouds.CLOUD_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(cloud)
 
 
 @cliutils.arg('--fields',
@@ -78,7 +77,7 @@ def do_cloud_list(cc, args):
     params['autopaginate'] = args.all
 
     clouds_list = cc.clouds.list(**params)
-    cliutils.print_list(clouds_list, list(fields))
+    args.formatter.configure(fields=list(fields)).handle(clouds_list)
 
 
 @cliutils.arg('id',
@@ -88,8 +87,7 @@ def do_cloud_list(cc, args):
 def do_cloud_show(cc, args):
     """Show detailed information about a cloud."""
     cloud = cc.clouds.get(args.id)
-    data = {f: getattr(cloud, f, '') for f in clouds.CLOUD_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(cloud)
 
 
 @cliutils.arg('id',
@@ -112,8 +110,7 @@ def do_cloud_update(cc, args):
             '--note'
         )
     cloud = cc.clouds.update(item_id, **fields)
-    data = {f: getattr(cloud, f, '') for f in clouds.CLOUD_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(cloud)
 
 
 @cliutils.arg('id',
