@@ -35,8 +35,7 @@ def do_region_create(cc, args):
               if k in regions.REGION_FIELDS and not (v is None)}
 
     region = cc.regions.create(**fields)
-    data = {f: getattr(region, f, '') for f in regions.REGION_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(region)
 
 
 @cliutils.arg('--cloud',
@@ -91,7 +90,7 @@ def do_region_list(cc, args):
     params['autopaginate'] = args.all
 
     regions_list = cc.regions.list(**params)
-    cliutils.print_list(regions_list, list(fields))
+    args.formatter.configure(fields=list(fields)).handle(regions_list)
 
 
 @cliutils.arg('id',
@@ -101,8 +100,7 @@ def do_region_list(cc, args):
 def do_region_show(cc, args):
     """Show detailed information about a region."""
     region = cc.regions.get(args.id)
-    data = {f: getattr(region, f, '') for f in regions.REGION_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(region)
 
 
 @cliutils.arg('id',
@@ -130,8 +128,7 @@ def do_region_update(cc, args):
             '--cloud, or --note'
         )
     region = cc.regions.update(item_id, **fields)
-    data = {f: getattr(region, f, '') for f in regions.REGION_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(region)
 
 
 @cliutils.arg('id',

@@ -17,7 +17,6 @@ import mock
 from cratonclient import exceptions
 from cratonclient.shell.v1 import regions_shell
 from cratonclient.tests.unit.shell import base
-from cratonclient.v1 import regions
 
 
 class TestDoRegionShow(base.TestShellCommandUsingPrintDict):
@@ -30,10 +29,8 @@ class TestDoRegionShow(base.TestShellCommandUsingPrintDict):
         regions_shell.do_region_show(self.craton_client, args)
 
         self.craton_client.regions.get.assert_called_once_with(1234)
-        self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
-            wrap=72,
-        )
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
 
 class TestDoRegionCreate(base.TestShellCommandUsingPrintDict):
@@ -56,10 +53,8 @@ class TestDoRegionCreate(base.TestShellCommandUsingPrintDict):
             name='New region',
             cloud_id=1,
         )
-        self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
-            wrap=72,
-        )
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
     def test_accepts_optional_arguments(self):
         """Verify operation with --note passed as well."""
@@ -72,10 +67,8 @@ class TestDoRegionCreate(base.TestShellCommandUsingPrintDict):
             cloud_id=1,
             note='This is a note',
         )
-        self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
-            wrap=72,
-        )
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
 
 class TestDoRegionUpdate(base.TestShellCommandUsingPrintDict):
@@ -98,7 +91,8 @@ class TestDoRegionUpdate(base.TestShellCommandUsingPrintDict):
             args,
         )
         self.assertFalse(self.craton_client.regions.update.called)
-        self.assertFalse(self.print_dict.called)
+        self.assertFalse(self.formatter.configure.called)
+        self.assertFalse(self.formatter.handle.called)
 
     def test_name_is_updated(self):
         """Verify the name attribute update is sent."""
@@ -110,10 +104,8 @@ class TestDoRegionUpdate(base.TestShellCommandUsingPrintDict):
             12345,
             name='A New Name',
         )
-        self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
-            wrap=72,
-        )
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
     def test_note_is_updated(self):
         """Verify the note attribute is updated."""
@@ -125,10 +117,8 @@ class TestDoRegionUpdate(base.TestShellCommandUsingPrintDict):
             12345,
             note='A New Note',
         )
-        self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
-            wrap=72,
-        )
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
     def test_everything_is_updated(self):
         """Verify the note and name are updated."""
@@ -146,10 +136,8 @@ class TestDoRegionUpdate(base.TestShellCommandUsingPrintDict):
             name='A New Name',
             cloud_id=2,
         )
-        self.print_dict.assert_called_once_with(
-            {field: mock.ANY for field in regions.REGION_FIELDS},
-            wrap=72,
-        )
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
 
 class TestDoRegionDelete(base.TestShellCommand):
@@ -226,9 +214,7 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
         args = self.args_for()
         regions_shell.do_region_list(self.craton_client, args)
 
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_with_cloud_id(self):
         """Test region-list with default values."""
@@ -239,9 +225,7 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
             marker=None,
             autopaginate=False,
         )
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_negative_limit(self):
         """Ensure we raise an exception for negative limits."""
@@ -257,16 +241,13 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
             marker=None,
             autopaginate=False,
         )
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_fields(self):
         """Verify that we print out specific fields."""
         args = self.args_for(fields=['id', 'name', 'note'])
         regions_shell.do_region_list(self.craton_client, args)
-        self.assertEqual(['id', 'name', 'note'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name', 'note'])
 
     def test_invalid_fields(self):
         """Verify that we error out with invalid fields."""

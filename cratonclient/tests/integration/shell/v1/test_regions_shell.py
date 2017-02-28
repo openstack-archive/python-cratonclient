@@ -26,18 +26,26 @@ class TestRegionsShell(base.ShellTestCase):
 
     re_options = re.DOTALL | re.MULTILINE
     region_valid_fields = None
-    region_invalid_field = None
+    region_invalid_fields = None
 
     def setUp(self):
         """Setup required test fixtures."""
         super(TestRegionsShell, self).setUp()
-        self.region_valid_fields = Namespace(project_id=1,
-                                             id=1,
-                                             name='mock_region')
-        self.region_invalid_field = Namespace(project_id=1,
-                                              id=1,
-                                              name='mock_region',
-                                              invalid_foo='ignored')
+        self.region_valid_kwargs = {
+            'project_id': 1,
+            'id': 1,
+            'name': 'mock_region',
+        }
+        self.region_invalid_kwargs = {
+            'project_id': 1,
+            'id': 1,
+            'name': 'mock_region',
+            'invalid_foo': 'ignored',
+        }
+        self.region_valid_fields = Namespace(**self.region_valid_kwargs)
+        self.region_invalid_fields = Namespace(**self.region_invalid_kwargs)
+        self.region_valid_fields.formatter = mock.Mock()
+        self.region_invalid_fields.formatter = mock.Mock()
 
     def test_region_create_missing_required_args(self):
         """Verify that missing required args results in error message."""
@@ -59,7 +67,7 @@ class TestRegionsShell(base.ShellTestCase):
         session.project_id = 1
         client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
         regions_shell.do_region_create(client, self.region_valid_fields)
-        mock_create.assert_called_once_with(**vars(self.region_valid_fields))
+        mock_create.assert_called_once_with(**self.region_valid_kwargs)
 
     @mock.patch('cratonclient.v1.regions.RegionManager.create')
     def test_do_region_create_ignores_unknown_fields(self, mock_create):
@@ -68,8 +76,8 @@ class TestRegionsShell(base.ShellTestCase):
         session = mock.Mock()
         session.project_id = 1
         client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
-        regions_shell.do_region_create(client, self.region_invalid_field)
-        mock_create.assert_called_once_with(**vars(self.region_valid_fields))
+        regions_shell.do_region_create(client, self.region_invalid_fields)
+        mock_create.assert_called_once_with(**self.region_valid_kwargs)
 
     def test_region_show_missing_required_args(self):
         """Verify that missing required args results in error message."""
@@ -90,9 +98,9 @@ class TestRegionsShell(base.ShellTestCase):
         session = mock.Mock()
         session.project_id = 1
         client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
-        test_args = Namespace(id=1)
+        test_args = Namespace(id=1, formatter=mock.Mock())
         regions_shell.do_region_show(client, test_args)
-        mock_get.assert_called_once_with(vars(test_args)['id'])
+        mock_get.assert_called_once_with(1)
 
     def test_region_delete_missing_required_args(self):
         """Verify that missing required args results in error message."""
@@ -135,7 +143,8 @@ class TestRegionsShell(base.ShellTestCase):
         session.project_id = 1
         client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
         valid_input = Namespace(id=1,
-                                name='mock_region')
+                                name='mock_region',
+                                formatter=mock.Mock())
         regions_shell.do_region_update(client, valid_input)
         mock_update.assert_called_once_with(1, name='mock_region')
 
@@ -148,6 +157,7 @@ class TestRegionsShell(base.ShellTestCase):
         client.regions = regions.RegionManager(session, 'http://127.0.0.1/')
         invalid_input = Namespace(id=1,
                                   name='mock_region',
-                                  invalid=True)
+                                  invalid=True,
+                                  formatter=mock.Mock())
         regions_shell.do_region_update(client, invalid_input)
         mock_update.assert_called_once_with(1, name='mock_region')
