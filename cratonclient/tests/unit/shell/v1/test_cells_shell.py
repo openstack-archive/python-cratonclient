@@ -33,10 +33,8 @@ class TestDoShellShow(base.TestShellCommandUsingPrintDict):
         cells_shell.do_cell_show(self.craton_client, args)
 
         self.craton_client.cells.get.assert_called_once_with(456)
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in cells.CELL_FIELDS},
-            wrap=72,
-        )
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
 
 class TestDoCellList(base.TestShellCommandUsingPrintList):
@@ -45,7 +43,8 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
     def assertNothingWasCalled(self):
         """Assert inventory, list, and print_list were not called."""
         super(TestDoCellList, self).assertNothingWasCalled()
-        self.assertFalse(self.print_list.called)
+        self.assertFalse(self.formatter.configure.called)
+        self.assertFalse(self.formatter.handle.called)
 
     def args_for(self, **kwargs):
         """Generate the default argument list for cell-list."""
@@ -72,9 +71,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_with_cloud_id(self):
         """Verify the behaviour of do_cell_list with mostly default values."""
@@ -89,9 +86,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_negative_limit(self):
         """Ensure we raise an exception for negative limits."""
@@ -113,9 +108,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_valid_sort_key(self):
         """Verify that we pass on our sort key."""
@@ -130,9 +123,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_invalid_sort_key(self):
         """Verify that do not we pass on our sort key."""
@@ -154,8 +145,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertEqual(sorted(list(cells.CELL_FIELDS)),
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(sorted(list(cells.CELL_FIELDS)))
 
     def test_raises_exception_with_detail_and_fields(self):
         """Verify that we fail when users specify --detail and --fields."""
@@ -179,8 +169,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertEqual(['id', 'name', 'note'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name', 'note'])
 
     def test_invalid_fields(self):
         """Verify that we error out with invalid fields."""
@@ -238,7 +227,8 @@ class TestDoCellCreate(base.TestShellCommandUsingPrintDict):
             name='New Cell',
             region_id=123,
         )
-        self.print_dict.assert_called_once_with(mock.ANY, wrap=72)
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
     def test_create_with_note(self):
         """Verify that we include the note argument when present."""
@@ -251,7 +241,8 @@ class TestDoCellCreate(base.TestShellCommandUsingPrintDict):
             region_id=123,
             note='This is a note',
         )
-        self.print_dict.assert_called_once_with(mock.ANY, wrap=72)
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
 
 class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
@@ -282,7 +273,8 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
             123,
             name='New name',
         )
-        self.print_dict.assert_called_once_with(mock.ANY, wrap=72)
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
     def test_update_with_new_region(self):
         """Verify we update with only the new region id."""
@@ -294,7 +286,8 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
             123,
             region_id=678,
         )
-        self.print_dict.assert_called_once_with(mock.ANY, wrap=72)
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
     def test_update_with_new_note(self):
         """Verify we update with only the new note text."""
@@ -306,7 +299,8 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
             123,
             note='A new note',
         )
-        self.print_dict.assert_called_once_with(mock.ANY, wrap=72)
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
     def test_update_with_everything(self):
         """Verify we update with everything."""
@@ -324,7 +318,8 @@ class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
             region_id=678,
             note='A new note',
         )
-        self.print_dict.assert_called_once_with(mock.ANY, wrap=72)
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
 
 class TestDoCellDelete(base.TestShellCommand):

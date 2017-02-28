@@ -26,8 +26,7 @@ from cratonclient.v1 import cells
 def do_cell_show(cc, args):
     """Show detailed information about a cell."""
     cell = cc.cells.get(args.id)
-    data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(cell)
 
 
 @cliutils.arg('-r', '--region',
@@ -117,7 +116,7 @@ def do_cell_list(cc, args):
     params['autopaginate'] = args.all
 
     listed_cells = cc.cells.list(**params)
-    cliutils.print_list(listed_cells, list(fields))
+    args.formatter.configure(fields=list(fields)).handle(listed_cells)
 
 
 @cliutils.arg('-n', '--name',
@@ -143,8 +142,7 @@ def do_cell_create(cc, args):
     fields = {k: v for (k, v) in vars(args).items()
               if k in cells.CELL_FIELDS and not (v is None)}
     cell = cc.cells.create(**fields)
-    data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(cell)
 
 
 @cliutils.arg('id',
@@ -177,8 +175,7 @@ def do_cell_update(cc, args):
             '--cloud, or --note'
         )
     cell = cc.cells.update(cell_id, **fields)
-    data = {f: getattr(cell, f, '') for f in cells.CELL_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(cell)
 
 
 @cliutils.arg('id',

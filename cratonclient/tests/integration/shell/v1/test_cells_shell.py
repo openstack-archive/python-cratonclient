@@ -29,18 +29,26 @@ class TestCellsShell(base.ShellTestCase):
 
     re_options = re.DOTALL | re.MULTILINE
     cell_valid_fields = None
-    cell_invalid_field = None
+    cell_invalid_fields = None
 
     def setUp(self):
         """Setup required test fixtures."""
         super(TestCellsShell, self).setUp()
-        self.cell_valid_fields = Namespace(project_id=1,
-                                           region_id=1,
-                                           name='mock_cell')
-        self.cell_invalid_field = Namespace(project_id=1,
-                                            region_id=1,
-                                            name='mock_cell',
-                                            invalid_foo='ignored')
+        self.cell_valid_kwargs = {
+            'project_id': 1,
+            'region_id': 1,
+            'name': 'mock_cell',
+        }
+        self.cell_valid_fields = Namespace(**self.cell_valid_kwargs)
+        self.cell_valid_fields.formatter = mock.Mock()
+        self.cell_invalid_kwargs = {
+            'project_id': 1,
+            'region_id': 1,
+            'name': 'mock_cell',
+            'invalid_foo': 'ignored',
+        }
+        self.cell_invalid_fields = Namespace(**self.cell_invalid_kwargs)
+        self.cell_invalid_fields.formatter = mock.Mock()
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
     def test_cell_list_success(self, mock_list):
@@ -103,8 +111,7 @@ class TestCellsShell(base.ShellTestCase):
         )
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
-    @mock.patch('cratonclient.common.cliutils.print_list')
-    def test_cell_list_fields_success(self, mock_printlist, mock_list):
+    def test_cell_list_fields_success(self, mock_list):
         """Verify --fields argument successfully passed to Client."""
         self.shell('cell-list -r 1 --fields id name')
         mock_list.assert_called_once_with(
@@ -113,9 +120,6 @@ class TestCellsShell(base.ShellTestCase):
             autopaginate=False,
             marker=None,
         )
-        mock_printlist.assert_called_once_with(mock.ANY,
-                                               list({'id': 'ID',
-                                                     'name': 'Name'}))
 
     @mock.patch('cratonclient.v1.cells.CellManager.list')
     def test_cell_list_sort_key_field_key_success(self, mock_list):
@@ -187,7 +191,7 @@ class TestCellsShell(base.ShellTestCase):
             region_id=mock.ANY,
         )
         cells_shell.do_cell_create(client, self.cell_valid_fields)
-        mock_create.assert_called_once_with(**vars(self.cell_valid_fields))
+        mock_create.assert_called_once_with(**self.cell_valid_kwargs)
 
     @mock.patch('cratonclient.v1.cells.CellManager.create')
     def test_do_cell_create_ignores_unknown_fields(self, mock_create):
@@ -197,8 +201,8 @@ class TestCellsShell(base.ShellTestCase):
             mock.ANY, 'http://127.0.0.1/',
             region_id=mock.ANY,
         )
-        cells_shell.do_cell_create(client, self.cell_invalid_field)
-        mock_create.assert_called_once_with(**vars(self.cell_valid_fields))
+        cells_shell.do_cell_create(client, self.cell_invalid_fields)
+        mock_create.assert_called_once_with(**self.cell_valid_kwargs)
 
     def test_cell_update_missing_required_args(self):
         """Verify that missing required args results in error message."""
@@ -222,7 +226,8 @@ class TestCellsShell(base.ShellTestCase):
         )
         valid_input = Namespace(region=1,
                                 id=1,
-                                name='mock_cell')
+                                name='mock_cell',
+                                formatter=mock.Mock())
         cells_shell.do_cell_update(client, valid_input)
         mock_update.assert_called_once_with(1, name='mock_cell')
 
@@ -237,7 +242,8 @@ class TestCellsShell(base.ShellTestCase):
         invalid_input = Namespace(region=1,
                                   id=1,
                                   name='mock_cell',
-                                  invalid=True)
+                                  invalid=True,
+                                  formatter=mock.Mock())
         cells_shell.do_cell_update(client, invalid_input)
         mock_update.assert_called_once_with(1, name='mock_cell')
 
@@ -261,7 +267,7 @@ class TestCellsShell(base.ShellTestCase):
             mock.ANY, 'http://127.0.0.1/',
             region_id=mock.ANY,
         )
-        test_args = Namespace(id=1)
+        test_args = Namespace(id=1, formatter=mock.Mock())
         cells_shell.do_cell_show(client, test_args)
         mock_get.assert_called_once_with(vars(test_args)['id'])
 

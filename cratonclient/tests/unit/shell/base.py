@@ -93,3 +93,9 @@ class TestShellCommandUsingPrintList(TestShellCommand):
         kwargs = self.formatter.configure.call_args[1]
         self.assertListEqual(expected_fields,
                              sorted(kwargs['fields']))
+
+    def assertSortedFieldsEqualTo(self, expected_fields):
+        """Assert the sorted fields parameter is equal expected_fields."""
+        kwargs = self.formatter.configure.call_args[1]
+        self.assertListEqual(expected_fields,
+                             sorted(kwargs['fields']))
