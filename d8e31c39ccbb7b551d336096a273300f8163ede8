@@ -1,0 +1,8 @@
+Code-Review+2: Jim Baker <jim.baker@python.org>
+Workflow+1: Jim Baker <jim.baker@python.org>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 28 Feb 2017 18:54:38 +0000
+Reviewed-on: https://review.openstack.org/439087
+Project: openstack/python-cratonclient
+Branch: refs/heads/master
