@@ -35,10 +35,8 @@ class TestDoShellShow(base.TestShellCommandUsingPrintDict):
         projects_shell.do_project_show(self.craton_client, args)
 
         self.craton_client.projects.get.assert_called_once_with(456)
-        self.print_dict.assert_called_once_with(
-            {f: mock.ANY for f in projects.PROJECT_FIELDS},
-            wrap=72,
-        )
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
 
 class TestDoProjectList(base.TestShellCommandUsingPrintList):
@@ -47,7 +45,8 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
     def assertNothingWasCalled(self):
         """Assert inventory, list, and print_list were not called."""
         super(TestDoProjectList, self).assertNothingWasCalled()
-        self.assertFalse(self.print_list.called)
+        self.assertFalse(self.formatter.configure.called)
+        self.assertFalse(self.formatter.handle.called)
 
     def args_for(self, **kwargs):
         """Generate the default argument list for project-list."""
@@ -69,9 +68,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
             marker=None,
             autopaginate=False,
         )
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_negative_limit(self):
         """Ensure we raise an exception for negative limits."""
@@ -92,9 +89,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertTrue(self.print_list.called)
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_detail(self):
         """Verify the behaviour of specifying --detail."""
@@ -106,8 +101,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
             marker=None,
             autopaginate=False,
         )
-        self.assertEqual(sorted(list(projects.PROJECT_FIELDS)),
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(sorted(list(projects.PROJECT_FIELDS)))
 
     def test_list_name(self):
         """Verify the behaviour of specifying --detail."""
@@ -120,8 +114,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_raises_exception_with_detail_and_fields(self):
         """Verify that we fail when users specify --detail and --fields."""
@@ -143,8 +136,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertEqual(['id', 'name'],
-                         sorted(self.print_list.call_args[0][-1]))
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_invalid_fields(self):
         """Verify that we error out with invalid fields."""
@@ -207,7 +199,8 @@ class TestDoProjectCreate(base.TestShellCommandUsingPrintDict):
         self.craton_client.projects.create.assert_called_once_with(
             name='New Project'
         )
-        self.print_dict.assert_called_once_with(mock.ANY, wrap=72)
+        self.formatter.configure.assert_called_once_with(wrap=72)
+        self.assertEqual(1, self.formatter.handle.call_count)
 
 
 class TestDoProjectDelete(base.TestShellCommand):

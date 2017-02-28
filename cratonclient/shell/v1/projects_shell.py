@@ -25,8 +25,7 @@ from cratonclient.v1 import projects
 def do_project_show(cc, args):
     """Show detailed information about a project."""
     project = cc.projects.get(args.id)
-    data = {f: getattr(project, f, '') for f in projects.PROJECT_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(project)
 
 
 @cliutils.arg('-n', '--name',
@@ -88,7 +87,7 @@ def do_project_list(cc, args):
     params['autopaginate'] = args.all
 
     listed_projects = cc.projects.list(**params)
-    cliutils.print_list(listed_projects, list(fields))
+    args.formatter.configure(fields=list(fields)).handle(listed_projects)
 
 
 @cliutils.arg('-n', '--name',
@@ -100,8 +99,7 @@ def do_project_create(cc, args):
     fields = {k: v for (k, v) in vars(args).items()
               if k in projects.PROJECT_FIELDS and not (v is None)}
     project = cc.projects.create(**fields)
-    data = {f: getattr(project, f, '') for f in projects.PROJECT_FIELDS}
-    cliutils.print_dict(data, wrap=72)
+    args.formatter.configure(wrap=72).handle(project)
 
 
 @cliutils.arg('id',

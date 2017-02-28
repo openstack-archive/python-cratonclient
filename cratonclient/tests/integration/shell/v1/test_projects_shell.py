@@ -29,14 +29,22 @@ class TestProjectsShell(base.ShellTestCase):
 
     re_options = re.DOTALL | re.MULTILINE
     project_valid_fields = None
-    project_invalid_field = None
+    project_invalid_fields = None
 
     def setUp(self):
         """Setup required test fixtures."""
         super(TestProjectsShell, self).setUp()
-        self.project_valid_fields = Namespace(name='mock_project')
-        self.project_invalid_field = Namespace(name='mock_project',
-                                               invalid_foo='ignored')
+        self.project_valid_kwargs = {
+            'name': 'mock_project',
+        }
+        self.project_invalid_kwargs = {
+            'name': 'mock_project',
+            'invalid_foo': 'ignored',
+        }
+        self.project_valid_fields = Namespace(**self.project_valid_kwargs)
+        self.project_invalid_fields = Namespace(**self.project_invalid_kwargs)
+        self.project_valid_fields.formatter = mock.Mock()
+        self.project_invalid_fields.formatter = mock.Mock()
 
     @mock.patch('cratonclient.v1.projects.ProjectManager.list')
     def test_project_list_success(self, mock_list):
@@ -92,17 +100,13 @@ class TestProjectsShell(base.ShellTestCase):
         )
 
     @mock.patch('cratonclient.v1.projects.ProjectManager.list')
-    @mock.patch('cratonclient.common.cliutils.print_list')
-    def test_project_list_fields_success(self, mock_printlist, mock_list):
+    def test_project_list_fields_success(self, mock_list):
         """Verify --fields argument successfully passed to Client."""
         self.shell('project-list --fields id name')
         mock_list.assert_called_once_with(
             marker=None,
             autopaginate=False,
         )
-        mock_printlist.assert_called_once_with(mock.ANY,
-                                               list({'id': 'ID',
-                                                     'name': 'Name'}))
 
     def test_project_create_missing_required_args(self):
         """Verify that missing required args results in error message."""
@@ -126,7 +130,7 @@ class TestProjectsShell(base.ShellTestCase):
             region_id=mock.ANY,
         )
         projects_shell.do_project_create(client, self.project_valid_fields)
-        mock_create.assert_called_once_with(**vars(self.project_valid_fields))
+        mock_create.assert_called_once_with(**self.project_valid_kwargs)
 
     @mock.patch('cratonclient.v1.projects.ProjectManager.create')
     def test_do_project_create_ignores_unknown_fields(self, mock_create):
@@ -136,8 +140,8 @@ class TestProjectsShell(base.ShellTestCase):
             mock.ANY, 'http://127.0.0.1/',
             region_id=mock.ANY,
         )
-        projects_shell.do_project_create(client, self.project_invalid_field)
-        mock_create.assert_called_once_with(**vars(self.project_valid_fields))
+        projects_shell.do_project_create(client, self.project_invalid_fields)
+        mock_create.assert_called_once_with(**self.project_valid_kwargs)
 
     def test_project_show_missing_required_args(self):
         """Verify that missing required args results in error message."""
@@ -159,9 +163,9 @@ class TestProjectsShell(base.ShellTestCase):
             mock.ANY, 'http://127.0.0.1/',
             region_id=mock.ANY,
         )
-        test_args = Namespace(id=1)
+        test_args = Namespace(id=1, formatter=mock.Mock())
         projects_shell.do_project_show(client, test_args)
-        mock_get.assert_called_once_with(vars(test_args)['id'])
+        mock_get.assert_called_once_with(1)
 
     def test_project_delete_missing_required_args(self):
         """Verify that missing required args results in error message."""
