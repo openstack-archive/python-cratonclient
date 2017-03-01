@@ -163,6 +163,17 @@ class TestCellsShell(base.ShellTestCase):
             marker=None,
         )
 
+    @mock.patch('cratonclient.v1.cells.CellManager.list')
+    def test_cell_list_does_not_require_region_id(self, cell_list):
+        """Verify -r/--region are not required to list cells."""
+        self.shell('cell-list --limit 10')
+        cell_list.assert_called_once_with(
+            sort_dir='asc',
+            autopaginate=False,
+            limit=10,
+            marker=None,
+        )
+
     def test_cell_list_sort_dir_invalid_value(self):
         """Verify --sort-dir with invalid args, fails with Command Error."""
         (_, error) = self.shell(

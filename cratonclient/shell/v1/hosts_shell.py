@@ -32,7 +32,6 @@ def do_host_show(cc, args):
 @cliutils.arg('-r', '--region',
               metavar='<region>',
               type=int,
-              required=True,
               help='ID of the region that the host belongs to.')
 @cliutils.arg('--cloud',
               metavar='<cloud>',
@@ -140,8 +139,10 @@ def do_host_list(cc, args):
                 )
             )
         params['sort_key'] = sort_key
+    if args.region is not None:
+        params['region_id'] = args.region
+
     params['sort_dir'] = args.sort_dir
-    params['region_id'] = args.region
     params['marker'] = args.marker
     params['autopaginate'] = args.all
 

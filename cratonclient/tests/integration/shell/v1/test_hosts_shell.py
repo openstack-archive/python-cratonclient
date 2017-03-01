@@ -93,6 +93,17 @@ class TestHostsShell(base.ShellTestCase):
             autopaginate=False,
         )
 
+    @mock.patch('cratonclient.v1.hosts.HostManager.list')
+    def test_host_list_does_not_require_region(self, host_list):
+        """Verify -r/--region is not required to list hosts."""
+        self.shell('host-list --limit 10')
+        host_list.assert_called_once_with(
+            limit=10,
+            sort_dir='asc',
+            marker=None,
+            autopaginate=False,
+        )
+
     def test_host_list_limit_negative_num_failure(self):
         """Verify --limit X, where X is a negative integer, fails.
 
