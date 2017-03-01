@@ -183,6 +183,7 @@ class TestCRUDClient(base.TestCase):
             autopaginate=True,
             items_key='test_keys',
             params={'sort': 'asc'},
+            nested=False,
         )
         self.resource_spec.assert_called_once_with(
             self.client,
