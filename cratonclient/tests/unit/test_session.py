@@ -12,6 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Session specific unit tests."""
+from itertools import chain
+from operator import itemgetter
+
 from keystoneauth1 import session as ksa_session
 import mock
 
@@ -161,4 +164,58 @@ class TestSession(base.TestCase):
                     endpoint_filter={'service_type': 'fleet_management'},
                 ),
             ],
+        )
+
+    def test_paginate_nested_response(self):
+        """Verify Session#paginate can extract nested lists."""
+        responses = [
+            self.create_response(
+                {
+                    "items-sub-type-1": [
+                        {"id": 1},
+                    ],
+                    "items-sub-type-2": [
+                        {"id": 2},
+                    ],
+                },
+                "http://example.com/v1/items?limit=30&marker=2"
+            ),
+            self.create_response(
+                {
+                    "items-sub-type-1": [],
+                    "items-sub-type-2": [],
+                },
+                ""
+            ),
+        ]
+        mock_session = mock.Mock()
+        mock_session.request.side_effect = responses
+
+        craton_session = session.Session(session=mock_session)
+        paginated_items = list(craton_session.paginate(
+            url='http://example.com/v1/items',
+            items_key='items',
+            autopaginate=True,
+            nested=True,
+        ))
+
+        self.assertEqual(2, len(paginated_items))
+        resp_items = sorted(
+            chain(*(resp[1] for resp in paginated_items)), key=itemgetter("id")
+        )
+        self.assertListEqual([{"id": 1}, {"id": 2}], resp_items)
+        self.assertListEqual(
+            mock_session.request.call_args_list,
+            [
+                mock.call(
+                    method='GET',
+                    url='http://example.com/v1/items',
+                    endpoint_filter={'service_type': 'fleet_management'},
+                ),
+                mock.call(
+                    method='GET',
+                    url='http://example.com/v1/items?limit=30&marker=2',
+                    endpoint_filter={'service_type': 'fleet_management'},
+                ),
+            ]
         )
