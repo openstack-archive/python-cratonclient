@@ -49,6 +49,10 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('fields', [])
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
+        kwargs.setdefault('vars', None)
+        kwargs.setdefault('label', None)
+        kwargs.setdefault('device_type', None)
+        kwargs.setdefault('ip', None)
         return super(TestDoHostList, self).args_for(**kwargs)
 
     def test_only_required_parameters(self):
@@ -154,6 +158,74 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
 
         self.assertRaisesCommandErrorWith(hosts_shell.do_host_list, args)
         self.assertNothingWasCalled()
+
+    def test_with_vars(self):
+        """Verify the behaviour with --vars specified."""
+        args = self.args_for(vars='a:b')
+
+        hosts_shell.do_host_list(self.craton_client, args)
+
+        self.craton_client.hosts.list.assert_called_once_with(
+            vars='a:b',
+            sort_dir='asc',
+            region_id=246,
+            autopaginate=False,
+            marker=None,
+        )
+        self.assertSortedPrintListFieldsEqualTo([
+            'active', 'cell_id', 'device_type', 'id', 'name'
+        ])
+
+    def test_with_label(self):
+        """Verify the behaviour with --label specified."""
+        args = self.args_for(label='compute')
+
+        hosts_shell.do_host_list(self.craton_client, args)
+
+        self.craton_client.hosts.list.assert_called_once_with(
+            label='compute',
+            sort_dir='asc',
+            region_id=246,
+            autopaginate=False,
+            marker=None,
+        )
+        self.assertSortedPrintListFieldsEqualTo([
+            'active', 'cell_id', 'device_type', 'id', 'name'
+        ])
+
+    def test_with_device_type(self):
+        """Verify the behaviour with --device-type specified."""
+        args = self.args_for(device_type='compute')
+
+        hosts_shell.do_host_list(self.craton_client, args)
+
+        self.craton_client.hosts.list.assert_called_once_with(
+            device_type='compute',
+            sort_dir='asc',
+            region_id=246,
+            autopaginate=False,
+            marker=None,
+        )
+        self.assertSortedPrintListFieldsEqualTo([
+            'active', 'cell_id', 'device_type', 'id', 'name'
+        ])
+
+    def test_with_ip(self):
+        """Verify the behaviour with --ip specified."""
+        args = self.args_for(ip='10.10.1.1')
+
+        hosts_shell.do_host_list(self.craton_client, args)
+
+        self.craton_client.hosts.list.assert_called_once_with(
+            ip_address='10.10.1.1',
+            sort_dir='asc',
+            region_id=246,
+            autopaginate=False,
+            marker=None,
+        )
+        self.assertSortedPrintListFieldsEqualTo([
+            'active', 'cell_id', 'device_type', 'id', 'name'
+        ])
 
     def test_fields(self):
         """Verify that we can specify custom fields."""

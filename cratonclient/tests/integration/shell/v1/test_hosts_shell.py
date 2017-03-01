@@ -117,6 +117,58 @@ class TestHostsShell(base.ShellTestCase):
             mock_list.reset_mock()
 
     @mock.patch('cratonclient.v1.hosts.HostManager.list')
+    def test_host_list_vars_success(self, mock_list):
+        """Verify --vars arguments successfully pass cell to Client."""
+        self.shell('host-list -r 1 --vars a:b')
+        mock_list.assert_called_once_with(
+            vars='a:b',
+            sort_dir='asc',
+            region_id=1,
+            marker=None,
+            autopaginate=False,
+        )
+        mock_list.reset_mock()
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.list')
+    def test_host_list_ip_success(self, mock_list):
+        """Verify --ip arguments successfully pass cell to Client."""
+        self.shell('host-list -r 1 --ip 10.10.1.1')
+        mock_list.assert_called_once_with(
+            ip_address='10.10.1.1',
+            sort_dir='asc',
+            region_id=1,
+            marker=None,
+            autopaginate=False,
+        )
+        mock_list.reset_mock()
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.list')
+    def test_host_list_label_success(self, mock_list):
+        """Verify --label arguments successfully pass cell to Client."""
+        self.shell('host-list -r 1 --label compute')
+        mock_list.assert_called_once_with(
+            label='compute',
+            sort_dir='asc',
+            region_id=1,
+            marker=None,
+            autopaginate=False,
+        )
+        mock_list.reset_mock()
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.list')
+    def test_host_list_device_type_success(self, mock_list):
+        """Verify --device-type arguments successfully pass cell to Client."""
+        self.shell('host-list -r 1 --device-type compute')
+        mock_list.assert_called_once_with(
+            device_type='compute',
+            sort_dir='asc',
+            region_id=1,
+            marker=None,
+            autopaginate=False,
+        )
+        mock_list.reset_mock()
+
+    @mock.patch('cratonclient.v1.hosts.HostManager.list')
     def test_host_list_detail_success(self, mock_list):
         """Verify --detail argument successfully pass detail to Client."""
         self.shell('host-list -r 1 --detail')

@@ -76,6 +76,22 @@ def do_host_show(cc, args):
               metavar='<marker>',
               default=None,
               help='ID of the cell to use to resume listing hosts.')
+@cliutils.arg('--device-type',
+              metavar='<device_type>',
+              default=None,
+              help='Device type to use as filter.')
+@cliutils.arg('--vars',
+              metavar='<vars>',
+              default=None,
+              help='Variables to use as filter in the form of key:value.')
+@cliutils.arg('--label',
+              metavar='<label>',
+              default=None,
+              help='Label to use as filter.')
+@cliutils.arg('--ip',
+              metavar='<ip_address>',
+              default=None,
+              help='IP address to use as filter.')
 def do_host_list(cc, args):
     """Print list of hosts which are registered with the Craton service."""
     params = {}
@@ -84,6 +100,14 @@ def do_host_list(cc, args):
         params['cell_id'] = args.cell
     if args.cloud is not None:
         params['cloud_id'] = args.cloud
+    if args.device_type is not None:
+        params['device_type'] = args.device_type
+    if args.vars is not None:
+        params['vars'] = args.vars
+    if args.label is not None:
+        params['label'] = args.label
+    if args.ip is not None:
+        params['ip_address'] = args.ip
     if args.limit is not None:
         if args.limit < 0:
             raise exc.CommandError('Invalid limit specified. Expected '
