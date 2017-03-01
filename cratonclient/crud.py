@@ -105,12 +105,15 @@ class CRUDClient(object):
     def list(self, skip_merge=False, **kwargs):
         """Generate the items from this endpoint."""
         autopaginate = kwargs.pop('autopaginate', True)
+        nested = kwargs.pop('nested', False)
         self.merge_request_arguments(kwargs, skip_merge)
         url = self.build_url(path_arguments=kwargs)
+
         response_generator = self.session.paginate(
             url,
             autopaginate=autopaginate,
             items_key=(self.key + 's'),
+            nested=nested,
             params=kwargs,
         )
         for response, items in response_generator:
