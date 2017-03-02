@@ -164,17 +164,58 @@ class TestTableFormatter(base.FormatterTestCase):
             sortby_index=3,
         )
 
-    def test_sortby_kwargs(self):
-        """Verify sortby_kwargs relies on sortby_index."""
+    def test_sort_kwargs(self):
+        """Verify sort_kwargs relies on sortby_index."""
         self.formatter.field_labels = ['id', 'created_at']
-        self.assertDictEqual({'sortby': 'id'}, self.formatter.sortby_kwargs())
+        self.assertDictEqual(
+            {
+                'sortby': 'id',
+                'sort_key': self.formatter.sort_key_func,
+            },
+            self.formatter.sort_kwargs()
+        )
 
         self.formatter.sortby_index = 1
-        self.assertDictEqual({'sortby': 'created_at'},
-                             self.formatter.sortby_kwargs())
+        self.assertDictEqual(
+            {
+                'sortby': 'created_at',
+                'sort_key': self.formatter.sort_key_func,
+            },
+            self.formatter.sort_kwargs()
+        )
 
         self.formatter.sortby_index = None
-        self.assertDictEqual({}, self.formatter.sortby_kwargs())
+        self.assertDictEqual({}, self.formatter.sort_kwargs())
+
+        self.formatter.sortby_index = 0
+        mock_sort_key = mock.Mock()
+        self.formatter.sort_key_func = mock_sort_key
+        self.assertDictEqual(
+            {
+                'sortby': 'id',
+                'sort_key': mock_sort_key,
+            },
+            self.formatter.sort_kwargs()
+        )
+
+    def test_sort_key_func(self):
+        """Verify sort_key_func sorts lists with None and another type."""
+        unsorted_list = [
+            [2, 2],
+            [None, 1],
+            [1, 1],
+            [2, 1],
+        ]
+        sorted_list = [
+            [None, 1],
+            [1, 1],
+            [2, 1],
+            [2, 2],
+        ]
+        self.assertEqual(
+            sorted_list,
+            sorted(unsorted_list, key=self.formatter.sort_key_func)
+        )
 
     def test_build_table(self):
         """Verify that we build our table and auto-align it."""
@@ -224,5 +265,7 @@ class TestTableFormatter(base.FormatterTestCase):
             [mock.call([i, 'Test Resource']) for i in range(15)],
             mocktable.add_row.call_args_list,
         )
-        mocktable.get_string.assert_called_once_with(sortby='id')
+        mocktable.get_string.assert_called_once_with(
+            sort_key=self.formatter.sort_key_func, sortby='id'
+        )
         self.print_.assert_called_once_with('')
