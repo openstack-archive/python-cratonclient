@@ -18,6 +18,7 @@ from oslo_utils import encodeutils
 import prettytable
 import six
 
+from cratonclient.common import cliutils
 from cratonclient.formatters import base
 
 
@@ -28,7 +29,7 @@ class Formatter(base.Formatter):
         """Set-up after initialization."""
         self.fields = []
         self.formatters = {}
-        self.sortby_index = 0
+        self.sortby_index = None
         self.mixed_case_fields = set([])
         self.field_labels = []
         self.dict_property = "Property"
@@ -71,7 +72,7 @@ class Formatter(base.Formatter):
         if fields is not None:
             self.fields = fields
         if field_labels is None:
-            self.field_labels = self.fields
+            self.field_labels = cliutils.field_labels_from(self.fields)
         elif len(field_labels) != len(self.fields):
             raise ValueError(
                 "Field labels list %(labels)s has different number "

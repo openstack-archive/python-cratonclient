@@ -46,7 +46,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('limit', None)
         kwargs.setdefault('sort_key', None)
         kwargs.setdefault('sort_dir', 'asc')
-        kwargs.setdefault('fields', [])
+        kwargs.setdefault('fields', hosts_shell.DEFAULT_HOST_FIELDS)
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
         kwargs.setdefault('vars', None)
@@ -67,9 +67,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name'
-        ])
+        self.assertFieldsEqualTo(hosts_shell.DEFAULT_HOST_FIELDS)
 
     def test_with_cell_id(self):
         """Verify that we include the cell_id in the params."""
@@ -84,9 +82,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name',
-        ])
+        self.assertFieldsEqualTo(hosts_shell.DEFAULT_HOST_FIELDS)
 
     def test_with_cloud_id(self):
         """Verify that we include the cell_id in the params."""
@@ -101,9 +97,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name',
-        ])
+        self.assertFieldsEqualTo(hosts_shell.DEFAULT_HOST_FIELDS)
 
     def test_with_detail(self):
         """Verify the behaviour of specifying --detail."""
@@ -118,22 +112,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active',
-            'cell_id',
-            'cloud_id',
-            'created_at',
-            'device_type',
-            'id',
-            'ip_address',
-            'labels',
-            'name',
-            'note',
-            'parent_id',
-            'project_id',
-            'region_id',
-            'updated_at',
-        ])
+        self.assertFieldsEqualTo(hosts_shell.HOST_FIELDS)
 
     def test_with_limit(self):
         """Verify the behaviour with --limit specified."""
@@ -148,9 +127,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name'
-        ])
+        self.assertFieldsEqualTo(hosts_shell.DEFAULT_HOST_FIELDS)
 
     def test_negative_limit_raises_command_error(self):
         """Verify that we forbid negative limit values."""
@@ -172,9 +149,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name'
-        ])
+        self.assertFieldsEqualTo(hosts_shell.DEFAULT_HOST_FIELDS)
 
     def test_with_label(self):
         """Verify the behaviour with --label specified."""
@@ -189,9 +164,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name'
-        ])
+        self.assertFieldsEqualTo(hosts_shell.DEFAULT_HOST_FIELDS)
 
     def test_with_device_type(self):
         """Verify the behaviour with --device-type specified."""
@@ -206,9 +179,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name'
-        ])
+        self.assertFieldsEqualTo(hosts_shell.DEFAULT_HOST_FIELDS)
 
     def test_with_ip(self):
         """Verify the behaviour with --ip specified."""
@@ -223,9 +194,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name'
-        ])
+        self.assertFieldsEqualTo(hosts_shell.DEFAULT_HOST_FIELDS)
 
     def test_fields(self):
         """Verify that we can specify custom fields."""

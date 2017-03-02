@@ -54,7 +54,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('limit', None)
         kwargs.setdefault('sort_key', None)
         kwargs.setdefault('sort_dir', 'asc')
-        kwargs.setdefault('fields', [])
+        kwargs.setdefault('fields', cells_shell.DEFAULT_CELL_FIELDS)
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
         return super(TestDoCellList, self).args_for(**kwargs)
@@ -71,7 +71,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(cells_shell.DEFAULT_CELL_FIELDS)
 
     def test_with_cloud_id(self):
         """Verify the behaviour of do_cell_list with mostly default values."""
@@ -86,7 +86,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(cells_shell.DEFAULT_CELL_FIELDS)
 
     def test_negative_limit(self):
         """Ensure we raise an exception for negative limits."""
@@ -108,7 +108,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(cells_shell.DEFAULT_CELL_FIELDS)
 
     def test_valid_sort_key(self):
         """Verify that we pass on our sort key."""
@@ -123,7 +123,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(cells_shell.DEFAULT_CELL_FIELDS)
 
     def test_invalid_sort_key(self):
         """Verify that do not we pass on our sort key."""
@@ -145,7 +145,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedFieldsEqualTo(sorted(list(cells.CELL_FIELDS)))
+        self.assertFieldsEqualTo(cells_shell.CELL_FIELDS)
 
     def test_raises_exception_with_detail_and_fields(self):
         """Verify that we fail when users specify --detail and --fields."""
@@ -169,7 +169,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name', 'note'])
+        self.assertFieldsEqualTo(['id', 'name', 'note'])
 
     def test_invalid_fields(self):
         """Verify that we error out with invalid fields."""

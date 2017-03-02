@@ -18,6 +18,21 @@ from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
 from cratonclient.v1 import cells
 
+DEFAULT_CELL_FIELDS = [
+    'id',
+    'name',
+    'cloud_id',
+    'region_id',
+    'created_at',
+]
+
+CELL_FIELDS = DEFAULT_CELL_FIELDS + [
+    'updated_at',
+    'note',
+    'variables',
+    'project_id',
+]
+
 
 @cliutils.arg('id',
               metavar='<cell>',
@@ -52,7 +67,7 @@ def do_cell_show(cc, args):
 @cliutils.arg('--fields',
               nargs='+',
               metavar='<fields>',
-              default=[],
+              default=DEFAULT_CELL_FIELDS,
               help='Space-separated list of fields to display. '
                    'Only these fields will be fetched from the server. '
                    'Can not be used when "--detail" is specified')
@@ -85,27 +100,29 @@ def do_cell_list(cc, args):
     if args.all is True:
         params['limit'] = 100
 
-    if args.fields and args.detail:
-        raise exc.CommandError('Cannot specify both --fields and --detail.')
-
     if args.detail:
-        fields = cells.CELL_FIELDS
+        if args.fields and args.fields == DEFAULT_CELL_FIELDS:
+            args.fields = CELL_FIELDS
+        else:
+            raise exc.CommandError(
+                'Cannot specify both --fields and --detail.'
+            )
         params['detail'] = args.detail
-    elif args.fields:
-        try:
-            fields = {x: cells.CELL_FIELDS[x] for x in args.fields}
-        except KeyError as keyerr:
-            raise exc.CommandError('Invalid field "{}"'.format(keyerr.args[0]))
-    else:
-        fields = {x: cells.CELL_FIELDS[x] for x in default_fields}
+
+    fields = args.fields
+    for field in fields:
+        if field not in CELL_FIELDS:
+            raise exc.CommandError(
+                'Invalid field "{}"'.format(field)
+            )
     sort_key = args.sort_key and args.sort_key.lower()
     if sort_key is not None:
-        if sort_key not in cells.CELL_FIELDS:
+        if sort_key not in CELL_FIELDS:
             raise exc.CommandError(
                 ('"--sort-key" value was "{}" but should '
                  'be one of: {}').format(
                      args.sort_key,
-                     ', '.join(cells.CELL_FIELDS.keys())
+                     ', '.join(CELL_FIELDS)
                 )
             )
         params['sort_key'] = sort_key
@@ -117,7 +134,7 @@ def do_cell_list(cc, args):
     params['autopaginate'] = args.all
 
     listed_cells = cc.cells.list(**params)
-    args.formatter.configure(fields=list(fields)).handle(listed_cells)
+    args.formatter.configure(fields=fields).handle(listed_cells)
 
 
 @cliutils.arg('-n', '--name',
@@ -141,7 +158,7 @@ def do_cell_list(cc, args):
 def do_cell_create(cc, args):
     """Register a new cell with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in cells.CELL_FIELDS and not (v is None)}
+              if k in CELL_FIELDS and not (v is None)}
     cell = cc.cells.create(**fields)
     args.formatter.configure(wrap=72).handle(cell)
 
@@ -168,7 +185,7 @@ def do_cell_create(cc, args):
 def do_cell_update(cc, args):
     """Update a cell that is registered with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in cells.CELL_FIELDS and not (v is None)}
+              if k in CELL_FIELDS and not (v is None)}
     cell_id = fields.pop('id')
     if not fields:
         raise exc.CommandError(

@@ -27,15 +27,3 @@ class CellManager(crud.CRUDClient):
     key = 'cell'
     base_path = '/cells'
     resource_class = Cell
-
-
-CELL_FIELDS = {
-    'id': 'ID',
-    'region_id': 'Region ID',
-    'project_id': 'Project ID',
-    'cloud_id': 'Cloud ID',
-    'name': 'Name',
-    'note': 'Note',
-    'created_at': 'Created At',
-    'updated_at': 'Updated At'
-}
