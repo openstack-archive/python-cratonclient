@@ -207,6 +207,7 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('fields', [])
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
+        kwargs.setdefault('vars', None)
         return super(TestDoRegionList, self).args_for(**kwargs)
 
     def test_with_defaults(self):
@@ -222,6 +223,17 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
         regions_shell.do_region_list(self.craton_client, args)
         self.craton_client.regions.list.assert_called_once_with(
             cloud_id=123,
+            marker=None,
+            autopaginate=False,
+        )
+        self.assertSortedFieldsEqualTo(['id', 'name'])
+
+    def test_with_vars(self):
+        """Verify that we pass vars filters to region list."""
+        args = self.args_for(vars='a:b')
+        regions_shell.do_region_list(self.craton_client, args)
+        self.craton_client.regions.list.assert_called_once_with(
+            vars='a:b',
             marker=None,
             autopaginate=False,
         )

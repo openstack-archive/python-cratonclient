@@ -63,12 +63,18 @@ def do_region_create(cc, args):
               metavar='<marker>',
               default=None,
               help='ID of the region to use to resume listing regions.')
+@cliutils.arg('--vars',
+              metavar='<vars>',
+              default=None,
+              help='Variables to use as filter in the form of key:value.')
 def do_region_list(cc, args):
     """List all regions."""
     params = {}
     default_fields = ['id', 'name']
     if args.cloud is not None:
         params['cloud_id'] = args.cloud
+    if args.vars is not None:
+        params['vars'] = args.vars
     if args.limit is not None:
         if args.limit < 0:
             raise exc.CommandError('Invalid limit specified. Expected '
