@@ -29,11 +29,25 @@ class Formatter(base.Formatter):
         self.fields = []
         self.formatters = {}
         self.sortby_index = 0
+        self.sort_key = self._default_sort_key
         self.mixed_case_fields = set([])
         self.field_labels = []
         self.dict_property = "Property"
         self.wrap = 0
         self.dict_value = "Value"
+
+    def _default_sort_key(self, row):
+        """Return a row key compatible with sorting in PrettyTable.
+
+        Each column in the row is converted to a tuple to allow for the
+        ordering of None with another type, this allows Python 3 to support
+        sorting similar to the default in Python 2.
+
+        In Python 2.x sorting [1, None, 2] gives, [None, 1, 2]. In Python 3
+        this raises a TypeError because int and None are not the same type.
+        This function ensures sorting works in the same way for both versions.
+        """
+        return [(column is not None, column) for column in row]
 
     def configure(self, fields=None, formatters=None, sortby_index=False,
                   mixed_case_fields=None, field_labels=None,
@@ -118,11 +132,14 @@ class Formatter(base.Formatter):
 
         return self
 
-    def sortby_kwargs(self):
-        """Generate the sortby keyword argument for PrettyTable."""
+    def sort_kwargs(self):
+        """Generate the sort keyword arguments for PrettyTable."""
         if self.sortby_index is None:
             return {}
-        return {'sortby': self.field_labels[self.sortby_index]}
+        return {
+            'sortby': self.field_labels[self.sortby_index],
+            'sort_key': self.sort_key,
+        }
 
     def build_table(self, field_labels, alignment='l'):
         """Create a PrettyTable instance based off of the labels."""
@@ -132,7 +149,7 @@ class Formatter(base.Formatter):
 
     def handle_generator(self, generator):
         """Handle a generator of resources."""
-        sortby_kwargs = self.sortby_kwargs()
+        sort_kwargs = self.sort_kwargs()
         table = self.build_table(self.field_labels)
 
         for resource in generator:
@@ -150,7 +167,7 @@ class Formatter(base.Formatter):
                 row.append(data)
             table.add_row(row)
 
-        output = encodeutils.safe_encode(table.get_string(**sortby_kwargs))
+        output = encodeutils.safe_encode(table.get_string(**sort_kwargs))
         if six.PY3:
             output = output.decode()
         print(output)
