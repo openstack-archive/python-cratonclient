@@ -27,21 +27,3 @@ class HostManager(crud.CRUDClient):
     key = 'host'
     base_path = '/hosts'
     resource_class = Host
-
-
-HOST_FIELDS = {
-    'id': 'ID',
-    'name': 'Name',
-    'device_type': 'Device Type',
-    'project_id': 'Project ID',
-    'cloud_id': 'Cloud ID',
-    'region_id': 'Region ID',
-    'cell_id': 'Cell ID',
-    'ip_address': 'IP Address',
-    'active': 'Active',
-    'note': 'Note',
-    'created_at': 'Created At',
-    'updated_at': 'Updated At',
-    'labels': 'Labels',
-    'parent_id': 'Parent ID',
-}

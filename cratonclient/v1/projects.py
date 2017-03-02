@@ -27,11 +27,3 @@ class ProjectManager(crud.CRUDClient):
     key = 'project'
     base_path = '/projects'
     resource_class = Project
-
-
-PROJECT_FIELDS = {
-    'id': 'ID',
-    'name': 'Name',
-    'created_at': 'Created At',
-    'updated_at': 'Updated At'
-}

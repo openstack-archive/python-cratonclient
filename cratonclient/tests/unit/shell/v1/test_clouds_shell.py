@@ -196,7 +196,7 @@ class TestDoCloudList(base.TestShellCommandUsingPrintList):
         """Generate the default argument list for cloud-list."""
         kwargs.setdefault('detail', False)
         kwargs.setdefault('limit', None)
-        kwargs.setdefault('fields', [])
+        kwargs.setdefault('fields', clouds_shell.DEFAULT_CLOUD_FIELDS)
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
         return super(TestDoCloudList, self).args_for(**kwargs)
@@ -206,7 +206,7 @@ class TestDoCloudList(base.TestShellCommandUsingPrintList):
         args = self.args_for()
         clouds_shell.do_cloud_list(self.craton_client, args)
 
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(clouds_shell.DEFAULT_CLOUD_FIELDS)
 
     def test_negative_limit(self):
         """Ensure we raise an exception for negative limits."""
@@ -222,13 +222,13 @@ class TestDoCloudList(base.TestShellCommandUsingPrintList):
             marker=None,
             autopaginate=False,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(clouds_shell.DEFAULT_CLOUD_FIELDS)
 
     def test_fields(self):
         """Verify that we print out specific fields."""
         args = self.args_for(fields=['id', 'name', 'note'])
         clouds_shell.do_cloud_list(self.craton_client, args)
-        self.assertSortedFieldsEqualTo(['id', 'name', 'note'])
+        self.assertFieldsEqualTo(['id', 'name', 'note'])
 
     def test_invalid_fields(self):
         """Verify that we error out with invalid fields."""
