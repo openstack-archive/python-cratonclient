@@ -28,13 +28,3 @@ class RegionManager(crud.CRUDClient):
     base_path = '/regions'
     resource_class = Region
     project_id = 0
-
-REGION_FIELDS = {
-    'id': 'ID',
-    'project_id': 'Project ID',
-    'cloud_id': 'Cloud ID',
-    'name': 'Name',
-    'note': 'Note',
-    'created_at': 'Created At',
-    'updated_at': 'Updated At'
-}

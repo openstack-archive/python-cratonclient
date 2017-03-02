@@ -14,7 +14,19 @@ from __future__ import print_function
 
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
-from cratonclient.v1 import regions
+
+DEFAULT_REGION_FIELDS = [
+    'id',
+    'name',
+    'cloud_id',
+]
+
+REGION_FIELDS = DEFAULT_REGION_FIELDS + [
+    'project_id',
+    'note',
+    'created_at',
+    'updated_at',
+]
 
 
 @cliutils.arg('-n', '--name',
@@ -32,7 +44,7 @@ from cratonclient.v1 import regions
 def do_region_create(cc, args):
     """Register a new region with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in regions.REGION_FIELDS and not (v is None)}
+              if k in REGION_FIELDS and not (v is None)}
 
     region = cc.regions.create(**fields)
     args.formatter.configure(wrap=72).handle(region)
@@ -45,10 +57,14 @@ def do_region_create(cc, args):
 @cliutils.arg('--fields',
               nargs='+',
               metavar='<fields>',
-              default=[],
+              default=DEFAULT_REGION_FIELDS,
               help='Space-separated list of fields to display. '
                    'Only these fields will be fetched from the server. '
                    'Can not be used when "--detail" is specified')
+@cliutils.arg('--detail',
+              action='store_true',
+              default=False,
+              help='Show detailed information about the regions.')
 @cliutils.arg('--all',
               action='store_true',
               default=False,
@@ -66,7 +82,6 @@ def do_region_create(cc, args):
 def do_region_list(cc, args):
     """List all regions."""
     params = {}
-    default_fields = ['id', 'name']
     if args.cloud is not None:
         params['cloud_id'] = args.cloud
     if args.limit is not None:
@@ -78,13 +93,21 @@ def do_region_list(cc, args):
     if args.all is True:
         params['limit'] = 100
 
-    if args.fields:
-        try:
-            fields = {x: regions.REGION_FIELDS[x] for x in args.fields}
-        except KeyError as err:
-            raise exc.CommandError('Invalid field "{}"'.format(err.args[0]))
-    else:
-        fields = default_fields
+    if args.detail:
+        if args.fields and args.fields == DEFAULT_REGION_FIELDS:
+            args.fields = REGION_FIELDS
+        else:
+            raise exc.CommandError(
+                'Cannot specify both --fields and --detail.'
+            )
+        params['detail'] = args.detail
+
+    fields = args.fields
+    for field in args.fields:
+        if field not in REGION_FIELDS:
+            raise exc.CommandError(
+                'Invalid field "{}"'.format(field)
+            )
 
     params['marker'] = args.marker
     params['autopaginate'] = args.all
@@ -120,7 +143,7 @@ def do_region_show(cc, args):
 def do_region_update(cc, args):
     """Update a region that is registered with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in regions.REGION_FIELDS and not (v is None)}
+              if k in REGION_FIELDS and not (v is None)}
     item_id = fields.pop('id')
     if not fields:
         raise exc.CommandError(

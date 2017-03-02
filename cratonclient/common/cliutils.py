@@ -51,6 +51,27 @@ def add_arg(func, *args, **kwargs):
         func.arguments.insert(0, (args, kwargs))
 
 
+def field_labels_from(attributes):
+    """Generate a list of slightly more human readable field names.
+
+    This takes the list of fields/attributes on the object and makes them
+    easier to read.
+
+    :param list attributes:
+        The attribute names to convert. For example, ``["parent_id"]``.
+    :returns:
+        List of field names. For example ``["Parent Id"]``
+    :rtype:
+        list
+
+    Example:
+
+    >>> field_labels_from(["id", "name", "cloud_id"])
+    ["Id", "Name", "Cloud Id"]
+    """
+    return [field.replace('_', ' ').title() for field in attributes]
+
+
 def print_list(objs, fields, formatters=None, sortby_index=0,
                mixed_case_fields=None, field_labels=None):
     """Print a list or objects as a table, one row per object.

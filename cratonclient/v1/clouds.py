@@ -27,12 +27,3 @@ class CloudManager(crud.CRUDClient):
     key = 'cloud'
     base_path = '/clouds'
     resource_class = Cloud
-
-CLOUD_FIELDS = {
-    'id': 'ID',
-    'project_id': 'Project ID',
-    'name': 'Name',
-    'note': 'Note',
-    'created_at': 'Created At',
-    'updated_at': 'Updated At'
-}
