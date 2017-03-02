@@ -161,3 +161,14 @@ class TestRegionsShell(base.ShellTestCase):
                                   formatter=mock.Mock())
         regions_shell.do_region_update(client, invalid_input)
         mock_update.assert_called_once_with(1, name='mock_region')
+
+    @mock.patch('cratonclient.v1.regions.RegionManager.list')
+    def test_region_list_with_vars_success(self, mock_list):
+        """Verify --vars arguments successfully passed to Client."""
+        self.shell('region-list --vars a:b')
+        mock_list.assert_called_once_with(
+            vars='a:b',
+            marker=None,
+            autopaginate=False,
+        )
+        mock_list.reset_mock()

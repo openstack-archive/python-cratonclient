@@ -63,10 +63,20 @@ def do_region_create(cc, args):
               metavar='<marker>',
               default=None,
               help='ID of the region to use to resume listing regions.')
+@cliutils.arg('--vars',
+              metavar='<vars>',
+              nargs='+',
+              action='append',
+              default=[],
+              help='Variables to use as filter in the form of '
+                   '--vars="key:value" --vars="key2:value2"')
 def do_region_list(cc, args):
     """List all regions."""
     params = {}
     default_fields = ['id', 'name']
+    if args.vars:
+        query_vars = ",".join([i[0] for i in args.vars])
+        params['vars'] = query_vars
     if args.cloud is not None:
         params['cloud_id'] = args.cloud
     if args.limit is not None:
