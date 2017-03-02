@@ -31,7 +31,7 @@ class TestTableFormatter(base.FormatterTestCase):
         """Verify we set up defaults for our PrettyTable formatter."""
         self.assertEqual([], self.formatter.fields)
         self.assertEqual({}, self.formatter.formatters)
-        self.assertEqual(0, self.formatter.sortby_index)
+        self.assertIsNone(self.formatter.sortby_index)
         self.assertEqual(set([]), self.formatter.mixed_case_fields)
         self.assertEqual([], self.formatter.field_labels)
         self.assertEqual("Property", self.formatter.dict_property)
@@ -63,7 +63,7 @@ class TestTableFormatter(base.FormatterTestCase):
         # Assert defaults remain unchanged
         self.assertEqual([], self.formatter.fields)
         self.assertEqual([], self.formatter.field_labels)
-        self.assertEqual(0, self.formatter.sortby_index)
+        self.assertIsNone(self.formatter.sortby_index)
 
     # Case 1: Just fields
     def test_configure_fields_only(self):
@@ -167,6 +167,7 @@ class TestTableFormatter(base.FormatterTestCase):
     def test_sortby_kwargs(self):
         """Verify sortby_kwargs relies on sortby_index."""
         self.formatter.field_labels = ['id', 'created_at']
+        self.formatter.sortby_index = 0
         self.assertDictEqual({'sortby': 'id'}, self.formatter.sortby_kwargs())
 
         self.formatter.sortby_index = 1
@@ -224,5 +225,5 @@ class TestTableFormatter(base.FormatterTestCase):
             [mock.call([i, 'Test Resource']) for i in range(15)],
             mocktable.add_row.call_args_list,
         )
-        mocktable.get_string.assert_called_once_with(sortby='id')
+        mocktable.get_string.assert_called_once_with()
         self.print_.assert_called_once_with('')

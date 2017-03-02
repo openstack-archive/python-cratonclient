@@ -16,7 +16,28 @@ from __future__ import print_function
 
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
-from cratonclient.v1 import hosts
+
+
+DEFAULT_HOST_FIELDS = [
+    'id',
+    'name',
+    'active',
+    'device_type',
+    'ip_address',
+    'cloud_id',
+    'region_id',
+    'cell_id',
+    'created_at',
+]
+
+HOST_FIELDS = DEFAULT_HOST_FIELDS + [
+    'updated_at',
+    'note',
+    'variables',
+    'labels',
+    'parent_id',
+    'project_id',
+]
 
 
 @cliutils.arg('id',
@@ -57,7 +78,7 @@ def do_host_show(cc, args):
 @cliutils.arg('--fields',
               nargs='+',
               metavar='<fields>',
-              default=[],
+              default=DEFAULT_HOST_FIELDS,
               help='Space-separated list of fields to display. '
                    'Only these fields will be fetched from the server. '
                    'Can not be used when "--detail" is specified')
@@ -94,7 +115,6 @@ def do_host_show(cc, args):
 def do_host_list(cc, args):
     """Print list of hosts which are registered with the Craton service."""
     params = {}
-    default_fields = ['id', 'name', 'device_type', 'active', 'cell_id']
     if args.cell is not None:
         params['cell_id'] = args.cell
     if args.cloud is not None:
@@ -116,26 +136,31 @@ def do_host_list(cc, args):
     if args.all is True:
         params['limit'] = 100
 
-    if args.fields and args.detail:
-        raise exc.CommandError('Cannot specify both --fields and --detail.')
+    if args.detail:
+        if args.fields and args.fields == DEFAULT_HOST_FIELDS:
+            args.fields = []
+        else:
+            raise exc.CommandError(
+                'Cannot specify both --fields and --detail.'
+            )
 
     if args.detail:
-        fields = hosts.HOST_FIELDS
+        fields = HOST_FIELDS
         params['detail'] = args.detail
     elif args.fields:
-        try:
-            fields = {x: hosts.HOST_FIELDS[x] for x in args.fields}
-        except KeyError as keyerr:
-            raise exc.CommandError('Invalid field "{}"'.format(keyerr.args[0]))
-    else:
-        fields = {x: hosts.HOST_FIELDS[x] for x in default_fields}
+        for field in args.fields:
+            if field not in HOST_FIELDS:
+                raise exc.CommandError(
+                    'Invalid field "{}"'.format(field)
+                )
+
     sort_key = args.sort_key and args.sort_key.lower()
     if sort_key is not None:
-        if sort_key not in hosts.HOST_FIELDS:
+        if sort_key not in HOST_FIELDS:
             raise exc.CommandError(
                 '{0} is an invalid key for sorting,  valid values for '
                 '--sort-key are: {1}'.format(
-                    args.sort_key, hosts.HOST_FIELDS.keys()
+                    args.sort_key, HOST_FIELDS
                 )
             )
         params['sort_key'] = sort_key
@@ -147,7 +172,7 @@ def do_host_list(cc, args):
     params['autopaginate'] = args.all
 
     host_list = cc.hosts.list(**params)
-    args.formatter.configure(fields=list(fields)).handle(host_list)
+    args.formatter.configure(fields=fields).handle(host_list)
 
 
 @cliutils.arg('-n', '--name',
@@ -191,7 +216,7 @@ def do_host_list(cc, args):
 def do_host_create(cc, args):
     """Register a new host with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in hosts.HOST_FIELDS and (v or v is False)}
+              if k in HOST_FIELDS and (v or v is False)}
     host = cc.hosts.create(**fields)
     args.formatter.configure(wrap=72).handle(host)
 
@@ -232,7 +257,7 @@ def do_host_create(cc, args):
 def do_host_update(cc, args):
     """Update a host that is registered with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in hosts.HOST_FIELDS and (v or v is False)}
+              if k in HOST_FIELDS and (v or v is False)}
     item_id = fields.pop('id')
     host = cc.hosts.update(item_id, **fields)
     print("Host {0} has been successfully updated.".format(host.id))

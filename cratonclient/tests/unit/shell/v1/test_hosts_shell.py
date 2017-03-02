@@ -46,7 +46,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('limit', None)
         kwargs.setdefault('sort_key', None)
         kwargs.setdefault('sort_dir', 'asc')
-        kwargs.setdefault('fields', [])
+        kwargs.setdefault('fields', hosts_shell.DEFAULT_HOST_FIELDS)
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
         kwargs.setdefault('vars', None)
@@ -172,9 +172,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'device_type', 'id', 'name'
-        ])
+        self.assertFieldsEqualTo(hosts_shell.DEFAULT_HOST_FIELDS)
 
     def test_with_label(self):
         """Verify the behaviour with --label specified."""
