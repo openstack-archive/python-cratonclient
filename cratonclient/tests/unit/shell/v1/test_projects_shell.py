@@ -21,7 +21,7 @@ from cratonclient.shell.v1 import projects_shell
 from cratonclient.tests.unit.shell import base
 
 
-class TestDoShellShow(base.TestShellCommandUsingPrintDict):
+class TestDoShellShow(base.TestShellCommand):
     """Unit tests for the project show command."""
 
     def test_simple_usage(self):
@@ -38,7 +38,7 @@ class TestDoShellShow(base.TestShellCommandUsingPrintDict):
         self.assertEqual(1, self.formatter.handle.call_count)
 
 
-class TestDoProjectList(base.TestShellCommandUsingPrintList):
+class TestDoProjectList(base.TestShellCommand):
     """Unit tests for the project list command."""
 
     def assertNothingWasCalled(self):
@@ -181,7 +181,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
         )
 
 
-class TestDoProjectCreate(base.TestShellCommandUsingPrintDict):
+class TestDoProjectCreate(base.TestShellCommand):
     """Unit tests for the project create command."""
 
     def args_for(self, **kwargs):

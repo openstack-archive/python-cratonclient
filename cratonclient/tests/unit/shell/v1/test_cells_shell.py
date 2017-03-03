@@ -19,7 +19,7 @@ from cratonclient.shell.v1 import cells_shell
 from cratonclient.tests.unit.shell import base
 
 
-class TestDoShellShow(base.TestShellCommandUsingPrintDict):
+class TestDoShellShow(base.TestShellCommand):
     """Unit tests for the cell show command."""
 
     def test_simple_usage(self):
@@ -36,7 +36,7 @@ class TestDoShellShow(base.TestShellCommandUsingPrintDict):
         self.assertEqual(1, self.formatter.handle.call_count)
 
 
-class TestDoCellList(base.TestShellCommandUsingPrintList):
+class TestDoCellList(base.TestShellCommand):
     """Unit tests for the cell list command."""
 
     def assertNothingWasCalled(self):
@@ -206,7 +206,7 @@ class TestDoCellList(base.TestShellCommandUsingPrintList):
         )
 
 
-class TestDoCellCreate(base.TestShellCommandUsingPrintDict):
+class TestDoCellCreate(base.TestShellCommand):
     """Unit tests for the cell create command."""
 
     def args_for(self, **kwargs):
@@ -244,7 +244,7 @@ class TestDoCellCreate(base.TestShellCommandUsingPrintDict):
         self.assertEqual(1, self.formatter.handle.call_count)
 
 
-class TestDoCellUpdate(base.TestShellCommandUsingPrintDict):
+class TestDoCellUpdate(base.TestShellCommand):
     """Unit tests for the cell update command."""
 
     def args_for(self, **kwargs):

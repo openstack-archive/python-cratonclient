@@ -44,61 +44,11 @@ class TestShellCommand(base.TestCase):
         kwargs.setdefault('formatter', self.formatter)
         return argparse.Namespace(**kwargs)
 
-
-class TestShellCommandUsingPrintDict(TestShellCommand):
-    """Base class for shell commands using print_dict."""
-
-    def setUp(self):
-        """Initialize test fixtures."""
-        super(TestShellCommandUsingPrintDict, self).setUp()
-        self.print_dict_patch = mock.patch(
-            'cratonclient.common.cliutils.print_dict'
-        )
-        self.print_dict = self.print_dict_patch.start()
-
-    def tearDown(self):
-        """Clean-up test fixtures."""
-        super(TestShellCommandUsingPrintDict, self).tearDown()
-        self.print_dict_patch.stop()
-
     def assertNothingWasCalled(self):
-        """Assert inventory, list, and print_dict were not called."""
-        self.assertFalse(self.craton_client.inventory.called)
-        self.assertFalse(self.print_dict.called)
-
-
-class TestShellCommandUsingPrintList(TestShellCommand):
-    """Base class for shell commands using print_list."""
-
-    def setUp(self):
-        """Initialize test fixtures."""
-        super(TestShellCommandUsingPrintList, self).setUp()
-        self.print_list_patch = mock.patch(
-            'cratonclient.common.cliutils.print_list'
-        )
-        self.print_list = self.print_list_patch.start()
-
-    def tearDown(self):
-        """Clean-up test fixtures."""
-        super(TestShellCommandUsingPrintList, self).tearDown()
-        self.print_list_patch.stop()
-
-    def assertNothingWasCalled(self):
-        """Assert inventory, list, and print_dict were not called."""
-        self.assertFalse(self.craton_client.inventory.called)
-        self.assertFalse(self.print_list.called)
-
-    def assertSortedPrintListFieldsEqualTo(self, expected_fields):
-        """Assert the sorted fields parameter is equal expected_fields."""
-        kwargs = self.formatter.configure.call_args[1]
-        self.assertListEqual(expected_fields,
-                             sorted(kwargs['fields']))
-
-    def assertSortedFieldsEqualTo(self, expected_fields):
-        """Assert the sorted fields parameter is equal expected_fields."""
-        kwargs = self.formatter.configure.call_args[1]
-        self.assertListEqual(expected_fields,
-                             sorted(kwargs['fields']))
+        """Assert nothing was called on the formatter."""
+        self.assertListEqual([], self.craton_client.mock_calls)
+        self.assertFalse(self.formatter.configure.called)
+        self.assertFalse(self.formatter.handle.called)
 
     def assertFieldsEqualTo(self, expected_fields):
         """Assert the sorted fields parameter is equal expected_fields."""

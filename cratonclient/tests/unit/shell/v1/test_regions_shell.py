@@ -19,7 +19,7 @@ from cratonclient.shell.v1 import regions_shell
 from cratonclient.tests.unit.shell import base
 
 
-class TestDoRegionShow(base.TestShellCommandUsingPrintDict):
+class TestDoRegionShow(base.TestShellCommand):
     """Unit tests for the region-show command."""
 
     def test_prints_region_data(self):
@@ -33,7 +33,7 @@ class TestDoRegionShow(base.TestShellCommandUsingPrintDict):
         self.assertEqual(1, self.formatter.handle.call_count)
 
 
-class TestDoRegionCreate(base.TestShellCommandUsingPrintDict):
+class TestDoRegionCreate(base.TestShellCommand):
     """Unit tests for the region-create command."""
 
     def args_for(self, **kwargs):
@@ -71,7 +71,7 @@ class TestDoRegionCreate(base.TestShellCommandUsingPrintDict):
         self.assertEqual(1, self.formatter.handle.call_count)
 
 
-class TestDoRegionUpdate(base.TestShellCommandUsingPrintDict):
+class TestDoRegionUpdate(base.TestShellCommand):
     """Unit tests for region-update command."""
 
     def args_for(self, **kwargs):
@@ -196,7 +196,7 @@ class TestDoRegionDelete(base.TestShellCommand):
         self.assertFalse(self.print_func.called)
 
 
-class TestDoRegionList(base.TestShellCommandUsingPrintList):
+class TestDoRegionList(base.TestShellCommand):
     """Test region-list command."""
 
     def args_for(self, **kwargs):
