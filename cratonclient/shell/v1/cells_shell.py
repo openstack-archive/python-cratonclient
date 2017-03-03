@@ -84,9 +84,19 @@ def do_cell_show(cc, args):
               metavar='<marker>',
               default=None,
               help='ID of the cell to use to resume listing cells.')
+@cliutils.arg('--vars',
+              metavar='<vars>',
+              nargs='+',
+              action='append',
+              default=[],
+              help='Variables to use as filter in the form of '
+                   '--vars="key:value" --vars="key2:value2"')
 def do_cell_list(cc, args):
     """Print list of cells which are registered with the Craton service."""
     params = {}
+    if args.vars:
+        query_vars = ",".join([i[0] for i in args.vars])
+        params['vars'] = query_vars
     if args.cloud is not None:
         params['cloud_id'] = args.cloud
     if args.limit is not None:

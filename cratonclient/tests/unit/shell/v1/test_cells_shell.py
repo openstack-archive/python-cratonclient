@@ -56,6 +56,7 @@ class TestDoCellList(base.TestShellCommand):
         kwargs.setdefault('fields', cells_shell.DEFAULT_CELL_FIELDS)
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
+        kwargs.setdefault('vars', None)
         return super(TestDoCellList, self).args_for(**kwargs)
 
     def test_with_defaults(self):
@@ -176,6 +177,19 @@ class TestDoCellList(base.TestShellCommand):
 
         self.assertRaisesCommandErrorWith(cells_shell.do_cell_list, args)
         self.assertNothingWasCalled()
+
+    def test_with_multiple_vars(self):
+        """Verify that we pass vars filters to cell list."""
+        args = self.args_for(vars=[['a:b'], ['c:d']])
+        cells_shell.do_cell_list(self.craton_client, args)
+        self.craton_client.cells.list.assert_called_once_with(
+            vars='a:b,c:d',
+            region_id=123,
+            marker=None,
+            sort_dir='asc',
+            autopaginate=False,
+        )
+        self.assertSortedFieldsEqualTo(['id', 'name'])
 
     def test_autopaginate(self):
         """Verify that autopagination works."""
