@@ -181,6 +181,30 @@ class TestCellsShell(base.ShellTestCase):
         )
         self.assertIn("invalid choice: 'invalid'", error)
 
+    @mock.patch('cratonclient.v1.cells.CellManager.list')
+    def test_cell_list_with_vars_success(self, mock_list):
+        """Verify --vars arguments successfully passed to Client."""
+        self.shell('cell-list --vars a:b')
+        mock_list.assert_called_once_with(
+            vars='a:b',
+            marker=None,
+            sort_dir='asc',
+            autopaginate=False,
+        )
+        mock_list.reset_mock()
+
+    @mock.patch('cratonclient.v1.cells.CellManager.list')
+    def test_cell_list_with_multiple_vars_success(self, mock_list):
+        """Verify multiple --vars arguments successfully passed to Client."""
+        self.shell('cell-list --vars=a:b --vars=c:d')
+        mock_list.assert_called_once_with(
+            vars='a:b,c:d',
+            marker=None,
+            sort_dir='asc',
+            autopaginate=False,
+        )
+        mock_list.reset_mock()
+
     def test_cell_create_missing_required_args(self):
         """Verify that missing required args results in error message."""
         expected_responses = [
