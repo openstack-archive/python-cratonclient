@@ -108,6 +108,7 @@ class TestCrudIntegration(base.TestCase):
         self.session.request.assert_called_once_with(
             method='DELETE',
             url='http://example.com/v1/test/1',
+            json=None,
             params={},
             endpoint_filter={'service_type': 'fleet_management'},
         )
