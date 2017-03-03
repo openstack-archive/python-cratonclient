@@ -14,6 +14,9 @@
 """Hosts resource and resource shell wrapper."""
 from __future__ import print_function
 
+import argparse
+import sys
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
 
@@ -279,3 +282,55 @@ def do_host_delete(cc, args):
     else:
         print("Host {0} was {1} deleted.".
               format(args.id, 'successfully' if response else 'not'))
+
+
+@cliutils.arg('id',
+              metavar='<host>',
+              type=int,
+              help='ID or name of the host.')
+@cliutils.handle_shell_exception
+def do_host_vars_get(cc, args):
+    """Get variables for a host."""
+    args.formatter.configure(dict_property="Variable", wrap=72) \
+        .handle(cc.hosts.get(args.id).variables.get())
+
+
+@cliutils.arg('id',
+              metavar='<host>',
+              type=int,
+              help='ID of the host.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.handle_shell_exception
+def do_host_vars_set(cc, args):
+    """Set variables for a host."""
+    host_id = args.id
+    if not args.variables and sys.stdin.isatty():
+        raise exc.CommandError(
+            'Nothing to update... Please specify variables to set in the '
+            'following format: "key=value". You may also specify variables to '
+            'delete by key using the format: "key="'
+        )
+    adds, deletes = cliutils.variable_updates(args.variables)
+    variables = cc.hosts.get(host_id).variables
+    variables.update(**adds)
+    if deletes:
+        variables.delete(*deletes)
+
+
+@cliutils.arg('id',
+              metavar='<host>',
+              type=int,
+              help='ID of the host.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.handle_shell_exception
+def do_host_vars_delete(cc, args):
+    """Delete variables for a host by key."""
+    host_id = args.id
+    if not args.variables and sys.stdin.isatty():
+        raise exc.CommandError(
+            'Nothing to delete... Please specify variables to delete by '
+            'listing the keys you wish to delete separated by spaces.'
+        )
+    deletes = cliutils.variable_deletes(args.variables)
+    variables = cc.hosts.get(host_id).variables
+    variables.delete(*deletes)
