@@ -14,15 +14,38 @@ from __future__ import print_function
 
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
-from cratonclient.v1 import devices
+
+DEFAULT_DEVICE_FIELDS = [
+    'id',
+    'name',
+    'device_type',
+    'ip_address',
+    'cloud_id',
+    'region_id',
+    'cell_id',
+]
+
+
+DEVICE_FIELDS = DEFAULT_DEVICE_FIELDS + [
+    'parent_id',
+    'note',
+    'created_at',
+    'updated_at',
+    'project_id',
+]
 
 
 @cliutils.arg('--fields',
               nargs='+',
               metavar='<fields>',
-              default=[],
+              default=DEFAULT_DEVICE_FIELDS,
               help='Space-separated list of fields to display. '
-                   'Only these fields will be fetched from the server.')
+                   'Only these fields will be fetched from the server. '
+                   'This cannot be combined with --detail.')
+@cliutils.arg('--detail',
+              action='store_true',
+              default=False,
+              help='Retrieve and show all detail about devices in listing.')
 @cliutils.arg('--all',
               action='store_true',
               default=False,
@@ -73,10 +96,6 @@ from cratonclient.v1 import devices
 def do_device_list(cc, args):
     """List all devices."""
     params = {}
-    default_fields = [
-        'cloud_id', 'region_id', 'cell_id', 'parent_id', 'id', 'name',
-        'device_type', 'active',
-    ]
     if args.limit is not None:
         if args.limit < 0:
             raise exc.CommandError('Invalid limit specified. Expected '
@@ -86,20 +105,29 @@ def do_device_list(cc, args):
     if args.all is True:
         params['limit'] = 100
 
-    if args.fields:
-        try:
-            fields = {x: devices.DEVICE_FIELDS[x] for x in args.fields}
-        except KeyError as err:
-            raise exc.CommandError('Invalid field "{}"'.format(err.args[0]))
-    else:
-        fields = default_fields
+    if args.detail:
+        if args.fields and args.fields == DEFAULT_DEVICE_FIELDS:
+            args.fields = DEVICE_FIELDS
+        else:
+            raise exc.CommandError(
+                'Cannot specify both --fields and --detail.'
+            )
+        params['detail'] = args.detail
+
+    fields = args.fields
+    for field in fields:
+        if field not in DEVICE_FIELDS:
+            raise exc.CommandError(
+                'Invalid field "{}"'.format(field)
+            )
+
     sort_key = args.sort_key and args.sort_key.lower()
     if sort_key is not None:
-        if sort_key not in devices.DEVICE_FIELDS:
+        if sort_key not in DEVICE_FIELDS:
             raise exc.CommandError(
                 '{0} is an invalid key for sorting,  valid values for '
                 '--sort-key are: {1}'.format(
-                    args.sort_key, devices.DEVICE_FIELDS.keys()
+                    args.sort_key, DEVICE_FIELDS
                 )
             )
         params['sort_keys'] = sort_key
@@ -119,4 +147,4 @@ def do_device_list(cc, args):
         params['active'] = args.active
 
     devices_list = cc.devices.list(**params)
-    args.formatter.configure(fields=list(fields)).handle(devices_list)
+    args.formatter.configure(fields=fields).handle(devices_list)

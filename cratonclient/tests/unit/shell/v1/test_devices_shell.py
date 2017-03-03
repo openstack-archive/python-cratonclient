@@ -21,6 +21,7 @@ class TestDoDeviceList(base.TestShellCommandUsingPrintList):
 
     def args_for(self, **kwargs):
         """Generate a Namespace for do_device_list."""
+        kwargs.setdefault('detail', False)
         kwargs.setdefault('cloud', None)
         kwargs.setdefault('region', None)
         kwargs.setdefault('cell', None)
@@ -30,7 +31,7 @@ class TestDoDeviceList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('limit', None)
         kwargs.setdefault('sort_key', None)
         kwargs.setdefault('sort_dir', 'asc')
-        kwargs.setdefault('fields', [])
+        kwargs.setdefault('fields', devices_shell.DEFAULT_DEVICE_FIELDS)
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
         return super(TestDoDeviceList, self).args_for(**kwargs)
@@ -47,10 +48,7 @@ class TestDoDeviceList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'cloud_id', 'device_type', 'id', 'name',
-            'parent_id', 'region_id',
-        ])
+        self.assertFieldsEqualTo(devices_shell.DEFAULT_DEVICE_FIELDS)
 
     def test_with_parent_id(self):
         """Verify that we include the parent_id in the params."""
@@ -65,10 +63,7 @@ class TestDoDeviceList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'cloud_id', 'device_type', 'id', 'name',
-            'parent_id', 'region_id',
-        ])
+        self.assertFieldsEqualTo(devices_shell.DEFAULT_DEVICE_FIELDS)
 
     def test_with_parent_id_and_descendants(self):
         """Verify that the parent_id and descendants is in the params."""
@@ -83,10 +78,7 @@ class TestDoDeviceList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'cloud_id', 'device_type', 'id', 'name',
-            'parent_id', 'region_id',
-        ])
+        self.assertFieldsEqualTo(devices_shell.DEFAULT_DEVICE_FIELDS)
 
     def test_with_region_id(self):
         """Verify that we include the region_id in the params."""
@@ -101,10 +93,7 @@ class TestDoDeviceList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'cloud_id', 'device_type', 'id', 'name',
-            'parent_id', 'region_id',
-        ])
+        self.assertFieldsEqualTo(devices_shell.DEFAULT_DEVICE_FIELDS)
 
     def test_with_cell_id(self):
         """Verify that we include the cell_id in the params."""
@@ -119,10 +108,7 @@ class TestDoDeviceList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'cloud_id', 'device_type', 'id', 'name',
-            'parent_id', 'region_id',
-        ])
+        self.assertFieldsEqualTo(devices_shell.DEFAULT_DEVICE_FIELDS)
 
     def test_with_cloud_id(self):
         """Verify that we include the cell_id in the params."""
@@ -137,10 +123,7 @@ class TestDoDeviceList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'cloud_id', 'device_type', 'id', 'name',
-            'parent_id', 'region_id',
-        ])
+        self.assertFieldsEqualTo(devices_shell.DEFAULT_DEVICE_FIELDS)
 
     def test_with_limit(self):
         """Verify the behaviour with --limit specified."""
@@ -155,10 +138,7 @@ class TestDoDeviceList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'active', 'cell_id', 'cloud_id', 'device_type', 'id', 'name',
-            'parent_id', 'region_id',
-        ])
+        self.assertFieldsEqualTo(devices_shell.DEFAULT_DEVICE_FIELDS)
 
     def test_negative_limit_raises_command_error(self):
         """Verify that we forbid negative limit values."""
@@ -179,9 +159,7 @@ class TestDoDeviceList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'cell_id', 'id', 'name',
-        ])
+        self.assertFieldsEqualTo(['id', 'name', 'cell_id'])
 
     def test_invalid_sort_key(self):
         """Verify that we disallow invalid sort keys."""

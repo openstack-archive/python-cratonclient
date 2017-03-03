@@ -31,18 +31,3 @@ class DeviceManager(crud.CRUDClient):
     def list(self, **kwargs):
         """Generate the items from this endpoint."""
         return super(DeviceManager, self).list(nested=True, **kwargs)
-
-DEVICE_FIELDS = {
-    'id': 'ID',
-    'project_id': 'Project ID',
-    'cloud_id': 'Cloud ID',
-    'region_id': 'Region ID',
-    'cell_id': 'Cell ID',
-    'parent_id': 'Parent ID',
-    'name': 'Name',
-    'ip_address': 'IP Address',
-    'device_type': 'Device Type',
-    'note': 'Note',
-    'created_at': 'Created At',
-    'updated_at': 'Updated At'
-}
