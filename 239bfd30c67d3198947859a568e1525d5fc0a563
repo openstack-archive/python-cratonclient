@@ -1,0 +1,9 @@
+Code-Review+2: Jim Baker <jim.baker@python.org>
+Code-Review+2: Sulochan Acharya <sulochan@gmail.com>
+Workflow+1: Sulochan Acharya <sulochan@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 03 Mar 2017 09:44:11 +0000
+Reviewed-on: https://review.openstack.org/438561
+Project: openstack/python-cratonclient
+Branch: refs/heads/master
