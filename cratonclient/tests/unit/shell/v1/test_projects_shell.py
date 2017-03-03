@@ -19,7 +19,6 @@ import mock
 from cratonclient import exceptions
 from cratonclient.shell.v1 import projects_shell
 from cratonclient.tests.unit.shell import base
-from cratonclient.v1 import projects
 
 
 class TestDoShellShow(base.TestShellCommandUsingPrintDict):
@@ -53,7 +52,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('name', None)
         kwargs.setdefault('limit', None)
         kwargs.setdefault('detail', False)
-        kwargs.setdefault('fields', [])
+        kwargs.setdefault('fields', projects_shell.DEFAULT_PROJECT_FIELDS)
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
         return super(TestDoProjectList, self).args_for(**kwargs)
@@ -68,7 +67,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
             marker=None,
             autopaginate=False,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(projects_shell.DEFAULT_PROJECT_FIELDS)
 
     def test_negative_limit(self):
         """Ensure we raise an exception for negative limits."""
@@ -89,7 +88,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(projects_shell.DEFAULT_PROJECT_FIELDS)
 
     def test_detail(self):
         """Verify the behaviour of specifying --detail."""
@@ -101,7 +100,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
             marker=None,
             autopaginate=False,
         )
-        self.assertSortedFieldsEqualTo(sorted(list(projects.PROJECT_FIELDS)))
+        self.assertFieldsEqualTo(projects_shell.PROJECT_FIELDS)
 
     def test_list_name(self):
         """Verify the behaviour of specifying --detail."""
@@ -114,13 +113,13 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(projects_shell.DEFAULT_PROJECT_FIELDS)
 
     def test_raises_exception_with_detail_and_fields(self):
         """Verify that we fail when users specify --detail and --fields."""
         args = self.args_for(
             detail=True,
-            fields=['id', 'name'],
+            fields=['name', 'id'],
         )
 
         self.assertRaisesCommandErrorWith(projects_shell.do_project_list, args)
@@ -128,7 +127,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
 
     def test_fields(self):
         """Verify that we print out specific fields."""
-        args = self.args_for(fields=['id', 'name'])
+        args = self.args_for(fields=['name', 'id'])
 
         projects_shell.do_project_list(self.craton_client, args)
 
@@ -136,7 +135,7 @@ class TestDoProjectList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(['name', 'id'])
 
     def test_invalid_fields(self):
         """Verify that we error out with invalid fields."""

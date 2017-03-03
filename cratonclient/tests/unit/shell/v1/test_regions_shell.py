@@ -204,7 +204,7 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
         kwargs.setdefault('detail', False)
         kwargs.setdefault('cloud', None)
         kwargs.setdefault('limit', None)
-        kwargs.setdefault('fields', [])
+        kwargs.setdefault('fields', regions_shell.DEFAULT_REGION_FIELDS)
         kwargs.setdefault('marker', None)
         kwargs.setdefault('all', False)
         return super(TestDoRegionList, self).args_for(**kwargs)
@@ -214,7 +214,7 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
         args = self.args_for()
         regions_shell.do_region_list(self.craton_client, args)
 
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(regions_shell.DEFAULT_REGION_FIELDS)
 
     def test_with_cloud_id(self):
         """Test region-list with default values."""
@@ -225,7 +225,7 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
             marker=None,
             autopaginate=False,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(regions_shell.DEFAULT_REGION_FIELDS)
 
     def test_negative_limit(self):
         """Ensure we raise an exception for negative limits."""
@@ -241,13 +241,13 @@ class TestDoRegionList(base.TestShellCommandUsingPrintList):
             marker=None,
             autopaginate=False,
         )
-        self.assertSortedFieldsEqualTo(['id', 'name'])
+        self.assertFieldsEqualTo(regions_shell.DEFAULT_REGION_FIELDS)
 
     def test_fields(self):
         """Verify that we print out specific fields."""
-        args = self.args_for(fields=['id', 'name', 'note'])
+        args = self.args_for(fields=['name', 'id', 'note'])
         regions_shell.do_region_list(self.craton_client, args)
-        self.assertSortedFieldsEqualTo(['id', 'name', 'note'])
+        self.assertFieldsEqualTo(['name', 'id', 'note'])
 
     def test_invalid_fields(self):
         """Verify that we error out with invalid fields."""

@@ -14,7 +14,18 @@ from __future__ import print_function
 
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
-from cratonclient.v1 import clouds
+
+DEFAULT_CLOUD_FIELDS = [
+    'id',
+    'name',
+    'created_at',
+]
+
+CLOUD_FIELDS = DEFAULT_CLOUD_FIELDS + [
+    'updated_at',
+    'note',
+    'project_id',
+]
 
 
 @cliutils.arg('-n', '--name',
@@ -26,7 +37,7 @@ from cratonclient.v1 import clouds
 def do_cloud_create(cc, args):
     """Register a new cloud with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in clouds.CLOUD_FIELDS and not (v is None)}
+              if k in CLOUD_FIELDS and not (v is None)}
 
     cloud = cc.clouds.create(**fields)
     args.formatter.configure(wrap=72).handle(cloud)
@@ -35,7 +46,7 @@ def do_cloud_create(cc, args):
 @cliutils.arg('--fields',
               nargs='+',
               metavar='<fields>',
-              default=[],
+              default=DEFAULT_CLOUD_FIELDS,
               help='Comma-separated list of fields to display. '
                    'Only these fields will be fetched from the server. '
                    'Can not be used when "--detail" is specified')
@@ -45,6 +56,10 @@ def do_cloud_create(cc, args):
               help='Retrieve and show all clouds. This will override '
                    'the provided value for --limit and automatically '
                    'retrieve each page of results.')
+@cliutils.arg('--detail',
+              action='store_true',
+              default=False,
+              help='Show detailed information about all clouds.')
 @cliutils.arg('--limit',
               metavar='<limit>',
               type=int,
@@ -56,7 +71,6 @@ def do_cloud_create(cc, args):
 def do_cloud_list(cc, args):
     """List all clouds."""
     params = {}
-    default_fields = ['id', 'name']
     if args.limit is not None:
         if args.limit < 0:
             raise exc.CommandError('Invalid limit specified. Expected '
@@ -66,13 +80,22 @@ def do_cloud_list(cc, args):
     if args.all is True:
         params['limit'] = 100
 
-    if args.fields:
-        try:
-            fields = {x: clouds.CLOUD_FIELDS[x] for x in args.fields}
-        except KeyError as err:
-            raise exc.CommandError('Invalid field "{}"'.format(err.args[0]))
-    else:
-        fields = default_fields
+    if args.detail:
+        if args.fields and args.fields == DEFAULT_CLOUD_FIELDS:
+            args.fields = CLOUD_FIELDS
+        else:
+            raise exc.CommandError(
+                'Cannot specify both --fields and --detail.'
+            )
+        params['detail'] = args.detail
+
+    fields = args.fields
+    for field in args.fields:
+        if field not in CLOUD_FIELDS:
+            raise exc.CommandError(
+                'Invalid field "{}"'.format(field)
+            )
+
     params['marker'] = args.marker
     params['autopaginate'] = args.all
 
@@ -102,7 +125,7 @@ def do_cloud_show(cc, args):
 def do_cloud_update(cc, args):
     """Update a cloud that is registered with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in clouds.CLOUD_FIELDS and not (v is None)}
+              if k in CLOUD_FIELDS and not (v is None)}
     item_id = fields.pop('id')
     if not fields:
         raise exc.CommandError(

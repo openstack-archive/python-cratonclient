@@ -16,7 +16,17 @@ from __future__ import print_function
 
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
-from cratonclient.v1 import projects
+
+
+DEFAULT_PROJECT_FIELDS = [
+    'id',
+    'name',
+]
+
+PROJECT_FIELDS = DEFAULT_PROJECT_FIELDS + [
+    'created_at',
+    'updated_at',
+]
 
 
 @cliutils.arg('id',
@@ -38,7 +48,7 @@ def do_project_show(cc, args):
 @cliutils.arg('--fields',
               nargs='+',
               metavar='<fields>',
-              default=[],
+              default=DEFAULT_PROJECT_FIELDS,
               help='Space-separated list of fields to display. '
                    'Only these fields will be fetched from the server. '
                    'Can not be used when "--detail" is specified')
@@ -59,7 +69,6 @@ def do_project_show(cc, args):
 def do_project_list(cc, args):
     """Print list of projects which are registered with the Craton service."""
     params = {}
-    default_fields = ['id', 'name']
     if args.limit is not None:
         if args.limit < 0:
             raise exc.CommandError('Invalid limit specified. Expected '
@@ -69,20 +78,24 @@ def do_project_list(cc, args):
     if args.all is True:
         params['limit'] = 100
 
-    if args.fields and args.detail:
-        raise exc.CommandError('Cannot specify both --fields and --detail.')
+    if args.detail:
+        if args.fields and args.fields == DEFAULT_PROJECT_FIELDS:
+            args.fields = PROJECT_FIELDS
+        else:
+            raise exc.CommandError(
+                'Cannot specify both --fields and --detail.'
+            )
+
+    fields = args.fields
+    for field in fields:
+        if field not in PROJECT_FIELDS:
+            raise exc.CommandError(
+                'Invalid field "{}"'.format(field)
+            )
 
     if args.name:
         params['name'] = args.name
-    if args.detail:
-        fields = projects.PROJECT_FIELDS
-    elif args.fields:
-        try:
-            fields = {x: projects.PROJECT_FIELDS[x] for x in args.fields}
-        except KeyError as keyerr:
-            raise exc.CommandError('Invalid field "{}"'.format(keyerr.args[0]))
-    else:
-        fields = {x: projects.PROJECT_FIELDS[x] for x in default_fields}
+
     params['marker'] = args.marker
     params['autopaginate'] = args.all
 
@@ -97,7 +110,7 @@ def do_project_list(cc, args):
 def do_project_create(cc, args):
     """Register a new project with the Craton service."""
     fields = {k: v for (k, v) in vars(args).items()
-              if k in projects.PROJECT_FIELDS and not (v is None)}
+              if k in PROJECT_FIELDS and not (v is None)}
     project = cc.projects.create(**fields)
     args.formatter.configure(wrap=72).handle(project)
 
