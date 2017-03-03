@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Craton-specific session details."""
+from itertools import chain
 import logging
 
 from keystoneauth1 import session as ksa_session
@@ -233,7 +234,8 @@ class Session(object):
 
         return response
 
-    def paginate(self, url, items_key, autopaginate=True, **kwargs):
+    def paginate(self, url, items_key, autopaginate=True, nested=False,
+                 **kwargs):
         """Make a GET request to a paginated resource.
 
         If :param:`autopaginate` is set to ``True``, this will automatically
@@ -256,20 +258,23 @@ class Session(object):
             Determines whether or not this method continues requesting items
             automatically after the first page.
         """
-        response = self.get(url, **kwargs)
-        json_body = response.json()
-        items = json_body[items_key]
-        links = json_body['links']
-        yield response, items
-        while autopaginate and len(items) > 0:
-            url = _find_next_link(links)
-            if url is None:
-                break
-            response = self.get(url)
+        get_items = True
+
+        while get_items:
+            response = self.get(url, **kwargs)
             json_body = response.json()
-            items = json_body[items_key]
-            links = json_body['links']
+            if nested:
+                items = list(chain(*json_body[items_key].values()))
+            else:
+                items = json_body[items_key]
+
             yield response, items
+
+            links = json_body['links']
+            url = _find_next_link(links)
+
+            kwargs = {}
+            get_items = url and autopaginate and len(items) > 0
 
 
 def _find_next_link(links):
