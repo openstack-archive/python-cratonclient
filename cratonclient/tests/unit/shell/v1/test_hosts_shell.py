@@ -19,7 +19,7 @@ from cratonclient.shell.v1 import hosts_shell
 from cratonclient.tests.unit.shell import base
 
 
-class TestDoHostShow(base.TestShellCommandUsingPrintDict):
+class TestDoHostShow(base.TestShellCommand):
     """Unit tests for the host show command."""
 
     def test_print_host_data(self):
@@ -34,7 +34,7 @@ class TestDoHostShow(base.TestShellCommandUsingPrintDict):
         self.craton_client.hosts.get.assert_called_once_with(246)
 
 
-class TestDoHostList(base.TestShellCommandUsingPrintList):
+class TestDoHostList(base.TestShellCommand):
     """Unit tests for the host list command."""
 
     def args_for(self, **kwargs):
@@ -208,9 +208,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
             autopaginate=False,
             marker=None,
         )
-        self.assertSortedPrintListFieldsEqualTo([
-            'cell_id', 'id', 'name',
-        ])
+        self.assertFieldsEqualTo(['id', 'name', 'cell_id'])
 
     def test_invalid_sort_key(self):
         """Verify that we disallow invalid sort keys."""
@@ -295,7 +293,7 @@ class TestDoHostList(base.TestShellCommandUsingPrintList):
         )
 
 
-class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
+class TestDoHostCreate(base.TestShellCommand):
     """Tests for the do_host_create shell command."""
 
     def args_for(self, **kwargs):
@@ -371,7 +369,7 @@ class TestDoHostCreate(base.TestShellCommandUsingPrintDict):
         )
 
 
-class TestDoHostUpdate(base.TestShellCommandUsingPrintDict):
+class TestDoHostUpdate(base.TestShellCommand):
     """Tests host-update shell command."""
 
     def setUp(self):

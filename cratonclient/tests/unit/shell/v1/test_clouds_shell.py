@@ -19,7 +19,7 @@ from cratonclient.shell.v1 import clouds_shell
 from cratonclient.tests.unit.shell import base
 
 
-class TestDoCloudShow(base.TestShellCommandUsingPrintDict):
+class TestDoCloudShow(base.TestShellCommand):
     """Unit tests for the cloud-show command."""
 
     def test_prints_cloud_data(self):
@@ -33,7 +33,7 @@ class TestDoCloudShow(base.TestShellCommandUsingPrintDict):
         self.assertEqual(1, self.formatter.handle.call_count)
 
 
-class TestDoCloudCreate(base.TestShellCommandUsingPrintDict):
+class TestDoCloudCreate(base.TestShellCommand):
     """Unit tests for the cloud-create command."""
 
     def args_for(self, **kwargs):
@@ -68,7 +68,7 @@ class TestDoCloudCreate(base.TestShellCommandUsingPrintDict):
         self.assertEqual(1, self.formatter.handle.call_count)
 
 
-class TestDoCloudUpdate(base.TestShellCommandUsingPrintDict):
+class TestDoCloudUpdate(base.TestShellCommand):
     """Unit tests for cloud-update command."""
 
     def args_for(self, **kwargs):
@@ -86,8 +86,7 @@ class TestDoCloudUpdate(base.TestShellCommandUsingPrintDict):
             clouds_shell.do_cloud_update,
             args,
         )
-        self.assertFalse(self.craton_client.clouds.update.called)
-        self.assertFalse(self.print_dict.called)
+        self.assertNothingWasCalled()
 
     def test_name_is_updated(self):
         """Verify the name attribute update is sent."""
@@ -189,7 +188,7 @@ class TestDoCloudDelete(base.TestShellCommand):
         self.assertFalse(self.print_func.called)
 
 
-class TestDoCloudList(base.TestShellCommandUsingPrintList):
+class TestDoCloudList(base.TestShellCommand):
     """Test cloud-list command."""
 
     def args_for(self, **kwargs):

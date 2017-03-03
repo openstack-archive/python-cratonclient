@@ -16,7 +16,7 @@ from cratonclient.shell.v1 import devices_shell
 from cratonclient.tests.unit.shell import base
 
 
-class TestDoDeviceList(base.TestShellCommandUsingPrintList):
+class TestDoDeviceList(base.TestShellCommand):
     """Unit tests for the device list command."""
 
     def args_for(self, **kwargs):
