@@ -22,6 +22,7 @@ from cratonclient import exceptions as exc
 from cratonclient.shell.v1 import hosts_shell
 from cratonclient.tests.integration.shell import base
 from cratonclient.v1 import hosts
+from cratonclient.v1 import variables
 
 
 class TestHostsShell(base.ShellTestCase):
@@ -389,3 +390,99 @@ class TestHostsShell(base.ShellTestCase):
         test_args = Namespace(id=1, region=1)
         hosts_shell.do_host_delete(client, test_args)
         mock_delete.assert_called_once_with(vars(test_args)['id'])
+
+
+class TestHostsVarsShell(base.ShellTestCase):
+    """Test Host Variable shell calls."""
+
+    def setUp(self):
+        """Basic set up for all tests in this suite."""
+        super(TestHostsVarsShell, self).setUp()
+        self.host_url = 'http://127.0.0.1/v1/hosts/1'
+        self.variables_url = '{}/variables'.format(self.host_url)
+        self.test_args = Namespace(id=1, formatter=mock.Mock())
+
+        # NOTE(thomasem): Make all calls seem like they come from CLI args
+        self.stdin_patcher = \
+            mock.patch('cratonclient.common.cliutils.sys.stdin')
+        self.patched_stdin = self.stdin_patcher.start()
+        self.patched_stdin.isatty.return_value = True
+
+        # NOTE(thomasem): Mock out a session object to assert resulting API
+        # calls
+        self.mock_session = mock.Mock()
+        self.mock_get_response = self.mock_session.get.return_value
+        self.mock_put_response = self.mock_session.put.return_value
+
+        # NOTE(thomasem): Mock out a client to assert craton Python API calls
+        self.client = mock.Mock()
+        self.mock_host_resource = self.client.hosts.get.return_value
+        self.mock_host_resource.variables = variables.VariableManager(
+            self.mock_session, self.host_url
+        )
+
+    def tearDown(self):
+        """Clean up between tests."""
+        super(TestHostsVarsShell, self).tearDown()
+        self.stdin_patcher.stop()
+
+    def test_do_host_vars_get_gets_correct_host(self):
+        """Assert the proper host is retrieved when calling get."""
+        self.mock_get_response.json.return_value = \
+            {"variables": {"foo": "bar"}}
+        hosts_shell.do_host_vars_get(self.client, self.test_args)
+        self.client.hosts.get.assert_called_once_with(
+            vars(self.test_args)['id'])
+
+    def test_do_host_vars_delete_gets_correct_host(self):
+        """Assert the proper host is retrieved when calling delete."""
+        self.test_args.variables = ['foo', 'bar']
+        hosts_shell.do_host_vars_delete(self.client, self.test_args)
+        self.client.hosts.get.assert_called_once_with(
+            vars(self.test_args)['id'])
+
+    def test_do_host_vars_update_gets_correct_host(self):
+        """Assert the proper host is retrieved when calling update."""
+        self.test_args.variables = ['foo=', 'bar=']
+        mock_resp_json = {"variables": {"foo": "bar"}}
+        self.mock_get_response.json.return_value = mock_resp_json
+        self.mock_put_response.json.return_value = mock_resp_json
+
+        hosts_shell.do_host_vars_set(self.client, self.test_args)
+        self.client.hosts.get.assert_called_once_with(
+            vars(self.test_args)['id'])
+
+    def test_do_host_vars_get_calls_session_get(self):
+        """Assert the proper host is retrieved when calling get."""
+        self.mock_get_response.json.return_value = \
+            {"variables": {"foo": "bar"}}
+        hosts_shell.do_host_vars_get(self.client, self.test_args)
+        self.mock_session.get.assert_called_once_with(self.variables_url)
+
+    def test_do_host_vars_delete_calls_session_delete(self):
+        """Verify that do host-vars-delete calls expected session.delete."""
+        self.test_args.variables = ['foo', 'bar']
+        hosts_shell.do_host_vars_delete(self.client, self.test_args)
+        self.mock_session.delete.assert_called_once_with(
+            self.variables_url,
+            json=('foo', 'bar'),
+            params={},
+        )
+
+    def test_do_host_vars_update_calls_session_put(self):
+        """Verify that do host-vars-delete calls expected session.delete."""
+        self.test_args.variables = ['foo=baz', 'bar=boo', 'test=']
+        mock_resp_json = {"variables": {"foo": "bar"}}
+        self.mock_get_response.json.return_value = mock_resp_json
+        self.mock_put_response.json.return_value = mock_resp_json
+
+        hosts_shell.do_host_vars_set(self.client, self.test_args)
+        self.mock_session.delete.assert_called_once_with(
+            self.variables_url,
+            json=('test',),
+            params={},
+        )
+        self.mock_session.put.assert_called_once_with(
+            self.variables_url,
+            json={'foo': 'baz', 'bar': 'boo'}
+        )
