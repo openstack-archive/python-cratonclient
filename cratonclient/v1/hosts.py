@@ -13,12 +13,15 @@
 # under the License.
 """Hosts resource and resource manager."""
 from cratonclient import crud
+from cratonclient.v1 import variables
 
 
 class Host(crud.Resource):
     """Representation of a Host."""
 
-    pass
+    subresource_managers = {
+        'variables': variables.VariableManager,
+    }
 
 
 class HostManager(crud.CRUDClient):
