@@ -10,7 +10,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Base class implementation for formatting plugins."""
-from cratonclient import crud
 
 
 class Formatter(object):
@@ -66,7 +65,8 @@ class Formatter(object):
             we will not know how to handle it. In that case, we will raise a
             ValueError.
         """
-        if isinstance(item_to_format, crud.Resource):
+        to_dict = getattr(item_to_format, 'to_dict', None)
+        if to_dict is not None:
             self.handle_instance(item_to_format)
             return
 
