@@ -13,12 +13,15 @@
 # under the License.
 """Clouds manager code."""
 from cratonclient import crud
+from cratonclient.v1 import variables
 
 
 class Cloud(crud.Resource):
     """Representation of a Cloud."""
 
-    pass
+    subresource_managers = {
+        'variables': variables.VariableManager,
+    }
 
 
 class CloudManager(crud.CRUDClient):
