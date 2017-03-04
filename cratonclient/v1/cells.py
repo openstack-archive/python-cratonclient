@@ -13,12 +13,15 @@
 # under the License.
 """Regions manager code."""
 from cratonclient import crud
+from cratonclient.v1 import variables
 
 
 class Cell(crud.Resource):
     """Representation of a Region."""
 
-    pass
+    subresource_managers = {
+        'variables': variables.VariableManager,
+    }
 
 
 class CellManager(crud.CRUDClient):
