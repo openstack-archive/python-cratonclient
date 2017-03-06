@@ -23,11 +23,11 @@ DEFAULT_DEVICE_FIELDS = [
     'cloud_id',
     'region_id',
     'cell_id',
+    'parent_id',
 ]
 
 
 DEVICE_FIELDS = DEFAULT_DEVICE_FIELDS + [
-    'parent_id',
     'note',
     'created_at',
     'updated_at',
