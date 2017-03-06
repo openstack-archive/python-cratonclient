@@ -121,6 +121,7 @@ class TestCRUDClient(base.TestCase):
 
         self.session.delete.assert_called_once_with(
             'http://example.com/v1/test/1',
+            json=None,
             params={}
         )
         self.assertFalse(self.resource_spec.called)
@@ -134,6 +135,7 @@ class TestCRUDClient(base.TestCase):
 
         self.session.delete.assert_called_once_with(
             'http://example.com/v1/test/1',
+            json=None,
             params={}
         )
         self.assertFalse(self.resource_spec.called)
