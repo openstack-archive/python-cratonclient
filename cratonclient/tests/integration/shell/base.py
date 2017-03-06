@@ -11,6 +11,7 @@
 # under the License.
 """Resources for the shell integration tests."""
 
+from argparse import Namespace
 import mock
 import six
 
@@ -32,3 +33,33 @@ class ShellTestCase(base.TestCase):
             except SystemExit:
                 pass
             return (mock_stdout.getvalue(), mock_stderr.getvalue())
+
+
+class VariablesTestCase(base.TestCase):
+    """Test Host Variable shell calls."""
+
+    def setUp(self):
+        """Basic set up for all tests in this suite."""
+        super(VariablesTestCase, self).setUp()
+        self.resource_url = 'http://127.0.0.1/v1/hosts/1'
+        self.variables_url = '{}/variables'.format(self.resource_url)
+        self.test_args = Namespace(id=1, formatter=mock.Mock())
+
+        # NOTE(thomasem): Make all calls seem like they come from CLI args
+        self.stdin_patcher = \
+            mock.patch('cratonclient.common.cliutils.sys.stdin')
+        self.patched_stdin = self.stdin_patcher.start()
+        self.patched_stdin.isatty.return_value = True
+
+        # NOTE(thomasem): Mock out a session object to assert resulting API
+        # calls
+        self.mock_session = mock.Mock()
+        self.mock_get_response = self.mock_session.get.return_value
+        self.mock_put_response = self.mock_session.put.return_value
+        self.mock_delete_response = self.mock_session.delete.return_value
+        self.mock_delete_response.status_code = 204
+
+    def tearDown(self):
+        """Clean up between tests."""
+        super(VariablesTestCase, self).tearDown()
+        self.stdin_patcher.stop()
