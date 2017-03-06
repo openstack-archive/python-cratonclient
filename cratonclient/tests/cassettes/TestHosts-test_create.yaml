@@ -1,0 +1,155 @@
+http_interactions:
+- recorded_at: '2017-03-07T17:03:43'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cloud-0\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '19'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"id\": 1,\n  \"name\": \"cloud-0\",\n  \"updated_at\": null,\n  \"note\"\
+        : null,\n  \"created_at\": \"2017-03-07T17:03:43.429004\"\n}"
+    headers:
+      Content-Length:
+      - '174'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 07 Mar 2017 17:03:43 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/clouds/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-05559251-6463-4629-93e6-d77a9dd98230
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/clouds
+- recorded_at: '2017-03-07T17:03:43'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"region-0\",\n  \"cloud_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '35'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"created_at\": \"2017-03-07T17:03:43.495161\"\
+        ,\n  \"cloud_id\": 1,\n  \"name\": \"region-0\",\n  \"updated_at\": null,\n\
+        \  \"note\": null,\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"id\": 1\n}"
+    headers:
+      Content-Length:
+      - '190'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 07 Mar 2017 17:03:43 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-7e617a04-981e-4b39-ba6c-63517da72275
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-07T17:03:43'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"host-0\",\n  \"ip_address\": \"127.0.1.0\",\n  \"\
+        region_id\": 1,\n  \"device_type\": \"server\",\n  \"cloud_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"host-0\",\n  \"note\": null,\n\
+        \  \"cell_id\": null,\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"id\": 1,\n  \"cloud_id\": 1,\n  \"ip_address\": \"127.0.1.0\",\n  \"\
+        region_id\": 1,\n  \"links\": [\n    {\n      \"rel\": \"up\",\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\"\n    }\n  ],\n  \"active\": true,\n\
+        \  \"updated_at\": null,\n  \"device_type\": \"server\",\n  \"created_at\"\
+        : \"2017-03-07T17:03:43.533875\",\n  \"parent_id\": null\n}"
+    headers:
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 07 Mar 2017 17:03:43 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-ec0809d6-96ad-4db0-a9d1-c8bffc221a36
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+recorded_with: betamax/0.8.0
