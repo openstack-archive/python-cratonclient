@@ -392,41 +392,19 @@ class TestHostsShell(base.ShellTestCase):
         mock_delete.assert_called_once_with(vars(test_args)['id'])
 
 
-class TestHostsVarsShell(base.ShellTestCase):
+class TestHostsVarsShell(base.VariablesTestCase):
     """Test Host Variable shell calls."""
 
     def setUp(self):
         """Basic set up for all tests in this suite."""
         super(TestHostsVarsShell, self).setUp()
-        self.host_url = 'http://127.0.0.1/v1/hosts/1'
-        self.variables_url = '{}/variables'.format(self.host_url)
-        self.test_args = Namespace(id=1, formatter=mock.Mock())
-
-        # NOTE(thomasem): Make all calls seem like they come from CLI args
-        self.stdin_patcher = \
-            mock.patch('cratonclient.common.cliutils.sys.stdin')
-        self.patched_stdin = self.stdin_patcher.start()
-        self.patched_stdin.isatty.return_value = True
-
-        # NOTE(thomasem): Mock out a session object to assert resulting API
-        # calls
-        self.mock_session = mock.Mock()
-        self.mock_get_response = self.mock_session.get.return_value
-        self.mock_put_response = self.mock_session.put.return_value
-        self.mock_delete_response = self.mock_session.delete.return_value
-        self.mock_delete_response.status_code = 204
 
         # NOTE(thomasem): Mock out a client to assert craton Python API calls
         self.client = mock.Mock()
         self.mock_host_resource = self.client.hosts.get.return_value
         self.mock_host_resource.variables = variables.VariableManager(
-            self.mock_session, self.host_url
+            self.mock_session, self.resource_url
         )
-
-    def tearDown(self):
-        """Clean up between tests."""
-        super(TestHostsVarsShell, self).tearDown()
-        self.stdin_patcher.stop()
 
     def test_do_host_vars_get_gets_correct_host(self):
         """Assert the proper host is retrieved when calling get."""
