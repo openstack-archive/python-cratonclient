@@ -15,6 +15,7 @@
 from itertools import chain
 import logging
 
+from keystoneauth1 import exceptions as ksa_exc
 from keystoneauth1 import session as ksa_session
 from requests import exceptions as requests_exc
 
@@ -228,6 +229,8 @@ class Session(object):
             raise exc.Timeout(exception=err)
         except requests_exc.ConnectionError as err:
             raise exc.ConnectionFailed(exception=err)
+        except ksa_exc.HttpError as err:
+            raise exc.raise_from(err)
 
         if response.status_code >= 400:
             raise exc.error_from(response)

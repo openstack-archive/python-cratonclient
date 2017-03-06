@@ -1,0 +1,2594 @@
+http_interactions:
+- recorded_at: '2017-03-21T14:50:37'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cloud-TestHosts-test_list_only_retrieves_first_page\"\
+        \n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '63'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"id\": 7,\n  \"name\": \"cloud-TestHosts-test_list_only_retrieves_first_page\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-20T23:40:59.028969\",\n\
+        \  \"updated_at\": null,\n  \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '238'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:40:59 GMT
+      Location: <craton-url>/clouds/7
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-fa771369-e88f-44ab-b87b-7cb4ba383353
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T14:50:37'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"region-TestHosts-test_list_only_retrieves_first_page\"\
+        ,\n  \"cloud_id\": 7\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '79'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"id\": 3,\n  \"name\": \"region-TestHosts-test_list_only_retrieves_first_page\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-20T23:40:59.539916\",\n\
+        \  \"updated_at\": null,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        \n}"
+    headers:
+      Content-Length: '256'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:40:59 GMT
+      Location: <craton-url>/regions/3
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-f8a761fe-3d80-4310-8114-0739067273fd
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/regions
+- recorded_at: '2017-03-21T14:50:37'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-0\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.0\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '101'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 3,\n  \"ip_address\": \"127.0.1.0\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-0\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:40:59.676384\"\
+        \n}"
+    headers:
+      Content-Length: '442'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:40:59 GMT
+      Location: <craton-url>/hosts/3
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-e4d2ca0d-8b27-420f-ad66-4364924d7eb1
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-1\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.1\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '101'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 6,\n  \"ip_address\": \"127.0.1.1\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-1\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:40:59.791152\"\
+        \n}"
+    headers:
+      Content-Length: '442'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:40:59 GMT
+      Location: <craton-url>/hosts/6
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-84671525-fc3b-4d6a-8fa8-d1b0ce7865ec
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-2\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.2\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '101'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 9,\n  \"ip_address\": \"127.0.1.2\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-2\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:40:59.899123\"\
+        \n}"
+    headers:
+      Content-Length: '442'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:40:59 GMT
+      Location: <craton-url>/hosts/9
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-3b82a06f-9710-4b2e-8980-c7802c646bf2
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-3\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.3\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '101'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 11,\n  \"ip_address\": \"127.0.1.3\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-3\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:40:59.991162\"\
+        \n}"
+    headers:
+      Content-Length: '443'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/11
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-4db52004-f829-4199-8386-bd7a087aafd5
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-4\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.4\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '101'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 13,\n  \"ip_address\": \"127.0.1.4\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-4\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.081881\"\
+        \n}"
+    headers:
+      Content-Length: '443'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/13
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-0c896f9c-5fe5-486a-b934-bb5ae88d2e55
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-5\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.5\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '101'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 15,\n  \"ip_address\": \"127.0.1.5\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-5\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.170137\"\
+        \n}"
+    headers:
+      Content-Length: '443'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/15
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-cfb905bd-4f5e-4181-a881-e1f6c3384740
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-6\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.6\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '101'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 17,\n  \"ip_address\": \"127.0.1.6\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-6\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.243613\"\
+        \n}"
+    headers:
+      Content-Length: '443'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/17
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-95294301-6f85-4f62-ba07-b30c5a4ac919
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-7\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.7\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '101'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 19,\n  \"ip_address\": \"127.0.1.7\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-7\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.293222\"\
+        \n}"
+    headers:
+      Content-Length: '443'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/19
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-f97f8982-0a96-4dad-9495-4c4fcda65e68
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-8\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.8\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '101'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 21,\n  \"ip_address\": \"127.0.1.8\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-8\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.347397\"\
+        \n}"
+    headers:
+      Content-Length: '443'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/21
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-628502c8-2f8f-45a2-ad9c-0955850d1021
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-9\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.9\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '101'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 23,\n  \"ip_address\": \"127.0.1.9\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-9\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.395392\"\
+        \n}"
+    headers:
+      Content-Length: '443'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/23
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-389a5672-9a8c-4bd3-bfcd-44b36d9f578b
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-10\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.10\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 25,\n  \"ip_address\": \"127.0.1.10\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-10\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.442938\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/25
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-0249cb7c-06ff-4e37-aa6b-811888c137b5
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-11\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.11\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 27,\n  \"ip_address\": \"127.0.1.11\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-11\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.492444\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/27
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-fa00a192-7623-4ca5-b2b3-0e2277f454cd
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-12\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.12\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 29,\n  \"ip_address\": \"127.0.1.12\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-12\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.542755\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/29
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-6ea666ae-d316-4c13-99fa-e4ecd12a7910
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-13\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.13\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 31,\n  \"ip_address\": \"127.0.1.13\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-13\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.593712\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/31
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-705d53db-5e0d-4678-8924-0a35bbac3420
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-14\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.14\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 33,\n  \"ip_address\": \"127.0.1.14\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-14\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.643657\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/33
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-f0187a65-8612-46f4-90b4-b4b9876e5e8b
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-15\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.15\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 35,\n  \"ip_address\": \"127.0.1.15\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-15\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.696248\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/35
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-45d65309-bdf4-419e-853e-0040b982d221
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:38'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-16\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.16\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 37,\n  \"ip_address\": \"127.0.1.16\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-16\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.743705\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/37
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-018d9e8c-2832-470b-93f1-27c75cfb61dd
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-17\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.17\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 39,\n  \"ip_address\": \"127.0.1.17\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-17\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.791293\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/39
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-888e4493-57c3-4c88-8bcc-373eab03ceef
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-18\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.18\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 41,\n  \"ip_address\": \"127.0.1.18\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-18\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.839008\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/41
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a8a34d96-2ae6-4704-9a0e-ff12f9a83d4f
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-19\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.19\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 43,\n  \"ip_address\": \"127.0.1.19\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-19\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.891603\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/43
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a1d47416-92b9-4a28-9687-d211182873f4
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-20\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.20\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 45,\n  \"ip_address\": \"127.0.1.20\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-20\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.943115\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:00 GMT
+      Location: <craton-url>/hosts/45
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-d383b0e4-3083-4dfb-96b1-9f9da8bbb093
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-21\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.21\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 47,\n  \"ip_address\": \"127.0.1.21\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-21\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:00.992408\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/47
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a0874a52-4a66-477c-be39-c74bb0b58581
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-22\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.22\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 49,\n  \"ip_address\": \"127.0.1.22\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-22\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:01.041041\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/49
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-498394fc-45bd-4a24-ba00-8de0bb98340b
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-23\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.23\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 51,\n  \"ip_address\": \"127.0.1.23\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-23\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:01.090882\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/51
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-2980fc2c-f197-4960-9d5d-b53351b7d2a9
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-24\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.24\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 53,\n  \"ip_address\": \"127.0.1.24\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-24\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:01.141182\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/53
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-3160160d-3840-4160-8158-b3023115093c
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-25\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.25\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 55,\n  \"ip_address\": \"127.0.1.25\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-25\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:01.193347\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/55
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-769e091a-ebb9-47d5-bcf1-61b9d6b83e4b
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-26\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.26\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 57,\n  \"ip_address\": \"127.0.1.26\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-26\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:01.242203\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/57
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-0ad048b5-1bfb-4cd4-9c1e-a9c8ee2e41e3
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-27\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.27\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 59,\n  \"ip_address\": \"127.0.1.27\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-27\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:01.307118\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/59
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-c81b393b-8b64-436a-9863-f9f812949039
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-28\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.28\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 61,\n  \"ip_address\": \"127.0.1.28\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-28\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:01.365596\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/61
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-268ec550-cbfc-4098-aa44-3d280bd56dd3
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-29\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.29\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 63,\n  \"ip_address\": \"127.0.1.29\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-29\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:01.418749\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/63
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-e04f13be-831f-4db0-89fe-acebb655ed2b
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-30\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.30\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 65,\n  \"ip_address\": \"127.0.1.30\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-30\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:01.467382\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/65
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a792a9fc-20f8-4730-961f-7f93f6171105
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"region_id\": 3,\n  \"device_type\": \"server\",\n  \"name\"\
+        : \"host-31\",\n  \"cloud_id\": 7,\n  \"ip_address\": \"127.0.1.31\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '103'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"id\": 67,\n  \"ip_address\": \"127.0.1.31\",\n  \"region_id\"\
+        : 3,\n  \"active\": true,\n  \"cloud_id\": 7,\n  \"project_id\": \"<craton-demo-project>\"\
+        ,\n  \"variables\": {},\n  \"parent_id\": null,\n  \"updated_at\": null,\n\
+        \  \"name\": \"host-31\",\n  \"cell_id\": null,\n  \"device_type\": \"server\"\
+        ,\n  \"note\": null,\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/regions/3\"\
+        ,\n      \"rel\": \"up\"\n    }\n  ],\n  \"created_at\": \"2017-03-20T23:41:01.517881\"\
+        \n}"
+    headers:
+      Content-Length: '445'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Location: <craton-url>/hosts/67
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-09e68ab7-aead-4fed-a861-23974d807c27
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: GET
+    uri: <craton-url>/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"hosts\": [\n    {\n      \"id\": 3,\n      \"ip_address\": \"\
+        127.0.1.0\",\n      \"region_id\": 3,\n      \"active\": true,\n      \"cloud_id\"\
+        : 7,\n      \"project_id\": \"<craton-demo-project>\",\n      \"parent_id\"\
+        : null,\n      \"updated_at\": null,\n      \"name\": \"host-0\",\n      \"\
+        cell_id\": null,\n      \"device_type\": \"server\",\n      \"note\": null,\n\
+        \      \"links\": [\n        {\n          \"href\": \"<craton-url>/regions/3\"\
+        ,\n          \"rel\": \"up\"\n        }\n      ],\n      \"created_at\": \"\
+        2017-03-20T23:40:59.000000\"\n    },\n    {\n      \"id\": 4,\n      \"ip_address\"\
+        : \"127.0.1.0\",\n      \"region_id\": 4,\n      \"active\": true,\n     \
+        \ \"cloud_id\": 8,\n      \"project_id\": \"<craton-demo-project>\",\n   \
+        \   \"parent_id\": null,\n      \"updated_at\": null,\n      \"name\": \"\
+        host-0\",\n      \"cell_id\": null,\n      \"device_type\": \"server\",\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"<craton-url>/regions/4\",\n          \"rel\": \"up\"\n        }\n    \
+        \  ],\n      \"created_at\": \"2017-03-20T23:40:59.000000\"\n    },\n    {\n\
+        \      \"id\": 6,\n      \"ip_address\": \"127.0.1.1\",\n      \"region_id\"\
+        : 3,\n      \"active\": true,\n      \"cloud_id\": 7,\n      \"project_id\"\
+        : \"<craton-demo-project>\",\n      \"parent_id\": null,\n      \"updated_at\"\
+        : null,\n      \"name\": \"host-1\",\n      \"cell_id\": null,\n      \"device_type\"\
+        : \"server\",\n      \"note\": null,\n      \"links\": [\n        {\n    \
+        \      \"href\": \"<craton-url>/regions/3\",\n          \"rel\": \"up\"\n\
+        \        }\n      ],\n      \"created_at\": \"2017-03-20T23:40:59.000000\"\
+        \n    },\n    {\n      \"id\": 8,\n      \"ip_address\": \"127.0.1.1\",\n\
+        \      \"region_id\": 4,\n      \"active\": true,\n      \"cloud_id\": 8,\n\
+        \      \"project_id\": \"<craton-demo-project>\",\n      \"parent_id\": null,\n\
+        \      \"updated_at\": null,\n      \"name\": \"host-1\",\n      \"cell_id\"\
+        : null,\n      \"device_type\": \"server\",\n      \"note\": null,\n     \
+        \ \"links\": [\n        {\n          \"href\": \"<craton-url>/regions/4\"\
+        ,\n          \"rel\": \"up\"\n        }\n      ],\n      \"created_at\": \"\
+        2017-03-20T23:40:59.000000\"\n    },\n    {\n      \"id\": 9,\n      \"ip_address\"\
+        : \"127.0.1.2\",\n      \"region_id\": 3,\n      \"active\": true,\n     \
+        \ \"cloud_id\": 7,\n      \"project_id\": \"<craton-demo-project>\",\n   \
+        \   \"parent_id\": null,\n      \"updated_at\": null,\n      \"name\": \"\
+        host-2\",\n      \"cell_id\": null,\n      \"device_type\": \"server\",\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"<craton-url>/regions/3\",\n          \"rel\": \"up\"\n        }\n    \
+        \  ],\n      \"created_at\": \"2017-03-20T23:40:59.000000\"\n    },\n    {\n\
+        \      \"id\": 10,\n      \"ip_address\": \"127.0.1.2\",\n      \"region_id\"\
+        : 4,\n      \"active\": true,\n      \"cloud_id\": 8,\n      \"project_id\"\
+        : \"<craton-demo-project>\",\n      \"parent_id\": null,\n      \"updated_at\"\
+        : null,\n      \"name\": \"host-2\",\n      \"cell_id\": null,\n      \"device_type\"\
+        : \"server\",\n      \"note\": null,\n      \"links\": [\n        {\n    \
+        \      \"href\": \"<craton-url>/regions/4\",\n          \"rel\": \"up\"\n\
+        \        }\n      ],\n      \"created_at\": \"2017-03-20T23:40:59.000000\"\
+        \n    },\n    {\n      \"id\": 11,\n      \"ip_address\": \"127.0.1.3\",\n\
+        \      \"region_id\": 3,\n      \"active\": true,\n      \"cloud_id\": 7,\n\
+        \      \"project_id\": \"<craton-demo-project>\",\n      \"parent_id\": null,\n\
+        \      \"updated_at\": null,\n      \"name\": \"host-3\",\n      \"cell_id\"\
+        : null,\n      \"device_type\": \"server\",\n      \"note\": null,\n     \
+        \ \"links\": [\n        {\n          \"href\": \"<craton-url>/regions/3\"\
+        ,\n          \"rel\": \"up\"\n        }\n      ],\n      \"created_at\": \"\
+        2017-03-20T23:40:59.000000\"\n    },\n    {\n      \"id\": 12,\n      \"ip_address\"\
+        : \"127.0.1.3\",\n      \"region_id\": 4,\n      \"active\": true,\n     \
+        \ \"cloud_id\": 8,\n      \"project_id\": \"<craton-demo-project>\",\n   \
+        \   \"parent_id\": null,\n      \"updated_at\": null,\n      \"name\": \"\
+        host-3\",\n      \"cell_id\": null,\n      \"device_type\": \"server\",\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"<craton-url>/regions/4\",\n          \"rel\": \"up\"\n        }\n    \
+        \  ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\n    },\n    {\n\
+        \      \"id\": 13,\n      \"ip_address\": \"127.0.1.4\",\n      \"region_id\"\
+        : 3,\n      \"active\": true,\n      \"cloud_id\": 7,\n      \"project_id\"\
+        : \"<craton-demo-project>\",\n      \"parent_id\": null,\n      \"updated_at\"\
+        : null,\n      \"name\": \"host-4\",\n      \"cell_id\": null,\n      \"device_type\"\
+        : \"server\",\n      \"note\": null,\n      \"links\": [\n        {\n    \
+        \      \"href\": \"<craton-url>/regions/3\",\n          \"rel\": \"up\"\n\
+        \        }\n      ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\
+        \n    },\n    {\n      \"id\": 14,\n      \"ip_address\": \"127.0.1.4\",\n\
+        \      \"region_id\": 4,\n      \"active\": true,\n      \"cloud_id\": 8,\n\
+        \      \"project_id\": \"<craton-demo-project>\",\n      \"parent_id\": null,\n\
+        \      \"updated_at\": null,\n      \"name\": \"host-4\",\n      \"cell_id\"\
+        : null,\n      \"device_type\": \"server\",\n      \"note\": null,\n     \
+        \ \"links\": [\n        {\n          \"href\": \"<craton-url>/regions/4\"\
+        ,\n          \"rel\": \"up\"\n        }\n      ],\n      \"created_at\": \"\
+        2017-03-20T23:41:00.000000\"\n    },\n    {\n      \"id\": 15,\n      \"ip_address\"\
+        : \"127.0.1.5\",\n      \"region_id\": 3,\n      \"active\": true,\n     \
+        \ \"cloud_id\": 7,\n      \"project_id\": \"<craton-demo-project>\",\n   \
+        \   \"parent_id\": null,\n      \"updated_at\": null,\n      \"name\": \"\
+        host-5\",\n      \"cell_id\": null,\n      \"device_type\": \"server\",\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"<craton-url>/regions/3\",\n          \"rel\": \"up\"\n        }\n    \
+        \  ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\n    },\n    {\n\
+        \      \"id\": 16,\n      \"ip_address\": \"127.0.1.5\",\n      \"region_id\"\
+        : 4,\n      \"active\": true,\n      \"cloud_id\": 8,\n      \"project_id\"\
+        : \"<craton-demo-project>\",\n      \"parent_id\": null,\n      \"updated_at\"\
+        : null,\n      \"name\": \"host-5\",\n      \"cell_id\": null,\n      \"device_type\"\
+        : \"server\",\n      \"note\": null,\n      \"links\": [\n        {\n    \
+        \      \"href\": \"<craton-url>/regions/4\",\n          \"rel\": \"up\"\n\
+        \        }\n      ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\
+        \n    },\n    {\n      \"id\": 17,\n      \"ip_address\": \"127.0.1.6\",\n\
+        \      \"region_id\": 3,\n      \"active\": true,\n      \"cloud_id\": 7,\n\
+        \      \"project_id\": \"<craton-demo-project>\",\n      \"parent_id\": null,\n\
+        \      \"updated_at\": null,\n      \"name\": \"host-6\",\n      \"cell_id\"\
+        : null,\n      \"device_type\": \"server\",\n      \"note\": null,\n     \
+        \ \"links\": [\n        {\n          \"href\": \"<craton-url>/regions/3\"\
+        ,\n          \"rel\": \"up\"\n        }\n      ],\n      \"created_at\": \"\
+        2017-03-20T23:41:00.000000\"\n    },\n    {\n      \"id\": 18,\n      \"ip_address\"\
+        : \"127.0.1.6\",\n      \"region_id\": 4,\n      \"active\": true,\n     \
+        \ \"cloud_id\": 8,\n      \"project_id\": \"<craton-demo-project>\",\n   \
+        \   \"parent_id\": null,\n      \"updated_at\": null,\n      \"name\": \"\
+        host-6\",\n      \"cell_id\": null,\n      \"device_type\": \"server\",\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"<craton-url>/regions/4\",\n          \"rel\": \"up\"\n        }\n    \
+        \  ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\n    },\n    {\n\
+        \      \"id\": 19,\n      \"ip_address\": \"127.0.1.7\",\n      \"region_id\"\
+        : 3,\n      \"active\": true,\n      \"cloud_id\": 7,\n      \"project_id\"\
+        : \"<craton-demo-project>\",\n      \"parent_id\": null,\n      \"updated_at\"\
+        : null,\n      \"name\": \"host-7\",\n      \"cell_id\": null,\n      \"device_type\"\
+        : \"server\",\n      \"note\": null,\n      \"links\": [\n        {\n    \
+        \      \"href\": \"<craton-url>/regions/3\",\n          \"rel\": \"up\"\n\
+        \        }\n      ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\
+        \n    },\n    {\n      \"id\": 20,\n      \"ip_address\": \"127.0.1.7\",\n\
+        \      \"region_id\": 4,\n      \"active\": true,\n      \"cloud_id\": 8,\n\
+        \      \"project_id\": \"<craton-demo-project>\",\n      \"parent_id\": null,\n\
+        \      \"updated_at\": null,\n      \"name\": \"host-7\",\n      \"cell_id\"\
+        : null,\n      \"device_type\": \"server\",\n      \"note\": null,\n     \
+        \ \"links\": [\n        {\n          \"href\": \"<craton-url>/regions/4\"\
+        ,\n          \"rel\": \"up\"\n        }\n      ],\n      \"created_at\": \"\
+        2017-03-20T23:41:00.000000\"\n    },\n    {\n      \"id\": 21,\n      \"ip_address\"\
+        : \"127.0.1.8\",\n      \"region_id\": 3,\n      \"active\": true,\n     \
+        \ \"cloud_id\": 7,\n      \"project_id\": \"<craton-demo-project>\",\n   \
+        \   \"parent_id\": null,\n      \"updated_at\": null,\n      \"name\": \"\
+        host-8\",\n      \"cell_id\": null,\n      \"device_type\": \"server\",\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"<craton-url>/regions/3\",\n          \"rel\": \"up\"\n        }\n    \
+        \  ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\n    },\n    {\n\
+        \      \"id\": 22,\n      \"ip_address\": \"127.0.1.8\",\n      \"region_id\"\
+        : 4,\n      \"active\": true,\n      \"cloud_id\": 8,\n      \"project_id\"\
+        : \"<craton-demo-project>\",\n      \"parent_id\": null,\n      \"updated_at\"\
+        : null,\n      \"name\": \"host-8\",\n      \"cell_id\": null,\n      \"device_type\"\
+        : \"server\",\n      \"note\": null,\n      \"links\": [\n        {\n    \
+        \      \"href\": \"<craton-url>/regions/4\",\n          \"rel\": \"up\"\n\
+        \        }\n      ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\
+        \n    },\n    {\n      \"id\": 23,\n      \"ip_address\": \"127.0.1.9\",\n\
+        \      \"region_id\": 3,\n      \"active\": true,\n      \"cloud_id\": 7,\n\
+        \      \"project_id\": \"<craton-demo-project>\",\n      \"parent_id\": null,\n\
+        \      \"updated_at\": null,\n      \"name\": \"host-9\",\n      \"cell_id\"\
+        : null,\n      \"device_type\": \"server\",\n      \"note\": null,\n     \
+        \ \"links\": [\n        {\n          \"href\": \"<craton-url>/regions/3\"\
+        ,\n          \"rel\": \"up\"\n        }\n      ],\n      \"created_at\": \"\
+        2017-03-20T23:41:00.000000\"\n    },\n    {\n      \"id\": 24,\n      \"ip_address\"\
+        : \"127.0.1.9\",\n      \"region_id\": 4,\n      \"active\": true,\n     \
+        \ \"cloud_id\": 8,\n      \"project_id\": \"<craton-demo-project>\",\n   \
+        \   \"parent_id\": null,\n      \"updated_at\": null,\n      \"name\": \"\
+        host-9\",\n      \"cell_id\": null,\n      \"device_type\": \"server\",\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"<craton-url>/regions/4\",\n          \"rel\": \"up\"\n        }\n    \
+        \  ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\n    },\n    {\n\
+        \      \"id\": 25,\n      \"ip_address\": \"127.0.1.10\",\n      \"region_id\"\
+        : 3,\n      \"active\": true,\n      \"cloud_id\": 7,\n      \"project_id\"\
+        : \"<craton-demo-project>\",\n      \"parent_id\": null,\n      \"updated_at\"\
+        : null,\n      \"name\": \"host-10\",\n      \"cell_id\": null,\n      \"\
+        device_type\": \"server\",\n      \"note\": null,\n      \"links\": [\n  \
+        \      {\n          \"href\": \"<craton-url>/regions/3\",\n          \"rel\"\
+        : \"up\"\n        }\n      ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\
+        \n    },\n    {\n      \"id\": 26,\n      \"ip_address\": \"127.0.1.10\",\n\
+        \      \"region_id\": 4,\n      \"active\": true,\n      \"cloud_id\": 8,\n\
+        \      \"project_id\": \"<craton-demo-project>\",\n      \"parent_id\": null,\n\
+        \      \"updated_at\": null,\n      \"name\": \"host-10\",\n      \"cell_id\"\
+        : null,\n      \"device_type\": \"server\",\n      \"note\": null,\n     \
+        \ \"links\": [\n        {\n          \"href\": \"<craton-url>/regions/4\"\
+        ,\n          \"rel\": \"up\"\n        }\n      ],\n      \"created_at\": \"\
+        2017-03-20T23:41:00.000000\"\n    },\n    {\n      \"id\": 27,\n      \"ip_address\"\
+        : \"127.0.1.11\",\n      \"region_id\": 3,\n      \"active\": true,\n    \
+        \  \"cloud_id\": 7,\n      \"project_id\": \"<craton-demo-project>\",\n  \
+        \    \"parent_id\": null,\n      \"updated_at\": null,\n      \"name\": \"\
+        host-11\",\n      \"cell_id\": null,\n      \"device_type\": \"server\",\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"<craton-url>/regions/3\",\n          \"rel\": \"up\"\n        }\n    \
+        \  ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\n    },\n    {\n\
+        \      \"id\": 28,\n      \"ip_address\": \"127.0.1.11\",\n      \"region_id\"\
+        : 4,\n      \"active\": true,\n      \"cloud_id\": 8,\n      \"project_id\"\
+        : \"<craton-demo-project>\",\n      \"parent_id\": null,\n      \"updated_at\"\
+        : null,\n      \"name\": \"host-11\",\n      \"cell_id\": null,\n      \"\
+        device_type\": \"server\",\n      \"note\": null,\n      \"links\": [\n  \
+        \      {\n          \"href\": \"<craton-url>/regions/4\",\n          \"rel\"\
+        : \"up\"\n        }\n      ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\
+        \n    },\n    {\n      \"id\": 29,\n      \"ip_address\": \"127.0.1.12\",\n\
+        \      \"region_id\": 3,\n      \"active\": true,\n      \"cloud_id\": 7,\n\
+        \      \"project_id\": \"<craton-demo-project>\",\n      \"parent_id\": null,\n\
+        \      \"updated_at\": null,\n      \"name\": \"host-12\",\n      \"cell_id\"\
+        : null,\n      \"device_type\": \"server\",\n      \"note\": null,\n     \
+        \ \"links\": [\n        {\n          \"href\": \"<craton-url>/regions/3\"\
+        ,\n          \"rel\": \"up\"\n        }\n      ],\n      \"created_at\": \"\
+        2017-03-20T23:41:00.000000\"\n    },\n    {\n      \"id\": 30,\n      \"ip_address\"\
+        : \"127.0.1.12\",\n      \"region_id\": 4,\n      \"active\": true,\n    \
+        \  \"cloud_id\": 8,\n      \"project_id\": \"<craton-demo-project>\",\n  \
+        \    \"parent_id\": null,\n      \"updated_at\": null,\n      \"name\": \"\
+        host-12\",\n      \"cell_id\": null,\n      \"device_type\": \"server\",\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"<craton-url>/regions/4\",\n          \"rel\": \"up\"\n        }\n    \
+        \  ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\n    },\n    {\n\
+        \      \"id\": 31,\n      \"ip_address\": \"127.0.1.13\",\n      \"region_id\"\
+        : 3,\n      \"active\": true,\n      \"cloud_id\": 7,\n      \"project_id\"\
+        : \"<craton-demo-project>\",\n      \"parent_id\": null,\n      \"updated_at\"\
+        : null,\n      \"name\": \"host-13\",\n      \"cell_id\": null,\n      \"\
+        device_type\": \"server\",\n      \"note\": null,\n      \"links\": [\n  \
+        \      {\n          \"href\": \"<craton-url>/regions/3\",\n          \"rel\"\
+        : \"up\"\n        }\n      ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\
+        \n    },\n    {\n      \"id\": 32,\n      \"ip_address\": \"127.0.1.13\",\n\
+        \      \"region_id\": 4,\n      \"active\": true,\n      \"cloud_id\": 8,\n\
+        \      \"project_id\": \"<craton-demo-project>\",\n      \"parent_id\": null,\n\
+        \      \"updated_at\": null,\n      \"name\": \"host-13\",\n      \"cell_id\"\
+        : null,\n      \"device_type\": \"server\",\n      \"note\": null,\n     \
+        \ \"links\": [\n        {\n          \"href\": \"<craton-url>/regions/4\"\
+        ,\n          \"rel\": \"up\"\n        }\n      ],\n      \"created_at\": \"\
+        2017-03-20T23:41:00.000000\"\n    },\n    {\n      \"id\": 33,\n      \"ip_address\"\
+        : \"127.0.1.14\",\n      \"region_id\": 3,\n      \"active\": true,\n    \
+        \  \"cloud_id\": 7,\n      \"project_id\": \"<craton-demo-project>\",\n  \
+        \    \"parent_id\": null,\n      \"updated_at\": null,\n      \"name\": \"\
+        host-14\",\n      \"cell_id\": null,\n      \"device_type\": \"server\",\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"<craton-url>/regions/3\",\n          \"rel\": \"up\"\n        }\n    \
+        \  ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\n    },\n    {\n\
+        \      \"id\": 34,\n      \"ip_address\": \"127.0.1.14\",\n      \"region_id\"\
+        : 4,\n      \"active\": true,\n      \"cloud_id\": 8,\n      \"project_id\"\
+        : \"<craton-demo-project>\",\n      \"parent_id\": null,\n      \"updated_at\"\
+        : null,\n      \"name\": \"host-14\",\n      \"cell_id\": null,\n      \"\
+        device_type\": \"server\",\n      \"note\": null,\n      \"links\": [\n  \
+        \      {\n          \"href\": \"<craton-url>/regions/4\",\n          \"rel\"\
+        : \"up\"\n        }\n      ],\n      \"created_at\": \"2017-03-20T23:41:00.000000\"\
+        \n    }\n  ],\n  \"links\": [\n    {\n      \"href\": \"<craton-url>/hosts?sort_dir=asc&sort_keys=created_at%2Cid&resolved-values=True&limit=30\"\
+        ,\n      \"rel\": \"first\"\n    },\n    {\n      \"href\": \"<craton-url>/hosts?sort_dir=asc&sort_keys=created_at%2Cid&resolved-values=True&limit=30\"\
+        ,\n      \"rel\": \"prev\"\n    },\n    {\n      \"href\": \"<craton-url>/hosts?sort_dir=asc&sort_keys=created_at%2Cid&resolved-values=True&limit=30\"\
+        ,\n      \"rel\": \"self\"\n    },\n    {\n      \"href\": \"<craton-url>/hosts?sort_dir=asc&sort_keys=created_at%2Cid&resolved-values=True&limit=30&marker=34\"\
+        ,\n      \"rel\": \"next\"\n    }\n  ]\n}"
+    headers:
+      Content-Length: '15933'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-5bc74552-86b0-4525-9f94-2dbcdef988b6
+    status:
+      code: 200
+      message: OK
+    url: <craton-url>/hosts
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/67
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-637bbb38-91b2-44a2-adea-9814d4bceed9
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/67
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/65
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-23c19ae8-63a7-4622-9b75-3e59b6c3f971
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/65
+- recorded_at: '2017-03-21T14:50:39'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/63
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-d92a77a9-7642-4bf8-b0e1-f30868a1f543
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/63
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/61
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-df393429-62fc-4029-8146-778f9357ba1e
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/61
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/59
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-2e239216-bea8-469c-b16a-a0cf9c1611d1
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/59
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/57
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-538e4094-81bc-4c69-9910-66a1c86f4467
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/57
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/55
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-7795e3af-1905-435f-8d54-b592477e6714
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/55
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/53
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:01 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a4677ec0-1fcd-4124-a08c-2009c51edfc5
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/53
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/51
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-6edcf3e0-ee63-4849-91da-f0ce4edf76e4
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/51
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/49
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-be1f08ad-9c6a-4390-9a07-2ebd1b932a07
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/49
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/47
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-e2cab33b-2d69-422f-989b-335ccbcf333a
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/47
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/45
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-9e731d17-0aab-4259-b68d-6babf6b2c186
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/45
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/43
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b49b7a33-7668-4948-9169-c64bd6d7b76b
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/43
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/41
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-63ff05b9-8fcf-48d3-87ec-f99f6a1e3613
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/41
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/39
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a5f8484c-12f1-4d75-83d9-3c94463636e8
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/39
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/37
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-199c6e0f-10e8-40e9-ba1b-688bcc0a0d7d
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/37
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/35
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-1f717b49-59dc-4e33-8f6d-806919c28081
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/35
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/33
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-8d6b3ee3-fd57-40d1-afbb-2ea4195ffd37
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/33
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/31
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-53a64b30-252e-4c28-a81e-574d7b75a6b3
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/31
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/29
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a5525074-6687-4679-b4c8-5128e6e51173
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/29
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/27
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-8bb5574d-9e47-46ba-a0d0-b57067f8b7ba
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/27
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/25
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-e6c070be-c0d2-4332-b90a-b7c33d784e73
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/25
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/23
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-1285af2f-6db7-4741-9c18-5c5f342124c6
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/23
+- recorded_at: '2017-03-21T14:50:40'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/21
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-461250b7-2784-42b0-b993-000b9b0862f8
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/21
+- recorded_at: '2017-03-21T14:50:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/19
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-33fe04ea-c16a-4083-bc9d-0b53e7bd1ca7
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/19
+- recorded_at: '2017-03-21T14:50:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/17
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-18b23dbc-34ad-467b-96b9-438304249e73
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/17
+- recorded_at: '2017-03-21T14:50:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/15
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-97c0fa25-ec4b-4e2f-856b-752e821fdea0
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/15
+- recorded_at: '2017-03-21T14:50:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/13
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-68a0f593-4db0-41fb-8048-0d6e58c7c298
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/13
+- recorded_at: '2017-03-21T14:50:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/11
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:02 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-0e6e0e0c-6566-4422-ba01-00c1460cf179
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/11
+- recorded_at: '2017-03-21T14:50:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/9
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:03 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-0f320617-19ce-424f-b816-1e6c52e2c344
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/9
+- recorded_at: '2017-03-21T14:50:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/6
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:03 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-f551f0b6-1047-4a56-91ad-78acd7c25ca7
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/6
+- recorded_at: '2017-03-21T14:50:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/hosts/3
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:03 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-2f600f30-13b7-4e3d-b90f-83be44cadbf9
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/hosts/3
+- recorded_at: '2017-03-21T14:50:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/regions/3
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:03 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b9b11114-7503-4d3a-b018-8cdc557dfb2a
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/regions/3
+- recorded_at: '2017-03-21T14:50:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/7
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Mon, 20 Mar 2017 23:41:03 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-1df29967-d5f9-4d2a-b3f8-a8e44c763332
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/7
+recorded_with: betamax/0.8.0

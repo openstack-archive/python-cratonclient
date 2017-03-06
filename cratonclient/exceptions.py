@@ -270,13 +270,23 @@ _5xx_classes = [
 _5xx_codes = {cls.status_code: cls for cls in _5xx_classes}
 
 
-def error_from(response):
-    """Find an error code that matches a response status_code."""
-    if 400 <= response.status_code < 500:
-        cls = _4xx_codes.get(response.status_code, HTTPClientError)
-    elif 500 <= response.status_code < 600:
-        cls = _5xx_codes.get(response.status_code, HTTPServerError)
+def _error_class_from(status_code):
+    if 400 <= status_code < 500:
+        cls = _4xx_codes.get(status_code, HTTPClientError)
+    elif 500 <= status_code < 600:
+        cls = _5xx_codes.get(status_code, HTTPServerError)
     else:
         cls = HTTPError
+    return cls
 
+
+def error_from(response):
+    """Find an error code that matches a response status_code."""
+    cls = _error_class_from(response.status_code)
     return cls(response=response)
+
+
+def raise_from(exception):
+    """Raise an exception from the keystoneauth1 exception."""
+    cls = _error_class_from(exception.http_status)
+    return cls(response=exception.response, exception=exception)
