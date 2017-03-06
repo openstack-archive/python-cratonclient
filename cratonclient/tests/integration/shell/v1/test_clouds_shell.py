@@ -19,7 +19,6 @@ from testtools import matchers
 from cratonclient.shell.v1 import clouds_shell
 from cratonclient.tests.integration.shell import base
 from cratonclient.v1 import clouds
-from cratonclient.v1 import variables
 
 
 class TestCloudsShell(base.ShellTestCase):
@@ -167,74 +166,6 @@ class TestCloudsShell(base.ShellTestCase):
 class TestCloudsVarsShell(base.VariablesTestCase):
     """Test Cloud Variable shell calls."""
 
-    def setUp(self):
-        """Basic set up for all tests in this suite."""
-        super(TestCloudsVarsShell, self).setUp()
-
-        # NOTE(thomasem): Mock out a client to assert craton Python API calls
-        self.client = mock.Mock()
-        self.mock_cloud_resource = self.client.clouds.get.return_value
-        self.mock_cloud_resource.variables = variables.VariableManager(
-            self.mock_session, self.resource_url
-        )
-
-    def test_do_cloud_vars_get_gets_correct_cloud(self):
-        """Assert the proper cloud is retrieved when calling get."""
-        self.mock_get_response.json.return_value = \
-            {"variables": {"foo": "bar"}}
-        clouds_shell.do_cloud_vars_get(self.client, self.test_args)
-        self.client.clouds.get.assert_called_once_with(
-            vars(self.test_args)['id'])
-
-    def test_do_cloud_vars_delete_gets_correct_cloud(self):
-        """Assert the proper cloud is retrieved when calling delete."""
-        self.test_args.variables = ['foo', 'bar']
-        clouds_shell.do_cloud_vars_delete(self.client, self.test_args)
-        self.client.clouds.get.assert_called_once_with(
-            vars(self.test_args)['id'])
-
-    def test_do_cloud_vars_update_gets_correct_cloud(self):
-        """Assert the proper cloud is retrieved when calling update."""
-        self.test_args.variables = ['foo=', 'bar=']
-        mock_resp_json = {"variables": {"foo": "bar"}}
-        self.mock_get_response.json.return_value = mock_resp_json
-        self.mock_put_response.json.return_value = mock_resp_json
-
-        clouds_shell.do_cloud_vars_set(self.client, self.test_args)
-        self.client.clouds.get.assert_called_once_with(
-            vars(self.test_args)['id'])
-
-    def test_do_cloud_vars_get_calls_session_get(self):
-        """Assert the proper cloud is retrieved when calling get."""
-        self.mock_get_response.json.return_value = \
-            {"variables": {"foo": "bar"}}
-        clouds_shell.do_cloud_vars_get(self.client, self.test_args)
-        self.mock_session.get.assert_called_once_with(self.variables_url)
-
-    def test_do_cloud_vars_delete_calls_session_delete(self):
-        """Verify that do cloud-vars-delete calls expected session.delete."""
-        self.test_args.variables = ['foo', 'bar']
-        clouds_shell.do_cloud_vars_delete(self.client, self.test_args)
-        self.mock_session.delete.assert_called_once_with(
-            self.variables_url,
-            json=('foo', 'bar'),
-            params={},
-        )
-
-    def test_do_cloud_vars_update_calls_session_put(self):
-        """Verify that do cloud-vars-delete calls expected session.delete."""
-        self.test_args.variables = ['foo=baz', 'bar=boo', 'test=']
-        mock_resp_json = {"variables": {"foo": "bar"}}
-        self.mock_get_response.json.return_value = mock_resp_json
-        self.mock_put_response.json.return_value = mock_resp_json
-
-        clouds_shell.do_cloud_vars_set(self.client, self.test_args)
-        self.mock_session.delete.assert_called_once_with(
-            self.variables_url,
-            json=('test',),
-            params={},
-        )
-        self.mock_session.put.assert_called_once_with(
-            self.variables_url,
-            json={'foo': 'baz', 'bar': 'boo'}
-        )
+    resource = 'cloud'
+    resource_id = '1'
+    shell = clouds_shell
