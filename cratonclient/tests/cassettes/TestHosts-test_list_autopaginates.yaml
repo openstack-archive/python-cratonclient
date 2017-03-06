@@ -1,0 +1,4096 @@
+http_interactions:
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cloud-0\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '19'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"note\": null,\n  \"variables\": {},\n  \"name\": \"cloud-0\"\
+        ,\n  \"updated_at\": null,\n  \"created_at\": \"2017-03-08T20:06:14.138771\"\
+        ,\n  \"id\": 1,\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\n}"
+    headers:
+      Content-Length:
+      - '174'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/clouds/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-16e034df-50b9-4361-ad09-cd9559e866b9
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/clouds
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"region-0\",\n  \"cloud_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '35'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"note\": null,\n  \"updated_at\": null,\n  \"created_at\": \"\
+        2017-03-08T20:06:14.191329\",\n  \"name\": \"region-0\",\n  \"cloud_id\":\
+        \ 1,\n  \"variables\": {},\n  \"id\": 1,\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        \n}"
+    headers:
+      Content-Length:
+      - '190'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-0ce0203c-bee0-448d-b707-b82ed7727688
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.0\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-0\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.0\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.228223\",\n  \"name\": \"host-0\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 1,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-0baf5c48-9fac-4533-94a2-bdb4ea3e1c64
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.1\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-1\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.1\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.265059\",\n  \"name\": \"host-1\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 2,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/2
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-335ee3a8-7215-4134-9b3e-cafe631b1183
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.2\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-2\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.2\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.307698\",\n  \"name\": \"host-2\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 3,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/3
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-ee447d48-4ec8-455d-9f6a-dcfc7b0b3541
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.3\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-3\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.3\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.334589\",\n  \"name\": \"host-3\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 4,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/4
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e8f943d9-9f7c-464a-a0c7-76b6b47d1e6e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.4\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-4\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.4\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.358684\",\n  \"name\": \"host-4\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 5,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/5
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c2fe851a-0f3f-49dc-93e3-8fa34f4cadd4
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.5\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-5\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.5\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.383123\",\n  \"name\": \"host-5\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 6,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/6
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-6883e789-c915-4413-b591-4b2cfbc4a97d
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.6\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-6\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.6\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.408217\",\n  \"name\": \"host-6\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 7,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/7
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-fef1696d-b359-4d32-a31a-3b9566df30e4
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.7\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-7\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.7\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.436497\",\n  \"name\": \"host-7\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 8,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/8
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-6791ee11-1260-4abc-bd92-7586f686fd61
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.8\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-8\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.8\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.468210\",\n  \"name\": \"host-8\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 9,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '380'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/9
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-d932b4a2-c0e1-41e1-9f22-eec4f30f4075
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.9\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-9\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '101'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.9\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.495858\",\n  \"name\": \"host-9\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 10,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '381'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/10
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-6566b236-7c9c-452a-be8c-3c6a042aed69
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.10\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-10\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.10\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.526098\",\n  \"name\": \"host-10\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 11,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/11
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-3afc4b92-9f90-4714-a053-c1d604289312
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.11\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-11\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.11\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.554962\",\n  \"name\": \"host-11\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 12,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/12
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-605aa73f-d692-4b01-a222-15540f2c69d8
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.12\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-12\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.12\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.582977\",\n  \"name\": \"host-12\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 13,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/13
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-aaf10e6a-93cd-4c1b-9fa1-0b7236b1fb72
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.13\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-13\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.13\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.611860\",\n  \"name\": \"host-13\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 14,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/14
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-03cd2b92-0eac-4160-aed7-62266ce42c53
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.14\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-14\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.14\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.660687\",\n  \"name\": \"host-14\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 15,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/15
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-2779ea56-ad6b-4419-87a1-ca154622224e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.15\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-15\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.15\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.689243\",\n  \"name\": \"host-15\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 16,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/16
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-5e032c5d-dd85-45c2-b7d1-e50de21f0ae1
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.16\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-16\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.16\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.719009\",\n  \"name\": \"host-16\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 17,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/17
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-2446f86b-291c-4fd5-acca-339d8ce37903
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.17\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-17\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.17\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.747323\",\n  \"name\": \"host-17\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 18,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/18
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-205fdc89-8ec3-4e8b-8285-042956f804bc
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.18\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-18\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.18\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.775582\",\n  \"name\": \"host-18\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 19,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/19
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-6b41fdb2-dea7-485d-a830-1fadeddfee1c
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.19\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-19\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.19\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.803333\",\n  \"name\": \"host-19\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 20,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/20
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4190e9e0-963d-434d-974e-90dc12f266f5
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.20\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-20\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.20\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.832679\",\n  \"name\": \"host-20\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 21,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/21
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c412f122-bc56-49d8-b8d6-b41530be380c
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.21\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-21\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.21\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:14.860346\",\n  \"name\": \"host-21\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 22,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:14 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/22
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-24659528-83ff-459a-89fa-deed9758181d
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.22\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-22\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.22\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.207021\",\n  \"name\": \"host-22\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 23,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/23
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-ad2e9992-22e4-4ada-b9f4-050a3a7d11b2
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.23\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-23\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.23\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.236594\",\n  \"name\": \"host-23\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 24,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/24
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-1f488e9f-c6b3-4b0d-9c3a-7f4fb559eab7
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.24\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-24\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.24\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.265836\",\n  \"name\": \"host-24\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 25,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/25
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-7fb25938-9590-4212-8cc3-9be45f32ccf9
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.25\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-25\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.25\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.296513\",\n  \"name\": \"host-25\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 26,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/26
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-7a254cf2-1139-4444-8be5-f0bb2e40579d
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.26\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-26\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.26\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.348867\",\n  \"name\": \"host-26\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 27,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/27
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4274de17-8aa6-4384-9fec-72173081dbdd
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.27\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-27\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.27\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.377873\",\n  \"name\": \"host-27\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 28,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/28
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-222db2ff-5eda-4d41-844d-40b5e8ce0e75
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.28\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-28\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.28\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.406538\",\n  \"name\": \"host-28\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 29,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/29
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-b9904c46-0e45-4a68-b91f-15c184421c56
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.29\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-29\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.29\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.435307\",\n  \"name\": \"host-29\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 30,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/30
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-158e8c20-c804-4952-baa6-c94c73ef2c0b
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.30\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-30\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.30\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.463458\",\n  \"name\": \"host-30\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 31,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/31
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-1b85522e-664c-458b-b6c5-34c1c4680ebf
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.31\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-31\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.31\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.491991\",\n  \"name\": \"host-31\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 32,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/32
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-1ce0af87-1999-4c7f-aee5-d6f36e1235c4
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.32\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-32\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.32\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.519964\",\n  \"name\": \"host-32\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 33,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/33
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-885ebe0d-5fff-4344-9651-4d656f97b8cb
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.33\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-33\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.33\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.549582\",\n  \"name\": \"host-33\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 34,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/34
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e1909dca-d976-49eb-8002-21a700f3565f
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.34\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-34\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.34\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.577904\",\n  \"name\": \"host-34\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 35,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/35
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-3224b196-02f0-4234-a4f1-9f84e0f9ae0f
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.35\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-35\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.35\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.609744\",\n  \"name\": \"host-35\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 36,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/36
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-359a6d48-cd61-4053-b4ef-f7d0f8428e07
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.36\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-36\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.36\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.638913\",\n  \"name\": \"host-36\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 37,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/37
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a1c32a5f-47ee-423c-a313-45ea912fa986
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.37\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-37\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.37\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.667022\",\n  \"name\": \"host-37\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 38,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/38
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-b5b8992b-17a3-4c70-801f-10d8c8a73449
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.38\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-38\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.38\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.696074\",\n  \"name\": \"host-38\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 39,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/39
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-f967971a-e408-4471-bc81-811898116cb9
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.39\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-39\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.39\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.724852\",\n  \"name\": \"host-39\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 40,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/40
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-276af503-0ba5-44b4-bd9f-032832cf2fee
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.40\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-40\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.40\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.752849\",\n  \"name\": \"host-40\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 41,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/41
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-edf2ca33-09e9-4172-b900-18a3211f1244
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.41\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-41\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.41\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.783730\",\n  \"name\": \"host-41\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 42,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/42
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a36c0038-a5f9-47e4-b1e6-ed74c9c99719
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.42\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-42\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.42\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.813840\",\n  \"name\": \"host-42\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 43,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/43
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c06c44e7-73af-419a-85b1-68fca61133ae
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.43\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-43\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.43\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.842212\",\n  \"name\": \"host-43\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 44,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/44
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-6744acb6-2ae2-4c73-ab30-99b47746700e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.44\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-44\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.44\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.869803\",\n  \"name\": \"host-44\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 45,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/45
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-77a0e2da-7087-4939-bcf2-3aa213a75360
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.45\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-45\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.45\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.899161\",\n  \"name\": \"host-45\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 46,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/46
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-31c034d4-e528-43dc-9565-340227a43b71
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.46\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-46\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.46\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.928483\",\n  \"name\": \"host-46\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 47,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/47
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-076676eb-3abe-444a-b22a-4b6ad867f018
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:15'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.47\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-47\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.47\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.959219\",\n  \"name\": \"host-47\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 48,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:15 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/48
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-19cab1ea-4df6-4490-9de6-789743052673
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.48\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-48\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.48\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:15.987001\",\n  \"name\": \"host-48\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 49,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/49
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-2cdc3999-fb70-45d1-9d94-1b019239d57b
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.49\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-49\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.49\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.016191\",\n  \"name\": \"host-49\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 50,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/50
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-ee1d8773-c320-4f88-b1bf-55352bc8ca02
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.50\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-50\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.50\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.048676\",\n  \"name\": \"host-50\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 51,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/51
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-80c22c29-4ad6-42a4-9d5e-15777c910630
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.51\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-51\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.51\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.078497\",\n  \"name\": \"host-51\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 52,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/52
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-089d86ac-0362-4751-b4cb-caeef2bc26d8
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.52\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-52\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.52\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.111254\",\n  \"name\": \"host-52\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 53,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/53
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-ca2d8928-58de-43eb-adcd-33e68a26b37f
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.53\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-53\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.53\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.139285\",\n  \"name\": \"host-53\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 54,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/54
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-adc8648d-6266-4210-bff4-82e2c231ba0e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.54\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-54\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.54\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.171300\",\n  \"name\": \"host-54\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 55,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/55
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-565c0547-eea2-426d-ae7e-6eea636c18ae
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.55\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-55\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.55\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.214404\",\n  \"name\": \"host-55\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 56,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/56
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4bf33402-e459-49af-b0f4-aa46c54db519
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.56\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-56\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.56\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.244530\",\n  \"name\": \"host-56\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 57,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/57
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a9ae3480-7447-4b76-92bf-12c848f6421c
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.57\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-57\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.57\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.278842\",\n  \"name\": \"host-57\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 58,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/58
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c06806fa-6962-45d9-b773-bd8aa285d540
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.58\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-58\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.58\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.311737\",\n  \"name\": \"host-58\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 59,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/59
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-b690ed26-62e3-4137-927b-b8189e31ca90
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.59\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-59\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.59\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.354405\",\n  \"name\": \"host-59\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 60,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/60
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e6ad7163-5741-45a5-9748-4db3d077c47b
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.60\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-60\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.60\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.383919\",\n  \"name\": \"host-60\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 61,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/61
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4a13e208-aa50-42f2-ac5b-09c09ee89728
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"ip_address\": \"127.0.1.61\",\n  \"device_type\": \"server\"\
+        ,\n  \"name\": \"host-61\",\n  \"cloud_id\": 1,\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"device_type\": \"server\",\n  \"active\": true,\n  \"cloud_id\"\
+        : 1,\n  \"parent_id\": null,\n  \"ip_address\": \"127.0.1.61\",\n  \"created_at\"\
+        : \"2017-03-08T20:06:16.414904\",\n  \"name\": \"host-61\",\n  \"updated_at\"\
+        : null,\n  \"note\": null,\n  \"id\": 62,\n  \"cell_id\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n      \"rel\": \"up\"\n    }\n\
+        \  ],\n  \"variables\": {},\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '383'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/hosts/62
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-2902ef2d-e7fe-455f-a0e9-ea8785813881
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/hosts
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"hosts\": [\n    {\n      \"device_type\": \"server\",\n    \
+        \  \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\": \"\
+        127.0.1.0\",\n      \"cell_id\": null,\n      \"name\": \"host-0\",\n    \
+        \  \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n    \
+        \    {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n    \
+        \      \"rel\": \"up\"\n        }\n      ],\n      \"id\": 1,\n      \"project_id\"\
+        : \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\": 1,\n    \
+        \  \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\": 1\n\
+        \    },\n    {\n      \"device_type\": \"server\",\n      \"active\": true,\n\
+        \      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.1\",\n      \"\
+        cell_id\": null,\n      \"name\": \"host-1\",\n      \"updated_at\": null,\n\
+        \      \"note\": null,\n      \"links\": [\n        {\n          \"href\"\
+        : \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\n   \
+        \     }\n      ],\n      \"id\": 2,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.2\",\n      \"cell_id\": null,\n      \"name\": \"host-2\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 3,\n      \"\
+        project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.3\",\n\
+        \      \"cell_id\": null,\n      \"name\": \"host-3\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 4,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.4\",\n      \"cell_id\": null,\n      \"name\": \"host-4\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 5,\n      \"\
+        project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.5\",\n\
+        \      \"cell_id\": null,\n      \"name\": \"host-5\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 6,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.6\",\n      \"cell_id\": null,\n      \"name\": \"host-6\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 7,\n      \"\
+        project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.7\",\n\
+        \      \"cell_id\": null,\n      \"name\": \"host-7\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 8,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.8\",\n      \"cell_id\": null,\n      \"name\": \"host-8\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 9,\n      \"\
+        project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.9\",\n\
+        \      \"cell_id\": null,\n      \"name\": \"host-9\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 10,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.10\",\n      \"cell_id\": null,\n      \"name\": \"host-10\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 11,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.11\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-11\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 12,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.12\",\n      \"cell_id\": null,\n      \"name\": \"host-12\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 13,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.13\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-13\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 14,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.14\",\n      \"cell_id\": null,\n      \"name\": \"host-14\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 15,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.15\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-15\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 16,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.16\",\n      \"cell_id\": null,\n      \"name\": \"host-16\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 17,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.17\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-17\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 18,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.18\",\n      \"cell_id\": null,\n      \"name\": \"host-18\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 19,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.19\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-19\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 20,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.20\",\n      \"cell_id\": null,\n      \"name\": \"host-20\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 21,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.21\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-21\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 22,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:14.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.22\",\n      \"cell_id\": null,\n      \"name\": \"host-22\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 23,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.23\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-23\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 24,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.24\",\n      \"cell_id\": null,\n      \"name\": \"host-24\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 25,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.25\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-25\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 26,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.26\",\n      \"cell_id\": null,\n      \"name\": \"host-26\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 27,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.27\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-27\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 28,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.28\",\n      \"cell_id\": null,\n      \"name\": \"host-28\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 29,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.29\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-29\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 30,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    }\n  ],\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"first\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"prev\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"self\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=30&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"next\"\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '11563'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-7965f0bf-6b26-42e7-ae1f-1e98a8acd76e
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/hosts
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=30&limit=30&sort_dir=asc
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"hosts\": [\n    {\n      \"device_type\": \"server\",\n    \
+        \  \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\": \"\
+        127.0.1.30\",\n      \"cell_id\": null,\n      \"name\": \"host-30\",\n  \
+        \    \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n  \
+        \      {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n  \
+        \        \"rel\": \"up\"\n        }\n      ],\n      \"id\": 31,\n      \"\
+        project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.31\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-31\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 32,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.32\",\n      \"cell_id\": null,\n      \"name\": \"host-32\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 33,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.33\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-33\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 34,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.34\",\n      \"cell_id\": null,\n      \"name\": \"host-34\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 35,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.35\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-35\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 36,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.36\",\n      \"cell_id\": null,\n      \"name\": \"host-36\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 37,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.37\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-37\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 38,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.38\",\n      \"cell_id\": null,\n      \"name\": \"host-38\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 39,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.39\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-39\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 40,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.40\",\n      \"cell_id\": null,\n      \"name\": \"host-40\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 41,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.41\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-41\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 42,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.42\",\n      \"cell_id\": null,\n      \"name\": \"host-42\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 43,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.43\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-43\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 44,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.44\",\n      \"cell_id\": null,\n      \"name\": \"host-44\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 45,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.45\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-45\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 46,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.46\",\n      \"cell_id\": null,\n      \"name\": \"host-46\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 47,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.47\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-47\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 48,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.48\",\n      \"cell_id\": null,\n      \"name\": \"host-48\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 49,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:15.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.49\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-49\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 50,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.50\",\n      \"cell_id\": null,\n      \"name\": \"host-50\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 51,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.51\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-51\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 52,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.52\",\n      \"cell_id\": null,\n      \"name\": \"host-52\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 53,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.53\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-53\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 54,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.54\",\n      \"cell_id\": null,\n      \"name\": \"host-54\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 55,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.55\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-55\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 56,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.56\",\n      \"cell_id\": null,\n      \"name\": \"host-56\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 57,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.57\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-57\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 58,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"device_type\": \"server\"\
+        ,\n      \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\"\
+        : \"127.0.1.58\",\n      \"cell_id\": null,\n      \"name\": \"host-58\",\n\
+        \      \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n\
+        \        {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n\
+        \          \"rel\": \"up\"\n        }\n      ],\n      \"id\": 59,\n     \
+        \ \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.59\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-59\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 60,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\"\
+        ,\n      \"region_id\": 1\n    }\n  ],\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"first\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=1&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"prev\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=30&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"self\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=60&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"next\"\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '11611'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e772cd09-7302-43b4-9437-9a9b1945199c
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=30&limit=30&sort_dir=asc
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=60&limit=30&sort_dir=asc
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"hosts\": [\n    {\n      \"device_type\": \"server\",\n    \
+        \  \"active\": true,\n      \"parent_id\": null,\n      \"ip_address\": \"\
+        127.0.1.60\",\n      \"cell_id\": null,\n      \"name\": \"host-60\",\n  \
+        \    \"updated_at\": null,\n      \"note\": null,\n      \"links\": [\n  \
+        \      {\n          \"href\": \"http://127.0.0.1:8080/v1/regions/1\",\n  \
+        \        \"rel\": \"up\"\n        }\n      ],\n      \"id\": 61,\n      \"\
+        project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"cloud_id\"\
+        : 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"device_type\": \"server\",\n      \"active\":\
+        \ true,\n      \"parent_id\": null,\n      \"ip_address\": \"127.0.1.61\"\
+        ,\n      \"cell_id\": null,\n      \"name\": \"host-61\",\n      \"updated_at\"\
+        : null,\n      \"note\": null,\n      \"links\": [\n        {\n          \"\
+        href\": \"http://127.0.0.1:8080/v1/regions/1\",\n          \"rel\": \"up\"\
+        \n        }\n      ],\n      \"id\": 62,\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 1,\n      \"created_at\": \"2017-03-08T20:06:16.000000\"\
+        ,\n      \"region_id\": 1\n    }\n  ],\n  \"links\": [\n    {\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"first\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=30&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"prev\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=60&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"self\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=62&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"next\"\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '1224'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-764f3622-e19b-4f95-aca4-270996af8622
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=60&limit=30&sort_dir=asc
+- recorded_at: '2017-03-08T20:06:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=62&limit=30&sort_dir=asc
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"hosts\": [],\n  \"links\": [\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"first\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=32&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"prev\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=62&limit=30&sort_dir=asc\"\
+        ,\n      \"rel\": \"self\"\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '367'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Mar 2017 20:06:16 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-de4fe14c-0012-4bac-818a-0640fcc6e68f
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/hosts?sort_keys=created_at%2Cid&marker=62&limit=30&sort_dir=asc
+recorded_with: betamax/0.8.0
