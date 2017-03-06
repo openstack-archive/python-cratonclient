@@ -14,6 +14,9 @@
 """Projects resource and resource shell wrapper."""
 from __future__ import print_function
 
+import argparse
+import sys
+
 from cratonclient.common import cliutils
 from cratonclient import exceptions as exc
 
@@ -131,3 +134,57 @@ def do_project_delete(cc, args):
     else:
         print("Project {0} was {1} deleted.".
               format(args.id, 'successfully' if response else 'not'))
+
+
+@cliutils.arg('id',
+              metavar='<project>',
+              help='ID or name of the project.')
+@cliutils.handle_shell_exception
+def do_project_vars_get(cc, args):
+    """Get variables for a project."""
+    variables = cc.projects.get(args.id).variables.get()
+    formatter = args.formatter.configure(dict_property="Variable", wrap=72)
+    formatter.handle(variables)
+
+
+@cliutils.arg('id',
+              metavar='<project>',
+              help='ID of the project.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.handle_shell_exception
+def do_project_vars_set(cc, args):
+    """Set variables for a project."""
+    project_id = args.id
+    if not args.variables and sys.stdin.isatty():
+        raise exc.CommandError(
+            'Nothing to update... Please specify variables to set in the '
+            'following format: "key=value". You may also specify variables to '
+            'delete by key using the format: "key="'
+        )
+    adds, deletes = cliutils.variable_updates(args.variables)
+    variables = cc.projects.get(project_id).variables
+    if deletes:
+        variables.delete(*deletes)
+    variables.update(**adds)
+    formatter = args.formatter.configure(wrap=72, dict_property="Variable")
+    formatter.handle(variables.get())
+
+
+@cliutils.arg('id',
+              metavar='<project>',
+              help='ID of the project.')
+@cliutils.arg('variables', nargs=argparse.REMAINDER)
+@cliutils.handle_shell_exception
+def do_project_vars_delete(cc, args):
+    """Delete variables for a project by key."""
+    project_id = args.id
+    if not args.variables and sys.stdin.isatty():
+        raise exc.CommandError(
+            'Nothing to delete... Please specify variables to delete by '
+            'listing the keys you wish to delete separated by spaces.'
+        )
+    deletes = cliutils.variable_deletes(args.variables)
+    variables = cc.projects.get(project_id).variables
+    response = variables.delete(*deletes)
+    print("Variables {0} deleted.".
+          format('successfully' if response else 'not'))

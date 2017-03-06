@@ -24,6 +24,7 @@ class TestCloud(base.TestCase):
     def test_is_a_resource_instance(self):
         """Verify that a Cloud instance is an instance of a Resource."""
         manager = mock.Mock()
+        manager.extra_request_kwargs = {}
         self.assertIsInstance(clouds.Cloud(manager, {"id": 1234}),
                               crud.Resource)
 
