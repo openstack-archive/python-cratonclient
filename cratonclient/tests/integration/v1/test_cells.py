@@ -13,7 +13,6 @@
 # under the License.
 """Module containing the cratonclient.v1.cells integration tests."""
 
-from cratonclient import exceptions
 from cratonclient.tests.integration import base
 
 
@@ -56,7 +55,7 @@ class TestCells(base.BetamaxTestCase):
 
         self.assertEqual('cell-to-delete', cell.name)
         self.assertTrue(self.client.cells.delete(cell.id))
-        self.assertRaises(exceptions.NotFound, self.client.cells.get, cell.id)
+        self.assertNotFound(self.client.cells.get, cell.id)
 
     def test_autopagination_when_listing(self):
         """Verify the client autopaginates lists of cells."""

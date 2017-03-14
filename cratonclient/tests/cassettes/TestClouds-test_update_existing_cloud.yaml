@@ -1,0 +1,144 @@
+http_interactions:
+- recorded_at: '2017-03-14T17:36:32'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cloud-to-update\",\n  \"note\": \"Original note.\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '53'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"name\": \"cloud-to-update\",\n  \"note\": \"Original note.\"\
+        ,\n  \"variables\": {},\n  \"created_at\": \"2017-03-14T01:41:21.003240\"\
+        ,\n  \"updated_at\": null,\n  \"id\": 127,\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        \n}"
+    headers:
+      Content-Length:
+      - '196'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 01:41:21 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/clouds/127
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-7c7e489e-3941-47bd-8f9e-b7f9224b364a
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/clouds
+- recorded_at: '2017-03-14T17:36:32'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"updated-cloud\",\n  \"note\": \"Updated note.\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '50'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: PUT
+    uri: http://127.0.0.1:8080/v1/clouds/127
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"name\": \"updated-cloud\",\n  \"note\": \"Updated note.\",\n\
+        \  \"created_at\": \"2017-03-14T01:41:21.000000\",\n  \"updated_at\": \"2017-03-14T01:41:21.034402\"\
+        ,\n  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n  \"id\":\
+        \ 127\n}"
+    headers:
+      Content-Length:
+      - '204'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 01:41:21 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-cf15b474-d12e-45b9-abe1-8c1742f671e3
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/clouds/127
+- recorded_at: '2017-03-14T17:36:32'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/clouds/127
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 01:41:21 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-288b05e7-8fbf-49fc-badd-82c225a1a8dd
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/clouds/127
+recorded_with: betamax/0.8.0
