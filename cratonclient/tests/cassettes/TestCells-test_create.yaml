@@ -1,0 +1,154 @@
+http_interactions:
+- recorded_at: '2017-03-14T12:34:57'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cells-cloud-0\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '25'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"updated_at\": null,\n  \"id\": 1,\n  \"created_at\": \"2017-03-13T20:39:23.738747\"\
+        ,\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"note\": null,\n\
+        \  \"name\": \"cells-cloud-0\",\n  \"variables\": {}\n}"
+    headers:
+      Content-Length:
+      - '180'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 20:39:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/clouds/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-8d89cbca-e2b6-41ed-aa27-33b9f42c6184
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/clouds
+- recorded_at: '2017-03-14T12:34:57'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"name\": \"cells-region-0\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '41'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"updated_at\": null,\n  \"id\": 1,\n  \"created_at\": \"2017-03-13T20:39:23.798906\"\
+        ,\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"note\": null,\n\
+        \  \"name\": \"cells-region-0\",\n  \"cloud_id\": 1,\n  \"variables\": {}\n\
+        }"
+    headers:
+      Content-Length:
+      - '196'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 20:39:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a09d256a-81a3-48b6-839e-04c74d6790aa
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-14T12:34:57'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"name\": \"cell-0\",\n  \"note\": \"This\
+        \ is a test cell. There are many like it, but this is mine\",\n  \"variables\"\
+        : {\n    \"a\": \"b\"\n  },\n  \"region_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '147'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"updated_at\": null,\n  \"id\": 1,\n  \"created_at\": \"2017-03-13T20:39:23.836432\"\
+        ,\n  \"region_id\": 1,\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"note\": \"This is a test cell. There are many like it, but this is\
+        \ mine\",\n  \"name\": \"cell-0\",\n  \"cloud_id\": 1,\n  \"variables\": {\n\
+        \    \"a\": \"b\"\n  }\n}"
+    headers:
+      Content-Length:
+      - '271'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 20:39:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-73a634d2-73c4-418c-ae40-c4339a5f4677
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+recorded_with: betamax/0.8.0

@@ -1,0 +1,202 @@
+http_interactions:
+- recorded_at: '2017-03-14T13:53:28'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cells-cloud-0\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '25'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cells-cloud-0\",\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"note\": null,\n  \"id\": 1,\n\
+        \  \"created_at\": \"2017-03-13T21:58:00.969991\",\n  \"updated_at\": null\n\
+        }"
+    headers:
+      Content-Length:
+      - '180'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:58:01 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/clouds/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-f530ff0a-8d28-406b-9ba2-29af61d58396
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/clouds
+- recorded_at: '2017-03-14T13:53:28'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cells-region-0\",\n  \"cloud_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '41'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cells-region-0\",\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"note\": null,\n  \"id\": 1,\n\
+        \  \"created_at\": \"2017-03-13T21:58:01.020644\",\n  \"updated_at\": null,\n\
+        \  \"cloud_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '196'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:58:01 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-50835a6c-9087-4a43-904f-9e75c0473448
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-14T13:53:28'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"variables\": {\n    \"out-with\": \"the-old\"\n  },\n  \"name\"\
+        : \"cell-to-update\",\n  \"region_id\": 1,\n  \"note\": \"Original note\"\
+        ,\n  \"cloud_id\": 1\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '120'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {\n    \"out-with\": \"the-old\"\n  },\n  \"name\"\
+        : \"cell-to-update\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"note\": \"Original note\",\n  \"id\": 1,\n  \"created_at\": \"2017-03-13T21:58:01.053145\"\
+        ,\n  \"updated_at\": null,\n  \"region_id\": 1,\n  \"cloud_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '244'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:58:01 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-be597465-4739-4ee0-80c5-ac4fe203a452
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:53:28'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"Updated note.\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '25'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: PUT
+    uri: http://127.0.0.1:8080/v1/cells/1
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"name\": \"cell-to-update\",\n  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n  \"note\": \"Updated note.\",\n  \"id\": 1,\n  \"created_at\": \"2017-03-13T21:58:01.000000\"\
+        ,\n  \"updated_at\": \"2017-03-13T21:58:01.089230\",\n  \"region_id\": 1,\n\
+        \  \"cloud_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '234'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:58:01 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-922138d6-27e9-4b14-b13c-94aedb8d5258
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/cells/1
+recorded_with: betamax/0.8.0

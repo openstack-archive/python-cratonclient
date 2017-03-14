@@ -1,0 +1,3907 @@
+http_interactions:
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cells-cloud-0\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '25'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 1,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.494308\",\n  \"note\": null,\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"name\": \"cells-cloud-0\"\n}"
+    headers:
+      Content-Length:
+      - '180'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/clouds/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e370b215-7c27-4633-b399-2a2aef1fe4d8
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/clouds
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"name\": \"cells-region-0\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '41'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 1,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.552161\",\n  \"cloud_id\": 1,\n  \"note\"\
+        : null,\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"name\"\
+        : \"cells-region-0\"\n}"
+    headers:
+      Content-Length:
+      - '196'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a6cfb003-e762-4a6e-b742-57674014a2df
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (0/63)\",\n  \"name\": \"pagination-cell-0\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '125'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 1,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.591127\",\n  \"cloud_id\": 1,\n  \"name\"\
+        : \"pagination-cell-0\",\n  \"note\": \"This was created automatically for\
+        \ pagination. (0/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '266'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/1
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-dca59b1a-07fd-440c-a70e-bd999f761f6c
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (1/63)\",\n  \"name\": \"pagination-cell-1\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '125'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 2,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.627922\",\n  \"cloud_id\": 1,\n  \"name\"\
+        : \"pagination-cell-1\",\n  \"note\": \"This was created automatically for\
+        \ pagination. (1/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '266'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/2
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-6c48a372-4917-4fb2-8292-2a2ead507e39
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (2/63)\",\n  \"name\": \"pagination-cell-2\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '125'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 3,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.660686\",\n  \"cloud_id\": 1,\n  \"name\"\
+        : \"pagination-cell-2\",\n  \"note\": \"This was created automatically for\
+        \ pagination. (2/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '266'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/3
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-48df8152-29f3-43e8-878e-f7c9dd96164e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (3/63)\",\n  \"name\": \"pagination-cell-3\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '125'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 4,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.694799\",\n  \"cloud_id\": 1,\n  \"name\"\
+        : \"pagination-cell-3\",\n  \"note\": \"This was created automatically for\
+        \ pagination. (3/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '266'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/4
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-6af47f42-885e-438a-9013-772aec5291b5
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (4/63)\",\n  \"name\": \"pagination-cell-4\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '125'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 5,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.726215\",\n  \"cloud_id\": 1,\n  \"name\"\
+        : \"pagination-cell-4\",\n  \"note\": \"This was created automatically for\
+        \ pagination. (4/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '266'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/5
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-58b151d5-3c9a-48ea-b533-03c5fe3808aa
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (5/63)\",\n  \"name\": \"pagination-cell-5\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '125'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 6,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.757851\",\n  \"cloud_id\": 1,\n  \"name\"\
+        : \"pagination-cell-5\",\n  \"note\": \"This was created automatically for\
+        \ pagination. (5/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '266'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/6
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-cdd65481-5d6c-4e20-aa65-4cd600da03e2
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (6/63)\",\n  \"name\": \"pagination-cell-6\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '125'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 7,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.790416\",\n  \"cloud_id\": 1,\n  \"name\"\
+        : \"pagination-cell-6\",\n  \"note\": \"This was created automatically for\
+        \ pagination. (6/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '266'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/7
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-b1f5f4eb-427f-4ad2-b13d-ec8b37f8da7e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (7/63)\",\n  \"name\": \"pagination-cell-7\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '125'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 8,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.816349\",\n  \"cloud_id\": 1,\n  \"name\"\
+        : \"pagination-cell-7\",\n  \"note\": \"This was created automatically for\
+        \ pagination. (7/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '266'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/8
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-70f70010-f936-4f62-b628-43f2b5dfc050
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (8/63)\",\n  \"name\": \"pagination-cell-8\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '125'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 9,\n  \"\
+        created_at\": \"2017-03-13T21:35:09.843421\",\n  \"cloud_id\": 1,\n  \"name\"\
+        : \"pagination-cell-8\",\n  \"note\": \"This was created automatically for\
+        \ pagination. (8/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '266'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/9
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-42c11f2d-eb9a-470f-89e8-b0397429a73c
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (9/63)\",\n  \"name\": \"pagination-cell-9\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '125'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 10,\n \
+        \ \"created_at\": \"2017-03-13T21:35:09.869785\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-9\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (9/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '267'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/10
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-86692115-0f15-4981-8ee3-b557fa92956a
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (10/63)\",\n  \"name\": \"pagination-cell-10\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 11,\n \
+        \ \"created_at\": \"2017-03-13T21:35:09.895350\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-10\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (10/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/11
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-3a513791-a0c8-4173-8356-6ea06b4489a1
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (11/63)\",\n  \"name\": \"pagination-cell-11\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 12,\n \
+        \ \"created_at\": \"2017-03-13T21:35:09.925522\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-11\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (11/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/12
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-213c93c9-0aff-4686-9f77-395f76f6436a
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (12/63)\",\n  \"name\": \"pagination-cell-12\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 13,\n \
+        \ \"created_at\": \"2017-03-13T21:35:09.949327\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-12\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (12/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/13
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-70968f5a-d45f-4fd0-b2fe-3a67385e5187
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (13/63)\",\n  \"name\": \"pagination-cell-13\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 14,\n \
+        \ \"created_at\": \"2017-03-13T21:35:09.973541\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-13\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (13/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:09 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/14
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-9d568caf-0304-4377-b16a-73682d409539
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (14/63)\",\n  \"name\": \"pagination-cell-14\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 15,\n \
+        \ \"created_at\": \"2017-03-13T21:35:09.999055\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-14\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (14/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/15
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-5016fa4e-d32d-45af-8a24-0a3b9c793ba0
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (15/63)\",\n  \"name\": \"pagination-cell-15\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 16,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.024872\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-15\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (15/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/16
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c1cc8e68-99c9-4ad1-9f85-d9f7f2ec45ff
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (16/63)\",\n  \"name\": \"pagination-cell-16\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 17,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.052427\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-16\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (16/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/17
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-503be6f2-7c66-4499-92c3-87ecd3cd0f8a
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (17/63)\",\n  \"name\": \"pagination-cell-17\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 18,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.080373\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-17\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (17/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/18
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4405dd87-89e6-4946-b5b4-4b8659c81f65
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (18/63)\",\n  \"name\": \"pagination-cell-18\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 19,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.109203\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-18\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (18/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/19
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-39a8bd81-0bc1-4906-9b45-c46cfe3f3670
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (19/63)\",\n  \"name\": \"pagination-cell-19\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 20,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.136714\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-19\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (19/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/20
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e80f180b-b56d-4c36-af19-5846a6d48b88
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (20/63)\",\n  \"name\": \"pagination-cell-20\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 21,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.163981\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-20\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (20/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/21
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-f5dcec53-d5f8-4d1a-8edd-203ed988be9b
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (21/63)\",\n  \"name\": \"pagination-cell-21\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 22,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.194513\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-21\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (21/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/22
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c1c7cfee-8c8f-4ec4-84a6-16ef577ca294
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (22/63)\",\n  \"name\": \"pagination-cell-22\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 23,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.221210\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-22\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (22/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/23
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-51d7d132-31c9-48dd-bf2b-782fbc75cedc
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (23/63)\",\n  \"name\": \"pagination-cell-23\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 24,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.247530\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-23\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (23/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/24
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-3d98e61c-6adb-4ba1-b502-6b4398e9a70d
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (24/63)\",\n  \"name\": \"pagination-cell-24\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 25,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.275608\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-24\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (24/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/25
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-9bb69525-9f2f-418f-a2a1-ad294bc53a8a
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (25/63)\",\n  \"name\": \"pagination-cell-25\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 26,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.302833\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-25\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (25/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/26
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-63c9a458-b934-4eb1-9e1e-77d42693edd2
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:39'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (26/63)\",\n  \"name\": \"pagination-cell-26\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 27,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.354781\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-26\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (26/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/27
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-0f6d8ae9-9b7e-4c0e-9701-7bfdcaf44f5a
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (27/63)\",\n  \"name\": \"pagination-cell-27\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 28,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.683067\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-27\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (27/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/28
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-efc02378-3003-4f7e-a9d6-452ca2c8c2ea
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (28/63)\",\n  \"name\": \"pagination-cell-28\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 29,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.719075\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-28\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (28/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/29
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-8b75513d-e181-48bd-b492-be672e77345a
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (29/63)\",\n  \"name\": \"pagination-cell-29\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 30,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.748394\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-29\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (29/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/30
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-5d69f939-f341-4d1d-bd1a-4ab1f9b7fee5
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (30/63)\",\n  \"name\": \"pagination-cell-30\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 31,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.783069\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-30\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (30/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/31
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-51ce4942-7a9a-48c5-afc7-962cc713bac1
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (31/63)\",\n  \"name\": \"pagination-cell-31\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 32,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.810694\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-31\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (31/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/32
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-79c99c0c-164b-4af1-a935-d7761a007314
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (32/63)\",\n  \"name\": \"pagination-cell-32\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 33,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.836583\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-32\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (32/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/33
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-cad5c9df-1711-4b7a-92c5-cd0a8770babe
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (33/63)\",\n  \"name\": \"pagination-cell-33\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 34,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.864033\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-33\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (33/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/34
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-3aa0f224-0f2e-4f56-85ee-461067229c0e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (34/63)\",\n  \"name\": \"pagination-cell-34\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 35,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.891986\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-34\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (34/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/35
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-eb48c033-a916-4c13-937d-7eec10c4b526
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (35/63)\",\n  \"name\": \"pagination-cell-35\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 36,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.918929\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-35\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (35/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/36
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-cf9f83ab-b48a-481b-803d-d73a07199235
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (36/63)\",\n  \"name\": \"pagination-cell-36\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 37,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.946826\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-36\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (36/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/37
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-867e723c-6d15-41db-bd50-33ab46fa5090
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (37/63)\",\n  \"name\": \"pagination-cell-37\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 38,\n \
+        \ \"created_at\": \"2017-03-13T21:35:10.976914\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-37\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (37/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:10 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/38
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-041ed221-7b41-4811-a92d-8a4655d26e1f
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (38/63)\",\n  \"name\": \"pagination-cell-38\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 39,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.001780\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-38\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (38/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/39
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-8e09f291-7dbd-49a5-8853-c0e98657ef05
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (39/63)\",\n  \"name\": \"pagination-cell-39\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 40,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.028720\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-39\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (39/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/40
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a4a9c3ff-e538-4087-9c18-22d034e9c833
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (40/63)\",\n  \"name\": \"pagination-cell-40\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 41,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.059493\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-40\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (40/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/41
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a6be1cae-6a75-40a3-a646-5edf9b74f0f2
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (41/63)\",\n  \"name\": \"pagination-cell-41\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 42,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.084225\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-41\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (41/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/42
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-b71ac440-3fdd-44de-8b84-be8c2c47cac2
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (42/63)\",\n  \"name\": \"pagination-cell-42\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 43,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.110600\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-42\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (42/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/43
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a5871686-fec4-49af-9c8c-a9ea7bb64370
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (43/63)\",\n  \"name\": \"pagination-cell-43\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 44,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.141001\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-43\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (43/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/44
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-72daf01d-5eb4-486f-b5aa-982c92cb706c
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (44/63)\",\n  \"name\": \"pagination-cell-44\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 45,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.172454\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-44\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (44/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/45
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-26b10517-d0ee-4776-a9ce-b04e5885a065
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (45/63)\",\n  \"name\": \"pagination-cell-45\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 46,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.202311\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-45\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (45/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/46
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c8123f5c-458e-40c8-bc69-e2244580bfb7
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (46/63)\",\n  \"name\": \"pagination-cell-46\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 47,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.232985\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-46\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (46/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/47
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-9bd5832c-8d1b-49d3-9e6b-ca004339db6f
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (47/63)\",\n  \"name\": \"pagination-cell-47\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 48,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.264657\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-47\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (47/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/48
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4254da33-9414-41f9-b12e-45137b1089a8
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (48/63)\",\n  \"name\": \"pagination-cell-48\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 49,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.291798\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-48\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (48/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/49
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-8185a543-b10c-4ce8-b42b-b9e4a5719fe3
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (49/63)\",\n  \"name\": \"pagination-cell-49\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 50,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.319245\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-49\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (49/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/50
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-094df250-3167-4f4a-93f3-dceff2ba6430
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (50/63)\",\n  \"name\": \"pagination-cell-50\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 51,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.345874\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-50\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (50/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/51
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c09520cd-ae33-46a1-8459-3a055bd84c95
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (51/63)\",\n  \"name\": \"pagination-cell-51\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 52,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.370595\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-51\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (51/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/52
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-3fe0903c-6bc2-4cc9-a0ab-b763157cbb0e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (52/63)\",\n  \"name\": \"pagination-cell-52\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 53,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.397481\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-52\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (52/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/53
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-1ef50b41-63d9-4e7c-b3c2-e824c55dc535
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:40'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (53/63)\",\n  \"name\": \"pagination-cell-53\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 54,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.426656\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-53\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (53/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/54
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-d8df9510-f69d-472d-8e56-f6e961eeca67
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (54/63)\",\n  \"name\": \"pagination-cell-54\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 55,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.455433\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-54\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (54/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/55
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-08508e00-732e-44b9-8754-75f7e717e5b3
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (55/63)\",\n  \"name\": \"pagination-cell-55\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 56,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.481818\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-55\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (55/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/56
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-10f36515-a332-4b86-b435-1419e6227303
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (56/63)\",\n  \"name\": \"pagination-cell-56\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 57,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.508127\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-56\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (56/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/57
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4990ed90-826b-4171-82e7-c95a96af1c15
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (57/63)\",\n  \"name\": \"pagination-cell-57\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 58,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.534963\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-57\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (57/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/58
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-5a8723f0-c75e-42e4-8378-3e9d782f4a5e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (58/63)\",\n  \"name\": \"pagination-cell-58\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 59,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.562416\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-58\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (58/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/59
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e11ddb40-16ce-4657-8ac3-23fa307a660e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (59/63)\",\n  \"name\": \"pagination-cell-59\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 60,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.594072\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-59\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (59/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/60
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-8962d590-b484-4f96-8372-7792ce0c1fe7
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (60/63)\",\n  \"name\": \"pagination-cell-60\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 61,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.621525\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-60\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (60/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/61
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-d7679f84-022e-4479-a8c4-d5cdc4e8fec6
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (61/63)\",\n  \"name\": \"pagination-cell-61\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 62,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.650929\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-61\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (61/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/62
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-1513b227-a62a-40ea-89ea-0c8ae230d63a
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 1,\n  \"region_id\": 1,\n  \"note\": \"This was\
+        \ created automatically for pagination. (62/63)\",\n  \"name\": \"pagination-cell-62\"\
+        \n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '127'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"updated_at\": null,\n  \"id\": 63,\n \
+        \ \"created_at\": \"2017-03-13T21:35:11.677858\",\n  \"cloud_id\": 1,\n  \"\
+        name\": \"pagination-cell-62\",\n  \"note\": \"This was created automatically\
+        \ for pagination. (62/63)\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"region_id\": 1\n}"
+    headers:
+      Content-Length:
+      - '269'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/cells/63
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-d1f65195-4156-4935-ad16-2f79306da555
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/cells
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"links\": [\n    {\n      \"rel\": \"first\",\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/cells?limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"prev\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"self\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"next\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?marker=30&limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    }\n  ],\n  \"cells\": [\n    {\n      \"updated_at\": null,\n      \"\
+        id\": 1,\n      \"created_at\": \"2017-03-13T21:35:09.000000\",\n      \"\
+        cloud_id\": 1,\n      \"name\": \"pagination-cell-0\",\n      \"note\": \"\
+        This was created automatically for pagination. (0/63)\",\n      \"project_id\"\
+        : \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\": 1\n    },\n\
+        \    {\n      \"updated_at\": null,\n      \"id\": 2,\n      \"created_at\"\
+        : \"2017-03-13T21:35:09.000000\",\n      \"cloud_id\": 1,\n      \"name\"\
+        : \"pagination-cell-1\",\n      \"note\": \"This was created automatically\
+        \ for pagination. (1/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 3,\n      \"created_at\": \"2017-03-13T21:35:09.000000\",\n \
+        \     \"cloud_id\": 1,\n      \"name\": \"pagination-cell-2\",\n      \"note\"\
+        : \"This was created automatically for pagination. (2/63)\",\n      \"project_id\"\
+        : \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\": 1\n    },\n\
+        \    {\n      \"updated_at\": null,\n      \"id\": 4,\n      \"created_at\"\
+        : \"2017-03-13T21:35:09.000000\",\n      \"cloud_id\": 1,\n      \"name\"\
+        : \"pagination-cell-3\",\n      \"note\": \"This was created automatically\
+        \ for pagination. (3/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 5,\n      \"created_at\": \"2017-03-13T21:35:09.000000\",\n \
+        \     \"cloud_id\": 1,\n      \"name\": \"pagination-cell-4\",\n      \"note\"\
+        : \"This was created automatically for pagination. (4/63)\",\n      \"project_id\"\
+        : \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\": 1\n    },\n\
+        \    {\n      \"updated_at\": null,\n      \"id\": 6,\n      \"created_at\"\
+        : \"2017-03-13T21:35:09.000000\",\n      \"cloud_id\": 1,\n      \"name\"\
+        : \"pagination-cell-5\",\n      \"note\": \"This was created automatically\
+        \ for pagination. (5/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 7,\n      \"created_at\": \"2017-03-13T21:35:09.000000\",\n \
+        \     \"cloud_id\": 1,\n      \"name\": \"pagination-cell-6\",\n      \"note\"\
+        : \"This was created automatically for pagination. (6/63)\",\n      \"project_id\"\
+        : \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\": 1\n    },\n\
+        \    {\n      \"updated_at\": null,\n      \"id\": 8,\n      \"created_at\"\
+        : \"2017-03-13T21:35:09.000000\",\n      \"cloud_id\": 1,\n      \"name\"\
+        : \"pagination-cell-7\",\n      \"note\": \"This was created automatically\
+        \ for pagination. (7/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 9,\n      \"created_at\": \"2017-03-13T21:35:09.000000\",\n \
+        \     \"cloud_id\": 1,\n      \"name\": \"pagination-cell-8\",\n      \"note\"\
+        : \"This was created automatically for pagination. (8/63)\",\n      \"project_id\"\
+        : \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\": 1\n    },\n\
+        \    {\n      \"updated_at\": null,\n      \"id\": 10,\n      \"created_at\"\
+        : \"2017-03-13T21:35:09.000000\",\n      \"cloud_id\": 1,\n      \"name\"\
+        : \"pagination-cell-9\",\n      \"note\": \"This was created automatically\
+        \ for pagination. (9/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 11,\n      \"created_at\": \"2017-03-13T21:35:09.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-10\",\n      \"\
+        note\": \"This was created automatically for pagination. (10/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 12,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:09.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-11\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (11/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 13,\n      \"created_at\": \"2017-03-13T21:35:09.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-12\",\n      \"\
+        note\": \"This was created automatically for pagination. (12/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 14,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:09.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-13\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (13/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 15,\n      \"created_at\": \"2017-03-13T21:35:09.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-14\",\n      \"\
+        note\": \"This was created automatically for pagination. (14/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 16,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-15\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (15/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 17,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-16\",\n      \"\
+        note\": \"This was created automatically for pagination. (16/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 18,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-17\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (17/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 19,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-18\",\n      \"\
+        note\": \"This was created automatically for pagination. (18/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 20,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-19\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (19/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 21,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-20\",\n      \"\
+        note\": \"This was created automatically for pagination. (20/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 22,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-21\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (21/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 23,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-22\",\n      \"\
+        note\": \"This was created automatically for pagination. (22/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 24,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-23\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (23/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 25,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-24\",\n      \"\
+        note\": \"This was created automatically for pagination. (24/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 26,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-25\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (25/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 27,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-26\",\n      \"\
+        note\": \"This was created automatically for pagination. (26/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 28,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-27\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (27/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 29,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-28\",\n      \"\
+        note\": \"This was created automatically for pagination. (28/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 30,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-29\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (29/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '8143'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a6b4e17e-e77a-4dde-8d87-36356ab2d271
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/cells
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/cells?marker=30&limit=30&sort_keys=created_at%2Cid&sort_dir=asc
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"links\": [\n    {\n      \"rel\": \"first\",\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/cells?limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"prev\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?marker=1&limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"self\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?marker=30&limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"next\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?marker=60&limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    }\n  ],\n  \"cells\": [\n    {\n      \"updated_at\": null,\n      \"\
+        id\": 31,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"\
+        cloud_id\": 1,\n      \"name\": \"pagination-cell-30\",\n      \"note\": \"\
+        This was created automatically for pagination. (30/63)\",\n      \"project_id\"\
+        : \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\": 1\n    },\n\
+        \    {\n      \"updated_at\": null,\n      \"id\": 32,\n      \"created_at\"\
+        : \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n      \"name\"\
+        : \"pagination-cell-31\",\n      \"note\": \"This was created automatically\
+        \ for pagination. (31/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 33,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-32\",\n      \"\
+        note\": \"This was created automatically for pagination. (32/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 34,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-33\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (33/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 35,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-34\",\n      \"\
+        note\": \"This was created automatically for pagination. (34/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 36,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-35\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (35/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 37,\n      \"created_at\": \"2017-03-13T21:35:10.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-36\",\n      \"\
+        note\": \"This was created automatically for pagination. (36/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 38,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:10.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-37\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (37/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 39,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-38\",\n      \"\
+        note\": \"This was created automatically for pagination. (38/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 40,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-39\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (39/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 41,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-40\",\n      \"\
+        note\": \"This was created automatically for pagination. (40/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 42,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-41\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (41/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 43,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-42\",\n      \"\
+        note\": \"This was created automatically for pagination. (42/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 44,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-43\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (43/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 45,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-44\",\n      \"\
+        note\": \"This was created automatically for pagination. (44/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 46,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-45\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (45/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 47,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-46\",\n      \"\
+        note\": \"This was created automatically for pagination. (46/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 48,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-47\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (47/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 49,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-48\",\n      \"\
+        note\": \"This was created automatically for pagination. (48/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 50,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-49\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (49/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 51,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-50\",\n      \"\
+        note\": \"This was created automatically for pagination. (50/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 52,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-51\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (51/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 53,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-52\",\n      \"\
+        note\": \"This was created automatically for pagination. (52/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 54,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-53\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (53/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 55,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-54\",\n      \"\
+        note\": \"This was created automatically for pagination. (54/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 56,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-55\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (55/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 57,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-56\",\n      \"\
+        note\": \"This was created automatically for pagination. (56/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 58,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-57\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (57/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 59,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-58\",\n      \"\
+        note\": \"This was created automatically for pagination. (58/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    },\n    {\n      \"updated_at\": null,\n      \"id\": 60,\n     \
+        \ \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n\
+        \      \"name\": \"pagination-cell-59\",\n      \"note\": \"This was created\
+        \ automatically for pagination. (59/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '8191'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-2acd72a7-3c1c-4970-8f7d-48c8f5045d37
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/cells?marker=30&limit=30&sort_keys=created_at%2Cid&sort_dir=asc
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/cells?marker=60&limit=30&sort_keys=created_at%2Cid&sort_dir=asc
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"links\": [\n    {\n      \"rel\": \"first\",\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/cells?limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"prev\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?marker=30&limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"self\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?marker=60&limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"next\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?marker=63&limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    }\n  ],\n  \"cells\": [\n    {\n      \"updated_at\": null,\n      \"\
+        id\": 61,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n      \"\
+        cloud_id\": 1,\n      \"name\": \"pagination-cell-60\",\n      \"note\": \"\
+        This was created automatically for pagination. (60/63)\",\n      \"project_id\"\
+        : \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\": 1\n    },\n\
+        \    {\n      \"updated_at\": null,\n      \"id\": 62,\n      \"created_at\"\
+        : \"2017-03-13T21:35:11.000000\",\n      \"cloud_id\": 1,\n      \"name\"\
+        : \"pagination-cell-61\",\n      \"note\": \"This was created automatically\
+        \ for pagination. (61/63)\",\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"region_id\": 1\n    },\n    {\n      \"updated_at\": null,\n  \
+        \    \"id\": 63,\n      \"created_at\": \"2017-03-13T21:35:11.000000\",\n\
+        \      \"cloud_id\": 1,\n      \"name\": \"pagination-cell-62\",\n      \"\
+        note\": \"This was created automatically for pagination. (62/63)\",\n    \
+        \  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\",\n      \"region_id\"\
+        : 1\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '1253'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-18f01a8f-cd5f-4d75-952a-cc68c005412f
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/cells?marker=60&limit=30&sort_keys=created_at%2Cid&sort_dir=asc
+- recorded_at: '2017-03-14T13:30:41'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/cells?marker=63&limit=30&sort_keys=created_at%2Cid&sort_dir=asc
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"links\": [\n    {\n      \"rel\": \"first\",\n      \"href\"\
+        : \"http://127.0.0.1:8080/v1/cells?limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"prev\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?marker=33&limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    },\n    {\n      \"rel\": \"self\",\n      \"href\": \"http://127.0.0.1:8080/v1/cells?marker=63&limit=30&sort_keys=created_at%2Cid&sort_dir=asc\"\
+        \n    }\n  ],\n  \"cells\": []\n}"
+    headers:
+      Content-Length:
+      - '367'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Mar 2017 21:35:11 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-fdcca685-d2f6-4120-91db-5eaf8fa34b70
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/cells?marker=63&limit=30&sort_keys=created_at%2Cid&sort_dir=asc
+recorded_with: betamax/0.8.0
