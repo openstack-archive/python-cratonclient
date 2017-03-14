@@ -1,0 +1,4446 @@
+http_interactions:
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (0/62)\"\
+        ,\n  \"name\": \"cloud-0\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '80'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-0\",\n  \"id\": 85,\n\
+        \  \"note\": \"This cloud was created to test pagination. (0/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.266042\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '242'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/85
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-5500677c-a421-4581-a43a-27ee195f02de
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (1/62)\"\
+        ,\n  \"name\": \"cloud-1\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '80'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-1\",\n  \"id\": 86,\n\
+        \  \"note\": \"This cloud was created to test pagination. (1/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.307355\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '242'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/86
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-6be5f721-9a59-4fe7-bedb-03f822798d54
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (2/62)\"\
+        ,\n  \"name\": \"cloud-2\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '80'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-2\",\n  \"id\": 87,\n\
+        \  \"note\": \"This cloud was created to test pagination. (2/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.359313\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '242'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/87
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b471f303-6379-487a-a86b-73ec3c6e48cd
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (3/62)\"\
+        ,\n  \"name\": \"cloud-3\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '80'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-3\",\n  \"id\": 88,\n\
+        \  \"note\": \"This cloud was created to test pagination. (3/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.398049\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '242'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/88
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-da53685c-d996-4668-bdfd-bf0ee71506f9
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (4/62)\"\
+        ,\n  \"name\": \"cloud-4\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '80'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-4\",\n  \"id\": 89,\n\
+        \  \"note\": \"This cloud was created to test pagination. (4/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.436611\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '242'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/89
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b044e867-54ce-4971-8d84-8fd5bf8936aa
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (5/62)\"\
+        ,\n  \"name\": \"cloud-5\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '80'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-5\",\n  \"id\": 90,\n\
+        \  \"note\": \"This cloud was created to test pagination. (5/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.480788\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '242'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/90
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-2409a03f-cc82-4ffb-a990-5f3c002e39b2
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (6/62)\"\
+        ,\n  \"name\": \"cloud-6\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '80'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-6\",\n  \"id\": 91,\n\
+        \  \"note\": \"This cloud was created to test pagination. (6/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.521195\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '242'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/91
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-2645e550-2d0b-4f14-90d4-77827468db06
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (7/62)\"\
+        ,\n  \"name\": \"cloud-7\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '80'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-7\",\n  \"id\": 92,\n\
+        \  \"note\": \"This cloud was created to test pagination. (7/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.561030\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '242'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/92
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-05d9f594-9eff-45d9-835e-d910e244ca67
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (8/62)\"\
+        ,\n  \"name\": \"cloud-8\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '80'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-8\",\n  \"id\": 93,\n\
+        \  \"note\": \"This cloud was created to test pagination. (8/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.600604\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '242'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/93
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-36652719-2c99-4af7-adfe-3deeb372507b
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (9/62)\"\
+        ,\n  \"name\": \"cloud-9\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '80'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-9\",\n  \"id\": 94,\n\
+        \  \"note\": \"This cloud was created to test pagination. (9/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.640185\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '242'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/94
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-63fa6c78-4fbb-4d23-97e9-0b565d30c7c5
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (10/62)\"\
+        ,\n  \"name\": \"cloud-10\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-10\",\n  \"id\": 95,\n\
+        \  \"note\": \"This cloud was created to test pagination. (10/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.678277\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '244'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/95
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-655abb33-9631-4a5e-9e55-91884083fbfe
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (11/62)\"\
+        ,\n  \"name\": \"cloud-11\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-11\",\n  \"id\": 96,\n\
+        \  \"note\": \"This cloud was created to test pagination. (11/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.716269\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '244'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/96
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-15cecbaf-7f0e-4d66-bb33-72a2e11d92a8
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (12/62)\"\
+        ,\n  \"name\": \"cloud-12\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-12\",\n  \"id\": 97,\n\
+        \  \"note\": \"This cloud was created to test pagination. (12/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.753008\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '244'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/97
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a0ed93fe-84bf-48fe-878a-bca549a846c4
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (13/62)\"\
+        ,\n  \"name\": \"cloud-13\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-13\",\n  \"id\": 98,\n\
+        \  \"note\": \"This cloud was created to test pagination. (13/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.788373\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '244'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/98
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-697066e5-771e-4d29-abc9-dbae3c7b4c5d
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (14/62)\"\
+        ,\n  \"name\": \"cloud-14\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-14\",\n  \"id\": 99,\n\
+        \  \"note\": \"This cloud was created to test pagination. (14/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.825674\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '244'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/99
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-5474c133-7968-4999-93eb-69de53f7759f
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (15/62)\"\
+        ,\n  \"name\": \"cloud-15\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-15\",\n  \"id\": 100,\n\
+        \  \"note\": \"This cloud was created to test pagination. (15/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.867640\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/100
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a3fba29f-4cb5-4254-87ee-dd28cdee7026
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (16/62)\"\
+        ,\n  \"name\": \"cloud-16\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-16\",\n  \"id\": 101,\n\
+        \  \"note\": \"This cloud was created to test pagination. (16/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.907309\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/101
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-c18b9b00-442d-49d4-b7a7-b9b86ded3077
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:12'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (17/62)\"\
+        ,\n  \"name\": \"cloud-17\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-17\",\n  \"id\": 102,\n\
+        \  \"note\": \"This cloud was created to test pagination. (17/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.946760\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/102
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-11d8f30c-c5c0-46ec-a87d-b705ce778646
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (18/62)\"\
+        ,\n  \"name\": \"cloud-18\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-18\",\n  \"id\": 103,\n\
+        \  \"note\": \"This cloud was created to test pagination. (18/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:38.981146\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:38 GMT
+      Location: <craton-url>/clouds/103
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-109acc98-b2dd-4517-96fb-46aa53cf9e5e
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (19/62)\"\
+        ,\n  \"name\": \"cloud-19\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-19\",\n  \"id\": 104,\n\
+        \  \"note\": \"This cloud was created to test pagination. (19/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.014333\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/104
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-f78ebd5f-09ee-477e-a7ac-b9dfba619239
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (20/62)\"\
+        ,\n  \"name\": \"cloud-20\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-20\",\n  \"id\": 105,\n\
+        \  \"note\": \"This cloud was created to test pagination. (20/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.045389\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/105
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-4ba27a30-30ea-4240-b195-51196df4450e
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (21/62)\"\
+        ,\n  \"name\": \"cloud-21\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-21\",\n  \"id\": 106,\n\
+        \  \"note\": \"This cloud was created to test pagination. (21/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.078892\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/106
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-1d50bb2e-2f3d-461c-b11a-b8fe9d84953c
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (22/62)\"\
+        ,\n  \"name\": \"cloud-22\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-22\",\n  \"id\": 107,\n\
+        \  \"note\": \"This cloud was created to test pagination. (22/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.113655\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/107
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-fd66300f-61ed-4a86-bce0-6b0ba99a1573
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (23/62)\"\
+        ,\n  \"name\": \"cloud-23\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-23\",\n  \"id\": 108,\n\
+        \  \"note\": \"This cloud was created to test pagination. (23/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.144756\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/108
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-14f60cd1-715a-429c-a6ab-b53f51f1a555
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (24/62)\"\
+        ,\n  \"name\": \"cloud-24\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-24\",\n  \"id\": 109,\n\
+        \  \"note\": \"This cloud was created to test pagination. (24/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.176309\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/109
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-44e69199-5520-4c80-aa29-e92e063bc7af
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (25/62)\"\
+        ,\n  \"name\": \"cloud-25\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-25\",\n  \"id\": 110,\n\
+        \  \"note\": \"This cloud was created to test pagination. (25/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.208832\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/110
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-bde69d25-28c4-4662-b56a-785dd13d0202
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (26/62)\"\
+        ,\n  \"name\": \"cloud-26\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-26\",\n  \"id\": 111,\n\
+        \  \"note\": \"This cloud was created to test pagination. (26/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.243679\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/111
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-f3e517ff-d44a-452d-8b59-45197ba41341
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (27/62)\"\
+        ,\n  \"name\": \"cloud-27\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-27\",\n  \"id\": 112,\n\
+        \  \"note\": \"This cloud was created to test pagination. (27/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.278872\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/112
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b912dfd8-3dc2-4ebe-8faa-dfd35554b348
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (28/62)\"\
+        ,\n  \"name\": \"cloud-28\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-28\",\n  \"id\": 113,\n\
+        \  \"note\": \"This cloud was created to test pagination. (28/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.314746\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/113
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-c50b119e-00c0-4881-a14b-e0a2c8f7b6b4
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (29/62)\"\
+        ,\n  \"name\": \"cloud-29\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-29\",\n  \"id\": 114,\n\
+        \  \"note\": \"This cloud was created to test pagination. (29/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.348618\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/114
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-d06d6ce4-109b-4131-82f7-d15f79bc0599
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (30/62)\"\
+        ,\n  \"name\": \"cloud-30\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-30\",\n  \"id\": 115,\n\
+        \  \"note\": \"This cloud was created to test pagination. (30/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.381009\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/115
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-94f175a5-31ec-4909-90be-0ae97576c0df
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (31/62)\"\
+        ,\n  \"name\": \"cloud-31\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-31\",\n  \"id\": 116,\n\
+        \  \"note\": \"This cloud was created to test pagination. (31/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.405466\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/116
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-5454f76c-5316-4e50-afa7-9904ad5c23a0
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (32/62)\"\
+        ,\n  \"name\": \"cloud-32\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-32\",\n  \"id\": 117,\n\
+        \  \"note\": \"This cloud was created to test pagination. (32/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.432825\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/117
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-5c1f4b2e-f91e-4a31-ace7-1aca1dec3bd0
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (33/62)\"\
+        ,\n  \"name\": \"cloud-33\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-33\",\n  \"id\": 118,\n\
+        \  \"note\": \"This cloud was created to test pagination. (33/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.464007\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/118
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-c8f5dd77-e310-4cae-beab-f3c66353fc33
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (34/62)\"\
+        ,\n  \"name\": \"cloud-34\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-34\",\n  \"id\": 119,\n\
+        \  \"note\": \"This cloud was created to test pagination. (34/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.493808\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/119
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-62524eb4-36b0-4ca2-9dcf-f7023fae93c1
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (35/62)\"\
+        ,\n  \"name\": \"cloud-35\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-35\",\n  \"id\": 120,\n\
+        \  \"note\": \"This cloud was created to test pagination. (35/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.519776\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/120
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-96123f4a-f6ee-4a8c-ac62-f54d18f8bc27
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (36/62)\"\
+        ,\n  \"name\": \"cloud-36\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-36\",\n  \"id\": 121,\n\
+        \  \"note\": \"This cloud was created to test pagination. (36/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.548267\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/121
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-4e47b196-0f1d-4280-bd65-fcc705808124
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (37/62)\"\
+        ,\n  \"name\": \"cloud-37\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-37\",\n  \"id\": 122,\n\
+        \  \"note\": \"This cloud was created to test pagination. (37/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.577634\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/122
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-793731ad-3271-4759-a998-25ff3137ff98
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (38/62)\"\
+        ,\n  \"name\": \"cloud-38\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-38\",\n  \"id\": 123,\n\
+        \  \"note\": \"This cloud was created to test pagination. (38/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.604862\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/123
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-28daaeaf-43e5-4cec-a458-640698610cb9
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (39/62)\"\
+        ,\n  \"name\": \"cloud-39\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-39\",\n  \"id\": 124,\n\
+        \  \"note\": \"This cloud was created to test pagination. (39/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.632573\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/124
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b371a1b2-42ac-4797-adbd-bda5c4125de3
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (40/62)\"\
+        ,\n  \"name\": \"cloud-40\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-40\",\n  \"id\": 125,\n\
+        \  \"note\": \"This cloud was created to test pagination. (40/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.661624\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/125
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-5833397f-9507-4fdf-8ce7-88e75562543d
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (41/62)\"\
+        ,\n  \"name\": \"cloud-41\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-41\",\n  \"id\": 126,\n\
+        \  \"note\": \"This cloud was created to test pagination. (41/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.689887\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/126
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-0f943937-c0e9-4f32-be1d-04d01eed5a65
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (42/62)\"\
+        ,\n  \"name\": \"cloud-42\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-42\",\n  \"id\": 127,\n\
+        \  \"note\": \"This cloud was created to test pagination. (42/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.721501\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/127
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-6732f75c-8b09-478e-a2e5-2ad8d20b1937
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (43/62)\"\
+        ,\n  \"name\": \"cloud-43\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-43\",\n  \"id\": 128,\n\
+        \  \"note\": \"This cloud was created to test pagination. (43/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.753643\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/128
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-eff6c9c0-24c9-4a2b-a75d-d16d119f074a
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (44/62)\"\
+        ,\n  \"name\": \"cloud-44\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-44\",\n  \"id\": 129,\n\
+        \  \"note\": \"This cloud was created to test pagination. (44/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.789798\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/129
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-d9253523-6d55-455c-9f1e-fc996396b21b
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (45/62)\"\
+        ,\n  \"name\": \"cloud-45\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-45\",\n  \"id\": 130,\n\
+        \  \"note\": \"This cloud was created to test pagination. (45/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.819426\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/130
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b401822c-29d2-4c7f-9ee2-0f69a9097383
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (46/62)\"\
+        ,\n  \"name\": \"cloud-46\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-46\",\n  \"id\": 131,\n\
+        \  \"note\": \"This cloud was created to test pagination. (46/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.849945\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/131
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-7570ff70-b694-4261-80bc-8e19f23e8846
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (47/62)\"\
+        ,\n  \"name\": \"cloud-47\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-47\",\n  \"id\": 132,\n\
+        \  \"note\": \"This cloud was created to test pagination. (47/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.878513\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/132
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a77a60ef-cb96-4553-a8da-d388713f1f5e
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (48/62)\"\
+        ,\n  \"name\": \"cloud-48\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-48\",\n  \"id\": 133,\n\
+        \  \"note\": \"This cloud was created to test pagination. (48/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.905362\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/133
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-cec403ac-9646-485b-b8fc-cd88916e8d82
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (49/62)\"\
+        ,\n  \"name\": \"cloud-49\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-49\",\n  \"id\": 134,\n\
+        \  \"note\": \"This cloud was created to test pagination. (49/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.935398\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/134
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-3f49a2df-3f3b-431b-9d13-73336d3082b0
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (50/62)\"\
+        ,\n  \"name\": \"cloud-50\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-50\",\n  \"id\": 135,\n\
+        \  \"note\": \"This cloud was created to test pagination. (50/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:39.969695\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:39 GMT
+      Location: <craton-url>/clouds/135
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-4ee04a1f-978f-45ec-b2a5-b1691010fbf2
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (51/62)\"\
+        ,\n  \"name\": \"cloud-51\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-51\",\n  \"id\": 136,\n\
+        \  \"note\": \"This cloud was created to test pagination. (51/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.002400\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/136
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-90672ee9-37cd-49da-892a-05665f70facd
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (52/62)\"\
+        ,\n  \"name\": \"cloud-52\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-52\",\n  \"id\": 137,\n\
+        \  \"note\": \"This cloud was created to test pagination. (52/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.034002\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/137
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-3186cf23-0de8-4496-89c5-5ce91e5fe5cb
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (53/62)\"\
+        ,\n  \"name\": \"cloud-53\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-53\",\n  \"id\": 138,\n\
+        \  \"note\": \"This cloud was created to test pagination. (53/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.064358\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/138
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-48be29fe-1bf8-4979-817d-7fab0f73b486
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (54/62)\"\
+        ,\n  \"name\": \"cloud-54\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-54\",\n  \"id\": 139,\n\
+        \  \"note\": \"This cloud was created to test pagination. (54/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.096221\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/139
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-efcbf1b3-fdc3-4dd1-8416-4b3155f4569b
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (55/62)\"\
+        ,\n  \"name\": \"cloud-55\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-55\",\n  \"id\": 140,\n\
+        \  \"note\": \"This cloud was created to test pagination. (55/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.128311\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/140
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a7513f77-f080-4e6d-a11c-22a9633ad5b3
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (56/62)\"\
+        ,\n  \"name\": \"cloud-56\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-56\",\n  \"id\": 141,\n\
+        \  \"note\": \"This cloud was created to test pagination. (56/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.163796\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/141
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-aefe8ed5-e950-4bf6-9431-23a7f79fb92d
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (57/62)\"\
+        ,\n  \"name\": \"cloud-57\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-57\",\n  \"id\": 142,\n\
+        \  \"note\": \"This cloud was created to test pagination. (57/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.197158\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/142
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-94edc6fc-4062-4bce-a623-002669d81a8e
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (58/62)\"\
+        ,\n  \"name\": \"cloud-58\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-58\",\n  \"id\": 143,\n\
+        \  \"note\": \"This cloud was created to test pagination. (58/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.223828\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/143
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-5e1b245e-7de1-4645-b7b2-f7aa94edac58
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (59/62)\"\
+        ,\n  \"name\": \"cloud-59\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-59\",\n  \"id\": 144,\n\
+        \  \"note\": \"This cloud was created to test pagination. (59/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.253650\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/144
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-513c8a5d-5a52-464e-96ec-7ad6ecf9defb
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (60/62)\"\
+        ,\n  \"name\": \"cloud-60\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-60\",\n  \"id\": 145,\n\
+        \  \"note\": \"This cloud was created to test pagination. (60/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.284550\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/145
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-871838dc-297c-49f0-9126-2687bbc51fa0
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"note\": \"This cloud was created to test pagination. (61/62)\"\
+        ,\n  \"name\": \"cloud-61\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '82'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"name\": \"cloud-61\",\n  \"id\": 146,\n\
+        \  \"note\": \"This cloud was created to test pagination. (61/62)\",\n  \"\
+        updated_at\": null,\n  \"created_at\": \"2017-03-21T00:38:40.318584\",\n \
+        \ \"project_id\": \"<craton-demo-project>\"\n}"
+    headers:
+      Content-Length: '245'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Location: <craton-url>/clouds/146
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-8f2b8b63-6be8-4aa9-859d-7a8072248195
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: GET
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"clouds\": [\n    {\n      \"name\": \"cloud-0\",\n      \"id\"\
+        : 85,\n      \"note\": \"This cloud was created to test pagination. (0/62)\"\
+        ,\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:38.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-1\",\n      \"id\": 86,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (1/62)\",\n      \"updated_at\": null,\n   \
+        \   \"created_at\": \"2017-03-21T00:38:38.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-2\",\n\
+        \      \"id\": 87,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (2/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:38.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-3\",\n      \"id\": 88,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (3/62)\",\n      \"updated_at\": null,\n   \
+        \   \"created_at\": \"2017-03-21T00:38:38.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-4\",\n\
+        \      \"id\": 89,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (4/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:38.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-5\",\n      \"id\": 90,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (5/62)\",\n      \"updated_at\": null,\n   \
+        \   \"created_at\": \"2017-03-21T00:38:38.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-6\",\n\
+        \      \"id\": 91,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (6/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:38.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-7\",\n      \"id\": 92,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (7/62)\",\n      \"updated_at\": null,\n   \
+        \   \"created_at\": \"2017-03-21T00:38:38.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-8\",\n\
+        \      \"id\": 93,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (8/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:38.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-9\",\n      \"id\": 94,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (9/62)\",\n      \"updated_at\": null,\n   \
+        \   \"created_at\": \"2017-03-21T00:38:38.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-10\",\n\
+        \      \"id\": 95,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (10/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:38.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-11\",\n      \"id\": 96,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (11/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:38.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-12\",\n\
+        \      \"id\": 97,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (12/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:38.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-13\",\n      \"id\": 98,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (13/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:38.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-14\",\n\
+        \      \"id\": 99,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (14/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:38.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-15\",\n      \"id\": 100,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (15/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:38.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-16\",\n\
+        \      \"id\": 101,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (16/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:38.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-17\",\n      \"id\": 102,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (17/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:38.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-18\",\n\
+        \      \"id\": 103,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (18/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:38.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-19\",\n      \"id\": 104,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (19/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-20\",\n\
+        \      \"id\": 105,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (20/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-21\",\n      \"id\": 106,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (21/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-22\",\n\
+        \      \"id\": 107,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (22/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-23\",\n      \"id\": 108,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (23/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-24\",\n\
+        \      \"id\": 109,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (24/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-25\",\n      \"id\": 110,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (25/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-26\",\n\
+        \      \"id\": 111,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (26/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-27\",\n      \"id\": 112,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (27/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-28\",\n\
+        \      \"id\": 113,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (28/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-29\",\n      \"id\": 114,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (29/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    }\n  ],\n  \"links\": [\n    {\n      \"\
+        rel\": \"first\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30\"\
+        \n    },\n    {\n      \"rel\": \"prev\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30\"\
+        \n    },\n    {\n      \"rel\": \"self\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30\"\
+        \n    },\n    {\n      \"rel\": \"next\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=114\"\
+        \n    }\n  ]\n}"
+    headers:
+      Content-Length: '8361'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-c65f86b3-c5fe-4595-a586-d77da6a470a0
+    status:
+      code: 200
+      message: OK
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: GET
+    uri: <craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=114
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"clouds\": [\n    {\n      \"name\": \"cloud-30\",\n      \"\
+        id\": 115,\n      \"note\": \"This cloud was created to test pagination. (30/62)\"\
+        ,\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-31\",\n      \"id\": 116,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (31/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-32\",\n\
+        \      \"id\": 117,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (32/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-33\",\n      \"id\": 118,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (33/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-34\",\n\
+        \      \"id\": 119,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (34/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-35\",\n      \"id\": 120,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (35/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-36\",\n\
+        \      \"id\": 121,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (36/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-37\",\n      \"id\": 122,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (37/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-38\",\n\
+        \      \"id\": 123,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (38/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-39\",\n      \"id\": 124,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (39/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-40\",\n\
+        \      \"id\": 125,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (40/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-41\",\n      \"id\": 126,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (41/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-42\",\n\
+        \      \"id\": 127,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (42/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-43\",\n      \"id\": 128,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (43/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-44\",\n\
+        \      \"id\": 129,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (44/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-45\",\n      \"id\": 130,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (45/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-46\",\n\
+        \      \"id\": 131,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (46/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-47\",\n      \"id\": 132,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (47/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-48\",\n\
+        \      \"id\": 133,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (48/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-49\",\n      \"id\": 134,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (49/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:39.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-50\",\n\
+        \      \"id\": 135,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (50/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:39.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-51\",\n      \"id\": 136,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (51/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:40.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-52\",\n\
+        \      \"id\": 137,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (52/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:40.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-53\",\n      \"id\": 138,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (53/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:40.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-54\",\n\
+        \      \"id\": 139,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (54/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:40.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-55\",\n      \"id\": 140,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (55/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:40.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-56\",\n\
+        \      \"id\": 141,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (56/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:40.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-57\",\n      \"id\": 142,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (57/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:40.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    },\n    {\n      \"name\": \"cloud-58\",\n\
+        \      \"id\": 143,\n      \"note\": \"This cloud was created to test pagination.\
+        \ (58/62)\",\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:40.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-59\",\n      \"id\": 144,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (59/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:40.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    }\n  ],\n  \"links\": [\n    {\n      \"\
+        rel\": \"first\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30\"\
+        \n    },\n    {\n      \"rel\": \"prev\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=85\"\
+        \n    },\n    {\n      \"rel\": \"self\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=114\"\
+        \n    },\n    {\n      \"rel\": \"next\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=144\"\
+        \n    }\n  ]\n}"
+    headers:
+      Content-Length: '8417'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-7fa0b9fe-9c8e-481e-b565-f94360a7b8cb
+    status:
+      code: 200
+      message: OK
+    url: <craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=114
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: GET
+    uri: <craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=144
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"clouds\": [\n    {\n      \"name\": \"cloud-60\",\n      \"\
+        id\": 145,\n      \"note\": \"This cloud was created to test pagination. (60/62)\"\
+        ,\n      \"updated_at\": null,\n      \"created_at\": \"2017-03-21T00:38:40.000000\"\
+        ,\n      \"project_id\": \"<craton-demo-project>\"\n    },\n    {\n      \"\
+        name\": \"cloud-61\",\n      \"id\": 146,\n      \"note\": \"This cloud was\
+        \ created to test pagination. (61/62)\",\n      \"updated_at\": null,\n  \
+        \    \"created_at\": \"2017-03-21T00:38:40.000000\",\n      \"project_id\"\
+        : \"<craton-demo-project>\"\n    }\n  ],\n  \"links\": [\n    {\n      \"\
+        rel\": \"first\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30\"\
+        \n    },\n    {\n      \"rel\": \"prev\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=114\"\
+        \n    },\n    {\n      \"rel\": \"self\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=144\"\
+        \n    },\n    {\n      \"rel\": \"next\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=146\"\
+        \n    }\n  ]\n}"
+    headers:
+      Content-Length: '1166'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-fd498873-6558-476c-9cd8-e58dc89233e6
+    status:
+      code: 200
+      message: OK
+    url: <craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=144
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: GET
+    uri: <craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=146
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"clouds\": [],\n  \"links\": [\n    {\n      \"rel\": \"first\"\
+        ,\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30\"\
+        \n    },\n    {\n      \"rel\": \"prev\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=116\"\
+        \n    },\n    {\n      \"rel\": \"self\",\n      \"href\": \"<craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=146\"\
+        \n    }\n  ]\n}"
+    headers:
+      Content-Length: '491'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-912400ad-572c-48ff-93a5-c184620bc150
+    status:
+      code: 200
+      message: OK
+    url: <craton-url>/clouds?sort_dir=asc&sort_keys=created_at%2Cid&details=False&limit=30&marker=146
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/146
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-85355da1-d804-46a7-aa56-560905ada7fb
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/146
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/145
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-78c0ddf7-46de-40e2-ba8c-5da209d73331
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/145
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/144
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-f81e9081-65d1-49e8-bc31-30f0f663b85d
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/144
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/143
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-6eab5556-e92e-4f47-81f3-381914d8e5b0
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/143
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/142
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-4466f28d-ee7e-4669-925a-d1e7739badc3
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/142
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/141
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a39537c4-1b36-4d38-b1db-84b194b36f5a
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/141
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/140
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-df650bca-8f7a-46fd-9390-f24791220c2c
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/140
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/139
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-fd995a12-43a4-4bee-9ed8-1f40df02736a
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/139
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/138
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-c16ebaaa-2e5a-459a-a7f1-0c584cb06b09
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/138
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/137
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-e9df0c8c-6a65-4be5-883a-5b970b51fcb1
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/137
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/136
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-c9be6798-5e4e-4b56-9112-d555e12ca217
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/136
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/135
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-4a1017a5-1101-44a4-9b28-02e106f669b0
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/135
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/134
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-12879d26-442e-4503-8925-b7f6f3e36387
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/134
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/133
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b446ef82-4b7a-4488-bbcf-2e8307b3200c
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/133
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/132
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-7954f81f-654d-4b77-8e0f-c12e788a161e
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/132
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/131
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-8b4b33f7-80b4-428d-a6a9-67f0f386920c
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/131
+- recorded_at: '2017-03-21T15:48:14'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/130
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-14e044e1-b6cf-4cae-82dc-0f0b1262369b
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/130
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/129
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b5a9b776-c463-4fcb-8658-4be6312ce4c5
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/129
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/128
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-e50daf05-230a-4ee9-bf71-a864eb0bfe0e
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/128
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/127
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-7bada431-f1b6-4a22-a06a-6763e64749ba
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/127
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/126
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-731ed8bb-fcbb-48ba-8322-40af2c54fb1d
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/126
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/125
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-e4443e6c-cf0a-430b-b7be-8c189119e999
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/125
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/124
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-60e5562e-b0e7-451d-80fd-9cd630660f52
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/124
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/123
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-c85c42e2-3ce2-4ee2-a4e8-21d854ddf65d
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/123
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/122
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-dcd8e5f1-2b3f-4056-b1dd-909d585c3fc8
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/122
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/121
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-bd684616-7291-4852-b00d-4f2bb7bf5b13
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/121
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/120
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-65bb8063-c2f6-497c-8909-2d9f374607f8
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/120
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/119
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-abf6a295-dd6c-4b69-9d69-52eb3c09b337
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/119
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/118
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-2bdf82e5-46ec-4762-a1d3-be6e82b81807
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/118
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/117
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-18a63fbb-bac6-476e-879b-4d23907beac0
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/117
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/116
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b1415776-9b5c-414e-a498-0ce554ab9c7a
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/116
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/115
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-3c0d88ea-9e50-4592-afcd-f8f819211002
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/115
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/114
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-e087c7e5-76ff-4e3b-9358-38425ff66d59
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/114
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/113
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-9dbe2bf4-427b-49ad-a9f1-deca02f4f76b
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/113
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/112
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-72f3efd8-ae2a-4e49-b28f-86d1edf9c629
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/112
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/111
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-aaa39f3b-2d85-4ef5-b395-6bdecc2169a3
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/111
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/110
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-ef03c4c4-a8b1-48df-adb1-ad75c4bb14e1
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/110
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/109
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-793bfcfe-b2e7-461b-b557-3bb3a328f056
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/109
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/108
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-7acde9da-c06b-4a5f-932e-f260665ecd47
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/108
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/107
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-64e022db-a387-4b2c-8f48-74065d544a72
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/107
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/106
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-91df8e0d-1b73-4298-a19e-54ad504f46c2
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/106
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/105
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-e7c97f01-f41e-4168-aca4-5fb770fcb8bb
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/105
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/104
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-3c0d26f4-4ddb-4e97-a890-6773056c6549
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/104
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/103
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-f80212f2-9fba-4d14-b7e0-5ba275d77207
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/103
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/102
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-1eb2e16d-a80b-4b0f-bb45-a56e8d5eef09
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/102
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/101
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-02e80789-3f65-4a6d-9503-682611b0d559
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/101
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/100
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-9875f1ee-44ee-43f4-815d-87398006485e
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/100
+- recorded_at: '2017-03-21T15:48:15'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/99
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:41 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-0a39d39a-c9d7-4096-ade0-672f94a30547
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/99
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/98
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-1967cae0-7a2d-448e-8e98-55e82d7d0035
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/98
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/97
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-628fb484-6974-472c-8044-d226ceb9805f
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/97
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/96
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-d7059e5b-cb7d-4b48-950a-27800cfffb91
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/96
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/95
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a11fadce-1281-4801-905a-c2522834a08b
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/95
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/94
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-1b1416b8-d975-40a8-8c60-b20ae7383cd1
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/94
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/93
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-ac6095b7-1957-4a16-9c8c-59fb9e4f9f83
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/93
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/92
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-76b8dcc5-1dd6-4ee1-8fad-efdc48e66e92
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/92
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/91
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-a41e67b4-692a-4792-beae-1ba19538be37
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/91
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/90
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b79c4459-7fc2-4ca2-92e1-9275d6fc6bad
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/90
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/89
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-c18923f3-c74c-4b85-b64c-7fd6ba6f08e0
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/89
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/88
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-aa556bce-da63-4309-8738-9a65bdc9b5fa
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/88
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/87
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-34b09b55-0fd1-4470-8d89-f3e24fb75e9d
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/87
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/86
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-b5f572d0-4a95-4034-b4e4-9aef6f9c2303
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/86
+- recorded_at: '2017-03-21T15:48:16'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/85
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:38:42 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-88e714aa-6152-4e93-9990-773fa42b415e
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/85
+recorded_with: betamax/0.8.0
