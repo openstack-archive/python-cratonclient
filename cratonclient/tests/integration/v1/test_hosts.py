@@ -24,20 +24,13 @@ class TestHosts(base.BetamaxTestCase):
         """Prepare our hosts test case."""
         super(TestHosts, self).setUp()
         self.create_demo_client()
-        self.cloud = self.client.clouds.create(
+        self.cloud = self.cleanupCloud(self.client.clouds.create(
             name='cloud-{}'.format(self.cassette_name),
-        )
-        self.addCleanup(self.client.clouds.delete, self.cloud.id)
-        self.region = self.client.regions.create(
+        ))
+        self.region = self.cleanupRegion(self.client.regions.create(
             name='region-{}'.format(self.cassette_name),
             cloud_id=self.cloud.id,
-        )
-        self.addCleanup(self.client.regions.delete, self.region.id)
-
-    def cleanupHost(self, host):
-        """Add a cleanup task for this host."""
-        self.addCleanup(self.client.hosts.delete, host.id)
-        return host
+        ))
 
     def test_create(self):
         """Test creation of hosts via the Python API."""
