@@ -74,6 +74,26 @@ class BetamaxTestCase(base.TestCase):
             'project': CRATON_ROOT_PROJECT,
         }
 
+    def cleanupHost(self, host):
+        """Add a cleanup task for the host."""
+        self.addCleanup(self.client.hosts.delete, host.id)
+        return host
+
+    def cleanupCloud(self, cloud):
+        """Add a cleanup task for the cloud."""
+        self.addCleanup(self.client.clouds.delete, cloud.id)
+        return cloud
+
+    def cleanupRegion(self, region):
+        """Add a cleanup task for the region."""
+        self.addCleanup(self.client.regions.delete, region.id)
+        return region
+
+    def cleanupCell(self, cell):
+        """Add a cleanup task for the cell."""
+        self.addCleanup(self.client.cells.delete, cell.id)
+        return cell
+
     def create_client(self, username, token, project):
         """Create a Craton client using Craton Auth."""
         self.session = auth.craton_auth(
