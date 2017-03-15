@@ -1,0 +1,161 @@
+http_interactions:
+- recorded_at: '2017-03-21T15:52:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cloud-TestRegions-test_delete\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '41'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"created_at\": \"2017-03-21T00:42:40.048289\"\
+        ,\n  \"note\": null,\n  \"updated_at\": null,\n  \"id\": 148,\n  \"name\"\
+        : \"cloud-TestRegions-test_delete\",\n  \"project_id\": \"<craton-demo-project>\"\
+        \n}"
+    headers:
+      Content-Length: '218'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:42:40 GMT
+      Location: <craton-url>/clouds/148
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-e0b1ea02-0854-485d-91eb-7a04face6c95
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/clouds
+- recorded_at: '2017-03-21T15:52:13'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 148,\n  \"name\": \"region-creation\"\n}"
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '44'
+      Content-Type: application/json
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: POST
+    uri: <craton-url>/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"variables\": {},\n  \"cloud_id\": 148,\n  \"created_at\": \"\
+        2017-03-21T00:42:40.088796\",\n  \"note\": null,\n  \"updated_at\": null,\n\
+        \  \"id\": 16,\n  \"name\": \"region-creation\",\n  \"project_id\": \"<craton-demo-project>\"\
+        \n}"
+    headers:
+      Content-Length: '222'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:42:40 GMT
+      Location: <craton-url>/regions/16
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-c789660d-bf96-4bc2-a94d-4d8f8e5396d9
+    status:
+      code: 201
+      message: CREATED
+    url: <craton-url>/regions
+- recorded_at: '2017-03-21T15:52:13'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/regions/16
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:42:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-6814ce07-367f-4548-bcaa-354d24ed412e
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/regions/16
+- recorded_at: '2017-03-21T15:52:13'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: GET
+    uri: <craton-url>/regions/16
+  response:
+    body:
+      encoding: utf-8
+      string: '{"message": "Not Found", "status": 404}'
+    headers:
+      Content-Length: '46'
+      Content-Type: text/html; charset=utf-8
+      Date: Tue, 21 Mar 2017 00:42:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-2cf37f2b-64cb-4b71-99f7-369f3fda6d33
+    status:
+      code: 404
+      message: NOT FOUND
+    url: <craton-url>/regions/16
+- recorded_at: '2017-03-21T15:52:13'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept: '*/*'
+      Accept-Encoding: gzip, deflate
+      Connection: keep-alive
+      Content-Length: '0'
+      User-Agent: python-cratonclient/0.0.1
+      X-Auth-Project: <craton-demo-project>
+      X-Auth-Token: <craton-demo-token>
+      X-Auth-User: <craton-demo-username>
+    method: DELETE
+    uri: <craton-url>/clouds/148
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length: '0'
+      Content-Type: application/json
+      Date: Tue, 21 Mar 2017 00:42:40 GMT
+      Server: WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id: req-03c85c4a-b1a2-4c8e-a59c-ff3548a25212
+    status:
+      code: 204
+      message: NO CONTENT
+    url: <craton-url>/clouds/148
+recorded_with: betamax/0.8.0
