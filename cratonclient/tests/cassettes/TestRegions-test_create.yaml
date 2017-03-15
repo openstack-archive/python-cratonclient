@@ -1,0 +1,232 @@
+http_interactions:
+- recorded_at: '2017-03-15T19:11:05'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cloud-0\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '19'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"updated_at\": null,\n  \"variables\": {},\n  \"project_id\"\
+        : \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"id\": 129,\n  \"note\": null,\n\
+        \  \"created_at\": \"2017-03-14T10:43:05.107157\",\n  \"name\": \"cloud-0\"\
+        \n}"
+    headers:
+      Content-Length:
+      - '176'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:43:05 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/clouds/129
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4cb38278-65a9-42b0-a788-4bf717263d39
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/clouds
+- recorded_at: '2017-03-15T19:11:05'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"cloud_id\": 129,\n  \"name\": \"region-creation\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '44'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"updated_at\": null,\n  \"variables\": {},\n  \"created_at\"\
+        : \"2017-03-14T10:43:05.157388\",\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\"\
+        ,\n  \"id\": 2,\n  \"note\": null,\n  \"cloud_id\": 129,\n  \"name\": \"region-creation\"\
+        \n}"
+    headers:
+      Content-Length:
+      - '199'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:43:05 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/2
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-cc69048a-836b-44af-a167-4ca4054bdffb
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:11:05'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/regions/2
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"updated_at\": null,\n  \"variables\": {},\n  \"created_at\"\
+        : \"2017-03-14T10:43:05.000000\",\n  \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n  \"id\": 2,\n  \"note\": null,\n  \"cloud_id\": 129,\n  \"name\": \"region-creation\"\
+        \n}"
+    headers:
+      Content-Length:
+      - '203'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:43:05 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-027e5ebf-2a74-4f23-a550-96ac7fd07a08
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/regions/2
+- recorded_at: '2017-03-15T19:11:05'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/2
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:43:05 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-213cbe29-c263-49e6-8cb1-74339b572969
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/2
+- recorded_at: '2017-03-15T19:11:06'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/clouds/129
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:43:05 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-3a27949d-7e11-4b49-933f-436bc4c2e9b2
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/clouds/129
+recorded_with: betamax/0.8.0

@@ -1,0 +1,6421 @@
+http_interactions:
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"cloud-0\"\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '19'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/clouds
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"id\"\
+        : 131,\n  \"variables\": {},\n  \"name\": \"cloud-0\",\n  \"note\": null,\n\
+        \  \"created_at\": \"2017-03-14T10:46:22.802452\",\n  \"updated_at\": null\n\
+        }"
+    headers:
+      Content-Length:
+      - '176'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:22 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/clouds/131
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4eafcc7a-6c16-4d7e-a6c2-9f35302159cf
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/clouds
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-0\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 4,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-0\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:22.837919\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '206'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:22 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/4
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c1ec0066-4e79-497b-961a-ea139e4337bc
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-1\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 5,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-1\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:22.866163\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '206'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:22 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/5
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-77602ea4-51ad-4edb-a8b3-63fe1d27f39a
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-2\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 6,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-2\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:22.910516\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '206'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:22 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/6
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-583c7a72-6cfb-4fca-ad65-6768692f7dff
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-3\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 7,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-3\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:22.938408\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '206'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:22 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/7
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-d14991e3-1d13-49e2-a4eb-0c0030bc0e79
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-4\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 8,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-4\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:22.968320\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '206'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:22 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/8
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e7fc5c7a-8985-4534-a96b-b69e87dcd89b
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-5\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 9,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-5\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:22.998627\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '206'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/9
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c17c2103-e89a-4b90-b1fb-356556e19701
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-6\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 10,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-6\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.028855\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '207'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/10
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-121a17de-42a6-4277-9323-cbe6efdcdb1b
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-7\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 11,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-7\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.060143\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '207'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/11
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a4bddfee-9ab2-4d70-980a-f928a53b4040
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-8\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 12,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-8\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.091178\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '207'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/12
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4aaa3cbc-7bb6-4b8e-828c-321356f2ad0e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-9\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '51'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 13,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-9\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.118878\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '207'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/13
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-640585ed-8097-41d6-883b-ff6586a0e6bb
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-10\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 14,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-10\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.148527\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/14
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-d1821e31-4cea-40c4-96f5-946f843195e9
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-11\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 15,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-11\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.179656\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/15
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-8dd8c4a3-b179-494c-a27e-c6da1373a49e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-12\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 16,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-12\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.210201\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/16
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-5b7c65a7-5ba2-42c8-bc18-59af49a35b7c
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-13\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 17,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-13\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.248830\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/17
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-349121b3-b758-48e4-baea-dd463ef9de31
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-14\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 18,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-14\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.277727\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/18
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-8dd25805-2aa0-4143-9947-8c1829d410e3
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-15\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 19,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-15\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.316973\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/19
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e5360e73-d604-421b-baf2-4df587fab175
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-16\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 20,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-16\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.348046\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/20
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a11d5226-ef14-41cb-8c1c-081acdc7c7e6
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-17\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 21,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-17\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.375522\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/21
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-2fda8097-1a79-44b4-ae4b-b744e94f90db
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-18\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 22,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-18\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.401847\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/22
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-735ac06b-5f6d-45f7-8206-fd5888cf644e
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-19\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 23,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-19\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.431363\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/23
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-9805fd57-fc32-44ac-b68b-38b692425c85
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-20\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 24,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-20\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.458492\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/24
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-467335e5-477c-4280-9658-5e3f6757ffd2
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-21\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 25,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-21\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.486563\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/25
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-fb95c4da-0eb2-4f09-86be-d16f94b53254
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-22\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 26,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-22\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.514759\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/26
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-74bcbfe2-d9a3-403f-a4c9-78a73e16b519
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-23\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 27,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-23\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.540757\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/27
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-831b840b-b3c3-4104-8b63-bb3c5e1bbba8
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:23'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-24\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 28,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-24\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.569636\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/28
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-55531774-f195-4536-b89b-03b012d8fd09
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-25\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 29,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-25\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.599871\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/29
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-f09329a1-d0a1-4d91-9842-68d43e0eefef
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-26\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 30,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-26\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.630298\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/30
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-f36a1a51-0787-4965-83cd-8f1a9f752a53
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-27\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 31,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-27\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.658265\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/31
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-671cde80-41b4-432d-bf2f-9797520fecb3
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-28\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 32,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-28\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.686084\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/32
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-514c60d3-2e8e-4b51-bb27-9c2678722fab
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-29\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 33,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-29\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.713351\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/33
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-714b2873-900b-46d0-923a-fa1bf30b599f
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-30\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 34,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-30\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.740878\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/34
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-1ae319e7-63e6-4385-987a-29a54fb448ca
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-31\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 35,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-31\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.770522\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/35
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c1e7dfc1-67cf-4d11-aaed-10802cc37bce
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-32\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 36,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-32\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.801837\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/36
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-74cdbeb0-140f-4e1a-9df1-a1ce336153c7
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-33\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 37,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-33\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.832459\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/37
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-2e99b74b-655c-40eb-b667-e4ec6d1c7ca6
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-34\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 38,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-34\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.863978\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/38
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-d40dbb8e-eaf5-4708-aa18-5f733728023b
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-35\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 39,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-35\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.894910\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/39
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-dd0b4e00-b911-4c29-94ea-aa255c34de3a
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-36\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 40,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-36\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.925408\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/40
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-ab6c98d6-3ec2-4774-a9ad-a48b28336e94
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-37\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 41,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-37\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.956884\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/41
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-3ed68a51-5c2b-4196-be42-cda690cd3679
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-38\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 42,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-38\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:23.985196\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:23 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/42
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-22ad71b3-f666-4d35-ab3f-d5b39bac5b64
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-39\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 43,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-39\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.015071\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/43
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-0bbb8933-f6d0-4670-a374-a64b5bc9c85d
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-40\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 44,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-40\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.044595\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/44
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-1b10c065-fa08-4628-b176-51af84697702
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-41\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 45,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-41\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.075398\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/45
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-084612a7-c79b-4298-a17f-d833ec4b2041
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-42\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 46,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-42\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.106591\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/46
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-b978a34e-0914-4684-baac-e9fdea7c0bf4
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-43\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 47,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-43\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.137723\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/47
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-ca4bff0d-595f-467c-9720-012c35af6c61
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-44\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 48,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-44\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.167674\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/48
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-41561641-567d-49fe-bc90-893522b1b2a8
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-45\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 49,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-45\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.195957\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/49
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a1132343-984f-47eb-bea3-b1fdda8b0c34
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-46\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 50,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-46\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.226253\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/50
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c275e6fd-29cc-4806-98f1-b3cca13dcaf1
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-47\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 51,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-47\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.257342\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/51
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4ad27807-3bcb-4f0d-af62-025ec0b0a271
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-48\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 52,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-48\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.288412\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/52
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-8bc5b405-2e72-4fba-a3b4-cb87bc3a35b3
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-49\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 53,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-49\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.320281\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/53
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-16d9a747-94b8-4f6f-ada9-53fb67f713e9
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-50\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 54,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-50\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.351008\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/54
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-828dec89-4a94-4edb-95bb-8f461e550004
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-51\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 55,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-51\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.382743\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/55
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-0762a267-db9c-41c4-abfd-ee76ce21556f
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-52\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 56,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-52\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.408704\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/56
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-3d747cff-91f2-4d75-9d03-bfabdcc38416
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-53\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 57,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-53\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.434015\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/57
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-434d7e0c-9737-419e-827e-61912db16457
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-54\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 58,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-54\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.461986\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/58
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4fce65ca-4407-4189-a981-72507d2c64ac
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-55\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 59,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-55\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.490643\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/59
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a2515637-24b4-40f9-9fc6-69a228715b60
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-56\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 60,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-56\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.516299\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/60
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-901b0e1d-d740-496a-bbbf-34cc1bb87f7b
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-57\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 61,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-57\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.543500\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/61
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-71d51d44-7a53-4d14-833e-8fe4983a4e24
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:24'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-58\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 62,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-58\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.570364\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/62
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4cb43868-f8e6-4cb1-a052-aabec391eecb
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-59\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 63,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-59\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.597333\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/63
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-d2e0c8db-e739-4af0-9922-e8c4db90771c
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-60\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 64,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-60\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.624886\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/64
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-c58267f5-e783-4245-9290-d07b99e4621f
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-61\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 65,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-61\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.654699\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/65
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4f628b08-d6b5-4804-b9f9-402a9a60fc2c
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-62\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 66,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-62\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.683298\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/66
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-0bc92310-87a4-490a-baf7-468917dd6b08
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: "{\n  \"name\": \"regions-autopaginate-63\",\n  \"cloud_id\": 131\n}"
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '52'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: POST
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"project_id\": \"b9f10eca66ac4c279c139d01e65f96b4\",\n  \"cloud_id\"\
+        : 131,\n  \"id\": 67,\n  \"variables\": {},\n  \"name\": \"regions-autopaginate-63\"\
+        ,\n  \"note\": null,\n  \"created_at\": \"2017-03-14T10:46:24.712688\",\n\
+        \  \"updated_at\": null\n}"
+    headers:
+      Content-Length:
+      - '208'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Location:
+      - http://127.0.0.1:8080/v1/regions/67
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-f003a7ff-7a8c-40bf-940c-7f16c7514abf
+    status:
+      code: 201
+      message: CREATED
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/regions
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"regions\": [\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 4,\n      \"name\": \"regions-autopaginate-0\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:22.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 5,\n      \"name\": \"regions-autopaginate-1\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:22.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 6,\n      \"name\": \"regions-autopaginate-2\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:22.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 7,\n      \"name\": \"regions-autopaginate-3\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:22.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 8,\n      \"name\": \"regions-autopaginate-4\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:22.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 9,\n      \"name\": \"regions-autopaginate-5\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:22.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 10,\n      \"name\": \"regions-autopaginate-6\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 11,\n      \"name\": \"regions-autopaginate-7\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 12,\n      \"name\": \"regions-autopaginate-8\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 13,\n      \"name\": \"regions-autopaginate-9\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 14,\n      \"name\": \"regions-autopaginate-10\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 15,\n      \"name\": \"regions-autopaginate-11\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 16,\n      \"name\": \"regions-autopaginate-12\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 17,\n      \"name\": \"regions-autopaginate-13\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 18,\n      \"name\": \"regions-autopaginate-14\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 19,\n      \"name\": \"regions-autopaginate-15\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 20,\n      \"name\": \"regions-autopaginate-16\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 21,\n      \"name\": \"regions-autopaginate-17\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 22,\n      \"name\": \"regions-autopaginate-18\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 23,\n      \"name\": \"regions-autopaginate-19\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 24,\n      \"name\": \"regions-autopaginate-20\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 25,\n      \"name\": \"regions-autopaginate-21\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 26,\n      \"name\": \"regions-autopaginate-22\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 27,\n      \"name\": \"regions-autopaginate-23\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 28,\n      \"name\": \"regions-autopaginate-24\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 29,\n      \"name\": \"regions-autopaginate-25\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 30,\n      \"name\": \"regions-autopaginate-26\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 31,\n      \"name\": \"regions-autopaginate-27\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 32,\n      \"name\": \"regions-autopaginate-28\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 33,\n      \"name\": \"regions-autopaginate-29\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    }\n  ],\n  \"links\": [\n    {\n      \"\
+        href\": \"http://127.0.0.1:8080/v1/regions?limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"first\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"prev\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"self\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?marker=33&limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"next\"\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '6336'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-234f5c97-1af7-45ca-bb9f-b91ae4536425
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/regions
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/regions?marker=33&limit=30&sort_dir=asc&sort_keys=created_at%2Cid
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"regions\": [\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 34,\n      \"name\": \"regions-autopaginate-30\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 35,\n      \"name\": \"regions-autopaginate-31\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 36,\n      \"name\": \"regions-autopaginate-32\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 37,\n      \"name\": \"regions-autopaginate-33\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 38,\n      \"name\": \"regions-autopaginate-34\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 39,\n      \"name\": \"regions-autopaginate-35\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 40,\n      \"name\": \"regions-autopaginate-36\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 41,\n      \"name\": \"regions-autopaginate-37\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 42,\n      \"name\": \"regions-autopaginate-38\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:23.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 43,\n      \"name\": \"regions-autopaginate-39\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 44,\n      \"name\": \"regions-autopaginate-40\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 45,\n      \"name\": \"regions-autopaginate-41\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 46,\n      \"name\": \"regions-autopaginate-42\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 47,\n      \"name\": \"regions-autopaginate-43\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 48,\n      \"name\": \"regions-autopaginate-44\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 49,\n      \"name\": \"regions-autopaginate-45\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 50,\n      \"name\": \"regions-autopaginate-46\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 51,\n      \"name\": \"regions-autopaginate-47\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 52,\n      \"name\": \"regions-autopaginate-48\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 53,\n      \"name\": \"regions-autopaginate-49\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 54,\n      \"name\": \"regions-autopaginate-50\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 55,\n      \"name\": \"regions-autopaginate-51\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 56,\n      \"name\": \"regions-autopaginate-52\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 57,\n      \"name\": \"regions-autopaginate-53\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 58,\n      \"name\": \"regions-autopaginate-54\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 59,\n      \"name\": \"regions-autopaginate-55\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 60,\n      \"name\": \"regions-autopaginate-56\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 61,\n      \"name\": \"regions-autopaginate-57\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 62,\n      \"name\": \"regions-autopaginate-58\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 63,\n      \"name\": \"regions-autopaginate-59\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    }\n  ],\n  \"links\": [\n    {\n      \"\
+        href\": \"http://127.0.0.1:8080/v1/regions?limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"first\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?marker=4&limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"prev\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?marker=33&limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"self\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?marker=63&limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"next\"\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '6371'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-01d934d5-a0a5-4e1d-b21f-b5c0f196fb12
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/regions?marker=33&limit=30&sort_dir=asc&sort_keys=created_at%2Cid
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/regions?marker=63&limit=30&sort_dir=asc&sort_keys=created_at%2Cid
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"regions\": [\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 64,\n      \"name\": \"regions-autopaginate-60\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 65,\n      \"name\": \"regions-autopaginate-61\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 66,\n      \"name\": \"regions-autopaginate-62\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    },\n    {\n      \"project_id\": \"b9f10eca-66ac-4c27-9c13-9d01e65f96b4\"\
+        ,\n      \"cloud_id\": 131,\n      \"id\": 67,\n      \"name\": \"regions-autopaginate-63\"\
+        ,\n      \"note\": null,\n      \"created_at\": \"2017-03-14T10:46:24.000000\"\
+        ,\n      \"updated_at\": null\n    }\n  ],\n  \"links\": [\n    {\n      \"\
+        href\": \"http://127.0.0.1:8080/v1/regions?limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"first\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?marker=33&limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"prev\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?marker=63&limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"self\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?marker=67&limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"next\"\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '1276'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-ab2a02fa-b255-4fc6-9919-3ba5c598d615
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/regions?marker=63&limit=30&sort_dir=asc&sort_keys=created_at%2Cid
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: GET
+    uri: http://127.0.0.1:8080/v1/regions?marker=67&limit=30&sort_dir=asc&sort_keys=created_at%2Cid
+  response:
+    body:
+      encoding: null
+      string: "{\n  \"regions\": [],\n  \"links\": [\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"first\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?marker=37&limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"prev\"\n    },\n    {\n      \"href\": \"http://127.0.0.1:8080/v1/regions?marker=67&limit=30&sort_dir=asc&sort_keys=created_at%2Cid\"\
+        ,\n      \"rel\": \"self\"\n    }\n  ]\n}"
+    headers:
+      Content-Length:
+      - '375'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-611ed9c1-f424-40b8-8b13-61e2b9ad4373
+    status:
+      code: 200
+      message: OK
+    url: http://127.0.0.1:8080/v1/regions?marker=67&limit=30&sort_dir=asc&sort_keys=created_at%2Cid
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/67
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-20bbd0f9-b7dd-4e7c-b82e-7c2c02565b6b
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/67
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/66
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e16c7e20-ffdc-4117-9936-5b6b039f2f50
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/66
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/65
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-38017e2a-b315-417f-b73c-88774b9418ae
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/65
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/64
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:24 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e14dbfe4-7ac6-44f3-9dfe-28a5dad0f433
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/64
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/63
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-ee805089-0bb2-4080-91e3-ba8645ed4673
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/63
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/62
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-5a1a52fd-d091-48ee-9325-b8c4628efe2a
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/62
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/61
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-b3b0be9e-09b2-4fc8-b5cc-6ceb4396e9fc
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/61
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/60
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-f4685f04-2312-4cdd-b386-6fd54d01659c
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/60
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/59
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-7bdc2036-9771-4ee1-8659-c7dabfa140aa
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/59
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/58
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e7b0388d-1c60-446e-8c8c-c7dff4eff310
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/58
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/57
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-2e877719-0444-4846-99b9-fcb65cea50b6
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/57
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/56
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-65439ab3-d957-4a3f-a957-facf809cfd4c
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/56
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/55
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-620a9e23-53da-4bf4-bccd-c9f3facfbb42
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/55
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/54
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a83090b3-d85e-4c44-944b-1d677ba9ca92
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/54
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/53
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-fb29d99d-5801-41c6-ba33-bc93c7ef1c6a
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/53
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/52
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-9a9174c6-c880-43b1-ba18-6adf0192e7d5
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/52
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/51
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-ab01b4d1-7871-4a89-a813-f17f4af45b34
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/51
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/50
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-fbe70b2d-4e9f-4f05-a389-c84c7ac271a9
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/50
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/49
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-34e43a96-477b-4d92-ad10-a6e3ce23030c
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/49
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/48
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-7e821443-a93d-4885-9b1b-2310ab4d6121
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/48
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/47
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-3ea8b576-c87e-4973-8e24-dd13fe5b19a1
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/47
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/46
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-cccfd812-e25f-4de4-bb5f-92ec71aecf25
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/46
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/45
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-8fb63040-eede-4c2e-96e4-94943a6f5f3a
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/45
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/44
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-9dade6fe-9481-4d55-b198-075ce85ec2ce
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/44
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/43
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-117fa57f-8444-4922-bdc0-7fbe342313a9
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/43
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/42
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-1e5d1ea8-304c-4608-83ec-c39f070877f1
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/42
+- recorded_at: '2017-03-15T19:14:25'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/41
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-9c0de4c7-fc5b-4738-94de-93649a356aca
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/41
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/40
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-1b347eba-8d86-40ca-a8c0-e575f2752c68
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/40
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/39
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-eca3ad98-90f1-462a-b02e-79eab9482e4e
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/39
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/38
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-02265d3c-6e53-4515-8259-6d82f84d652f
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/38
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/37
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-58da7cc9-a1aa-4814-ae3a-90cf20b11e80
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/37
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/36
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-49626ec2-43b5-4713-bfed-3a872ec6528c
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/36
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/35
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-69dde3c5-692e-4e9a-9209-6d369c68530e
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/35
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/34
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-42aa0ebb-1e6a-41af-a391-0feab12e2ec3
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/34
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/33
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a7c77968-e078-4560-8f45-dd30225532cd
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/33
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/32
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-d69ec365-ba72-400b-94fa-19908f5493f9
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/32
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/31
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-649193b4-3494-45f3-aa86-d41378e12ef9
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/31
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/30
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-849278ee-2a04-4b26-a0e2-d78d6a035f43
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/30
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/29
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-5c576a97-59eb-4d01-8a57-19f761f01fc2
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/29
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/28
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e2ee6bc5-cfaf-47b1-afdc-48b76545e277
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/28
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/27
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-752bfaae-d2d5-44de-b95e-fd245cb50d0c
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/27
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/26
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:25 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-1c3f87fb-6d46-4c99-8e2b-dc27c2715e70
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/26
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/25
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-9c6f1713-e8e7-4913-8c6b-ce000decf7a9
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/25
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/24
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-fb5e1408-623d-4b58-985a-61dac9b1f640
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/24
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/23
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-98f66f66-c3de-4ef1-94a1-0f5a7f89a039
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/23
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/22
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-9d124171-db98-41fd-8758-026ea7394882
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/22
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/21
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-811b1db5-12d0-4a4c-98ac-2b8a776c81ae
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/21
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/20
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-8bf244fa-fe59-49fc-acbd-e01d4b80ba17
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/20
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/19
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-257391cc-155c-441d-b33a-13a3ec180269
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/19
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/18
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a648eaef-f2b9-4a74-a2b6-e71de0f3cd99
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/18
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/17
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-efdd5ec8-c772-4fbd-8f86-c4c68fdb79fc
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/17
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/16
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-976b0898-2537-421b-9b6f-c583b63ab9ae
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/16
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/15
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-6244266f-9170-4da7-a5c5-4c6f5ba314d9
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/15
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/14
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-21727f1e-b06a-4cf6-8f11-2f3ce1ee698c
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/14
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/13
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-adb628f0-4857-4d24-8b1a-d43bcda6aac2
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/13
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/12
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-35928bd2-17e2-4796-be72-5bad79fa4117
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/12
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/11
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a5b33d81-165a-4dc3-bd15-8db9f5b71d54
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/11
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/10
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-a26b731b-62fb-404a-8099-37d4ecf6275e
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/10
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/9
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-4eb3c02e-e0fa-4048-bdb0-c653fe9fb03a
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/9
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/8
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-5259fefc-febc-49b6-858e-46b4561e71bb
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/8
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/7
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-339d1258-35f1-43ad-bc27-e27836cd5419
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/7
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/6
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-b36c9092-f994-4dc3-868d-9a7f32eac0e0
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/6
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/5
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-e5eb7ef0-f7a9-42ad-b73c-59df72a4dc45
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/5
+- recorded_at: '2017-03-15T19:14:26'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/regions/4
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-31ac4150-3cbc-46d6-a714-29911708e5f4
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/regions/4
+- recorded_at: '2017-03-15T19:14:27'
+  request:
+    body:
+      encoding: utf-8
+      string: ''
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-cratonclient/0.0.1
+      X-Auth-Project:
+      - b9f10eca66ac4c279c139d01e65f96b4
+      X-Auth-Token:
+      - demo
+      X-Auth-User:
+      - demo
+    method: DELETE
+    uri: http://127.0.0.1:8080/v1/clouds/131
+  response:
+    body:
+      encoding: null
+      string: ''
+    headers:
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Mar 2017 10:46:26 GMT
+      Server:
+      - WSGIServer/0.2 CPython/3.5.2
+      x-openstack-request-id:
+      - req-937807a9-e0fa-4753-ae76-a9d211b71a7b
+    status:
+      code: 204
+      message: NO CONTENT
+    url: http://127.0.0.1:8080/v1/clouds/131
+recorded_with: betamax/0.8.0
