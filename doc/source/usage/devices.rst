@@ -28,5 +28,5 @@ allow cratonclient to do handle pagination for us:
    for device in craton.devices.list():
        print_device_info(device)
 
-By default :meth:`~cratonclient.v1.devices.DevicesManager.list` will handle
+By default :meth:`~cratonclient.v1.devices.DeviceManager.list` will handle
 pagination for you.

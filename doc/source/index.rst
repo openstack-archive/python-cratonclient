@@ -14,11 +14,10 @@ Contents:
 
    readme
    installation
+   contributing
    shell/index
    usage/index
-   v1-api-documentation
-   authentication-documentation
-   contributing
+   api-ref/index
 
 Specifications for python-cratonclient:
 

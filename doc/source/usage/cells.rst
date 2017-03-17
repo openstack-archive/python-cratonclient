@@ -18,7 +18,7 @@ allow cratonclient to do handle pagination for us:
    for cell in craton.cells.list():
        print_cell_info(cell)
 
-By default :meth:`~cratonclient.v1.cells.CellsManager.list` will handle
+By default :meth:`~cratonclient.v1.cells.CellManager.list` will handle
 pagination for you. If, instead, you want to handle it yourself you will want
 to do something akin to:
 

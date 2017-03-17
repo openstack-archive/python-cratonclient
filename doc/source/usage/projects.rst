@@ -18,7 +18,7 @@ allow cratonclient to do handle pagination for us:
    for project in craton.projects.list():
        print_project_info(project)
 
-By default :meth:`~cratonclient.v1.projects.ProjectsManager.list` will handle
+By default :meth:`~cratonclient.v1.projects.ProjectManager.list` will handle
 pagination for you. If, instead, you want to handle it yourself you will want
 to do something akin to:
 

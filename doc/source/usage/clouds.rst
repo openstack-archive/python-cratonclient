@@ -18,7 +18,7 @@ allow cratonclient to do handle pagination for us:
    for cloud in craton.clouds.list():
        print_cloud_info(cloud)
 
-By default :meth:`~cratonclient.v1.clouds.CloudsManager.list` will handle
+By default :meth:`~cratonclient.v1.clouds.CloudManager.list` will handle
 pagination for you. If, instead, you want to handle it yourself you will want
 to do something akin to:
 
