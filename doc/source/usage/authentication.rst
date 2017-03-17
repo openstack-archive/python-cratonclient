@@ -1,24 +1,8 @@
-=======================
- Python API User Guide
-=======================
+.. _usage-auth:
 
-Once you have installed ``python-cratonclient``, there are a few things you
-need to get started using the Python API:
-
-#. You need to know how to authenticate to the Craton API you wish to talk to
-
-   Some Craton API services will be deployed using Craton's in-built
-   authentication system while others may use Keystone.
-
-#. You need your credentials
-
-#. You need the location of your Craton API service
-
-Let's cover authentication first:
-
-
-Authenticating to Craton
-========================
+==========================
+ Authenticating to Craton
+==========================
 
 There are two ways to authenticate to Craton:
 
@@ -71,9 +55,6 @@ Then, we need to do the following:
 
 .. code-block:: python
 
-    from keystoneauth1.identity.v3 import password as password_auth
-    from keystoneauth1 import session as ksa_session
-
     from cratonclient import auth
     from cratonclient.v1 import client
 
@@ -89,46 +70,3 @@ Then, we need to do the following:
         session=craton_session,
         url=URL,
     )
-
-
-Communicating with Craton
-=========================
-
-Now that you've configured your authentication method, you can interact with
-your ``craton`` object like so:
-
-.. code-block:: python
-
-    for region in craton.regions.list():
-        print('Region {} contains:'.format(region.name))
-        for host in craton.hosts.list(region_id=region.id):
-            print('    {}'.format(host.name))
-
-
-The Craton API has the following resources:
-
-- Cells
-
-- Hosts
-
-- Network Devices
-
-- Network Interfaces
-
-- Networks
-
-- Projects
-
-- Regions
-
-- Users
-
-Of these:
-
-- Cells
-
-- Hosts
-
-- Regions
-
-Are implemented.
