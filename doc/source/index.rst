@@ -14,7 +14,7 @@ Contents:
 
    readme
    installation
-   usage
+   usage/index
    v1-api-documentation
    authentication-documentation
    contributing
