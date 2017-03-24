@@ -18,7 +18,7 @@ allow cratonclient to do handle pagination for us:
    for region in craton.regions.list():
        print_region_info(region)
 
-By default :meth:`~cratonclient.v1.regions.RegionsManager.list` will handle
+By default :meth:`~cratonclient.v1.regions.RegionManager.list` will handle
 pagination for you. If, instead, you want to handle it yourself you will want
 to do something akin to:
 

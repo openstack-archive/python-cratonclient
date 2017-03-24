@@ -21,7 +21,39 @@ from cratonclient.v1 import regions
 
 
 class Client(object):
-    """Craton v1 API Client."""
+    """Craton v1 API Client.
+
+    .. attribute:: cells
+
+        The canonical way to list, get, delete, or update cell objects via a
+        :class:`~cratonclient.v1.cells.CellManager` instance.
+
+    .. attribute:: clouds
+
+        The canonical way to list, get, delete, or update cloud objects via a
+        :class:`~cratonclient.v1.clouds.CloudManager` instance.
+
+    .. attribute:: devices
+
+        The canonical way to list devicess via a
+        :class:`~cratonclient.v1.devices.DeviceManager` instance.
+
+    .. attribute:: hosts
+
+        The canonical way to list, get, delete, or update host objects via a
+        :class:`~cratonclient.v1.hosts.HostManager` instance.
+
+    .. attribute:: projects
+
+        The canonical way to list, get, delete, or update project objects via
+        a :class:`~cratonclient.v1.projects.ProjectManager` instance.
+
+    .. attribute:: regions
+
+        The canonical way to list, get, delete, or update region objects via a
+        :class:`~cratonclient.v1.regions.RegionManager` instance.
+
+    """
 
     def __init__(self, session, url):
         """Initialize our client object with our session and url.

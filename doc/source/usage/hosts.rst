@@ -18,7 +18,7 @@ allow cratonclient to do handle pagination for us:
    for host in craton.hosts.list():
        print_host_info(host)
 
-By default :meth:`~cratonclient.v1.hosts.HostsManager.list` will handle
+By default :meth:`~cratonclient.v1.hosts.HostManager.list` will handle
 pagination for you. If, instead, you want to handle it yourself you will want
 to do something akin to:
 
