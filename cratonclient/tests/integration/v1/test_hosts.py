@@ -13,7 +13,6 @@
 # under the License.
 """Module containing the cratonclient.v1.hosts integration tests."""
 
-from cratonclient import exceptions
 from cratonclient.tests.integration import base
 
 
@@ -55,8 +54,7 @@ class TestHosts(base.BetamaxTestCase):
         )
 
         self.assertTrue(self.client.hosts.delete(host.id))
-        self.assertRaises(exceptions.NotFound, self.client.hosts.get,
-                          host.id)
+        self.assertNotFound(self.client.hosts.get, host.id)
 
     def test_list_autopaginates(self):
         """Verify listing of hosts via the Python API."""

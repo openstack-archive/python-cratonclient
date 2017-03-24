@@ -19,6 +19,7 @@ from betamax_matchers import json_body
 from keystoneauth1.fixture import keystoneauth_betamax as ksabetamax
 
 from cratonclient import auth
+from cratonclient import exceptions
 from cratonclient.tests import base
 from cratonclient.v1 import client
 
@@ -73,6 +74,10 @@ class BetamaxTestCase(base.TestCase):
             'token': CRATON_ROOT_TOKEN,
             'project': CRATON_ROOT_PROJECT,
         }
+
+    def assertNotFound(self, func, item_id):
+        """Assert that the item referenced by item_id 404s."""
+        self.assertRaises(exceptions.NotFound, func, item_id)
 
     def cleanupHost(self, host):
         """Add a cleanup task for the host."""
