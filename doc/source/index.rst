@@ -14,6 +14,7 @@ Contents:
 
    readme
    installation
+   shell/index
    usage/index
    v1-api-documentation
    authentication-documentation
