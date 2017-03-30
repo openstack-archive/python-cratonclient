@@ -137,6 +137,7 @@ class Formatter(base.Formatter):
         table = self.build_table(self.field_labels)
 
         for resource in generator:
+            resource_dict = resource.to_dict()
             row = []
             for field in self.fields:
                 formatter = self.formatters.get(field)
@@ -147,7 +148,7 @@ class Formatter(base.Formatter):
                         field_name = field.replace(' ', '_')
                     else:
                         field_name = field.lower().replace(' ', '_')
-                    data = getattr(resource, field_name, '')
+                    data = resource_dict.get(field_name, '')
                 row.append(data)
             table.add_row(row)
 
@@ -160,7 +161,12 @@ class Formatter(base.Formatter):
         """Handle a single resource."""
         table = self.build_table([self.dict_property, self.dict_value])
 
-        for key, value in sorted(instance.to_dict().items()):
+        instance_dict = instance.to_dict()
+        if self.fields:
+            instance_dict = {field: instance_dict.get(field) for field
+                             in self.fields}
+
+        for key, value in sorted(instance_dict.items()):
             if isinstance(value, dict):
                 value = six.text_type(value)
             if self.wrap > 0:

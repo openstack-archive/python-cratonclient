@@ -174,3 +174,17 @@ def variable_deletes(variables):
     else:
         delete_variables = variables
     return delete_variables
+
+
+def comma_arg_flattener(arg_list):
+    """Parse a list of comma separated arg strings into one list of args."""
+    updated_args = []
+
+    if not arg_list:
+        return updated_args
+
+    for item in arg_list:
+        temp_args = item.split(',')
+        updated_args.extend(temp_args)
+
+    return [item.strip() for item in updated_args]
