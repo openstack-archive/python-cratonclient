@@ -160,7 +160,12 @@ class Formatter(base.Formatter):
         """Handle a single resource."""
         table = self.build_table([self.dict_property, self.dict_value])
 
-        for key, value in sorted(instance.to_dict().items()):
+        instance_dict = instance.to_dict()
+        if self.fields:
+            instance_dict = {field: instance_dict.get(field) for field
+                             in self.fields}
+
+        for key, value in sorted(instance_dict.items()):
             if isinstance(value, dict):
                 value = six.text_type(value)
             if self.wrap > 0:

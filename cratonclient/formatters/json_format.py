@@ -28,6 +28,20 @@ class Formatter(base.Formatter):
         """
         self.indent = 4
         self.sort_keys = True
+        self.fields = []
+
+    def configure(self, fields=None, **kwargs):
+        """Configure some of the settings used to output JSON.
+
+        Parameters that configure JSON presentation:
+
+        :param list fields:
+            List of field names as strings.
+        """
+        if fields is not None:
+            self.fields = fields
+
+        return self
 
     def format(self, dictionary):
         """Return the dictionary as a JSON string."""
@@ -39,7 +53,11 @@ class Formatter(base.Formatter):
 
     def handle_instance(self, instance):
         """Print the JSON representation of a single instance."""
-        print(self.format(instance.to_dict()))
+        instance_dict = instance.to_dict()
+        if self.fields:
+            instance_dict = {field: instance_dict.get(field) for field
+                             in self.fields}
+        print(self.format(instance_dict))
 
     def handle_generator(self, generator):
         """Print the JSON representation of a collection."""
@@ -57,7 +75,12 @@ class Formatter(base.Formatter):
         # formatting.
         print('[', end='')
         while True:
-            print(self.format(instance.to_dict()), end='')
+            instance_dict = instance.to_dict()
+            print(self.fields)
+            if self.fields:
+                instance_dict = {field: instance_dict.get(field) for field
+                                 in self.fields}
+            print(self.format(instance_dict), end='')
             # After printing our instance as a JSON object, we need to
             # decide if we have another object to print. If we do have
             # another object to print, we need to print a comma to separate

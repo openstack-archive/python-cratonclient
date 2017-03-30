@@ -47,10 +47,25 @@ HOST_FIELDS = DEFAULT_HOST_FIELDS + [
               metavar='<host>',
               type=int,
               help='ID of the host.')
+@cliutils.arg('--fields',
+              metavar='<fields>',
+              action='append',
+              help='Comma-separated list of fields to display. '
+                   'Only these fields will be fetched from the server. '
+                   'Can not be used when "--detail" is specified')
 def do_host_show(cc, args):
     """Show detailed information about a host."""
     host = cc.hosts.get(args.id)
-    args.formatter.configure(wrap=72).handle(host)
+    if not args.fields:
+        fields = None
+    else:
+        fields = cliutils.comma_arg_flattener(args.fields)
+        for field in fields:
+            if field not in HOST_FIELDS:
+                raise exc.CommandError(
+                    'Invalid field "{}"'.format(field)
+                    )
+    args.formatter.configure(wrap=72, fields=fields).handle(host)
 
 
 @cliutils.arg('-r', '--region',
@@ -79,10 +94,9 @@ def do_host_show(cc, args):
               choices=('asc', 'desc'),
               help='Sort direction: "asc" (default) or "desc".')
 @cliutils.arg('--fields',
-              nargs='+',
               metavar='<fields>',
-              default=DEFAULT_HOST_FIELDS,
-              help='Space-separated list of fields to display. '
+              action='append',
+              help='Comma-separated list of fields to display. '
                    'Only these fields will be fetched from the server. '
                    'Can not be used when "--detail" is specified')
 @cliutils.arg('--all',
@@ -139,21 +153,22 @@ def do_host_list(cc, args):
     if args.all is True:
         params['limit'] = 100
 
-    if args.detail:
-        if args.fields and args.fields == DEFAULT_HOST_FIELDS:
-            args.fields = HOST_FIELDS
-        else:
-            raise exc.CommandError(
-                'Cannot specify both --fields and --detail.'
-            )
-        params['detail'] = args.detail
-
-    fields = args.fields
-    for field in args.fields:
-        if field not in HOST_FIELDS:
-            raise exc.CommandError(
-                'Invalid field "{}"'.format(field)
-            )
+    if args.detail and args.fields is not None:
+        raise exc.CommandError(
+                    'Cannot specify both --fields and --detail.'
+                )
+    elif args.detail:
+        fields = HOST_FIELDS
+        params['details'] = args.detail
+    elif args.fields is not None:
+        fields = cliutils.comma_arg_flattener(args.fields)
+        for field in fields:
+            if field not in HOST_FIELDS:
+                raise exc.CommandError(
+                    'Invalid field "{}"'.format(field)
+                )
+    else:
+        fields = DEFAULT_HOST_FIELDS
 
     sort_key = args.sort_key and args.sort_key.lower()
     if sort_key is not None:
