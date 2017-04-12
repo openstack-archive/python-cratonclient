@@ -1,0 +1,8 @@
+Code-Review+2: Sulochan Acharya <sulochan@gmail.com>
+Workflow+1: Sulochan Acharya <sulochan@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 12 Apr 2017 06:48:37 +0000
+Reviewed-on: https://review.openstack.org/455990
+Project: openstack/python-cratonclient
+Branch: refs/heads/master
