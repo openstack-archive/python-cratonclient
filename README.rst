@@ -10,8 +10,8 @@ Note that this is a hard requirement.
 
 * Free software: Apache license
 * Documentation: https://python-cratonclient.readthedocs.io
-* Source: http://git.openstack.org/cgit/openstack/python-cratonclient
-* Bugs: http://bugs.launchpad.net/python-cratonclient
+* Source: https://git.openstack.org/cgit/openstack/python-cratonclient
+* Bugs: https://bugs.launchpad.net/python-cratonclient
 
 Features
 --------

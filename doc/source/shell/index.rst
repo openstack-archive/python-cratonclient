@@ -101,7 +101,7 @@ command-line options are documented here:
 
     .. code::
 
-        $ craton --craton-url=https://craton.cloud.corp host-list
+        $ craton --craton-url=:https://craton.cloud.corp host-list
 
 .. option:: --craton-version=VERSION
 
