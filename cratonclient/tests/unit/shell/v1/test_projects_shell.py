@@ -12,13 +12,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 """Tests for the shell functions for the projects resource."""
-import uuid
 
 import mock
 
 from cratonclient import exceptions
 from cratonclient.shell.v1 import projects_shell
 from cratonclient.tests.unit.shell import base
+
+from oslo_utils import uuidutils
 
 
 class TestDoShellShow(base.TestShellCommand):
@@ -170,7 +171,7 @@ class TestDoProjectList(base.TestShellCommand):
 
     def test_marker_support(self):
         """Verify we pass through the marker."""
-        project_id = uuid.uuid4().hex
+        project_id = uuidutils.generate_uuid()
         args = self.args_for(marker=project_id)
 
         projects_shell.do_project_list(self.craton_client, args)
@@ -212,7 +213,7 @@ class TestDoProjectDelete(base.TestShellCommand):
             'cratonclient.shell.v1.projects_shell.print'
         )
         self.print_func = self.print_func_mock.start()
-        self.project_id = uuid.uuid4()
+        self.project_id = uuidutils.generate_uuid()
 
     def tearDown(self):
         """Clean up our print mock."""
