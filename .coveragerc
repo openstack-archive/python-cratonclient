@@ -1,7 +1,0 @@
-[run]
-branch = True
-source = cratonclient
-omit = cratonclient/openstack/*
-
-[report]
-ignore_errors = True

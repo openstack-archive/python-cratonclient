@@ -1,19 +1,10 @@
-===============================
-python-cratonclient
-===============================
+This project is no longer maintained.
 
-Craton API Client and Command-line Utility
+The contents of this repository are still available in the Git
+source code management system.  To see the contents of this
+repository before it reached its end of life, please check out the
+previous commit with "git checkout HEAD^1".
 
-Please fill here a long description which must be at least 3 lines wrapped on
-80 cols, so that distribution package maintainers can use it in their packages.
-Note that this is a hard requirement.
-
-* Free software: Apache license
-* Documentation: https://python-cratonclient.readthedocs.io
-* Source: http://git.openstack.org/cgit/openstack/python-cratonclient
-* Bugs: http://bugs.launchpad.net/python-cratonclient
-
-Features
---------
-
-* TODO
+For any further questions, please email
+openstack-dev@lists.openstack.org or join #openstack-dev on
+Freenode.
